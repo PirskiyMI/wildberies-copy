@@ -1,8 +1,7 @@
 import { FC, useEffect, useState } from 'react';
 import { IProductWithRating, useAppDispatch, useAppSelector } from '../../../shared/lib';
-import { Preloader } from '../../../shared/ui';
 import { fetchAllProducts } from '../../../entities/product/api/productsActionCreator';
-import { HomeListEmptyWithContainer, HomeListWithContainer } from '../../../widgets/home';
+import { HomeListPreloader, HomeListWithContainer } from '../../../widgets/home';
 
 const Home: FC = () => {
    const { value: searchValue } = useAppSelector((state) => state.searchReducer);
@@ -25,11 +24,13 @@ const Home: FC = () => {
    }, [searchValue, products]);
 
    if (isLoading) {
-      return <Preloader />;
+      return (
+         <div className="container">
+            <HomeListPreloader />
+         </div>
+      );
    } else if (error) {
       return <div>{error}</div>;
-   } else if (!productsList.length) {
-      return <HomeListEmptyWithContainer search={searchValue} productList={products} />;
    }
 
    return (
