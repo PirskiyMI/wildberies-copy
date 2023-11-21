@@ -1,0 +1,15 @@
+.modal {
+   position: absolute;
+   width: 100vw;
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   &__wrapper {
+      position: fixed;
+      background-color: white;
+      z-index: 3;
+      border-radius: 20px;
+      overflow: hidden;
+   }
+}

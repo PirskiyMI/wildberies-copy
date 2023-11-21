@@ -1,0 +1,17 @@
+export type Icon =
+   | 'burger'
+   | 'arrow'
+   | 'cart'
+   | 'checked'
+   | 'like'
+   | 'loop'
+   | 'pen'
+   | 'trash'
+   | 'user'
+   | 'cross'
+   | 'checkMark'
+   | 'rating'
+   | 'user-male'
+   | 'user-female'
+   | 'ring'
+   | 'electronics';

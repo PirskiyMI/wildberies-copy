@@ -1,0 +1,26 @@
+.body {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   row-gap: 18px;
+   text-align: center;
+   &__title {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 133%;
+   }
+   &__text {
+      font-size: 16px;
+      line-height: 138%;
+      color: #868695;
+   }
+   &__button {
+      max-width: 210px;
+      font-weight: 600;
+   }
+   &__link {
+      display: block;
+      padding: 8px 24px 10px;
+   }
+}

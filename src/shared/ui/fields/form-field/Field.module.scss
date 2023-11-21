@@ -1,0 +1,42 @@
+.field {
+   padding: 0 0 3px 0;
+   position: relative;
+   &__input {
+      width: 100%;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      &_error {
+         color: #f55123;
+         border-color: #f55123;
+      }
+   }
+   &__input,
+   &__label {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%;
+   }
+   &__label {
+      top: 0;
+      left: 0;
+      position: absolute;
+      color: #9797af;
+      transition: all ease 0.3s;
+      &_active {
+         top: -70%;
+         font-size: 13px;
+         line-height: 123%;
+      }
+      &_error {
+         color: #f55123;
+      }
+   }
+   &__error {
+      position: absolute;
+      bottom: -16px;
+      left: 0;
+      color: #f55123;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 117%;
+   }
+}

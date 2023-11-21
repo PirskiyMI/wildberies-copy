@@ -1,0 +1,26 @@
+.cart {
+   &__bottom {
+      margin-top: 30px;
+      background-color: white;
+      border-radius: 24px;
+   }
+   &__container {
+      padding-top: 30px;
+      padding-bottom: 50px;
+      display: flex;
+      justify-content: space-between;
+      &_column {
+         flex-direction: column;
+         row-gap: 30px;
+      }
+   }
+   &__left {
+      flex: 0 0 74%;
+      & section:not(:first-child) {
+         margin-top: 16px;
+      }
+   }
+   &__right {
+      flex: 0 0 24%;
+   }
+}

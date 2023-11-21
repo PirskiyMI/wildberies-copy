@@ -1,0 +1,15 @@
+.notification {
+   padding: 15px;
+   display: flex;
+   align-items: center;
+   column-gap: 12px;
+   font-size: 14px;
+   background-color: #2e2e2e;
+   border-radius: 8px;
+   color: white;
+   &__icon {
+      width: 14px;
+      height: 14px;
+      fill: white;
+   }
+}

@@ -1,0 +1,45 @@
+.menu {
+   padding: 20px 24px 20px 30px;
+   position: absolute;
+   top: 0;
+   left: -100%;
+   width: 300px;
+   height: 100%;
+   background-color: white;
+   transition: left ease 0.4s;
+   z-index: 10;
+   &_active {
+      left: 0;
+   }
+   &__list {
+      display: flex;
+      flex-direction: column;
+      row-gap: 12px;
+   }
+   &__item {
+      font-size: 16px;
+      line-height: 125%;
+      border-radius: 8px;
+      &:hover {
+         background-color: var(--secondary-color);
+      }
+   }
+   &__link {
+      padding: 5px 0 5px 20px;
+      display: flex;
+      column-gap: 20px;
+      align-items: center;
+      color: #242424;
+      &:hover {
+         color: white;
+         .menu__icon {
+            fill: white;
+         }
+      }
+   }
+   &__icon {
+      width: 20px;
+      height: 20px;
+      fill: rgba(36, 36, 36, .5);
+   }
+}

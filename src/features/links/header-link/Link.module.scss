@@ -1,0 +1,40 @@
+.link {
+   &__body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 8px;
+      text-decoration: none;
+   }
+   &__wrapper {
+      position: relative;
+   }
+   &__icon {
+      width: 24px;
+      height: 24px;
+      fill: white;
+   }
+   &__label {
+      color: rgba(255, 255, 255, 0.8);
+      transition: color ease 0.3s;
+   }
+   &__count {
+      min-width: 16px;
+      height: 16px;
+      padding: 2px 3px 1px;
+      position: absolute;
+      top: -6px;
+      right: -8px;
+      text-align: center;
+      font-size: 10px;
+      line-height: 130%;
+      color: white;
+      background-color: rgb(245, 81, 35);
+      border-radius: 16px;
+   }
+   @media (any-hover: hover) {
+      &__body:hover &__label {
+         color: rgba(255, 255, 255, 1);
+      }
+   }
+}
