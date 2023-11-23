@@ -1,9 +1,9 @@
 .menu {
-   padding: 20px 24px 20px 30px;
-   position: absolute;
+   padding: 17px 24px 17px 10px;
+   position: fixed;
    top: 0;
    left: -100%;
-   width: 300px;
+   width: 100%;
    height: 100%;
    background-color: white;
    transition: left ease 0.4s;
@@ -25,7 +25,7 @@
       }
    }
    &__link {
-      padding: 5px 0 5px 20px;
+      padding: 5px 0;
       display: flex;
       column-gap: 20px;
       align-items: center;
@@ -40,6 +40,14 @@
    &__icon {
       width: 20px;
       height: 20px;
-      fill: rgba(36, 36, 36, .5);
+      fill: rgba(36, 36, 36, 0.5);
+   }
+   @media (min-width: 1024px) {
+      padding: 20px 24px 20px 30px;
+      width: 300px;
+      position: absolute;
+      &__link {
+         padding: 5px 0 5px 20px;
+      }
    }
 }

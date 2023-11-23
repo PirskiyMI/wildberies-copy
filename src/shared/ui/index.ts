@@ -11,4 +11,4 @@ export { Rating } from './rating/Rating';
 export { Section } from './section/Section';
 export { Spoiler } from './spoiler/Spoiler';
 export { Title } from './title/Title';
-export { Slider } from './slider/slider';
+export { Slider } from './slider/Slider';

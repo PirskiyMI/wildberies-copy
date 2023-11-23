@@ -1,19 +1,11 @@
-.footer {
-   margin-top: -34px;
-   padding: 68px 0;
-   flex: 1 1 auto;
-   background-color: var(--main-color);
-   &__container {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-   }
-}
-
 .nav {
    color: white;
    font-size: 18px;
    line-height: 133%;
    &__label {
+      padding: 8px 0;
+      font-size: 18px;
+      line-height: 24px;
       font-weight: 700;
    }
    &__list {

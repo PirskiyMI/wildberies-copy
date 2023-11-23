@@ -14,9 +14,8 @@ export const ProductModal: FC = () => {
          <Modal>
             <ProductQuickView
                product={product}
-               Button={
-                  <QuickViewAddToCart inBasket={inBasket} product={product} />
-               }></ProductQuickView>
+               Button={<QuickViewAddToCart inBasket={inBasket} product={product} />}
+            />
          </Modal>
       );
    }

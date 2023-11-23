@@ -3,9 +3,11 @@
       position: relative;
       padding: 22px 0 0;
       flex: 0 0 300px;
-      border-radius: 24px;
       background-color: var(--background-color);
       z-index: 1;
+      @media (min-width: 1024px) {
+         border-radius: 24px;
+      }
    }
    &__notification {
       position: fixed;

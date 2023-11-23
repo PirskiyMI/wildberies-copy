@@ -4,17 +4,11 @@
       overflow: hidden;
    }
    &__label {
-      padding: 0 0 16px;
       display: flex;
       justify-content: space-between;
       align-items: center;
    }
-   &__title {
-      &_hidden {
-         opacity: 0;
-         visibility: hidden;
-      }
-   }
+
    &__arrow {
       transform: rotate(180deg);
       transition: transform ease 0.2s;

@@ -1,5 +1,5 @@
 import { FC, useState } from 'react';
-import styles from './Header.module.scss';
+import styles from './HeaderForm.module.scss';
 
 import { SearchField } from '../../../entities/search-field';
 import { ClearSearchField, SetSearchValue } from '../../../features/search-field';

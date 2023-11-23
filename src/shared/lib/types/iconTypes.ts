@@ -14,4 +14,5 @@ export type Icon =
    | 'user-male'
    | 'user-female'
    | 'ring'
-   | 'electronics';
+   | 'electronics'
+   | 'home';

@@ -56,8 +56,10 @@
       align-items: flex-end;
    }
    &__buttons {
+      opacity: 0;
       display: flex;
       column-gap: 16px;
+      transition: opacity ease 0.2s;
    }
    &__price {
       width: 300px;
@@ -69,18 +71,8 @@
       letter-spacing: -0.2px;
    }
    &:hover {
-      .item__button {
-         svg {
-            opacity: 0.4;
-         }
-         &:hover {
-            svg {
-               opacity: 1;
-            }
-         }
+      .item__buttons {
+         opacity: 1;
       }
    }
 }
-
-
-

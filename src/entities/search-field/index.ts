@@ -1,2 +1,2 @@
 export * from './model/searchSlice';
-export { SearchField } from './ui/SearchField';
+export * from './ui/SearchField';

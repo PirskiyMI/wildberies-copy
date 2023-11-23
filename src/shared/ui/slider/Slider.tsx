@@ -5,9 +5,10 @@ type Props = {
    children: ReactNode;
    showElements: number;
    gap: number;
+   minHeight: number;
 };
 
-export const Slider: FC<Props> = ({ children, showElements, gap }) => {
+export const Slider: FC<Props> = ({ children, showElements, gap, minHeight }) => {
    const sliderList = Children.toArray(children);
    const sliderRef = useRef<HTMLDivElement>(null);
    const [wrapperWidth, setWrapperWidth] = useState<number>(0);
@@ -49,7 +50,7 @@ export const Slider: FC<Props> = ({ children, showElements, gap }) => {
    return (
       <div ref={sliderRef} className={styles.slider}>
          <div
-            style={{ left: `${sliderPosition}px`, columnGap: `${gap}px` }}
+            style={{ left: `${sliderPosition}px`, columnGap: `${gap}px`, height: `${minHeight}px` }}
             className={styles.slider__wrapper}>
             {sliderList.map((el, index) => (
                <div

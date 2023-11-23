@@ -3,8 +3,9 @@ import styles from './Title.module.scss';
 
 type TitleProps = {
    children: ReactNode;
+   className?: string;
 };
 
-export const Title: FC<TitleProps> = ({ children }) => {
-   return <h1 className={styles.title}>{children}</h1>;
+export const Title: FC<TitleProps> = ({ children, className }) => {
+   return <h1 className={`${styles.title} ${className}`}>{children}</h1>;
 };

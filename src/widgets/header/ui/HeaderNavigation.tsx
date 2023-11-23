@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import styles from './Header.module.scss';
+import styles from './HeaderNavigation.module.scss';
 
 import { LinkToCart, LinkToProfile } from '../../../features/links';
 

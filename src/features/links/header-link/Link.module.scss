@@ -12,11 +12,7 @@
    &__icon {
       width: 24px;
       height: 24px;
-      fill: white;
-   }
-   &__label {
-      color: rgba(255, 255, 255, 0.8);
-      transition: color ease 0.3s;
+      fill: lightgray;
    }
    &__count {
       min-width: 16px;
@@ -31,6 +27,19 @@
       color: white;
       background-color: rgb(245, 81, 35);
       border-radius: 16px;
+   }
+   &__label {
+      display: none;
+   }
+   @media (min-width: 1024px) {
+      &__icon {
+         fill: white;
+      }
+      &__label {
+         display: block;
+         color: rgba(255, 255, 255, 0.8);
+         transition: color ease 0.3s;
+      }
    }
    @media (any-hover: hover) {
       &__body:hover &__label {

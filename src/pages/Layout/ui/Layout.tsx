@@ -9,7 +9,7 @@ import { Backdrop, Notification, Preloader } from '../../../shared/ui';
 import { useAppSelector } from '../../../shared/lib';
 import { Menu } from '../../../widgets/menu';
 import { Header } from '../../../widgets/header';
-import Footer from '../../../widgets/footer';
+import { Footer } from '../../../widgets/footer';
 import { ProductModal } from '../../../widgets/product-modal';
 
 export const Layout: FC = () => {
