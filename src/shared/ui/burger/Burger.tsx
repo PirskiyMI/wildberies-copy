@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import styles from './Burger.module.scss';
-import { openMenu } from '../../model';
 import { Icon } from '../icon/Icon';
 import { useAppDispatch } from '../../lib';
+import { toggleMenu } from '../../model/slices/burgerSlice';
 
 type Props = {
    className?: string;
@@ -12,7 +12,7 @@ export const Burger: FC<Props> = ({ className }) => {
    const dispatch = useAppDispatch();
 
    const openMenuHandler = () => {
-      dispatch(openMenu());
+      dispatch(toggleMenu());
    };
 
    return (

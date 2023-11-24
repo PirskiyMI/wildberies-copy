@@ -12,7 +12,6 @@ const CartLeftSide: FC = () => {
          <CartSpoiler />
          <Payment />
          <Recipient />
-         
       </div>
    );
 };

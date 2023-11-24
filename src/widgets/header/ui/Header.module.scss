@@ -1,9 +1,11 @@
 .header {
+   flex: 0 0 64px;
    position: relative;
    padding: 20px 0px;
-   min-height: 64px;
+   // height: 64px;
    color: white;
    &__container {
+      padding: 0 10px;
       height: 100%;
       display: flex;
       align-items: center;
@@ -13,6 +15,7 @@
          justify-content: safe;
       }
    }
+
    &__menu {
       padding: 15px 0;
       display: grid;
@@ -37,13 +40,16 @@
          }
       }
    }
+
    &__logo {
       max-width: 137px;
       font-size: 18px;
    }
+
    &__icon {
       fill: white;
    }
+
    &__search {
       position: absolute;
       top: 0;

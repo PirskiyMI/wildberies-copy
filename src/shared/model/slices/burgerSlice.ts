@@ -18,7 +18,10 @@ export const burgerSlice = createSlice({
       closeMenu: (state) => {
          state.isOpen = false;
       },
+      toggleMenu: (state) => {
+         state.isOpen = !state.isOpen;
+      },
    },
 });
 
-export const { openMenu, closeMenu } = burgerSlice.actions;
+export const { openMenu, closeMenu, toggleMenu } = burgerSlice.actions;

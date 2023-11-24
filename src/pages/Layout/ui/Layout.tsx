@@ -1,7 +1,7 @@
 import styles from './Layout.module.scss';
 
 import { FC, Suspense } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 
 import { menuList } from '../config/data';
@@ -16,6 +16,9 @@ export const Layout: FC = () => {
    const { isVisible: isActive } = useAppSelector((state) => state.notificationReducer);
    const { isModalOpen } = useAppSelector((state) => state.modalReducer);
    const { isOpen } = useAppSelector((state) => state.burgerReducer);
+
+   const location = useLocation();
+   console.log(location);
 
    return (
       <>
@@ -33,6 +36,7 @@ export const Layout: FC = () => {
          {isModalOpen && <ProductModal />}
          <Menu links={menuList} />
          {isModalOpen || isOpen ? <Backdrop /> : null}
+
          <Header />
          <main className={styles.layout__main}>
             <Suspense fallback={<Preloader />}>

@@ -9,6 +9,9 @@
 }
 .container {
    margin: 0 auto;
-   padding: 0 24px;
    max-width: 1488px;
+
+   @media (min-width: 1024px) {
+      padding: 0 24px;
+   }
 }

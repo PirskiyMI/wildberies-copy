@@ -1,17 +1,35 @@
 .item {
    padding-top: 12px;
    display: flex;
-   justify-content: space-between;
+   flex-direction: column;
    align-items: start;
+   row-gap: 20px;
+   @media (min-width: 1024px) {
+      justify-content: space-between;
+      flex-direction: row;
+   }
+   @media (max-width: 1024px) {
+      &:not(:first-child) {
+         margin-top: 20px;
+      }
+   }
    &__left {
       display: flex;
       align-items: start;
       column-gap: 16px;
    }
    &__label {
+      position: relative;
       display: flex;
       align-items: center;
       column-gap: 12px;
+   }
+   &__checkbox {
+      background-color: white;
+      border-radius: 10px;
+      position: absolute;
+      top: 4px;
+      left: 4px;
    }
    &__body {
       display: flex;
@@ -25,9 +43,14 @@
       line-height: 123%;
    }
    &__image {
-      width: 96px;
-      height: 128px;
+      width: 80px;
+      height: 106px;
       border-radius: 8px;
+      object-fit: contain;
+      @media (min-width: 1024px) {
+         width: 96px;
+         height: 128px;
+      }
    }
    &__name {
       font-size: 16px;
@@ -46,33 +69,48 @@
       color: #9797af;
    }
    &__right {
+      min-width: 100%;
       display: flex;
-      column-gap: 16px;
+      justify-content: space-between;
+      align-items: center;
+      @media (min-width: 1024px) {
+         min-width: auto;
+         justify-content: safe;
+         column-gap: 16px;
+      }
    }
    &__actions {
       display: flex;
-      flex-direction: column;
-      row-gap: 16px;
-      align-items: flex-end;
+      @media (min-width: 1024px) {
+         flex-direction: column;
+         row-gap: 16px;
+         align-items: flex-end;
+      }
    }
    &__buttons {
-      opacity: 0;
       display: flex;
       column-gap: 16px;
-      transition: opacity ease 0.2s;
+      @media (min-width: 1024px) {
+         opacity: 0;
+         transition: opacity ease 0.2s;
+      }
    }
    &__price {
-      width: 300px;
-      display: flex;
-      justify-content: end;
+      
       font-size: 20px;
       font-weight: 700;
       line-height: 140%;
       letter-spacing: -0.2px;
+      @media (min-width: 1024px) {
+         text-align: right;
+         width: 200px;
+      }
    }
-   &:hover {
-      .item__buttons {
-         opacity: 1;
+   @media (min-width: 1024px) {
+      &:hover {
+         .item__buttons {
+            opacity: 1;
+         }
       }
    }
 }

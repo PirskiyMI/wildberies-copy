@@ -26,7 +26,7 @@ export const ProductCounter: FC<ProductCounterProps> = ({ limit, id, value }) =>
                setCount((prev) => (prev -= 1));
                dispatch(decrementProductCount(id));
             }}>
-            −
+            <span>−</span>
          </button>
          <input
             type="number"
@@ -62,7 +62,7 @@ export const ProductCounter: FC<ProductCounterProps> = ({ limit, id, value }) =>
                setCount((prev) => (prev += 1));
                dispatch(incrementProductCount(id));
             }}>
-            +
+            <span>+</span>
          </button>
       </div>
    );

@@ -10,7 +10,9 @@ const Home: FC = () => {
    const dispatch = useAppDispatch();
 
    useEffect(() => {
-      dispatch(fetchAllProducts());
+      if (!products.length) {
+         dispatch(fetchAllProducts());
+      }
    }, [searchValue, dispatch]);
    useEffect(() => {
       if (searchValue.trim().length === 0) {

@@ -3,13 +3,29 @@
    &__top,
    &__bottom {
       display: flex;
-      column-gap: 24px;
+      flex-direction: column;
+      row-gap: 40px;
+      flex-wrap: wrap;
+      @media (min-width: 600px) {
+         flex-direction: row;
+         column-gap: 24px;
+      }
    }
    &__top label {
-      flex: 1 1 48%;
+      flex: 0 0 100%;
+      @media (min-width: 600px) {
+         margin-top: 0;
+         flex: 1 1 48%;
+      }
    }
-   &__bottom label {
-      margin-top: 38px;
-      flex: 1 1 31%;
+   &__bottom {
+      margin-top: 40px;
+      label {
+         flex: 0 0 100%;
+         @media (min-width: 600px) {
+            margin-top: 38px;
+            flex: 1 1 31%;
+         }
+      }
    }
 }

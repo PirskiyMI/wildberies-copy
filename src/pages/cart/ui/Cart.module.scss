@@ -7,20 +7,29 @@
    &__container {
       padding-top: 30px;
       padding-bottom: 50px;
+      row-gap: 16px;
+      column-gap: 10px;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       &_column {
          flex-direction: column;
          row-gap: 30px;
       }
    }
    &__left {
-      flex: 0 0 74%;
       & section:not(:first-child) {
          margin-top: 16px;
       }
    }
-   &__right {
-      flex: 0 0 24%;
+   @media (min-width: 1200px) {
+      &__container {
+         flex-direction: row;
+      }
+      &__left {
+         flex: 0 1 74%;
+      }
+      &__right {
+         flex: 0 0 345px;
+      }
    }
 }
