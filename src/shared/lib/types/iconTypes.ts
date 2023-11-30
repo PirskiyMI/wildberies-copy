@@ -15,4 +15,11 @@ export type Icon =
    | 'user-female'
    | 'ring'
    | 'electronics'
-   | 'home';
+   | 'home'
+   | 'chat-stroke'
+   | 'cart-stroke'
+   | 'home-stroke'
+   | 'heart-stroke'
+   | 'travel-stroke'
+   | 'like-stroke'
+   | 'user-stroke';

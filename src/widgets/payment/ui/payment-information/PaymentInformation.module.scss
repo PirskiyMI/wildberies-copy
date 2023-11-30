@@ -1,0 +1,8 @@
+.information {
+   display: flex;
+   column-gap: 8px;
+   &__data {
+      display: flex;
+      column-gap: 12px;
+   }
+}

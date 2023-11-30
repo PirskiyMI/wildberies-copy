@@ -12,3 +12,5 @@ export { Section } from './section/Section';
 export { Spoiler } from './spoiler/Spoiler';
 export { Title } from './title/Title';
 export { Slider } from './slider/Slider';
+export { Skeleton } from './skeleton/Skeleton';
+export { Logo } from './logo/Logo';

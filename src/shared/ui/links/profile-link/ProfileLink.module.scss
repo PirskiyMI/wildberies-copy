@@ -1,0 +1,21 @@
+.link {
+   display: flex;
+   align-items: center;
+   column-gap: 10px;
+   transition: color ease 0.1s;
+   svg {
+      stroke: #000000;
+      width: 24px;
+      height: 24px;
+      // fill: black;
+      transition: fill ease 0.1s, stroke ease 0.1s;
+   }
+   @media (any-hover: hover) {
+      &:hover {
+         color: var(--secondary-color);
+         svg {
+            stroke: var(--secondary-color);
+         }
+      }
+   }
+}

@@ -6,6 +6,7 @@ import { notificationSlice } from '../../entities/notification';
 import { searchSlice } from '../../entities/search-field';
 import { productListSlice } from '../../entities/product';
 import { productVisitedListSlice } from './../../entities/product/model/productVisitedListSlice';
+import { userSlice } from '../../entities/user';
 
 const rootReducer = combineReducers({
    burgerReducer: burgerSlice.reducer,
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
    productVisitedListSlice: productVisitedListSlice.reducer,
    searchReducer: searchSlice.reducer,
    modalReducer: modalSlice.reducer,
+   userReducer: userSlice.reducer,
 });
 
 const setupStore = () => {

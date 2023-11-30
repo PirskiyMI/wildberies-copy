@@ -1,2 +1,2 @@
 export { Menu } from './ui/Menu';
-export type { IMenuList } from './model/models';
+export type { IMenuList } from './model/types';

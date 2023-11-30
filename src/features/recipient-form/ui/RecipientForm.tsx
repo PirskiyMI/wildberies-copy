@@ -3,7 +3,7 @@ import styles from './Recipient.module.scss';
 import { FC } from 'react';
 
 import { Field } from '../../../shared/ui';
-import useInput from '../model/hooks/useInput';
+import useInput from '../lib/hooks/useInput';
 
 export const RecipientForm: FC = () => {
    const {

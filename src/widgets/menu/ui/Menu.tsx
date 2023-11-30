@@ -2,7 +2,7 @@ import { FC } from 'react';
 import styles from './Menu.module.scss';
 import { Link } from 'react-router-dom';
 import { Icon } from '../../../shared/ui';
-import { IMenuList } from '../model/models';
+import { IMenuList } from '../model/types';
 import { useAppSelector } from '../../../shared/lib';
 
 type MenuProps = {
