@@ -1,15 +1,15 @@
 import { FC } from 'react';
-import styles from './Menu.module.scss';
+import styles from './BurgerMenu.module.scss';
 import { Link } from 'react-router-dom';
 import { Icon } from '../../../shared/ui';
 import { IMenuList } from '../model/types';
 import { useAppSelector } from '../../../shared/lib';
 
-type MenuProps = {
+type Props = {
    links: IMenuList[];
 };
 
-export const Menu: FC<MenuProps> = ({ links }) => {
+export const BurgerMenu: FC<Props> = ({ links }) => {
    const { isOpen } = useAppSelector((state) => state.burgerReducer);
 
    return (

@@ -5,11 +5,12 @@ import { useAppSelector } from '../../../../shared/lib';
 import { Section, Spoiler, Title } from '../../../../shared/ui';
 
 import { BasketInfo, BasketItem } from '../../../../entities/basket';
-
-import { ToggleSelectedProduct } from '../../../../features/toggle-selected-product';
-import { ProductCounter } from '../../../../features/product-counter';
-import { DeleteFromCart } from '../../../../features/delete-from-cart';
-import { ToggleToFavorite } from '../../../../features/toggle-to-favorite';
+import {
+   DeleteFromCart,
+   ProductCounter,
+   SelectProduct,
+   ToggleToFavorite,
+} from '../../../../features/product-actions';
 
 const CartList: FC = () => {
    const { list } = useAppSelector((state) => state.basketListReducer);
@@ -21,7 +22,7 @@ const CartList: FC = () => {
                key={el.id}
                product={el}
                features={{
-                  Checkbox: <ToggleSelectedProduct id={el.id} isChecked={el.status.isChecked} />,
+                  Checkbox: <SelectProduct id={el.id} isChecked={el.status.isChecked} />,
                   Counter: <ProductCounter id={el.id} value={el.status.count} />,
                   Delete: <DeleteFromCart id={el.id} />,
                   Like: <ToggleToFavorite />,

@@ -1,4 +1,4 @@
-import { CartOrder } from '../../../widgets/cart/cart-order/ui/CartOrder';
+import { CartOrder } from '../../../widgets/cart';
 import styles from './Cart.module.scss';
 
 import { FC } from 'react';

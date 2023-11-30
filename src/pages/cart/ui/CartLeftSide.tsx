@@ -2,9 +2,9 @@ import styles from './Cart.module.scss';
 
 import { FC } from 'react';
 
-import Payment from '../../../widgets/payment/Payment';
-import Recipient from '../../../widgets/recipient/Recipient';
-import { CartSpoiler } from '../../../widgets/cart/cart-spoiler/ui/CartSpoiler';
+import { Payment } from '../../../widgets/payment';
+import { Recipient } from '../../../widgets/recipient';
+import { CartSpoiler } from '../../../widgets/cart';
 
 const CartLeftSide: FC = () => {
    return (

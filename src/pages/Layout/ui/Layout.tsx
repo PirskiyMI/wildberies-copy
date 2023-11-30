@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { menuList } from '../config/data';
 import { Backdrop, Notification, Preloader } from '../../../shared/ui';
 import { useAppSelector } from '../../../shared/lib';
-import { Menu } from '../../../widgets/menu';
+import { BurgerMenu } from '../../../widgets/burger-menu';
 import { Header } from '../../../widgets/header';
 import { Footer } from '../../../widgets/footer';
 import { ProductModal } from '../../../widgets/product-modal';
@@ -34,7 +34,7 @@ export const Layout: FC = () => {
             )}
          </AnimatePresence>
          {isModalOpen && <ProductModal />}
-         <Menu links={menuList} />
+         <BurgerMenu links={menuList} />
          {isModalOpen || isOpen ? <Backdrop /> : null}
 
          <Header />

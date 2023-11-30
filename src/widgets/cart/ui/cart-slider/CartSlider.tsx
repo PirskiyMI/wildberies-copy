@@ -2,8 +2,7 @@ import { FC } from 'react';
 import { Slider, Title } from '../../../../shared/ui';
 import { useAppSelector } from '../../../../shared/lib';
 import { ProductCard } from '../../../../entities/product';
-import { QuickView } from '../../../../features/quick-view';
-import { AddToCart } from '../../../../features/add-to-cart';
+import { AddToCart, QuickView } from '../../../../features/product-actions';
 
 export const CartSlider: FC = () => {
    const { list } = useAppSelector((state) => state.productVisitedListSlice);

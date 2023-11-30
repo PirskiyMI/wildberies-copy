@@ -2,9 +2,8 @@ import { FC } from 'react';
 import styles from './CartProductList.module.scss';
 import { useAppSelector } from '../../../../shared/lib';
 import { ProductCard, ProductList } from '../../../../entities/product';
-import { QuickView } from '../../../../features/quick-view';
-import { AddToCart } from '../../../../features/add-to-cart';
 import { Section, Title } from '../../../../shared/ui';
+import { AddToCart, QuickView } from '../../../../features/product-actions';
 
 export const CartProductList: FC = () => {
    const { list } = useAppSelector((state) => state.productVisitedListSlice);

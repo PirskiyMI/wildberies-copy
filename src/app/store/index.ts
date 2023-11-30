@@ -3,7 +3,7 @@ import { modalSlice, burgerSlice } from '../../shared/model';
 import { orderSlice } from '../../entities/order';
 import { basketInfoSlice, basketListSlice } from '../../entities/basket';
 import { notificationSlice } from '../../entities/notification';
-import { searchSlice } from '../../entities/search-field';
+import { searchSlice } from '../../shared/model'; 
 import { productListSlice } from '../../entities/product';
 import { productVisitedListSlice } from './../../entities/product/model/productVisitedListSlice';
 import { userSlice } from '../../entities/user';

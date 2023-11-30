@@ -1,4 +1,4 @@
-import { IMenuList } from "../../../widgets/menu";
+import { IMenuList } from '../../../widgets/burger-menu';
 
 export const menuList: IMenuList[] = [
    {

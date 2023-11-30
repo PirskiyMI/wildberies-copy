@@ -6,7 +6,7 @@ import CartLeftSide from './CartLeftSide';
 import CartRightSide from './CartRightSide';
 import { useAppSelector } from '../../../shared/lib';
 import { useSetCount } from '../lib/hooks/useSetCount';
-import { CartEmpty } from '../../../widgets/cart/cart-empty';
+import { CartEmpty } from '../../../widgets/cart';
 import { CartSlider } from '../../../widgets/cart';
 
 export const CartPage: FC = () => {
