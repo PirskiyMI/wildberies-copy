@@ -3,11 +3,11 @@ import { useAppDispatch } from '../../../../shared/lib';
 import { deleteProduct } from '../../../../entities/basket';
 import { DeleteButton } from '../../../../shared/ui';
 
-type DeleteFromCartProps = {
+type Props = {
    id: number;
 };
 
-export const DeleteFromCart: FC<DeleteFromCartProps> = ({ id }) => {
+export const DeleteFromCart: FC<Props> = ({ id }) => {
    const dispatch = useAppDispatch();
 
    const deleteHandler = () => {
