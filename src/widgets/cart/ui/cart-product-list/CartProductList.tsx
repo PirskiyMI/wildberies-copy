@@ -6,7 +6,7 @@ import { Section, Title } from '../../../../shared/ui';
 import { AddToCart, QuickView } from '../../../../features/product-actions';
 
 export const CartProductList: FC = () => {
-   const { list } = useAppSelector((state) => state.productVisitedListSlice);
+   const { list } = useAppSelector((state) => state.cartSliderReducer);
 
    if (!list) return null;
 

@@ -1,10 +1,7 @@
 import { useState, ChangeEvent } from 'react';
-import {
-   decrementProductCount,
-   incrementProductCount,
-   setProductCount,
-} from '../../../../entities/basket';
+
 import { useAppDispatch } from '../../../../shared/lib';
+import { decrementProductCount, incrementProductCount, setProductCount } from '../../model/slices/basketListSlice';
 
 type Props = {
    id: number;

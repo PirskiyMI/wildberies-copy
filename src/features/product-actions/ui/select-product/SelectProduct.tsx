@@ -2,7 +2,7 @@ import { ChangeEventHandler, FC } from 'react';
 import styles from './SelectProduct.module.scss';
 import { useAppDispatch } from '../../../../shared/lib';
 import { Icon } from '../../../../shared/ui';
-import { toggleProductIsChecked } from '../../../../entities/basket';
+import { toggleProductIsChecked } from '../../model/slices/basketListSlice';
 
 type Props = {
    isChecked: boolean;

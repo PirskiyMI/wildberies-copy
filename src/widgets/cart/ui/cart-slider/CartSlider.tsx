@@ -5,7 +5,7 @@ import { ProductCard } from '../../../../entities/product';
 import { AddToCart, QuickView } from '../../../../features/product-actions';
 
 export const CartSlider: FC = () => {
-   const { list } = useAppSelector((state) => state.productVisitedListSlice);
+   const { list } = useAppSelector((state) => state.cartSliderReducer);
 
    if (!list.length) return null;
 

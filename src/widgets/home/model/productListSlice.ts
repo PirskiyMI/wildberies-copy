@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { IProductWithRating } from '../../../shared/lib';
 import { fetchAllProducts, fetchProducts } from '../api/productsActionCreator';
-
+import { IProductWithRating } from '../../../shared/lib';
 
 interface IProductListSlice {
    products: IProductWithRating[];

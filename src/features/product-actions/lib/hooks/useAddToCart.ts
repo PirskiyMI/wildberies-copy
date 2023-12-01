@@ -1,6 +1,7 @@
-import { addProduct, incrementTotalCount } from '../../../../entities/basket';
 import { hideNotification, showNotification } from '../../../../entities/notification';
 import { IProduct, useAppDispatch } from '../../../../shared/lib';
+import { incrementTotalCount } from '../../model/slices/basketInfoSlice';
+import { addProduct } from '../../model/slices/basketListSlice';
 
 export const useAddToCart = (product: IProduct) => {
    const dispatch = useAppDispatch();

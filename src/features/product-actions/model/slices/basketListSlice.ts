@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IProductWithStatus } from '../../../shared/lib';
+import { IProductWithStatus } from '../../../../shared/lib';
 
-export interface IBasketListSlice {
+export interface IState {
    list: IProductWithStatus[];
 }
 
-const initialState: IBasketListSlice = {
+const initialState: IState = {
    list: [],
 };
 

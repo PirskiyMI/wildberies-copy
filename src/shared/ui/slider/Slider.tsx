@@ -1,5 +1,6 @@
 import { Children, FC, ReactNode, useEffect, useRef, useState } from 'react';
 import styles from './Slider.module.scss';
+import { useResize } from '../../lib';
 
 type Props = {
    children: ReactNode;
@@ -9,6 +10,7 @@ type Props = {
 };
 
 export const Slider: FC<Props> = ({ children, showElements, gap, minHeight }) => {
+   const { width } = useResize();
    const sliderList = Children.toArray(children);
    const sliderRef = useRef<HTMLDivElement>(null);
    const [wrapperWidth, setWrapperWidth] = useState<number>(0);
@@ -29,7 +31,7 @@ export const Slider: FC<Props> = ({ children, showElements, gap, minHeight }) =>
          }
          setWrapperWidth(wrapperWidth);
       }
-   }, [showElements, gap, sliderList]);
+   }, [showElements, gap, sliderList, width]);
 
    const scrollToPrev = () => {
       if (Math.abs(sliderPosition) >= wrapperWidth) {

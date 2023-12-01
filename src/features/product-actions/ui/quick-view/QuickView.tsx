@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { IProductWithRating, useAppDispatch } from '../../../../shared/lib';
 import { openModal, setProductToModal } from '../../../../shared/model';
-import { addProductToVisited } from '../../../../entities/product';
+import { addProductToVisited } from '../../model/slices/cartSliderSlice';
 
 type Props = {
    product: IProductWithRating;

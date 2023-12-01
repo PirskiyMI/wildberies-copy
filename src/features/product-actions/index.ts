@@ -1,3 +1,7 @@
+export { cartSliderSlice } from './model/slices/cartSliderSlice';
+export { basketListSlice } from './model/slices/basketListSlice';
+export { basketInfoSlice, setTotalCount, setTotalPrice } from './model/slices/basketInfoSlice';
+
 export { AddToCart } from './ui/add-to-cart/AddToCart';
 export { QuickViewAddToCart } from './ui/add-to-cart/QuickViewAddToCart';
 export { DeleteFromCart } from './ui/delete-from-cart/DeleteFromCart';

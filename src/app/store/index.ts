@@ -1,12 +1,12 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { modalSlice, burgerSlice } from '../../shared/model';
+import { searchSlice } from '../../shared/model';
 import { orderSlice } from '../../entities/order';
-import { basketInfoSlice, basketListSlice } from '../../entities/basket';
 import { notificationSlice } from '../../entities/notification';
-import { searchSlice } from '../../shared/model'; 
-import { productListSlice } from '../../entities/product';
-import { productVisitedListSlice } from './../../entities/product/model/productVisitedListSlice';
 import { userSlice } from '../../entities/user';
+import { basketInfoSlice, basketListSlice, cartSliderSlice } from '../../features/product-actions';
+import { productListSlice } from '../../widgets/home';
+import { categoryProductListSlice } from '../../widgets/catalog';
 
 const rootReducer = combineReducers({
    burgerReducer: burgerSlice.reducer,
@@ -15,7 +15,8 @@ const rootReducer = combineReducers({
    basketListReducer: basketListSlice.reducer,
    notificationReducer: notificationSlice.reducer,
    productListReducer: productListSlice.reducer,
-   productVisitedListSlice: productVisitedListSlice.reducer,
+   catalogListReducer: categoryProductListSlice.reducer,
+   cartSliderReducer: cartSliderSlice.reducer,
    searchReducer: searchSlice.reducer,
    modalReducer: modalSlice.reducer,
    userReducer: userSlice.reducer,

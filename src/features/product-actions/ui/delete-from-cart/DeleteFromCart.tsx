@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { useAppDispatch } from '../../../../shared/lib';
-import { deleteProduct } from '../../../../entities/basket';
 import { DeleteButton } from '../../../../shared/ui';
+import { deleteProduct } from '../../model/slices/basketListSlice';
 
 type Props = {
    id: number;

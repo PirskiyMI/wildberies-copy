@@ -1,9 +1,13 @@
 import { FC } from 'react';
 import styles from './BasketInfo.module.scss';
-import { getNoun, useAppSelector } from '../../../../shared/lib';
+import { getNoun } from '../../../../shared/lib';
 
-export const BasketInfo: FC = () => {
-   const { count, price } = useAppSelector((state) => state.basketInfoReducer);
+type Props = {
+   price: number;
+   count: number;
+};
+
+export const BasketInfo: FC<Props> = ({ count, price }) => {
    const nounCount = getNoun(count, 'товар', 'товара', 'товаров');
 
    return (

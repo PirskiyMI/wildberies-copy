@@ -5,12 +5,12 @@ import { IProductWithRating } from '../../../../shared/lib';
 import { SearchIsEmpty } from '../../../../entities/search-is-empty';
 
 type Props = {
-   search: string;
+   search?: string;
    productList: IProductWithRating[];
 };
 
 export const HomeList: FC<Props> = ({ productList, search }) => {
-   if (!productList.length) {
+   if (!productList.length && search) {
       return (
          <>
             <SearchIsEmpty search={search} />

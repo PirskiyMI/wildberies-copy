@@ -11,7 +11,7 @@ import { CartSlider } from '../../../widgets/cart';
 
 export const CartPage: FC = () => {
    const { list } = useAppSelector((state) => state.basketListReducer);
-   const { list: visitedProducts } = useAppSelector((state) => state.productVisitedListSlice);
+   const { list: visitedProducts } = useAppSelector((state) => state.cartSliderReducer);
 
    useSetCount({ list });
 

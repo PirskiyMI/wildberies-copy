@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from 'react';
 import { IProductWithRating, useAppDispatch, useAppSelector } from '../../../shared/lib';
-import { fetchAllProducts } from '../../../entities/product/api/productsActionCreator';
+import { fetchAllProducts } from '../../../widgets/home/api/productsActionCreator';
 import { HomeList, HomePreloader } from '../../../widgets/home';
 
 const Home: FC = () => {

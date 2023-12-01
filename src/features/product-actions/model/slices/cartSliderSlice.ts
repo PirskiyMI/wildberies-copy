@@ -1,16 +1,16 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { IProductWithRating } from '../../../shared/lib';
+import { IProductWithRating } from '../../../../shared/lib';
 
-interface IProductVisitedList {
+interface ICartSpoilerList {
    list: IProductWithRating[];
 }
 
-const initialState: IProductVisitedList = {
+const initialState: ICartSpoilerList = {
    list: [],
 };
 
-export const productVisitedListSlice = createSlice({
-   name: 'productVisitedList',
+export const cartSliderSlice = createSlice({
+   name: 'cartSpoiler',
    initialState,
    reducers: {
       addProduct: (state, { payload }: PayloadAction<IProductWithRating>) => {
@@ -22,4 +22,4 @@ export const productVisitedListSlice = createSlice({
    },
 });
 
-export const { addProduct: addProductToVisited } = productVisitedListSlice.actions;
+export const { addProduct: addProductToVisited } = cartSliderSlice.actions;

@@ -1,11 +1,11 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-interface IBasketInfoSlice {
+interface ISlice {
    count: number;
    price: number;
 }
 
-const initialState: IBasketInfoSlice = {
+const initialState: ISlice = {
    count: 0,
    price: 0,
 };
