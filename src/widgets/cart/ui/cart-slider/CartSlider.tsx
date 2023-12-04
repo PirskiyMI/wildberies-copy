@@ -12,7 +12,7 @@ export const CartSlider: FC = () => {
    return (
       <div style={{ width: 'calc(100% + 32px)' }}>
          <Title>Вы недавно смотрели</Title>
-         <Slider minHeight={370} showElements={6} gap={0}>
+         <Slider minHeight={370} gap={30}>
             {list.map((el) => (
                <ProductCard key={el.id} product={el}>
                   <QuickView product={el} />
