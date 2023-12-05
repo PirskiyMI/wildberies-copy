@@ -2,6 +2,7 @@ import { FC, useEffect, useState } from 'react';
 import { IProductWithRating, useAppDispatch, useAppSelector } from '../../../shared/lib';
 import { fetchAllProducts } from '../../../widgets/home/api/productsActionCreator';
 import { HomeList, HomePreloader } from '../../../widgets/home';
+import styles from './Home.module.scss';
 
 const Home: FC = () => {
    const { value: searchValue } = useAppSelector((state) => state.searchReducer);
@@ -36,7 +37,7 @@ const Home: FC = () => {
    }
 
    return (
-      <div className="container">
+      <div className={`${styles.home__container} container`}>
          <HomeList productList={productsList} search={searchValue} />
       </div>
    );

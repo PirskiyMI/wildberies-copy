@@ -1,8 +1,10 @@
 .wrapper {
    width: 100vw;
+   min-width: 320px;
    height: 100%;
    display: flex;
    flex-direction: column;
+   overflow-x: hidden;
    &_hidden {
       overflow-y: hidden;
    }

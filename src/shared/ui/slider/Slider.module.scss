@@ -1,20 +1,19 @@
 .slider {
-   margin: -16px -16px -200px;
-   padding: 16px 16px 200px;
    position: relative;
-   margin-top: 30px;
    width: 100%;
-   overflow: auto;
+   overflow-x: auto;
    &::-webkit-scrollbar {
       display: none;
    }
    &__wrapper {
-      position: relative;
       top: 0;
       left: 0;
-      width: 100%;
       display: flex;
-      transition: left ease-in-out 0.5s;
+      @media (min-width: 1024px) {
+         width: 100%;
+         position: relative;
+         transition: left ease-in-out 0.5s;
+      }
    }
    &__button {
       width: 50px;
@@ -38,5 +37,10 @@
          opacity: 0;
          visibility: hidden;
       }
+   }
+   @media (min-width: 1024px) {
+      margin-top: 30px;
+      margin: -16px -16px -200px;
+      padding: 16px 16px 200px;
    }
 }

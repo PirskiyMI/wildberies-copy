@@ -3,6 +3,7 @@ import { Slider, Title } from '../../../../shared/ui';
 import { useAppSelector } from '../../../../shared/lib';
 import { ProductCard } from '../../../../entities/product';
 import { AddToCart, QuickView } from '../../../../features/product-actions';
+import styles from './CartSlider.module.scss';
 
 export const CartSlider: FC = () => {
    const { list } = useAppSelector((state) => state.cartSliderReducer);
@@ -10,7 +11,11 @@ export const CartSlider: FC = () => {
    if (!list.length) return null;
 
    return (
-      <div style={{ width: 'calc(100% + 32px)' }}>
+      <div
+         style={{
+            
+         }}
+         className={styles.slider}>
          <Title>Вы недавно смотрели</Title>
          <Slider minHeight={370} gap={30}>
             {list.map((el) => (

@@ -16,8 +16,6 @@ export const Slider: FC<Props> = ({ children, gap, minHeight }) => {
    const [sliderPosition, setSliderPosition] = useState<number>(0);
    const [scrollingWidth, setScrollingWidth] = useState<number>(0);
 
-   const [mouseStartPosition, setMouseStart] = useState<number>(0);
-
    useEffect(() => {
       if (sliderRef.current) {
          const wrapperWidth = sliderRef.current?.getBoundingClientRect().width;
@@ -40,7 +38,6 @@ export const Slider: FC<Props> = ({ children, gap, minHeight }) => {
          setSliderPosition((prev) => (prev += Math.abs(sliderPosition)));
       }
    };
-
    const scrollToNext = () => {
       const widthLeft = scrollingWidth + sliderPosition;
       const test = !!((wrapperWidth - 32 + gap) % (214 + gap));
@@ -62,45 +59,51 @@ export const Slider: FC<Props> = ({ children, gap, minHeight }) => {
       }
    };
 
+   if (width >= 1024) {
+      return (
+         <div ref={sliderRef} className={styles.slider}>
+            <div
+               style={{
+                  left: `${sliderPosition}px`,
+                  columnGap: `${gap}px`,
+                  height: `${minHeight}px`,
+               }}
+               className={styles.slider__wrapper}>
+               {sliderList.map((el, index) => (
+                  <div style={{ flex: `0 0 215px` }} className={styles.slider__item} key={index}>
+                     {el}
+                  </div>
+               ))}
+            </div>
+
+            <button
+               className={`${styles.slider__button} ${styles.slider__button_prev}`}
+               onClick={scrollToPrev}
+               disabled={sliderPosition === 0}>
+               Prev
+            </button>
+            <button
+               className={`${styles.slider__button} ${styles.slider__button_next}`}
+               onClick={scrollToNext}
+               disabled={scrollingWidth === Math.abs(sliderPosition)}>
+               Next
+            </button>
+         </div>
+      );
+   }
+
    return (
-      <div ref={sliderRef} className={styles.slider}>
+      <div className={styles.slider} style={{padding: '0px'}}>
          <div
-            style={{ left: `${sliderPosition}px`, columnGap: `${gap}px`, height: `${minHeight}px` }}
             className={styles.slider__wrapper}
-            onDragStart={(e) => {
-               setMouseStart(e.pageX);
-            }}
-            onDrag={(e) => {
-               const dragStart = e.pageX;
-               const dragMove = dragStart - mouseStartPosition;
-               if (dragMove !== 0) {
-                  setSliderPosition((prev) => (prev += dragMove));
-                  // console.log(dragMove);
-               }
-               setMouseStart(e.pageX);
-            }}
-            onDragEnd={(e) => {
-               setMouseStart(e.pageX);
-            }}>
+            style={{columnGap: '8px'}}
+            >
             {sliderList.map((el, index) => (
-               <div style={{ flex: `0 0 215px` }} className={styles.slider__item} key={index}>
+               <div style={{ flex: `0 0 140px`, width: '140px' }} className={styles.slider__item} key={index}>
                   {el}
                </div>
             ))}
          </div>
-
-         <button
-            className={`${styles.slider__button} ${styles.slider__button_prev}`}
-            onClick={scrollToPrev}
-            disabled={sliderPosition === 0}>
-            Prev
-         </button>
-         <button
-            className={`${styles.slider__button} ${styles.slider__button_next}`}
-            onClick={scrollToNext}
-            disabled={scrollingWidth === Math.abs(sliderPosition)}>
-            Next
-         </button>
       </div>
    );
 };

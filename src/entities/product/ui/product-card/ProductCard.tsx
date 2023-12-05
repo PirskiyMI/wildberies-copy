@@ -25,7 +25,10 @@ export const ProductCard: FC<Props> = (props) => {
                <Link className={styles.card__link} to="#"></Link>
 
                <div className={`${styles.card__wrapper} ${styles.card__wrapper_top}`}>
-                  <img src={image} alt={title} />
+                  <div className={styles.card__img}>
+                     <img src={image} alt={title} />
+                  </div>
+
                   <div className={styles.card__show}>{children[0]}</div>
                </div>
 
@@ -49,7 +52,9 @@ export const ProductCard: FC<Props> = (props) => {
             <Link className={styles.card__link} to="#"></Link>
 
             <div className={`${styles.card__wrapper} ${styles.card__wrapper_top}`}>
-               <img src={image} alt={title} />
+               <div className={styles.card__img}>
+                  <img src={image} alt={title} />
+               </div>
             </div>
 
             <div className={`${styles.card__wrapper} ${styles.card__wrapper_middle}`}>
