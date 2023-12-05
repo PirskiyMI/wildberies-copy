@@ -1,11 +1,11 @@
 import { FC } from 'react';
 import { ProfileGrid, ProfileNav } from '../../../widgets/profile';
+import styles from './Profile.module.scss';
 
 export const Profile: FC = () => {
    return (
-      <div className={`container`}>
+      <div className={` ${styles.profile__container} container`}>
          <ProfileNav />
-         <div style={{ marginTop: '20px' }} />
          <ProfileGrid />
       </div>
    );

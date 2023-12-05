@@ -1,21 +1,25 @@
 .item {
-   padding: 20px;
+   padding: 16px 12px;
    display: flex;
-   flex-direction: column;
+   flex-wrap: wrap;
    justify-content: space-between;
    width: 100%;
    height: 100%;
    background-color: #ffffff;
    border-radius: 14px;
-   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+   box-shadow: 0 0 16px rgba(0, 0, 0, 0.08);
    transition: box-shadow ease 0.3s;
+   &__bottom {
+      font-size: 12px;
+      line-height: 133%;
+   }
    &__label {
       color: #868695;
    }
    h2 {
       transition: color ease 0.2s;
-      font-size: 20px;
-      line-height: 140%;
+      font-size: 14px;
+      line-height: 143%;
       font-weight: 700;
    }
    @media (any-hover: hover) {
@@ -24,6 +28,18 @@
          h2 {
             color: var(--secondary-color);
          }
+      }
+   }
+   @media (min-width: 1024px) {
+      padding: 20px;
+      flex-direction: column;
+      &__bottom {
+         font-size: 16px;
+         line-height: 125%;
+      }
+      h2 {
+         font-size: 20px;
+         line-height: 140%;
       }
    }
 }

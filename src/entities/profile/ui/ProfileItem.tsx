@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 type Props = {
    path: string;
    top: ReactNode;
-   bottom: ReactNode;
+   bottom?: ReactNode;
    className?: string;
 };
 
@@ -21,7 +21,7 @@ export const ProfileItemLabel: FC<PropsLabel> = ({ label, text, className }) => 
    return (
       <div className={classes}>
          <span className={styles.item__label}>{label}</span>
-         <span>{text}</span>
+         {text && <span>{text}</span>}
       </div>
    );
 };
@@ -32,7 +32,7 @@ export const ProfileItem: FC<Props> = ({ path, top, bottom, className }) => {
    return (
       <Link to={path} className={classes}>
          <div className={styles.item__top}>{top}</div>
-         <div className={styles.item__bottom}>{bottom}</div>
+         {bottom && <div className={styles.item__bottom}>{bottom}</div>}
       </Link>
    );
 };

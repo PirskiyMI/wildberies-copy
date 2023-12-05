@@ -1,6 +1,7 @@
 import { Children, FC, ReactNode, useEffect, useRef, useState } from 'react';
 import styles from './Slider.module.scss';
 import { useResize } from '../../lib';
+import { Icon } from '..';
 
 type Props = {
    children: ReactNode;
@@ -61,45 +62,46 @@ export const Slider: FC<Props> = ({ children, gap, minHeight }) => {
 
    if (width >= 1024) {
       return (
-         <div ref={sliderRef} className={styles.slider}>
-            <div
-               style={{
-                  left: `${sliderPosition}px`,
-                  columnGap: `${gap}px`,
-                  height: `${minHeight}px`,
-               }}
-               className={styles.slider__wrapper}>
-               {sliderList.map((el, index) => (
-                  <div style={{ flex: `0 0 215px` }} className={styles.slider__item} key={index}>
-                     {el}
-                  </div>
-               ))}
+         <div style={{ position: 'relative' }}>
+            <div ref={sliderRef} className={styles.slider}>
+               <div
+                  style={{
+                     left: `${sliderPosition}px`,
+                     columnGap: `${gap}px`,
+                     height: `${minHeight}px`,
+                  }}
+                  className={styles.slider__wrapper}>
+                  {sliderList.map((el, index) => (
+                     <div style={{ flex: `0 0 215px` }} className={styles.slider__item} key={index}>
+                        {el}
+                     </div>
+                  ))}
+               </div>
             </div>
-
             <button
                className={`${styles.slider__button} ${styles.slider__button_prev}`}
                onClick={scrollToPrev}
                disabled={sliderPosition === 0}>
-               Prev
+               <Icon icon="arrow" />
             </button>
             <button
                className={`${styles.slider__button} ${styles.slider__button_next}`}
                onClick={scrollToNext}
                disabled={scrollingWidth === Math.abs(sliderPosition)}>
-               Next
+               <Icon icon="arrow" />
             </button>
          </div>
       );
    }
 
    return (
-      <div className={styles.slider} style={{padding: '0px'}}>
-         <div
-            className={styles.slider__wrapper}
-            style={{columnGap: '8px'}}
-            >
+      <div className={styles.slider} style={{ padding: '0px' }}>
+         <div className={styles.slider__wrapper} style={{ columnGap: '8px' }}>
             {sliderList.map((el, index) => (
-               <div style={{ flex: `0 0 140px`, width: '140px' }} className={styles.slider__item} key={index}>
+               <div
+                  style={{ flex: `0 0 140px`, width: '140px' }}
+                  className={styles.slider__item}
+                  key={index}>
                   {el}
                </div>
             ))}

@@ -3,11 +3,7 @@
 @import './variables.scss';
 @import './App.scss';
 
-#root {
-   height: 100%;
-}
 body {
-   min-width: 320px;
    font-family: 'Segoe UI', sans-serif;
    background: linear-gradient(90deg, var(--secondary-color) 0%, var(--main-color) 100%);
    overflow-x: hidden;

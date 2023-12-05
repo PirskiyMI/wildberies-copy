@@ -21,6 +21,9 @@
          margin-top: 16px;
       }
    }
+   &__right {
+      position: relative;
+   }
    @media (min-width: 1200px) {
       &__container {
          flex-direction: row;

@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import styles from './User.module.scss';
-import { useAppSelector } from '../../../shared/lib';
+import { useAppSelector } from '../../../../shared/lib';
 
 export const User: FC = () => {
    const { name } = useAppSelector((state) => state.userReducer);

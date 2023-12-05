@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 
 import { menuList } from '../config/data';
-import { Backdrop, Notification, Preloader } from '../../../shared/ui';
+import { Backdrop, Notification, Preloader, ScrollToTop } from '../../../shared/ui';
 import { useAppSelector } from '../../../shared/lib';
 import { BurgerMenu } from '../../../widgets/burger-menu';
 import { Header } from '../../../widgets/header';
@@ -35,11 +35,14 @@ export const Layout: FC = () => {
          {isModalOpen || isOpen ? <Backdrop /> : null}
 
          <Header />
+
          <main className={styles.layout__main}>
             <Suspense fallback={<Preloader />}>
                <Outlet />
             </Suspense>
          </main>
+         <ScrollToTop />
+
          <Footer />
       </>
    );

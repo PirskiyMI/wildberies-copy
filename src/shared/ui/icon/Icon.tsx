@@ -471,7 +471,3 @@ export const Icon: FC<IconProps> = ({ icon, className }) => {
       );
    }
 };
-
-{
-   /*  */
-}

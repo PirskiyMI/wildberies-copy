@@ -14,3 +14,4 @@ export { Title } from './title/Title';
 export { Slider } from './slider/Slider';
 export { Skeleton } from './skeleton/Skeleton';
 export { Logo } from './logo/Logo';
+export { ScrollToTop } from './scroll-to-top/ScrollToTop';

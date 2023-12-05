@@ -1,10 +1,8 @@
 .slider {
    position: relative;
    width: 100%;
+   max-width: 100%;
    overflow-x: auto;
-   &::-webkit-scrollbar {
-      display: none;
-   }
    &__wrapper {
       top: 0;
       left: 0;
@@ -29,14 +27,28 @@
       z-index: 5;
       &_prev {
          left: 0;
+         transform: translateX(-100%);
+         svg {
+            transform: rotate(-90deg);
+         }
       }
       &_next {
-         right: 0;
+         right: 10px;
+         transform: translateX(50%);
+         svg {
+            transform: rotate(90deg);
+         }
       }
       &:disabled {
          opacity: 0;
          visibility: hidden;
       }
+      svg {
+         fill: black;
+      }
+   }
+   &::-webkit-scrollbar {
+      display: none;
    }
    @media (min-width: 1024px) {
       margin-top: 30px;
