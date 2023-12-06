@@ -22,4 +22,5 @@ export type Icon =
    | 'heart-stroke'
    | 'travel-stroke'
    | 'like-stroke'
-   | 'user-stroke';
+   | 'user-stroke'
+   | 'delivery';

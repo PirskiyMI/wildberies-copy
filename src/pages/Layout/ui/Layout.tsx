@@ -1,12 +1,13 @@
 import styles from './Layout.module.scss';
+import { menuList } from '../config/data';
+import { setWindowWidth } from '../model/slices/windowWidthSlice';
 
-import { FC, Suspense } from 'react';
+import { FC, Suspense, useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 
-import { menuList } from '../config/data';
 import { Backdrop, Notification, Preloader, ScrollToTop } from '../../../shared/ui';
-import { useAppSelector } from '../../../shared/lib';
+import { useAppDispatch, useAppSelector } from '../../../shared/lib';
 import { BurgerMenu } from '../../../widgets/burger-menu';
 import { Header } from '../../../widgets/header';
 import { Footer } from '../../../widgets/footer';
@@ -16,6 +17,35 @@ export const Layout: FC = () => {
    const { isVisible: isActive } = useAppSelector((state) => state.notificationReducer);
    const { isModalOpen } = useAppSelector((state) => state.modalReducer);
    const { isOpen } = useAppSelector((state) => state.burgerReducer);
+   const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
+   const [isButtonVisible, setIsButtonVisible] = useState(false);
+   const dispatch = useAppDispatch();
+
+   const resizeHandler = () => {
+      dispatch(setWindowWidth(window.innerWidth));
+   };
+   const scrollHandler = () => {
+      if (window.scrollY > window.innerHeight && !isButtonVisible) {
+         setIsButtonVisible(true);
+      } else if (window.scrollY < window.innerHeight && isButtonVisible) {
+         setIsButtonVisible(false);
+      }
+   };
+
+   useEffect(() => {
+      resizeHandler();
+      window.addEventListener('resize', resizeHandler);
+      return () => {
+         window.removeEventListener('resize', resizeHandler);
+      };
+   }, []);
+
+   useEffect(() => {
+      window.addEventListener('scroll', scrollHandler);
+      return () => {
+         window.removeEventListener('scroll', scrollHandler);
+      };
+   }, [isButtonVisible]);
 
    return (
       <>
@@ -41,7 +71,7 @@ export const Layout: FC = () => {
                <Outlet />
             </Suspense>
          </main>
-         <ScrollToTop />
+         {isButtonVisible && windowWidth >= 1024 && <ScrollToTop />}
 
          <Footer />
       </>

@@ -4,8 +4,8 @@ export const useResize = () => {
    const [width, setWidth] = useState(window.innerWidth);
 
    useEffect(() => {
-      const handleResize = (e) => {
-         setWidth(e.target.innerWidth);
+      const handleResize = () => {
+         setWidth(window.innerWidth);
       };
       window.addEventListener('resize', handleResize);
       return () => {
@@ -13,7 +13,5 @@ export const useResize = () => {
       };
    }, []);
 
-   return {
-      width,
-   };
+   return { width };
 };

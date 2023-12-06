@@ -7,6 +7,7 @@ import { userSlice } from '../../entities/user';
 import { basketInfoSlice, basketListSlice, cartSliderSlice } from '../../features/product-actions';
 import { productListSlice } from '../../widgets/home';
 import { categoryProductListSlice } from '../../widgets/catalog';
+import { windowWidthSlice } from '../../pages/Layout';
 
 const rootReducer = combineReducers({
    burgerReducer: burgerSlice.reducer,
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
    searchReducer: searchSlice.reducer,
    modalReducer: modalSlice.reducer,
    userReducer: userSlice.reducer,
+   windowWidthReducer: windowWidthSlice.reducer,
 });
 
 const setupStore = () => {

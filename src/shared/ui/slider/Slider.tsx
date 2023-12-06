@@ -1,6 +1,6 @@
 import { Children, FC, ReactNode, useEffect, useRef, useState } from 'react';
 import styles from './Slider.module.scss';
-import { useResize } from '../../lib';
+import { useAppSelector } from '../../lib';
 import { Icon } from '..';
 
 type Props = {
@@ -10,7 +10,7 @@ type Props = {
 };
 
 export const Slider: FC<Props> = ({ children, gap, minHeight }) => {
-   const { width } = useResize();
+   const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
    const sliderList = Children.toArray(children);
    const sliderRef = useRef<HTMLDivElement>(null);
    const [wrapperWidth, setWrapperWidth] = useState<number>(0);
@@ -30,7 +30,7 @@ export const Slider: FC<Props> = ({ children, gap, minHeight }) => {
          }
          setWrapperWidth(wrapperWidth);
       }
-   }, [gap, sliderList, width]);
+   }, [gap, sliderList, windowWidth]);
 
    const scrollToPrev = () => {
       if (Math.abs(sliderPosition) >= wrapperWidth) {
@@ -60,7 +60,7 @@ export const Slider: FC<Props> = ({ children, gap, minHeight }) => {
       }
    };
 
-   if (width >= 1024) {
+   if (windowWidth >= 1024) {
       return (
          <div style={{ position: 'relative' }}>
             <div ref={sliderRef} className={styles.slider}>

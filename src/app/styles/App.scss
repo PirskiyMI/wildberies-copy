@@ -4,6 +4,7 @@
    height: 100%;
    display: flex;
    flex-direction: column;
+   background: linear-gradient(90deg, var(--secondary-color) 0%, var(--main-color) 100%);
    &_hidden {
       overflow-y: hidden;
    }

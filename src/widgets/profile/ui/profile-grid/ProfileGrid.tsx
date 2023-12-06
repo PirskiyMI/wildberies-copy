@@ -1,15 +1,17 @@
 import { FC } from 'react';
 import styles from './ProfileGrid.module.scss';
 import { ProfileItem, ProfileItemLabel } from '../../../../entities/profile';
-import { User, UserPhone } from '../../../../entities/user';
-import { useResize } from '../../../../shared/lib';
+import { User, UserDelivery, UserDiscounts, UserPhone } from '../../../../entities/user';
+import { useAppSelector } from '../../../../shared/lib';
 
 export const ProfileGrid: FC = () => {
-   const { width } = useResize();
+   const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
    const itemClasses =
-      width >= 576 ? styles.profile__item : `${styles.profile__item} ${styles.profile__item_big}`;
+      windowWidth >= 576
+         ? styles.profile__item
+         : `${styles.profile__item} ${styles.profile__item_big}`;
 
-   if (width >= 1024) {
+   if (windowWidth >= 1024) {
       return (
          <section className={styles.profile}>
             <div className={styles.profile__item}>
@@ -17,14 +19,15 @@ export const ProfileGrid: FC = () => {
             </div>
             <div className={styles.profile__item}>
                <ProfileItem
-                  top={<h2>Доставка</h2>}
+                  top={<UserDelivery />}
                   bottom={<ProfileItemLabel label="Ближайшая" text=" не ожидается" />}
                   path="/"
+                  className={styles.profile__item_gradient}
                />
             </div>
             <div className={styles.profile__item}>
                <ProfileItem
-                  top={<h2>WB скидка</h2>}
+                  top={<UserDiscounts />}
                   bottom={
                      <ProfileItemLabel
                         className={styles.profile__label}
@@ -41,6 +44,7 @@ export const ProfileGrid: FC = () => {
                   top={<h2>Способы оплаты</h2>}
                   bottom={<ProfileItemLabel label="Добавить карту" />}
                   path="/"
+                  className={styles.profile__item_colored}
                />
             </div>
             <div className={`${styles.profile__item} ${styles.profile__item_small}`}>

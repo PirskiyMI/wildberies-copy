@@ -3,7 +3,7 @@ import styles from './BasketItem.module.scss';
 import { FC, ReactNode, useEffect, useState } from 'react';
 
 import { Price } from '../../../../shared/ui';
-import { IProductWithStatus, useResize } from '../../../../shared/lib';
+import { IProductWithStatus, useAppSelector } from '../../../../shared/lib';
 
 type Props = {
    product: IProductWithStatus;
@@ -16,17 +16,19 @@ type Props = {
 };
 
 export const BasketItem: FC<Props> = ({ product, features }) => {
+   const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
    const { image, price, status, title } = product;
    const [productPrice, setProductPrice] = useState<number>(price);
    const { Checkbox, Counter, Delete, Like } = features;
    const { count } = status;
-   const { width } = useResize();
 
    useEffect(() => {
       setProductPrice(price * count);
    }, [count, price]);
 
-   if (width >= 1024) {
+   if (windowWidth >= 1024) {
+      console.log(windowWidth);
+
       return (
          <article className={styles.item}>
             <div className={styles.item__left}>

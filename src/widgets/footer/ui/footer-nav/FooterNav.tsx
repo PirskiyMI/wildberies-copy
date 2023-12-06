@@ -1,4 +1,4 @@
-import { useResize } from '../../../../shared/lib';
+import { useAppSelector } from '../../../../shared/lib';
 import { Spoiler } from '../../../../shared/ui';
 import styles from './FooterNav.module.scss';
 import { FC } from 'react';
@@ -13,9 +13,9 @@ type Props = {
 };
 
 export const FooterNav: FC<Props> = ({ label, links }) => {
-   const { width } = useResize();
+   const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
 
-   if (width >= 1024) {
+   if (windowWidth >= 1024) {
       return (
          <nav className={styles.nav}>
             <div className={styles.nav__label}>{label}</div>

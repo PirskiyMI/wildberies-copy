@@ -4,7 +4,7 @@ import { FC, Children, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Rating } from '../../../../shared/ui';
-import { IProductWithRating, priceFormatter, useResize } from '../../../../shared/lib';
+import { IProductWithRating, priceFormatter, useAppSelector } from '../../../../shared/lib';
 
 type Props = {
    product: IProductWithRating;
@@ -12,13 +12,13 @@ type Props = {
 };
 
 export const ProductCard: FC<Props> = (props) => {
-   const { width } = useResize();
+   const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
    const { title, price, rating, image } = props.product;
    const children = Children.toArray(props.children);
    const cartPrice = priceFormatter(price);
    const count = priceFormatter(rating.count);
 
-   if (width >= 1024) {
+   if (windowWidth >= 1024) {
       return (
          <article className={styles.card}>
             <div className={styles.card__body}>
