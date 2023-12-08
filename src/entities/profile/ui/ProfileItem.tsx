@@ -4,35 +4,29 @@ import { Link } from 'react-router-dom';
 
 type Props = {
    path: string;
-   top: ReactNode;
-   bottom?: ReactNode;
+   content: ReactNode;
    className?: string;
 };
 
-type PropsLabel = {
-   label: string;
-   text?: string;
-   className?: string;
-};
-
-export const ProfileItemLabel: FC<PropsLabel> = ({ label, text, className }) => {
-   const classes = className ? `${styles.item__bottom} ${className}` : `${styles.item__bottom}`;
-
-   return (
-      <div className={classes}>
-         <span className={styles.item__label}>{label}</span>
-         {text && <span>{text}</span>}
-      </div>
-   );
-};
-
-export const ProfileItem: FC<Props> = ({ path, top, bottom, className }) => {
+export const ProfileItem: FC<Props> = ({ path, content, className }) => {
    const classes = className ? `${styles.item} ${className}` : `${styles.item}`;
 
    return (
       <Link to={path} className={classes}>
-         <div className={styles.item__top}>{top}</div>
-         {bottom && <div className={styles.item__bottom}>{bottom}</div>}
+         {content}
       </Link>
    );
 };
+// export const ProfileItemTop: FC<PropsTop> = ({ title, image }) => {
+//    return <></>;
+// };
+// export const ProfileItemBottom: FC<PropsBottom> = ({ label, text, className }) => {
+//    const classes = className ? `${styles.item__bottom} ${className}` : `${styles.item__bottom}`;
+
+//    return (
+//       <div className={classes}>
+//          <span className={styles.item__label}>{label}</span>
+//          {text && <span>{text}</span>}
+//       </div>
+//    );
+// };

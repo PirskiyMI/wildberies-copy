@@ -1,7 +1,17 @@
 import { FC } from 'react';
 import styles from './ProfileGrid.module.scss';
-import { ProfileItem, ProfileItemLabel } from '../../../../entities/profile';
-import { User, UserDelivery, UserDiscounts, UserPhone } from '../../../../entities/user';
+import { ProfileItem } from '../../../../entities/profile';
+import {
+   UserInfo,
+   UserDelivery,
+   UserDiscounts,
+   UserPaymentMethods,
+   UserBalance,
+   UserChecks,
+   UserFavoriteBrands,
+   UserPurchases,
+   UserFavorite,
+} from '../../../../entities/user';
 import { useAppSelector } from '../../../../shared/lib';
 
 export const ProfileGrid: FC = () => {
@@ -15,73 +25,41 @@ export const ProfileGrid: FC = () => {
       return (
          <section className={styles.profile}>
             <div className={styles.profile__item}>
-               <ProfileItem top={<User />} bottom={<UserPhone />} path="/" />
+               <ProfileItem content={<UserInfo />} path="/" />
             </div>
             <div className={styles.profile__item}>
                <ProfileItem
-                  top={<UserDelivery />}
-                  bottom={<ProfileItemLabel label="Ближайшая" text=" не ожидается" />}
+                  content={<UserDelivery />}
                   path="/"
                   className={styles.profile__item_gradient}
                />
             </div>
             <div className={styles.profile__item}>
-               <ProfileItem
-                  top={<UserDiscounts />}
-                  bottom={
-                     <ProfileItemLabel
-                        className={styles.profile__label}
-                        label="Процент и сумма выкупа за 2 года"
-                        text="0% | 0 Р"
-                     />
-                  }
-                  path="/"
-               />
+               <ProfileItem content={<UserDiscounts />} path="/" />
             </div>
 
             <div className={`${styles.profile__item} ${styles.profile__item_small}`}>
                <ProfileItem
-                  top={<h2>Способы оплаты</h2>}
-                  bottom={<ProfileItemLabel label="Добавить карту" />}
+                  content={<UserPaymentMethods />}
                   path="/"
                   className={styles.profile__item_colored}
                />
             </div>
             <div className={`${styles.profile__item} ${styles.profile__item_small}`}>
-               <ProfileItem
-                  top={<h2>Баланс</h2>}
-                  bottom={<ProfileItemLabel label="0 ₽" />}
-                  path="/"
-               />
+               <ProfileItem content={<UserBalance />} path="/" />
             </div>
             <div className={`${styles.profile__item} ${styles.profile__item_small}`}>
-               <ProfileItem
-                  top={<h2>Чеки</h2>}
-                  bottom={<ProfileItemLabel label="Смотреть" />}
-                  path="/"
-               />
+               <ProfileItem content={<UserChecks />} path="/" />
             </div>
             <div className={`${styles.profile__item} ${styles.profile__item_small}`}>
-               <ProfileItem
-                  top={<h2>Любимые бренды</h2>}
-                  bottom={<ProfileItemLabel label="0 брендов" />}
-                  path="/"
-               />
+               <ProfileItem content={<UserFavoriteBrands />} path="/" />
             </div>
 
             <div className={`${styles.profile__item} ${styles.profile__item_big}`}>
-               <ProfileItem
-                  top={<h2>Покупки</h2>}
-                  bottom={<ProfileItemLabel label="В покупках пока пусто" />}
-                  path="/"
-               />
+               <ProfileItem content={<UserPurchases />} path="/" />
             </div>
             <div className={`${styles.profile__item} ${styles.profile__item_big}`}>
-               <ProfileItem
-                  top={<h2>Избранное</h2>}
-                  bottom={<ProfileItemLabel label="В избранном пока пусто" />}
-                  path="/"
-               />
+               <ProfileItem content={<UserFavorite />} path="/" />
             </div>
          </section>
       );
@@ -90,66 +68,52 @@ export const ProfileGrid: FC = () => {
    return (
       <section className={styles.profile}>
          <div className={`${styles.profile__item} ${styles.profile__item_big}`}>
-            <ProfileItem top={<User />} path="/" />
+            <UserInfo />
          </div>
          <div className={`${styles.profile__item} ${styles.profile__item_big}`}>
             <ProfileItem
-               top={<h2>Доставка</h2>}
-               bottom={<ProfileItemLabel label="Ближайшая" text=" не ожидается" />}
+               content={<UserDelivery />}
                path="/"
-               className={`${styles.profile__item_gradient} ${styles.profile__item_column}`}
+               className={styles.profile__item_gradient}
             />
          </div>
 
          <div className={styles.profile__item}>
             <ProfileItem
-               top={<h2>Способы оплаты</h2>}
-               bottom={<ProfileItemLabel label="Добавить карту" />}
+               content={<UserPaymentMethods />}
                path="/"
                className={`${styles.profile__item_colored} ${styles.profile__item_column}`}
             />
          </div>
          <div className={styles.profile__item}>
             <ProfileItem
-               top={<h2>Баланс</h2>}
-               bottom={<ProfileItemLabel label="0 ₽" />}
+               content={<UserBalance />}
                path="/"
                className={styles.profile__item_column}
             />
          </div>
-
-         <div className={itemClasses}>
-            <ProfileItem
-               top={<h2>WB скидка</h2>}
-               bottom={<ProfileItemLabel className={styles.profile__label} label="28%" />}
-               path="/"
-            />
-         </div>
-         <div className={itemClasses}>
-            <ProfileItem top={<h2>Чеки</h2>} path="/" />
-         </div>
-         <div className={itemClasses}>
-            <ProfileItem
-               top={<h2>Любимые бренды</h2>}
-               bottom={<ProfileItemLabel label="0 брендов" />}
-               path="/"
-            />
-         </div>
-         <div className={itemClasses}>
-            <ProfileItem
-               top={<h2>Покупки</h2>}
-               bottom={<ProfileItemLabel label="0 товаров" />}
-               path="/"
-            />
-         </div>
-
          <div className={`${styles.profile__item} ${styles.profile__item_big}`}>
             <ProfileItem
-               top={<h2>Избранное</h2>}
-               bottom={<ProfileItemLabel label="В избранном пока пусто" />}
+               content={<UserFavorite />}
                path="/"
                className={styles.profile__item_column}
             />
+         </div>
+         <div className={`${styles.profile__item} ${styles.profile__item_big}`}>
+            <ProfileItem content={<UserDiscounts />} path="/" />
+         </div>
+
+         <div className={itemClasses}>
+            <ProfileItem content={<UserPurchases />} path="/" />
+         </div>
+         <div className={itemClasses}>
+            <ProfileItem content={<UserFavoriteBrands />} path="/" />
+         </div>
+         <div className={itemClasses}>
+            <ProfileItem content={<UserChecks />} path="/" />
+         </div>
+         <div className={itemClasses}>
+            <ProfileItem content={<h2>Travel</h2>} path="/" />
          </div>
       </section>
    );

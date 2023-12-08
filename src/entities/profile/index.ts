@@ -1,1 +1,1 @@
-export { ProfileItem, ProfileItemLabel } from './ui/ProfileItem';
+export { ProfileItem } from './ui/ProfileItem';

@@ -1,18 +1,18 @@
-.purchases {
+.brands {
+   width: 100%;
    display: flex;
    align-items: center;
    justify-content: space-between;
-   width: 100%;
-   &__bottom {
+   &__label {
       font-size: 12px;
       line-height: 133%;
       color: #868695;
    }
    @media (min-width: 1024px) {
-      align-items: stretch;
+      align-items: baseline;
       flex-direction: column;
       row-gap: 8px;
-      &__bottom {
+      &__label {
          font-size: 16px;
          line-height: 138%;
       }

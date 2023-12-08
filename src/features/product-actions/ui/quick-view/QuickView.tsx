@@ -10,10 +10,10 @@ type Props = {
 export const QuickView: FC<Props> = ({ product }) => {
    const dispatch = useAppDispatch();
 
-   const showHandler = () => {
+   const clickHandler = () => {
       dispatch(setProductToModal(product));
       dispatch(addProductToVisited(product));
       dispatch(openModal());
    };
-   return <div onClick={showHandler}>Быстрый просмотр</div>;
+   return <div onClick={clickHandler}>Быстрый просмотр</div>;
 };

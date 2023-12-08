@@ -1,14 +1,14 @@
-.favorite {
-   &__title {
-      margin-bottom: 8px;
-   }
-   &__text {
+.checks {
+   &__label {
       font-size: 12px;
       line-height: 133%;
       color: #868695;
    }
    @media (min-width: 1024px) {
-      &__text {
+      &__title {
+         margin-bottom: 8px;
+      }
+      &__label {
          font-size: 16px;
          line-height: 138%;
       }
