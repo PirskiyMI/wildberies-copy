@@ -1,0 +1,10 @@
+.profile {
+   &__container {
+      padding: 0 10px;
+   }
+   @media (min-width: 1024px) {
+      &__container {
+         margin-top: 20px;
+      }
+   }
+}

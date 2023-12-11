@@ -31,6 +31,11 @@
    &__label {
       display: none;
    }
+   &_active {
+      .link__icon {
+         fill: var(--secondary-color);
+      }
+   }
    @media (min-width: 1024px) {
       &__icon {
          fill: white;
@@ -39,6 +44,11 @@
          display: block;
          color: rgba(255, 255, 255, 0.8);
          transition: color ease 0.3s;
+      }
+      &_active {
+         .link__icon {
+            fill: white;
+         }
       }
    }
    @media (any-hover: hover) {

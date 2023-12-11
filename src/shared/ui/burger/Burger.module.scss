@@ -1,6 +1,9 @@
 .burger {
    &__icon {
       fill: lightgray;
+      &_active {
+         fill: var(--secondary-color);
+      }
    }
    @media (any-hover: hover) {
       &:hover {

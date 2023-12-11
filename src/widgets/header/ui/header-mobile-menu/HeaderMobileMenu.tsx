@@ -1,26 +1,28 @@
 import { FC } from 'react';
 import styles from './HeaderMobileMenu.module.scss';
 
-import { Burger } from '../../../../shared/ui';
-import { LinkToCart, LinkToFavorite, LinkToHome, LinkToProfile } from '../../../../shared/ui/links';
+import { HeaderLink } from '../../../../shared/ui/links';
+import { useAppSelector } from '../../../../shared/lib';
 
 export const HeaderMobileMenu: FC = () => {
+   const { count } = useAppSelector((state) => state.basketInfoReducer);
+
    return (
       <div className={styles.menu}>
          <span className={styles.menu__item}>
-            <LinkToHome />
+            <HeaderLink icon="home" path="/" />
          </span>
          <span className={styles.menu__item}>
-            <Burger className={styles.menu__icon} />
+            <HeaderLink icon="burger" path="/navigation" />
          </span>
          <span className={styles.menu__item}>
-            <LinkToCart />
+            <HeaderLink icon="cart" path="/cart" count={count} />
          </span>
          <span className={styles.menu__item}>
-            <LinkToFavorite />
+            <HeaderLink icon="like" path="/profile/favorite" />
          </span>
          <span className={styles.menu__item}>
-            <LinkToProfile />
+            <HeaderLink icon="user" path="/profile" />
          </span>
       </div>
    );

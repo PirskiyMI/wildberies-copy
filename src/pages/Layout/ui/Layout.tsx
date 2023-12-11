@@ -3,7 +3,7 @@ import { menuList } from '../config/data';
 import { setWindowWidth } from '../model/slices/windowWidthSlice';
 
 import { FC, Suspense, useEffect, useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 
 import { Backdrop, Notification, Preloader, ScrollToTop } from '../../../shared/ui';
@@ -12,6 +12,7 @@ import { BurgerMenu } from '../../../widgets/burger-menu';
 import { Header } from '../../../widgets/header';
 import { Footer } from '../../../widgets/footer';
 import { ProductModal } from '../../../widgets/product-modal';
+import { ProfileNav } from '../../../widgets/profile';
 
 export const Layout: FC = () => {
    const { isVisible: isActive } = useAppSelector((state) => state.notificationReducer);
@@ -47,6 +48,9 @@ export const Layout: FC = () => {
       };
    }, [isButtonVisible]);
 
+   const { pathname } = useLocation();
+   console.log(pathname.includes('profile'));
+
    return (
       <>
          <AnimatePresence>
@@ -67,6 +71,11 @@ export const Layout: FC = () => {
          <Header />
 
          <main className={styles.layout__main}>
+            {pathname.includes('profile') && (
+               <div className="container">
+                  <ProfileNav />
+               </div>
+            )}
             <Suspense fallback={<Preloader />}>
                <Outlet />
             </Suspense>
