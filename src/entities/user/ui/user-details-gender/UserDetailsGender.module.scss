@@ -1,0 +1,10 @@
+.gender {
+   display: flex;
+   flex-direction: column;
+   row-gap: 4px;
+   &__title {
+      font-size: 12px;
+      line-height: 16px;
+      color: #868695;
+   }
+}

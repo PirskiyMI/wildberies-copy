@@ -7,7 +7,7 @@ type Props = {
    path: string;
    icon: 'burger' | 'cart' | 'user' | 'like' | 'home' | 'delivery';
    label?: string;
-   count?: number;
+   count?: number | null;
 };
 
 export const HeaderLink: FC<Props> = ({ icon, path, label, count }) => {

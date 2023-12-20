@@ -3,7 +3,6 @@ import styles from './UserFavoriteBrands.module.scss';
 import { useAppSelector } from '../../../../shared/lib';
 
 export const UserFavoriteBrands: FC = () => {
-
    return (
       <div className={styles.brands}>
          <UserFavoriteBrandsTop />

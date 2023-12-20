@@ -1,10 +1,10 @@
 import { ChangeEvent, useState } from 'react';
-import useValidation, { validatorsValue } from './useValidation';
-import { phoneFormatter } from '../../../../shared/lib';
+import { validatorsValue, useValidation } from './useValidation';
+import { phoneFormatter } from '..';
 
 const phoneRegExp = new RegExp(/[а-яА-ЯёЁa-zA-Z]/gi);
 
-const useInput = (
+export const useInput = (
    initialValue: string,
    validators: validatorsValue,
    isPhone?: boolean,
@@ -28,6 +28,14 @@ const useInput = (
          } else if (e.target.value.length === 0) {
             setValue('');
          }
+      } else if (validators.type === 'card') {
+         if (e.target.value.length <= 23) {
+            setValue(e.target.value);
+         }
+      } else if (validators.type === 'date' || validators.type === 'CVV/CVC') {
+         if (e.target.value.length <= 4) {
+            setValue(e.target.value);
+         }
       } else {
          setValue(e.target.value);
       }
@@ -43,5 +51,3 @@ const useInput = (
 
    return { onChange, onBlur, value, isDirty, ...validation };
 };
-
-export default useInput;

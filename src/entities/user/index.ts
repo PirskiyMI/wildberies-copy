@@ -8,4 +8,8 @@ export { UserFavoriteBrands } from './ui/user-favorite-brands/UserFavoriteBrands
 export { UserPaymentMethods } from './ui/user-payment-methods/UserPaymentMethods';
 export { UserPhone } from './ui/user-phone/UserPhone';
 export { UserPurchases } from './ui/user-purchases/UserPurchases';
+export { UserDetailsInfo } from './ui/user-details-info/UserDetailsInfo';
+export { UserDetailsPhone } from './ui/user-details-phone/UserDetailsPhone';
+export { UserDetailsGender } from './ui/user-details-gender/UserDetailsGender';
+export { UserDetailsIndicator } from './ui/user-details-indicator/UserDetailsIndicator';
 export * from './model';

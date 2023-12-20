@@ -1,0 +1,28 @@
+.metrics {
+   &__list {
+      display: flex;
+      flex-direction: column;
+      row-gap: 8px;
+   }
+   &__title {
+      margin-top: 16px;
+      font-size: 16px;
+      line-height: 22px;
+      color: #868695;
+   }
+
+   @media (min-width: 768px) {
+      &__list {
+         flex-direction: row;
+         column-gap: 8px;
+      }
+      &__item {
+         flex: 0 0 calc((100% - 16px) / 3);
+      }
+   }
+   @media (min-width: 1024px) {
+      &__item {
+         flex: 0 0 25%;
+      }
+   }
+}

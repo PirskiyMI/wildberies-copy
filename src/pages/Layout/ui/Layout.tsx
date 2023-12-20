@@ -11,7 +11,6 @@ import { useAppDispatch, useAppSelector } from '../../../shared/lib';
 import { BurgerMenu } from '../../../widgets/burger-menu';
 import { Header } from '../../../widgets/header';
 import { Footer } from '../../../widgets/footer';
-import { ProductModal } from '../../../widgets/product-modal';
 import { ProfileNav } from '../../../widgets/profile';
 
 export const Layout: FC = () => {
@@ -49,7 +48,6 @@ export const Layout: FC = () => {
    }, [isButtonVisible]);
 
    const { pathname } = useLocation();
-   console.log(pathname.includes('profile'));
 
    return (
       <>
@@ -64,7 +62,6 @@ export const Layout: FC = () => {
                </motion.div>
             )}
          </AnimatePresence>
-         {isModalOpen && <ProductModal />}
          <BurgerMenu links={menuList} />
          {isModalOpen || isOpen ? <Backdrop /> : null}
 

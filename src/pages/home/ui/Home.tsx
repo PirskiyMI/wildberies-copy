@@ -3,11 +3,13 @@ import { IProductWithRating, useAppDispatch, useAppSelector } from '../../../sha
 import { fetchAllProducts } from '../../../widgets/home/api/productsActionCreator';
 import { HomeList, HomePreloader } from '../../../widgets/home';
 import styles from './Home.module.scss';
+import { ProductModal } from '../../../widgets/product-modal';
 
 const Home: FC = () => {
    const { value: searchValue } = useAppSelector((state) => state.searchReducer);
    const [productsList, setProductsList] = useState<IProductWithRating[]>([]);
    const { products, isLoading, error } = useAppSelector((state) => state.productListReducer);
+   const { isModalOpen } = useAppSelector((state) => state.modalReducer);
    const dispatch = useAppDispatch();
 
    useEffect(() => {
@@ -37,9 +39,12 @@ const Home: FC = () => {
    }
 
    return (
-      <div className={`${styles.home__container} container`}>
-         <HomeList productList={productsList} search={searchValue} />
-      </div>
+      <>
+         {isModalOpen && <ProductModal />}
+         <div className={`${styles.home__container} container`}>
+            <HomeList productList={productsList} search={searchValue} />
+         </div>
+      </>
    );
 };
 

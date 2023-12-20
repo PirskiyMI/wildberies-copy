@@ -1,14 +1,38 @@
-import { FC, ReactNode } from 'react';
+import { Dispatch, FC, ReactNode, SetStateAction } from 'react';
 import styles from './Modal.module.scss';
+import { createPortal } from 'react-dom';
+import { useAppDispatch } from '../../lib';
+import { closeModal } from '../../model';
 
-type ModalProps = {
+type Props = {
    children: ReactNode;
+   clickHandler?: Dispatch<SetStateAction<boolean>>;
+   className?: string;
 };
 
-export const Modal: FC<ModalProps> = ({ children }) => {
-   return (
-      <div className={styles.modal}>
-         <div className={styles.modal__wrapper}>{children}</div>
-      </div>
+const modalElement = document.getElementById('modal')!;
+
+export const Modal: FC<Props> = ({ children, className, clickHandler }) => {
+   const classes = className ? `${styles.modal__wrapper} ${className}` : styles.modal__wrapper;
+   const dispatch = useAppDispatch();
+
+   const closeModalHandler = () => {
+      if (clickHandler) {
+         clickHandler(false);
+      }
+      dispatch(closeModal());
+   };
+
+   return createPortal(
+      <div className={styles.modal} onClick={closeModalHandler}>
+         <div
+            className={classes}
+            onClick={(e) => {
+               e.stopPropagation();
+            }}>
+            {children}
+         </div>
+      </div>,
+      modalElement,
    );
 };

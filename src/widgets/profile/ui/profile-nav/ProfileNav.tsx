@@ -7,7 +7,7 @@ export const ProfileNav: FC = () => {
       <nav className={styles.nav}>
          <ul className={styles.nav__list}>
             <li className={styles.nav__item}>
-               <ProfileLink icon="home" path="/" title="Главная" />
+               <ProfileLink icon="home" path="/profile" title="Главная" />
             </li>
             <li className={styles.nav__item}>
                <ProfileLink icon="like" path="/profile/favorites" title="Избранное" />

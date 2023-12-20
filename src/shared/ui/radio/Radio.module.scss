@@ -1,0 +1,13 @@
+.radio {
+   padding: 4px;
+   width: 22px;
+   height: 22px;
+   border: 2px solid #cb11ab;
+   border-radius: 50%;
+   &__circle {
+      width: 10px;
+      height: 10px;
+      background-color: #cb11ab;
+      border-radius: 50%;
+   }
+}

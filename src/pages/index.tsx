@@ -8,7 +8,6 @@ const Home = lazy(() => import('./home'));
 const Catalog = lazy(() => import('./catalog'));
 const Cart = lazy(() => import('./cart'));
 const Navigation = lazy(() => import('./navigation'));
-
 const ProfileAppeals = lazy(() => import('./profile/ui/profile-appeals/ProfileAppeals'));
 const ProfileFavorites = lazy(() => import('./profile/ui/profile-favorites/ProfileFavorites'));
 const ProfileInfo = lazy(() => import('./profile/ui/profile-info/ProfileInfo'));

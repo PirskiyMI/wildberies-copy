@@ -28,7 +28,6 @@ const UserDiscountsTop: FC = () => {
       </div>
    );
 };
-
 const UserDiscountsBottom: FC = () => {
    return (
       <div className={styles.discount__bottom}>
