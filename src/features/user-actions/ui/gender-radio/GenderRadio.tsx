@@ -6,7 +6,10 @@ import { Radio } from '../../../../shared/ui/radio/Radio';
 
 export const GenderRadio: FC = () => {
    const { isMale } = useAppSelector((state) => state.userReducer);
+   const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
    const dispatch = useAppDispatch();
+   const maleGender = windowWidth >= 768 ? 'Муж.' : 'Мужской';
+   const femaleGender = windowWidth >= 768 ? 'Жен.' : 'Женский';
 
    const setMale = () => {
       dispatch(setGender(true));
@@ -19,11 +22,11 @@ export const GenderRadio: FC = () => {
       <form className={styles.form}>
          <label className={styles.form__item} onClick={setMale}>
             <Radio isActive={isMale} />
-            <span>Муж.</span>
+            <span>{maleGender}</span>
          </label>
          <label className={styles.form__item} onClick={setFemale}>
             <Radio isActive={!isMale} />
-            <span>Жен.</span>
+            <span>{femaleGender}</span>
          </label>
       </form>
    );

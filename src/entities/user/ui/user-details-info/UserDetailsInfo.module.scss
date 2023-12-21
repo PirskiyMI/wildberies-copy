@@ -1,14 +1,15 @@
 .user {
    display: flex;
    align-items: center;
-   column-gap: 16px;
    font-weight: 700;
+   gap: 10px;
    &__avatar {
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 80px;
-      width: 80px;
+      height: 64px;
+      width: 64px;
+      flex: 0 0 64px;
       border-radius: 50%;
       font-size: 28px;
       line-height: 129%;
@@ -23,8 +24,27 @@
    &__name {
       display: flex;
       align-items: center;
-      column-gap: 8px;
-      font-size: 24px;
-      line-height: 133%;
+      justify-content: space-between;
+      flex: 0 1 calc(100% - 90px);
+      font-size: 16px;
+      line-height: 22px;
+   }
+   @media (min-width: 1024px) {
+      gap: 16px;
+      &__name {
+      }
+   }
+   @media (min-width: 768px) {
+      &__avatar {
+         height: 80px;
+         width: 80px;
+         flex: 0 0 80px;
+      }
+      &__name {
+         column-gap: 8px;
+         justify-content: stretch;
+         font-size: 24px;
+         line-height: 133%;
+      }
    }
 }

@@ -32,7 +32,7 @@ export const UserDetailsInfo: FC<Props> = ({ changeButton }) => {
       <article className={styles.user}>
          <UserDetailsAvatar name={name} />
          <div className={styles.user__name}>
-            {name} {changeButton}
+            <span className={styles.user__text}>{name}</span> {changeButton}
          </div>
       </article>
    );

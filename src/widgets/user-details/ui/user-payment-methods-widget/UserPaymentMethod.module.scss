@@ -1,8 +1,8 @@
 .payments {
    &__title {
-      margin-bottom: 20px;
-      font-size: 24px;
-      line-height: 32px;
+      margin-bottom: 12px;
+      font-size: 18px;
+      line-height: 24px;
       font-weight: 700;
    }
    &__list {
@@ -19,6 +19,17 @@
       border-radius: 12px;
    }
    @media (min-width: 1024px) {
+      &__title {
+         margin-bottom: 20px;
+         font-size: 24px;
+         line-height: 32px;
+      }
+      &__item {
+         &_background {
+            border-color: var(--background-color);
+            background-color: var(--background-color);
+         }
+      }
       &__list {
          flex-direction: row;
          flex-wrap: wrap;

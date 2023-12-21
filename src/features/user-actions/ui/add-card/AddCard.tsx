@@ -1,7 +1,13 @@
-import { FC } from 'react';
+import { FC, FormEvent } from 'react';
 import styles from './AddCard.module.scss';
 import { Field } from '../../../../shared/ui';
-import { cardNumberFormatter, dateFormatter, useInput } from '../../../../shared/lib';
+import {
+   cardNumberFormatter,
+   dateFormatter,
+   useAppDispatch,
+   useInput,
+} from '../../../../shared/lib';
+import { addCard } from '../../../../entities/user';
 
 export const AddCard: FC = () => {
    const {
@@ -21,12 +27,20 @@ export const AddCard: FC = () => {
       isDirty: codeIsDirty,
       ...code
    } = useInput('', { isRequired: true, type: 'CVV/CVC' });
+   const dispatch = useAppDispatch();
 
    const cardNumber = cardNumberFormatter(cardValue);
    const cardDate = dateFormatter(dateValue);
 
+   const submitHandler = (e: FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      dispatch(
+         addCard({ cardNumber: cardValue, code: code.value, id: Date.now(), date: dateValue }),
+      );
+   };
+
    return (
-      <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
+      <form className={styles.form} onSubmit={submitHandler}>
          <div className={styles.form__top}>
             <ul className={styles.form__list}>
                <li className={styles.form__item}>

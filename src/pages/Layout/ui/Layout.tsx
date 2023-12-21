@@ -68,8 +68,8 @@ export const Layout: FC = () => {
          <Header />
 
          <main className={styles.layout__main}>
-            {pathname.includes('profile') && (
-               <div className="container">
+            {pathname.includes('profile') && windowWidth >= 1024 && (
+               <div className={'container'}>
                   <ProfileNav />
                </div>
             )}

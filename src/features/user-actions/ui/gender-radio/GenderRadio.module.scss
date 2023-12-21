@@ -1,12 +1,14 @@
 .form {
    display: flex;
-   column-gap: 10px;
+   column-gap: 40px;
    &__item {
       display: flex;
       align-items: center;
       column-gap: 4px;
+      font-size: 14px;
+      line-height: 20px;
    }
-   &__radio {
-      
+   @media (min-width: 768px) {
+      column-gap: 10px;
    }
 }

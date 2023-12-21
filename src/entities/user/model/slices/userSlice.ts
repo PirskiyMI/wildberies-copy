@@ -1,10 +1,10 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 type TPayment = {
-   cardNumber: number;
-   code: number;
-   year: number;
-   month: number;
+   id: number;
+   cardNumber: string;
+   code: string;
+   date: string;
 };
 
 interface IUserSlice {
@@ -38,7 +38,9 @@ const initialState: IUserSlice = {
       products: [],
    },
    isMale: true,
-   paymentInfo: [],
+   paymentInfo: [
+      { cardNumber: '2202 2062 1235 4687', code: '111', id: 1703154986920, date: '0125' },
+   ],
 };
 
 export const userSlice = createSlice({
@@ -54,7 +56,10 @@ export const userSlice = createSlice({
       addCard: (state, { payload }: PayloadAction<TPayment>) => {
          state.paymentInfo.push(payload);
       },
+      deleteCard: (state, { payload }: PayloadAction<number>) => {
+         state.paymentInfo = state.paymentInfo.filter((el) => el.id !== payload);
+      },
    },
 });
 
-export const { setName, setGender, addCard } = userSlice.actions;
+export const { setName, setGender, addCard, deleteCard } = userSlice.actions;

@@ -1,7 +1,12 @@
-.info{
+.info {
    &__container {
       display: flex;
       flex-direction: column;
-      row-gap: 32px;
+      row-gap: 12px;
+   }
+   @media (min-width: 1024px) {
+      &__container {
+         row-gap: 32px;
+      }
    }
 }
