@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { AddToCart, QuickView } from '../../../../features/product-actions';
+import { AddToCart, QuickView, ToggleToFavorite } from '../../../../features/product-actions';
 import { ProductCard, ProductList } from '../../../../entities/product';
 import { IProductWithRating } from '../../../../shared/lib';
 import { SearchIsEmpty } from '../../../../entities/search-is-empty';
@@ -16,10 +16,19 @@ export const HomeList: FC<Props> = ({ productList, search }) => {
             <SearchIsEmpty search={search} />
             <ProductList>
                {productList.map((el) => (
-                  <ProductCard key={el.id} product={el}>
+                  <ProductCard
+                     key={el.id}
+                     product={el}
+                     addToFavoriteButton={<ToggleToFavorite product={el} />}>
                      <QuickView product={el} />
                      <AddToCart
-                        product={{ id: el.id, image: el.image, price: el.price, title: el.title }}
+                        product={{
+                           id: el.id,
+                           image: el.image,
+                           price: el.price,
+                           title: el.title,
+                           isFavorite: el.isFavorite,
+                        }}
                      />
                   </ProductCard>
                ))}
@@ -31,10 +40,19 @@ export const HomeList: FC<Props> = ({ productList, search }) => {
    return (
       <ProductList>
          {productList.map((el) => (
-            <ProductCard key={el.id} product={el}>
+            <ProductCard
+               key={el.id}
+               product={el}
+               addToFavoriteButton={<ToggleToFavorite product={el} />}>
                <QuickView product={el} />
                <AddToCart
-                  product={{ id: el.id, image: el.image, price: el.price, title: el.title }}
+                  product={{
+                     id: el.id,
+                     image: el.image,
+                     price: el.price,
+                     title: el.title,
+                     isFavorite: el.isFavorite,
+                  }}
                />
             </ProductCard>
          ))}

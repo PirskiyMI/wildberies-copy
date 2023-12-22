@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { fetchAllProducts, fetchProducts } from '../api/productsActionCreator';
 import { IProductWithRating } from '../../../shared/lib';
 
@@ -17,7 +17,13 @@ const initialState: IProductListSlice = {
 export const productListSlice = createSlice({
    name: 'home',
    initialState,
-   reducers: {},
+   reducers: {
+      toggleToFavorite: (state, { payload }: PayloadAction<number>) => {
+         state.products.forEach((el) =>
+            el.id === payload ? (el.isFavorite = !el.isFavorite) : null,
+         );
+      },
+   },
    extraReducers: (builder) => {
       builder
          .addCase(fetchAllProducts.pending, (state) => {
@@ -48,3 +54,5 @@ export const productListSlice = createSlice({
          .addDefaultCase(() => {});
    },
 });
+
+export const { toggleToFavorite } = productListSlice.actions;

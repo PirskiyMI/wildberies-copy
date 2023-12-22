@@ -13,7 +13,7 @@ export const fetchAllProducts = createAsyncThunk<
          .then((res) => res.data)
          .then((data) =>
             data.map((el: IProductWithRating) => {
-               return { ...el, price: el.price * 100 };
+               return { ...el, price: el.price * 100, isFavorite: false };
             }),
          );
       return response;

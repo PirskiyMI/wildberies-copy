@@ -12,6 +12,7 @@ export interface IProduct {
    title: string;
    price: number;
    image: string;
+   isFavorite: boolean;
 }
 export interface IProductWithDescription extends IProduct {
    description: string;

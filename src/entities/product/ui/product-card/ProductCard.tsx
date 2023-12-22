@@ -9,14 +9,18 @@ import { IProductWithRating, priceFormatter, useAppSelector } from '../../../../
 type Props = {
    product: IProductWithRating;
    children: ReactNode;
+   addToFavoriteButton: ReactNode;
 };
 
 export const ProductCard: FC<Props> = (props) => {
    const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
-   const { title, price, rating, image } = props.product;
+   const { title, price, rating, image, isFavorite } = props.product;
    const children = Children.toArray(props.children);
    const cartPrice = priceFormatter(price);
    const count = priceFormatter(rating.count);
+   const toggleFavoriteClasses = isFavorite
+      ? `${styles.card__favorite} ${styles.card__favorite_active}`
+      : styles.card__favorite;
 
    if (windowWidth >= 1024) {
       return (
@@ -25,6 +29,8 @@ export const ProductCard: FC<Props> = (props) => {
                <Link className={styles.card__link} to="#"></Link>
 
                <div className={`${styles.card__wrapper} ${styles.card__wrapper_top}`}>
+                  <div className={toggleFavoriteClasses}>{props.addToFavoriteButton}</div>
+
                   <div className={styles.card__img}>
                      <img src={image} alt={title} />
                   </div>
