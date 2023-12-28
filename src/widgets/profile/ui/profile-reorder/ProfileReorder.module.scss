@@ -1,0 +1,20 @@
+.body {
+   margin-bottom: 8px;
+   font-size: 16px;
+   line-height: 22px;
+   &__content {
+      margin-bottom: 24px;
+      max-width: 360px;
+   }
+   &__title {
+      font-weight: 700;
+   }
+   &__button {
+      height: 44px;
+   }
+   @media (min-width: 1024px) {
+      &__button {
+         width: 207px;
+      }
+   }
+}

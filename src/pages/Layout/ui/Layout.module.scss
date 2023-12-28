@@ -1,7 +1,7 @@
 .layout {
    &__main {
+      padding: 16px 0 32px;
       position: relative;
-      flex: 0 0 300px;
       background-color: var(--background-color);
       z-index: 1;
    }
@@ -12,13 +12,8 @@
    }
    @media (min-width: 1024px) {
       &__main {
-         padding: 22px 0 50px;
+         padding: 24px 0px 48px;
          background-color: #ffffff;
-      }
-   }
-   @media (min-width: 768px) {
-      &__main {
-         padding: 10px 0 50px;
       }
    }
 }

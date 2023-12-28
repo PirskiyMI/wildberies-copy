@@ -1,7 +1,4 @@
 .catalog {
-   &__container {
-      padding-bottom: 50px;
-   }
    &__products {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
