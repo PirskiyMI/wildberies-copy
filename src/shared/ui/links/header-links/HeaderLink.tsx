@@ -22,7 +22,7 @@ export const HeaderLink: FC<Props> = ({ icon, path, label, count }) => {
                <Icon icon={icon} className={styles.link__icon} />
                {count && count > 0 && <div className={styles.link__count}>{count}</div>}
             </div>
-            {label && <span className={styles.icon__label}>{label}</span>}
+            {label && <span className={styles.link__label}>{label}</span>}
          </div>
       </NavLink>
    );

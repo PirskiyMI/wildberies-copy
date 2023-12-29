@@ -3,40 +3,38 @@
    position: relative;
    &__input {
       width: 100%;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      border-bottom: 1px solid var(--border-color-gray);
       &_error {
-         color: #f55123;
-         border-color: #f55123;
+         color: var(--text-color-error);
+         border-color: var(--border-color-error);
       }
    }
    &__input,
    &__label {
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 150%;
+      font-size: var(--text-fs-normal);
+      line-height: var(--text-lh-normal);
    }
    &__label {
       top: 0;
       left: 0;
       position: absolute;
-      color: #9797af;
+      color: var(--text-color-gray);
       transition: all ease 0.3s;
       &_active {
          top: -70%;
-         font-size: 13px;
-         line-height: 123%;
+         font-size: var(--text-fs-smallest);
+         line-height: var(--text-lh-smallest);
       }
       &_error {
-         color: #f55123;
+         color: var(--text-color-error);
       }
    }
    &__error {
       position: absolute;
       bottom: -16px;
       left: 0;
-      color: #f55123;
-      font-size: 12px;
-      font-weight: 400;
-      line-height: 117%;
+      font-size: var(--text-fs-smallest);
+      line-height: var(--text-lh-smallest);
+      color: var(--text-color-error);
    }
 }

@@ -2,9 +2,9 @@
    &__icon {
       width: 12px;
       height: 12px;
-      fill: orangered;
+      fill: var(--orange-color);
    }
    &__count {
-      color: #9d9da5;
+      color: var(--text-color-gray);
    }
 }

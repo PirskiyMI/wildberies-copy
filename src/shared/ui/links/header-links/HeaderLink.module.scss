@@ -3,8 +3,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      row-gap: 8px;
-      text-decoration: none;
    }
    &__wrapper {
       position: relative;
@@ -12,21 +10,21 @@
    &__icon {
       width: 24px;
       height: 24px;
-      fill: lightgray;
+      fill: var(--light-black-color);
    }
    &__count {
+      position: absolute;
       min-width: 16px;
       height: 16px;
       padding: 2px 3px 1px;
-      position: absolute;
       top: -6px;
       right: -8px;
       text-align: center;
       font-size: 10px;
       line-height: 130%;
-      color: white;
-      background-color: rgb(245, 81, 35);
-      border-radius: 16px;
+      color: rgb(255, 255, 255);
+      background-color: var(--orange-color);
+      border-radius: var(--br-large);
    }
    &__label {
       display: none;
@@ -36,24 +34,26 @@
          fill: var(--secondary-color);
       }
    }
+
    @media (min-width: 1024px) {
       &__icon {
-         fill: white;
+         fill: var(--white-color);
       }
       &__label {
          display: block;
-         color: rgba(255, 255, 255, 0.8);
-         transition: color ease 0.3s;
+         font-size: var(--text-fs-small);
+         color: var(--light-gray-color);
+         transition: color var(--transition-slow);
       }
       &_active {
          .link__icon {
-            fill: white;
+            fill: var(--white-color);
          }
       }
    }
    @media (any-hover: hover) {
       &__body:hover &__label {
-         color: rgba(255, 255, 255, 1);
+         color: var(--white-color);
       }
    }
 }

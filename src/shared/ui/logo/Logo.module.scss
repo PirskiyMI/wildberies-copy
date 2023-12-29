@@ -1,9 +1,9 @@
 .logo {
-   font-size: 24px;
+   font-size: var(--title-fs-large);
    line-height: 0.8;
    letter-spacing: 0.56px;
-   font-weight: 600;
+   font-weight: var(--fw-medium);
    @media (min-width: 1024px) {
-      font-size: 28px;
+      font-size: var(--title-fs-big);
    }
 }

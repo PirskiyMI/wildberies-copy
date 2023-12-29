@@ -2,12 +2,12 @@
    padding: 4px;
    width: 22px;
    height: 22px;
-   border: 2px solid #cb11ab;
-   border-radius: 50%;
+   border: 2px solid var(--tertiary-color);
+   border-radius: var(--br-circle);
    &__circle {
       width: 10px;
       height: 10px;
-      background-color: #cb11ab;
-      border-radius: 50%;
+      background-color: var(--tertiary-color);
+      border-radius: var(--br-circle);
    }
 }

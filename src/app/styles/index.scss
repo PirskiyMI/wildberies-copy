@@ -1,15 +1,14 @@
 @import './../assets/fonts/fonts.scss';
-@import './normalize.scss';
-@import './variables.scss';
+@import './lib/normalize.scss';
+@import './lib/variables.scss';
 @import './App.scss';
 
 body {
-   font-family: 'Segoe UI', sans-serif;
-   
+   font-family: var(--main-font);
+   font-size: var(--text-fs-normal);
+   font-weight: var(--fw-normal);
+   line-height: var(--text-lh-normal);
    overflow-x: hidden;
-   font-size: 16px;
-   line-height: 1;
-   font-weight: 400;
    &.hidden {
       overflow-y: hidden;
    }

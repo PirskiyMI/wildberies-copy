@@ -5,12 +5,11 @@
    display: flex;
    align-items: center;
    column-gap: 10px;
-   border-radius: 36px;
-   font-size: 18px;
-   line-height: 133%;
-   color: black;
-   background-color: rgba(0, 0, 0, 0.1);
-   transition: background-color ease 0.2s;
+   border-radius: var(--br-big);
+   font-size: var(--text-fs-large);
+   line-height: var(--text-lh-small);
+   background-color: var(--light-dark-color);
+   transition: background-color var(--transition-slow);
    &__button {
       position: absolute;
       top: 50%;
@@ -18,26 +17,26 @@
       &_loop {
          left: 14px;
          svg {
-            width: 20px;
-            height: 20px;
+            width: 16px;
+            height: 17px;
          }
       }
       &_cross {
          right: 20px;
          svg {
-            width: 16px;
-            height: 16px;
+            width: 12px;
+            height: 12px;
          }
       }
       svg {
-         fill: rgba(0, 0, 0, 0.3);
+         fill: var(--light-black-color);
       }
    }
 
    @media (min-width: 1024px) {
       padding: 16px 120px 16px 48px;
-      color: rgba(255, 255, 255, 0.5);
-      background-color: rgba(255, 255, 255, 0.2);
+      color: var(--text-color-light-gray);
+      background-color: var(--background-color-gray);
       &__button {
          &_loop {
             left: 20px;
@@ -49,34 +48,33 @@
             }
          }
          svg {
-            fill: rgba(255, 255, 255, 0.5);
-            transition: fill ease 0.2s;
+            fill: var(--text-color-light-gray);
+            transition: fill var(--transition-slow);
          }
          @media (any-hover: hover) {
             &:hover {
                svg {
-                  fill: white;
+                  fill: var(--white-color);
                }
             }
          }
       }
       &::placeholder {
-         color: rgba(255, 255, 255, 0.5);
+         color: var(--text-color-light-gray);
       }
-
       &:focus ~ &__button {
          svg {
-            fill: rgba(0, 0, 0, 0.3);
+            fill: var(--light-black-color);
          }
       }
       @media (any-hover: hover) {
          &:hover {
-            background-color: rgba(255, 255, 255, 0.6);
+            background-color: var(--text-color-light-gray);
          }
       }
       &:focus {
-         color: #000;
-         background-color: white;
+         color: var(--text-color-dark);
+         background-color: var(--background-color);
       }
    }
 }

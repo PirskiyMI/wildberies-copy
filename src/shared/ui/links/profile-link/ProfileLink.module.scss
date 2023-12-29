@@ -2,26 +2,26 @@
    display: flex;
    align-items: center;
    column-gap: 10px;
-   transition: color ease 0.1s;
+   transition: color var(--transition-fast);
    svg {
-      fill: #000000;
       width: 24px;
       height: 24px;
-      transition: fill ease 0.1s;
+      fill: var(--dark-color);
+      transition: fill var(--transition-fast);
    }
    &_active {
       .link__title {
-         color: var(--secondary-color);
+         color: var(--tertiary-color);
       }
       svg {
-         fill: var(--secondary-color);
+         fill: var(--tertiary-color);
       }
    }
    @media (any-hover: hover) {
       &:hover {
-         color: var(--secondary-color);
+         color: var(--tertiary-color);
          svg {
-            fill: var(--secondary-color);
+            fill: var(--tertiary-color);
          }
       }
    }

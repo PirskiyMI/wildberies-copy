@@ -6,6 +6,7 @@
    overflow: hidden;
    width: 100px;
    height: 100px;
+   border-radius: var(--br-circle);
    &__wrapper {
       display: flex;
       width: 100%;

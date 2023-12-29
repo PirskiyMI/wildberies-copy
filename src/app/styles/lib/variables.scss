@@ -1,0 +1,98 @@
+:root {
+   /* ------------------ Colors ------------------ */
+
+   // Main-colors
+   --main-color: rgb(72, 17, 115);
+   --secondary-color: rgb(203, 17, 171);
+   --tertiary-color: rgb(167, 58, 253);
+   --tertiary-color-hovered: rgb(188, 100, 255);
+
+   // Text-colors
+   --text-color-dark: rgb(36, 36, 36);
+   --text-color-gray: rgb(134, 134, 149);
+   --text-color-light-gray: rgba(255, 255, 255, 0.6);
+   --text-color-white: rgb(255, 255, 255);
+   --text-color-dark-white: rgb(241, 241, 245);
+   --text-color-error: rgb(245, 81, 35);
+
+   // Background-colors
+   --background-color: rgb(246, 246, 246);
+   --background-color-gray: rgb(255, 255, 255, 0.2);
+   --background-color-light-black: rgba(0, 0, 0, 0.3);
+
+   // Border-colors
+   --border-color-gray: rgba(0, 0, 0, 0.2);
+   --border-color-error: rgb(245, 81, 35);
+
+   // Other-colors
+   --light-black-color: rgba(0, 0, 0, 0.3);
+   --dark-color: rgb(36, 36, 36);
+   --light-dark-color: rgba(36, 36, 36, 0.1);
+   --white-color: rgb(255, 255, 255);
+   --light-gray-color: rgba(255, 255, 255, 0.6);
+   --orange-color: rgb(245, 81, 35);
+   --green-color: rgb(12, 180, 119);
+   --purple-color: rgb(130, 39, 199);
+
+   /* ------------------ Typography ------------------ */
+
+   /* -------- Font-family -------- */
+   --main-font: 'Segoe UI', sans-serif;
+
+   /* -------- Font-sizes -------- */
+   // Text-font-sizes
+   --text-fs-big: 24px;
+   --text-fs-large: 18px;
+   --text-fs-normal: 16px;
+   --text-fs-small: 14px;
+   --text-fs-smallest: 12px;
+
+   // Title-font-sizes
+   --title-fs-big: 28px;
+   --title-fs-large: 24px;
+   --title-fs-normal: 20px;
+   --title-fs-small: 18px;
+   --title-fs-smallest: 14px;
+
+   /* -------- Line-height -------- */
+   // Text-line-heights
+   --text-lh-big: 150%;
+   --text-lh-normal: 143%;
+   --text-lh-small: 133%;
+   --text-lh-smallest: 123%;
+
+   // Title-line-heights
+   --title-lh-big: 142%;
+   --title-lh-large: 140%;
+   --title-lh-normal: 138%;
+   --title-lh-small: 133%;
+
+   /* Font-weight */
+   --fw-bold: 700;
+   --fw-medium: 600;
+   --fw-normal: 400;
+
+   /* ------------------ Border ------------------ */
+   // Border-radius
+   --br-circle: 50%;
+   --br-big: 36px;
+   --br-large: 16px;
+   --br-normal: 8px;
+
+   /* ------------------ Animation ------------------ */
+   // Transition
+   --transition-slow: ease 0.3s;
+   --transition-fast: ease 0.1s;
+}
+
+@media (min-width: 1024px) {
+   :root {
+      --background-color: rgb(255, 255, 255);
+   }
+}
+
+/* 
+box-shadow
+— 0px 0px 16px rgba($color: #000000, $alpha: .08)
+— 0px 2px 16px rgba($color: #000000, $alpha: .08)
+*/
