@@ -9,7 +9,7 @@ import { IProductWithRating, priceFormatter, useAppSelector } from '../../../../
 type Props = {
    product: IProductWithRating;
    children: ReactNode;
-   addToFavoriteButton: ReactNode;
+   addToFavoriteButton?: ReactNode;
 };
 
 export const ProductCard: FC<Props> = (props) => {

@@ -1,5 +1,7 @@
 import { FC } from 'react';
-import styles from './HomePreloader.module.scss';
+
+import styles from './styles.module.scss';
+
 import { Skeleton } from '../../../../shared/ui';
 
 export const HomePreloader: FC = () => {

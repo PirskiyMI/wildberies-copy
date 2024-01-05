@@ -1,10 +1,13 @@
 import { FC } from 'react';
-import styles from './BurgerMenu.module.scss';
 import { Link } from 'react-router-dom';
-import { Icon } from '../../../shared/ui';
-import { IMenuList } from '../model/types';
+
+import styles from './styles.module.scss';
+
 import { useAppDispatch, useAppSelector } from '../../../shared/lib';
+import { Icon } from '../../../shared/ui';
 import { closeMenu } from '../../../shared/model';
+
+import { IMenuList } from '../model/types';
 
 type Props = {
    links: IMenuList[];

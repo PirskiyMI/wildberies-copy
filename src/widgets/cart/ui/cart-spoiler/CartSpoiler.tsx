@@ -1,15 +1,14 @@
 import { FC } from 'react';
-import styles from './CartSpoiler.module.scss';
+
+import styles from './styles.module.scss';
 
 import { useAppSelector } from '../../../../shared/lib';
-import { Section, Spoiler, Title } from '../../../../shared/ui';
-
+import { Section, Spoiler } from '../../../../shared/ui';
 import { BasketInfo, BasketItem } from '../../../../entities/basket';
 import {
-   DeleteFromCart,
    ProductCounter,
-   SelectProduct,
-   ToggleToFavorite,
+   ProductRemoveFromCart,
+   ProductSelect,
 } from '../../../../features/product-actions';
 
 const CartList: FC = () => {
@@ -22,10 +21,10 @@ const CartList: FC = () => {
                key={el.id}
                product={el}
                features={{
-                  Checkbox: <SelectProduct id={el.id} isChecked={el.status.isChecked} />,
+                  Checkbox: <ProductSelect id={el.id} isChecked={el.status.isChecked} />,
                   Counter: <ProductCounter id={el.id} value={el.status.count} />,
-                  Delete: <DeleteFromCart id={el.id} />,
-                  Like: <ToggleToFavorite />,
+                  Delete: <ProductRemoveFromCart id={el.id} />,
+                  Like: <div />,
                }}></BasketItem>
          ))}
       </div>
@@ -37,7 +36,7 @@ export const CartSpoiler: FC = () => {
 
    return (
       <Section className={styles.cart}>
-         <Title>Корзина</Title>
+         <h2>Корзина</h2>
          <Spoiler
             initial
             Title={<BasketInfo count={count} price={price} />}

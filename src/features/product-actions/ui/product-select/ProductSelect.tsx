@@ -1,7 +1,9 @@
 import { ChangeEventHandler, FC } from 'react';
-import styles from './SelectProduct.module.scss';
+import styles from './styles.module.scss';
+
 import { useAppDispatch } from '../../../../shared/lib';
 import { Icon } from '../../../../shared/ui';
+
 import { toggleProductIsChecked } from '../../model/slices/basketListSlice';
 
 type Props = {
@@ -9,7 +11,7 @@ type Props = {
    id: number;
 };
 
-export const SelectProduct: FC<Props> = ({ id, isChecked }) => {
+export const ProductSelect: FC<Props> = ({ id, isChecked }) => {
    const dispatch = useAppDispatch();
 
    const classes = isChecked ? `${styles.checkbox} ${styles.checkbox_active}` : styles.checkbox;

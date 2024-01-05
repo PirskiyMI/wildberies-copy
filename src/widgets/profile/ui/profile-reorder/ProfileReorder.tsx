@@ -1,7 +1,9 @@
 import { FC } from 'react';
-import styles from './ProfileReorder.module.scss';
-import { Button } from '../../../../shared/ui';
 import { Link } from 'react-router-dom';
+
+import styles from './styles.module.scss';
+
+import { Button } from '../../../../shared/ui';
 
 type Props = {
    title: string;

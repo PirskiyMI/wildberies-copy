@@ -1,6 +1,8 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
-import styles from './CartEmpty.module.scss';
+
+import styles from './styles.module.scss';
+
 import { Button, Section } from '../../../../shared/ui';
 
 export const CartEmpty: FC = () => {

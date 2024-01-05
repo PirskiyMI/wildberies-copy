@@ -1,0 +1,29 @@
+.button {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 12px 5px;
+   font-size: var(--title-fs-normal);
+   font-weight: var(--fw-bold);
+   background-color: #d4d4d4;
+   span {
+      line-height: 0;
+   }
+   &:disabled {
+      background-color: #e0e0e0;
+      cursor: default;
+   }
+   @media (min-width: 1024px) {
+      width: 32px;
+      height: 32px;
+      font-size: var(--text-fs-large);
+      background-color: #e0e0e0;
+      border-radius: var(--br-normal);
+      transition: background-color var(--transition-slow);
+      @media (any-hover: hover) {
+         &:hover {
+            background-color: #d4d4d4;
+         }
+      }
+   }
+}

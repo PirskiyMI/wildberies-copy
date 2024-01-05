@@ -12,12 +12,12 @@
 
    &__arrow {
       transform: rotate(180deg);
-      transition: transform ease 0.2s;
+      transition: transform var(--transition-slow);
       &_active {
          transform: rotate(0);
       }
       svg {
-         fill: #9797af;
+         fill: var(--text-color-gray);
       }
    }
 }

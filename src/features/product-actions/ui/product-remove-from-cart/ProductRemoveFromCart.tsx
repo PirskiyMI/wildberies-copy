@@ -1,13 +1,15 @@
 import { FC } from 'react';
+
 import { useAppDispatch } from '../../../../shared/lib';
 import { DeleteButton } from '../../../../shared/ui';
+
 import { deleteProduct } from '../../model/slices/basketListSlice';
 
 type Props = {
    id: number;
 };
 
-export const DeleteFromCart: FC<Props> = ({ id }) => {
+export const ProductRemoveFromCart: FC<Props> = ({ id }) => {
    const dispatch = useAppDispatch();
 
    const deleteHandler = () => {

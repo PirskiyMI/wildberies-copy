@@ -1,5 +1,8 @@
 import { FC } from 'react';
-import styles from './ProductCounter.module.scss';
+
+import styles from './styles.module.scss';
+
+import { CountButton } from '../../../../shared/ui';
 import { useCounterActions } from '../../lib/hooks/useCounterActions';
 
 type Props = {
@@ -18,12 +21,9 @@ export const ProductCounter: FC<Props> = (props) => {
 
    return (
       <div className={styles.counter}>
-         <button
-            className={styles.counter__button}
-            disabled={value <= 1}
-            onClick={decrementHandler}>
+         <CountButton disabled={value <= 1} onClick={decrementHandler}>
             <span>−</span>
-         </button>
+         </CountButton>
          <input
             type="number"
             className={styles.counter__field}
@@ -31,12 +31,9 @@ export const ProductCounter: FC<Props> = (props) => {
             onChange={setHandler}
             onBlur={blurHandler}
          />
-         <button
-            className={styles.counter__button}
-            disabled={value === limit}
-            onClick={incrementHandler}>
+         <CountButton disabled={value === limit} onClick={incrementHandler}>
             <span>+</span>
-         </button>
+         </CountButton>
       </div>
    );
 };

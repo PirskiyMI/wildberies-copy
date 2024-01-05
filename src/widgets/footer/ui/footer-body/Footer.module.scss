@@ -1,7 +1,7 @@
 .footer {
    margin-top: -34px;
    padding: 68px 0;
-   flex: 1 1 auto;
+   flex: 0 0 none;
    background-color: var(--main-color);
    &__container {
       padding: 0 10px;
@@ -14,7 +14,7 @@
          border-top: 1px solid rgba($color: white, $alpha: 0.2);
       }
    }
-   
+
    @media (min-width: 1024px) {
       &__container {
          display: grid;

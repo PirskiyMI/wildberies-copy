@@ -72,7 +72,10 @@ export const Slider: FC<Props> = ({ children, gap, minHeight }) => {
                   }}
                   className={styles.slider__wrapper}>
                   {sliderList.map((el, index) => (
-                     <div style={{ flex: `0 0 215px` }} className={styles.slider__item} key={index}>
+                     <div
+                        style={{ flex: `0 0 215px`, minWidth: '215px' }}
+                        className={styles.slider__item}
+                        key={index}>
                         {el}
                      </div>
                   ))}

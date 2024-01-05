@@ -1,5 +1,7 @@
 import { FC } from 'react';
-import styles from './UserMetrics.module.scss';
+
+import styles from './styles.module.scss';
+
 import { Section } from '../../../../shared/ui';
 import { useAppSelector } from '../../../../shared/lib';
 import { UserDetailsIndicator } from '../../../../entities/user';

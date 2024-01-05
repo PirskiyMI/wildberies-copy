@@ -1,14 +1,17 @@
 import { FC } from 'react';
+
+import { toggleToFavorite } from '../../../../widgets/home/model/productListSlice';
+
+import { addToFavorites, removeFromFavorites } from '../../../../entities/user';
+
 import { FavoriteButton } from '../../../../shared/ui';
 import { IProductWithRating, useAppDispatch } from '../../../../shared/lib';
-import { addToFavorites, removeFromFavorites } from '../../../../entities/user';
-import { toggleToFavorite } from '../../../../widgets/home/model/productListSlice';
 
 type Props = {
    product: IProductWithRating;
 };
 
-export const ToggleToFavorite: FC<Props> = ({ product }) => {
+export const ProductToggleToFavorite: FC<Props> = ({ product }) => {
    const dispatch = useAppDispatch();
 
    const clickHandler = () => {

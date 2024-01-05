@@ -1,9 +1,11 @@
 import { FC } from 'react';
-import { Icon, Modal, Section } from '../../../../shared/ui';
-import { UserDetailsGender, UserDetailsInfo, UserDetailsPhone } from '../../../../entities/user';
-import styles from './UserProfile.module.scss';
+
+import styles from './styles.module.scss';
+
 import { useAppDispatch, useAppSelector } from '../../../../shared/lib';
 import { openModal } from '../../../../shared/model';
+import { Icon, Modal, Section } from '../../../../shared/ui';
+import { UserDetailsGender, UserDetailsInfo, UserDetailsPhone } from '../../../../entities/user';
 import { ChangeName, GenderRadio } from '../../../../features/user-actions';
 
 export const UserProfile: FC = () => {

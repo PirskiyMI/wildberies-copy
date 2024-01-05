@@ -2,11 +2,12 @@ export { cartSliderSlice } from './model/slices/cartSliderSlice';
 export { basketListSlice } from './model/slices/basketListSlice';
 export { basketInfoSlice, setTotalCount, setTotalPrice } from './model/slices/basketInfoSlice';
 
-export { AddToCart } from './ui/add-to-cart/AddToCart';
-export { QuickViewAddToCart } from './ui/add-to-cart/QuickViewAddToCart';
-export { DeleteFromCart } from './ui/delete-from-cart/DeleteFromCart';
+export {
+   ProductAddToCart,
+   ProductQuickViewAddToCart,
+} from './ui/product-add-to-cart/ProductAddToCart';
 export { ProductCounter } from './ui/product-counter/ProductCounter';
-export { QuickView } from './ui/quick-view/QuickView';
-export { SelectProduct } from './ui/select-product/SelectProduct';
-export { ToggleToFavorite } from './ui/toggle-to-favorite/ToggleToFavorite';
-export { RemoveFromFavorite } from './ui/remove-from-favorite/RemoveFromFavorite';
+export { ProductQuickView } from './ui/product-quick-view/ProductQuickView';
+export { ProductRemoveFromCart } from './ui/product-remove-from-cart/ProductRemoveFromCart';
+export { ProductSelect } from './ui/product-select/ProductSelect';
+export { ProductToggleToFavorite } from './ui/product-toggle-to-favorite/ProductToggleToFavorite';

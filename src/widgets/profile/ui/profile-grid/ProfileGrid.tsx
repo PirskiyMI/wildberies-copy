@@ -1,5 +1,8 @@
 import { FC } from 'react';
-import styles from './ProfileGrid.module.scss';
+
+import styles from './styles.module.scss';
+
+import { useAppSelector } from '../../../../shared/lib';
 import { ProfileItem } from '../../../../entities/profile';
 import {
    UserInfo,
@@ -12,7 +15,6 @@ import {
    UserPurchases,
    UserFavorite,
 } from '../../../../entities/user';
-import { useAppSelector } from '../../../../shared/lib';
 
 export const ProfileGrid: FC = () => {
    const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);

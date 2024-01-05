@@ -1,0 +1,14 @@
+.counter {
+   display: flex;
+   align-items: center;
+   &__field {
+      width: 42px;
+      height: 24px;
+      text-align: center;
+   }
+   &__field::-webkit-outer-spin-button,
+   &__field::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+   }
+}

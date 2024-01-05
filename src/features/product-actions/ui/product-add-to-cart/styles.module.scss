@@ -1,0 +1,13 @@
+.button {
+   padding: 5px 20px 7px;
+   &_disabled {
+      color: var(--tertiary-color);
+      background-color: transparent;
+      @media (any-hover: hover) {
+         &:hover {
+            color: var(--tertiary-color);
+            background: none;
+         }
+      }
+   }
+}

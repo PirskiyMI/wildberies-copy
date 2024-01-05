@@ -1,5 +1,6 @@
 import { FC } from 'react';
-import styles from './UserFavoritesSelect.module.scss';
+
+import styles from './styles.module.scss';
 
 export type SelectOption = {
    value: string;

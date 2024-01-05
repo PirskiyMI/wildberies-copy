@@ -1,5 +1,7 @@
 import { FC } from 'react';
-import styles from './ProfileNav.module.scss';
+
+import styles from './styles.module.scss';
+
 import { ProfileLink } from '../../../../shared/ui/links';
 
 export const ProfileNav: FC = () => {

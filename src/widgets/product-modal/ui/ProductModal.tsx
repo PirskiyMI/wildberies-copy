@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { Modal } from '../../../shared/ui';
 import { useAppSelector } from '../../../shared/lib';
 import { ProductQuickView } from '../../../entities/product';
-import { QuickViewAddToCart } from '../../../features/product-actions';
+import { ProductQuickViewAddToCart } from '../../../features/product-actions';
 
 export const ProductModal: FC = () => {
    const { product } = useAppSelector((state) => state.modalReducer);
@@ -14,7 +14,7 @@ export const ProductModal: FC = () => {
          <Modal>
             <ProductQuickView
                product={product}
-               Button={<QuickViewAddToCart inBasket={inBasket} product={product} />}
+               Button={<ProductQuickViewAddToCart inBasket={inBasket} product={product} />}
             />
          </Modal>
       );
