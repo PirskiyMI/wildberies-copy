@@ -15,19 +15,18 @@ type Props = {
 };
 
 export const BasketItem: FC<Props> = ({ product, features }) => {
-   const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
    const { image, price, status, title } = product;
-   const [productPrice, setProductPrice] = useState<number>(price);
    const { Checkbox, Counter, Delete, Like } = features;
    const { count } = status;
+
+   const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
+   const [productPrice, setProductPrice] = useState(price);
 
    useEffect(() => {
       setProductPrice(price * count);
    }, [count, price]);
 
    if (windowWidth >= 1024) {
-      console.log(windowWidth);
-
       return (
          <article className={styles.item}>
             <div className={styles.item__left}>

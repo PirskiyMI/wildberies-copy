@@ -19,7 +19,7 @@ export const useSetCount = ({ list }: Props) => {
 
       list.forEach((el) => {
          totalCount += el.status.count;
-         totalPrice += el.price;
+         totalPrice += Math.ceil(el.price * el.status.count);
          if (el.status.isChecked) {
             productsCount += el.status.count;
             productsPrice += Math.ceil(el.price * el.status.count);

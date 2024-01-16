@@ -22,6 +22,7 @@ export const useCounterActions = ({ id, value, limit }: Props) => {
       setCount((prev) => (prev += 1));
       dispatch(incrementProductCount(id));
    };
+   
    const setHandler = (e: ChangeEvent<HTMLInputElement>) => setCount(e.target.valueAsNumber);
    const blurHandler = () => {
       const countAsString = String(count);
