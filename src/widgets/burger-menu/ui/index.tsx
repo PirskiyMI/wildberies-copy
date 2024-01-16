@@ -21,6 +21,7 @@ export const BurgerMenu: FC<Props> = ({ links }) => {
 
    return (
       <>
+         {isOpen && <div className={styles.burger} onClick={clickHandler}></div>}
          <nav className={`${styles.menu} ${isOpen && styles.menu_active}`}>
             <ul className={styles.menu__list}>
                {links.map((el) => (
