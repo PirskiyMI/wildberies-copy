@@ -1,3 +1,3 @@
-import CatalogPage from './ui/CatalogPage';
+import CatalogPage from './ui';
 
 export default CatalogPage;

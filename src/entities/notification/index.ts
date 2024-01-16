@@ -1,2 +1,2 @@
-export * from './model/notificationSlice';
-export { Notification } from './ui/Notification';
+export * from './model';
+export * from './ui';

@@ -8,14 +8,14 @@ const Home = lazy(() => import('./home'));
 const Catalog = lazy(() => import('./catalog'));
 const Cart = lazy(() => import('./cart'));
 const Navigation = lazy(() => import('./navigation'));
-const ProfileAppeals = lazy(() => import('./profile/ui/profile-appeals/ProfileAppeals'));
-const ProfileFavorites = lazy(() => import('./profile/ui/profile-favorites/ProfileFavorites'));
-const ProfileInfo = lazy(() => import('./profile/ui/profile-info/ProfileInfo'));
-const ProfileMain = lazy(() => import('./profile/ui/profile-main/ProfileMain'));
-const ProfilePurchases = lazy(() => import('./profile/ui/profile-purchases/ProfilePurchases'));
-const ProfileReviews = lazy(() => import('./profile/ui/profile-reviews/ProfileReviews'));
-const ProfileTravel = lazy(() => import('./profile/ui/profile-travel/ProfileTravel'));
-const ProfileDelivery = lazy(() => import('./profile/ui/profile-delivery/ProfileDelivery'));
+const ProfileAppeals = lazy(() => import('./profile/profile-appeals'));
+const ProfileFavorites = lazy(() => import('./profile/profile-favorites'));
+const ProfileInfo = lazy(() => import('./profile/profile-info'));
+const ProfileMain = lazy(() => import('./profile/profile-main'));
+const ProfilePurchases = lazy(() => import('./profile/profile-purchases'));
+const ProfileReviews = lazy(() => import('./profile/profile-reviews'));
+const ProfileTravel = lazy(() => import('./profile/profile-travel'));
+const ProfileDelivery = lazy(() => import('./profile/profile-delivery'));
 
 const Routing = () => {
    const { isOpen: isBurgerOpen } = useAppSelector((state) => state.burgerReducer);

@@ -1,3 +1,3 @@
-import Navigation from './ui/Navigation';
+import Navigation from './ui';
 
 export default Navigation;

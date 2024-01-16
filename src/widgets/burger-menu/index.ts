@@ -1,1 +1,2 @@
-export { BurgerMenu } from './ui/BurgerMenu';
+export * from './model';
+export * from './ui';

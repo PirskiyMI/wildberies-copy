@@ -1,2 +1,2 @@
-export { Order } from './ui/Order';
-export * from './model/orderSlice';
+export * from './ui';
+export * from './model';

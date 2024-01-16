@@ -1,9 +1,10 @@
-import { CartOrder } from '../../../widgets/cart';
-import styles from './Cart.module.scss';
-
 import { FC } from 'react';
 
-const CartRightSide: FC = () => {
+import styles from './styles.module.scss';
+
+import { CartOrder } from '../../../widgets/cart';
+
+export const CartRightSide: FC = () => {
    return (
       <div className={styles.cart__right}>
          <CartOrder />
@@ -11,4 +12,3 @@ const CartRightSide: FC = () => {
    );
 };
 
-export default CartRightSide;

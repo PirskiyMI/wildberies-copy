@@ -1,1 +1,1 @@
-export { Recipient } from './ui/Recipient';
+export * from './ui';

@@ -1,1 +1,1 @@
-export { RecipientForm } from './ui/RecipientForm';
+export * from './ui';

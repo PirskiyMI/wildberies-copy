@@ -1,4 +1,4 @@
-export { Button } from './button/Button';
-export { DeleteButton } from './delete-button/DeleteButton';
-export { FavoriteButton } from './favorite-button/FavoriteButton';
-export { CountButton } from './count-button/CountButton';
+export * from './button';
+export * from './delete-button';
+export * from './favorite-button';
+export * from './count-button';

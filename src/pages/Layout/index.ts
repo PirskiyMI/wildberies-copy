@@ -1,2 +1,2 @@
-export { Layout } from './ui/Layout';
-export { windowWidthSlice } from './model/slices/windowWidthSlice';
+export * from './ui';
+export * from './model/slices';

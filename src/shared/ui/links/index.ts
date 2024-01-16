@@ -1,2 +1,2 @@
-export { HeaderLink } from './header-links/HeaderLink';
-export { ProfileLink } from './profile-link/ProfileLink';
+export * from './header-links';
+export * from './profile-link';

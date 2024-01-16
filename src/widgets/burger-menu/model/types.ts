@@ -1,8 +1,8 @@
-import { Icon } from '../../../shared/lib';
+import { TIcon } from '../../../shared/lib';
 
 export interface IMenuList {
    id: string;
    title: string;
    path: string;
-   icon: Icon;
+   icon: TIcon;
 }

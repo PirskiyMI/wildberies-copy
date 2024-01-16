@@ -1,12 +1,12 @@
-import styles from './Cart.module.scss';
-
 import { FC } from 'react';
+
+import styles from './styles.module.scss';
 
 import { Payment } from '../../../widgets/payment';
 import { Recipient } from '../../../widgets/recipient';
 import { CartSpoiler } from '../../../widgets/cart';
 
-const CartLeftSide: FC = () => {
+export const CartLeftSide: FC = () => {
    return (
       <div className={styles.cart__left}>
          <CartSpoiler />
@@ -15,5 +15,3 @@ const CartLeftSide: FC = () => {
       </div>
    );
 };
-
-export default CartLeftSide;

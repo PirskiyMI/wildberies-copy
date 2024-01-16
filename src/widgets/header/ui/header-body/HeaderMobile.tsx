@@ -1,8 +1,10 @@
 import { FC } from 'react';
-import styles from './Header.module.scss';
+
+import styles from './styles.module.scss';
+
 import { useAppSelector } from '../../../../shared/lib';
 import { SearchForm } from '../../../../features/search';
-import { ToggleSearchField } from '../../../../features/search/ui/toggle-search/ToggleSearchField';
+import { ToggleSearchField } from '../../../../features/search/ui/toggle-search';
 import { Logo } from '../../../../shared/ui';
 
 export const HeaderMobile: FC = () => {

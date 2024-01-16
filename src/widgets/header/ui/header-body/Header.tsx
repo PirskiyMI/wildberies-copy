@@ -1,12 +1,12 @@
-import styles from './Header.module.scss';
-
 import { FC } from 'react';
 
-import { HeaderLabel } from '../header-label/HeaderLabel';
-import { HeaderNavigation } from '../header-nav/HeaderNavigation';
+import styles from './styles.module.scss';
+
+import { HeaderLabel } from '../header-label';
+import { HeaderNavigation } from '../header-nav';
 import { useAppSelector } from '../../../../shared/lib';
 
-import { HeaderMobileMenu } from '../header-mobile-menu/HeaderMobileMenu';
+import { HeaderMobileMenu } from '../header-mobile-menu';
 import { HeaderMobile } from './HeaderMobile';
 import { SearchForm } from '../../../../features/search';
 

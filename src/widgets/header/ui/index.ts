@@ -1,1 +1,1 @@
-export { Header } from './header-body/Header';
+export * from './header-body';
