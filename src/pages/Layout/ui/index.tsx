@@ -75,7 +75,9 @@ export const Layout: FC = () => {
                <Outlet />
             </Suspense>
          </main>
-         {isButtonVisible && windowWidth >= 1024 && <ScrollToTop />}
+         {isButtonVisible && windowWidth >= 1024 && (
+            <ScrollToTop className={styles.layout__button} />
+         )}
 
          <Footer />
       </>
