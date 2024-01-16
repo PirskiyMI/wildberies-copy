@@ -62,7 +62,7 @@ export const SelectList: FC<SelectListProps> = ({ options, setSort, value, setVa
                </li>
             ))}
          </ul>
-         <div className={styles.background} />
+         <div className={styles.backdrop} />
       </>,
       selectElement,
    );
