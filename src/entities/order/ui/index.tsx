@@ -1,9 +1,8 @@
 import { FC, ReactNode } from 'react';
 
-import styles from './styles.module.scss';
+import { Icon, Price, Section, useAppSelector } from 'src/shared';
 
-import { Icon, Price, Section } from '../../../shared/ui';
-import { useAppSelector } from '../../../shared/lib';
+import styles from './styles.module.scss';
 
 type Props = {
    Button: ReactNode;

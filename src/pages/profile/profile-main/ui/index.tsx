@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
-import styles from './styles.module.scss';
+import { ProfileGrid } from 'src/widgets/profile';
 
-import { ProfileGrid } from '../../../../widgets/profile';
+import styles from './styles.module.scss';
 
 const ProfileMain: FC = () => {
    return (

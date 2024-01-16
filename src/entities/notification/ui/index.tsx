@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
-import styles from './styles.module.scss';
+import { Icon } from 'src/shared';
 
-import { Icon } from '../../../shared/ui';
+import styles from './styles.module.scss';
 
 export const Notification: FC = () => {
    return (

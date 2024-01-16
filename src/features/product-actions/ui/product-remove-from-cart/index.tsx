@@ -1,9 +1,8 @@
 import { FC } from 'react';
 
-import { useAppDispatch } from '../../../../shared/lib';
-import { DeleteButton } from '../../../../shared/ui';
+import { DeleteButton, useAppDispatch } from 'src/shared';
 
-import { deleteProduct } from '../../model/slices/basketListSlice';
+import { deleteProduct } from '../..';
 
 type Props = {
    id: number;

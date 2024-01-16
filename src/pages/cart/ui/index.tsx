@@ -1,10 +1,9 @@
 import { FC } from 'react';
 
-import styles from './styles.module.scss';
+import { useAppSelector } from 'src/shared';
+import { CartEmpty, CartSlider } from 'src/widgets/cart';
 
-import { useAppSelector } from '../../../shared/lib';
-import { CartEmpty } from '../../../widgets/cart';
-import { CartSlider } from '../../../widgets/cart';
+import styles from './styles.module.scss';
 
 import { useSetCount } from '../lib';
 import { CartLeftSide } from './CartLeftSide';

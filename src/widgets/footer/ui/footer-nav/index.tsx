@@ -2,8 +2,7 @@ import { FC } from 'react';
 
 import styles from './styles.module.scss';
 
-import { useAppSelector } from '../../../../shared/lib';
-import { Spoiler } from '../../../../shared/ui';
+import { useAppSelector, Spoiler } from 'src/shared';
 
 type TLink = {
    title: string;

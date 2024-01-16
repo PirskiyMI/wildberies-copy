@@ -1,10 +1,9 @@
 import { FC } from 'react';
 
-import styles from './styles.module.scss';
+import { Icon, useAppDispatch } from 'src/shared';
+import { deleteCard } from 'src/entities/user';
 
-import { Icon } from '../../../../shared/ui';
-import { useAppDispatch } from '../../../../shared/lib';
-import { deleteCard } from '../../../../entities/user';
+import styles from './styles.module.scss';
 
 type Props = {
    id: number;

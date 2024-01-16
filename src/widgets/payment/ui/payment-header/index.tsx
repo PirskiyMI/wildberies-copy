@@ -1,7 +1,8 @@
-import { Button } from '../../../../shared/ui';
-import styles from './styles.module.scss';
-
 import { FC } from 'react';
+
+import { Button } from 'src/shared';
+
+import styles from './styles.module.scss';
 
 export const PaymentHeader: FC = () => {
    return (

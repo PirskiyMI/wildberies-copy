@@ -1,9 +1,8 @@
 import { FC, ReactNode, useEffect, useState } from 'react';
 
-import styles from './styles.module.scss';
+import { IProductWithStatus, useAppSelector, Price } from 'src/shared';
 
-import { Price } from '../../../../shared/ui';
-import { IProductWithStatus, useAppSelector } from '../../../../shared/lib';
+import styles from './styles.module.scss';
 
 type Props = {
    product: IProductWithStatus;

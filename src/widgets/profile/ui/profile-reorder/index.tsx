@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 
-import styles from './styles.module.scss';
+import { Button } from 'src/shared';
 
-import { Button } from '../../../../shared/ui';
+import styles from './styles.module.scss';
 
 type Props = {
    title: string;

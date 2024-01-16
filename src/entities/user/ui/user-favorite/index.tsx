@@ -1,8 +1,8 @@
 import { FC, useEffect, useState } from 'react';
 
-import styles from './styles.module.scss';
+import { useAppSelector } from 'src/shared';
 
-import { useAppSelector } from '../../../../shared/lib';
+import styles from './styles.module.scss';
 
 const UserFavoriteTop: FC = () => {
    return <h2 className={styles.favorite__title}>Избранное</h2>;

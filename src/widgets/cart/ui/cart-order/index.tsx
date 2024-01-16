@@ -1,6 +1,7 @@
 import { FC } from 'react';
-import { Order } from '../../../../entities/order';
-import { Button } from '../../../../shared/ui';
+
+import { Button } from 'src/shared';
+import { Order } from 'src/entities/order';
 
 export const CartOrder: FC = () => {
    return <Order Button={<Button>Заказать</Button>} />;

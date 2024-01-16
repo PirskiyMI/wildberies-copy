@@ -1,5 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { IProductWithRating } from '../../../../shared/lib';
+
+import { IProductWithRating } from 'src/shared';
 
 interface ICartSpoilerList {
    list: IProductWithRating[];

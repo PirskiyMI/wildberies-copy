@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
-import styles from './styles.module.scss';
+import { Burger, Logo } from 'src/shared';
 
-import { Burger, Logo } from '../../../../shared/ui';
+import styles from './styles.module.scss';
 
 export const HeaderLabel: FC = () => {
    return (

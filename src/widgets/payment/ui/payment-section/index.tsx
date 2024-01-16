@@ -1,6 +1,7 @@
 import { FC } from 'react';
 
-import { Section } from '../../../../shared/ui';
+import { Section } from 'src/shared';
+
 import { PaymentHeader } from '../payment-header';
 import { PaymentBody } from '../payment-body';
 

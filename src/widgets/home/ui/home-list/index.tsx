@@ -1,13 +1,13 @@
 import { FC } from 'react';
 
-import { IProductWithRating } from '../../../../shared/lib';
-import { ProductCard, ProductList } from '../../../../entities/product';
-import { SearchIsEmpty } from '../../../../entities/search-is-empty';
+import { IProductWithRating } from 'src/shared';
+import { ProductCard, ProductList } from 'src/entities/product';
+import { SearchIsEmpty } from 'src/entities/search-is-empty';
 import {
    ProductAddToCart,
    ProductQuickView,
    ProductToggleToFavorite,
-} from '../../../../features/product-actions';
+} from 'src/features/product-actions';
 
 type Props = {
    search?: string;

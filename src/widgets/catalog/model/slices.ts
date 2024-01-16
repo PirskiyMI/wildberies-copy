@@ -1,6 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchCategoryProducts } from '../api/actions';
-import { IProductWithRating } from '../../../shared/lib';
+
+import { IProductWithRating } from 'src/shared';
+
+import { fetchCategoryProducts } from '../api';
 
 interface IState {
    list: IProductWithRating[];

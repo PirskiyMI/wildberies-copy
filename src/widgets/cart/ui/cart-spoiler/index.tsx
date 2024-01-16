@@ -1,15 +1,10 @@
 import { FC } from 'react';
 
-import styles from './styles.module.scss';
+import { useAppSelector, Section, Spoiler } from 'src/shared';
+import { BasketInfo, BasketItem } from 'src/entities/basket';
+import { ProductCounter, ProductRemoveFromCart, ProductSelect } from 'src/features/product-actions';
 
-import { useAppSelector } from '../../../../shared/lib';
-import { Section, Spoiler } from '../../../../shared/ui';
-import { BasketInfo, BasketItem } from '../../../../entities/basket';
-import {
-   ProductCounter,
-   ProductRemoveFromCart,
-   ProductSelect,
-} from '../../../../features/product-actions';
+import styles from './styles.module.scss';
 
 const CartList: FC = () => {
    const { list } = useAppSelector((state) => state.basketListReducer);

@@ -1,11 +1,10 @@
 import { FC, useEffect, useState } from 'react';
 
-import styles from './styles.module.scss';
+import { useAppSelector, Select } from 'src/shared';
+import { UserFavoritesList } from 'src/widgets/user-favorites';
+import { ProfileReorder } from 'src/widgets/profile';
 
-import { UserFavoritesList } from '../../../../widgets/user-favorites';
-import { useAppSelector } from '../../../../shared/lib';
-import { Select } from '../../../../shared/ui';
-import { ProfileReorder } from '../../../../widgets/profile';
+import styles from './styles.module.scss';
 
 const ProfileFavorites: FC = () => {
    const { favorites } = useAppSelector((state) => state.userReducer);

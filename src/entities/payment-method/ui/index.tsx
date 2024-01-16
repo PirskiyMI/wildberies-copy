@@ -1,8 +1,8 @@
 import { FC, ReactNode } from 'react';
 
-import styles from './styles.module.scss';
+import { useAppSelector } from 'src/shared';
 
-import { useAppSelector } from '../../../shared/lib';
+import styles from './styles.module.scss';
 
 type Props = {
    number: string;

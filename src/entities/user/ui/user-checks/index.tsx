@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
-import styles from './styles.module.scss';
+import { useAppSelector } from 'src/shared';
 
-import { useAppSelector } from '../../../../shared/lib';
+import styles from './styles.module.scss';
 
 export const UserChecks: FC = () => {
    const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);

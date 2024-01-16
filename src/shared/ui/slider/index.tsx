@@ -1,6 +1,6 @@
 import { Children, FC, ReactNode, useEffect, useRef, useState } from 'react';
 
-import styles from './Slider.module.scss';
+import styles from './styles.module.scss';
 import { useAppSelector } from '../../lib';
 import { Icon } from '..';
 

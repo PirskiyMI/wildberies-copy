@@ -1,9 +1,8 @@
 import { FC } from 'react';
 
-import styles from './styles.module.scss';
+import { Icon, useAppSelector } from 'src/shared';
 
-import { Icon } from '../../../../shared/ui';
-import { useAppSelector } from '../../../../shared/lib';
+import styles from './styles.module.scss';
 
 const UserDeliveryImage = () => {
    return (

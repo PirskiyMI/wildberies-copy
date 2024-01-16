@@ -1,11 +1,17 @@
 import { FC, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 
-import styles from './styles.module.scss';
+import {
+   IProductWithRating,
+   Icon,
+   Rating,
+   closeModal,
+   priceFormatter,
+   setProductToModal,
+   useAppDispatch,
+} from 'src/shared';
 
-import { closeModal, setProductToModal } from '../../../../shared/model';
-import { Icon, Rating } from '../../../../shared/ui';
-import { IProductWithRating, priceFormatter, useAppDispatch } from '../../../../shared/lib';
+import styles from './styles.module.scss';
 
 type Props = {
    product: IProductWithRating;

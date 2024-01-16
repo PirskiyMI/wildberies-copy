@@ -1,13 +1,17 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 
+import {
+   Button,
+   IProduct,
+   closeModal,
+   setProductToModal,
+   useAppDispatch,
+   useAppSelector,
+} from 'src/shared';
+import { useAddToCart } from '../../lib';
+
 import styles from './styles.module.scss';
-
-import { IProduct, useAppDispatch, useAppSelector } from '../../../../shared/lib';
-import { Button } from '../../../../shared/ui';
-import { closeModal, setProductToModal } from '../../../../shared/model';
-
-import { useAddToCart } from '../../lib/hooks/useAddToCart';
 
 type Props = {
    product: IProduct;

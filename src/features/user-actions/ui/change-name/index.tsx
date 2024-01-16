@@ -1,11 +1,9 @@
 import { FC, FormEvent } from 'react';
 
-import styles from './styles.module.scss';
+import { useAppDispatch, useAppSelector, useInput, Button, Field, closeModal } from 'src/shared';
+import { setName } from 'src/entities/user';
 
-import { useAppDispatch, useAppSelector, useInput } from '../../../../shared/lib';
-import { setName } from '../../../../entities/user';
-import { Button, Field } from '../../../../shared/ui';
-import { closeModal } from '../../../../shared/model';
+import styles from './styles.module.scss';
 
 export const ChangeName: FC = () => {
    const { name } = useAppSelector((state) => state.userReducer);

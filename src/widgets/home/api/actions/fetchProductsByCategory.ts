@@ -1,6 +1,7 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { IProductWithRating } from '../../../../shared/lib/types';
+import { createAsyncThunk } from '@reduxjs/toolkit';
+
+import { IProductWithRating } from 'src/shared';
 
 export const fetchProductsByCategory = createAsyncThunk<
    IProductWithRating[],

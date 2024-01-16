@@ -1,10 +1,9 @@
 import { FC, Children, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 
-import styles from './styles.module.scss';
+import { IProductWithRating, Rating, priceFormatter, useAppSelector } from 'src/shared';
 
-import { Rating } from '../../../../shared/ui';
-import { IProductWithRating, priceFormatter, useAppSelector } from '../../../../shared/lib';
+import styles from './styles.module.scss';
 
 type Props = {
    product: IProductWithRating;

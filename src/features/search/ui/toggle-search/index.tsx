@@ -1,10 +1,8 @@
 import { FC } from 'react';
 
-import styles from './styles.module.scss';
+import { Icon, toggleSearch, useAppDispatch } from 'src/shared';
 
-import { Icon } from '../../../../shared/ui';
-import { useAppDispatch } from '../../../../shared/lib';
-import { toggleSearch } from '../../../../shared/model';
+import styles from './styles.module.scss';
 
 type Props = {
    isOpen: boolean;

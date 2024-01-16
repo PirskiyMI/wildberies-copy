@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
-import styles from './styles.module.scss';
+import { phoneFormatter, useAppSelector } from 'src/shared';
 
-import { phoneFormatter, useAppSelector } from '../../../../shared/lib';
+import styles from './styles.module.scss';
 
 export const UserPhone: FC = () => {
    const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);

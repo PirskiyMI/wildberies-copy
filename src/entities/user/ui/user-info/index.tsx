@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 
-import styles from './styles.module.scss';
+import { phoneFormatter, useAppSelector } from 'src/shared';
 
-import { phoneFormatter, useAppSelector } from '../../../../shared/lib';
+import styles from './styles.module.scss';
 
 const UserInfoTop: FC = () => {
    const { name } = useAppSelector((state) => state.userReducer);

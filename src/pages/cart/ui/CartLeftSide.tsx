@@ -1,10 +1,10 @@
 import { FC } from 'react';
 
-import styles from './styles.module.scss';
+import { Payment } from 'src/widgets/payment';
+import { Recipient } from 'src/widgets/recipient';
+import { CartSpoiler } from 'src/widgets/cart';
 
-import { Payment } from '../../../widgets/payment';
-import { Recipient } from '../../../widgets/recipient';
-import { CartSpoiler } from '../../../widgets/cart';
+import styles from './styles.module.scss';
 
 export const CartLeftSide: FC = () => {
    return (

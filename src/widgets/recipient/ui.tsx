@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-import { Section } from '../../shared/ui';
-import { RecipientForm } from '../../features/recipient-form';
+import { Section } from 'src/shared';
+import { RecipientForm } from 'src/features/recipient-form';
 
 export const Recipient: FC = () => {
    return (

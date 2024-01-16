@@ -1,10 +1,9 @@
 import { FC } from 'react';
 
-import styles from './styles.module.scss';
+import { Section, useAppSelector } from 'src/shared';
+import { UserDetailsIndicator } from 'src/entities/user';
 
-import { Section } from '../../../../shared/ui';
-import { useAppSelector } from '../../../../shared/lib';
-import { UserDetailsIndicator } from '../../../../entities/user';
+import styles from './styles.module.scss';
 
 export const UserMetrics: FC = () => {
    const { discount, ransomAmount, redemptionPercentage } = useAppSelector(

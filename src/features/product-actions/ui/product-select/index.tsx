@@ -1,10 +1,9 @@
 import { ChangeEventHandler, FC } from 'react';
+
+import { Icon, useAppDispatch } from 'src/shared';
+
 import styles from './styles.module.scss';
-
-import { useAppDispatch } from '../../../../shared/lib';
-import { Icon } from '../../../../shared/ui';
-
-import { toggleProductIsChecked } from '../../model/slices/basketListSlice';
+import { toggleProductIsChecked } from '../..';
 
 type Props = {
    isChecked: boolean;

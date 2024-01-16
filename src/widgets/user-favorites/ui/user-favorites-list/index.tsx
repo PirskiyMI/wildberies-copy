@@ -1,14 +1,14 @@
 import { FC } from 'react';
 
-import styles from './styles.module.scss';
-
-import { IProductWithRating } from '../../../../shared/lib';
-import { ProductCard, ProductList } from '../../../../entities/product';
+import { IProductWithRating } from 'src/shared';
+import { ProductCard, ProductList } from 'src/entities/product';
 import {
    ProductAddToCart,
    ProductQuickView,
    ProductToggleToFavorite,
-} from '../../../../features/product-actions';
+} from 'src/features/product-actions';
+
+import styles from './styles.module.scss';
 
 type Props = {
    products: IProductWithRating[];

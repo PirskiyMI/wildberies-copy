@@ -1,11 +1,10 @@
 import { FC, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import styles from './styles.module.scss';
+import { Preloader, useAppDispatch, useAppSelector } from 'src/shared';
+import { CatalogList, fetchCategoryProducts } from 'src/widgets/catalog';
 
-import { Preloader } from '../../../shared/ui';
-import { useAppDispatch, useAppSelector } from '../../../shared/lib';
-import { CatalogList, fetchCategoryProducts } from '../../../widgets/catalog';
+import styles from './styles.module.scss';
 
 const CatalogPage: FC = () => {
    const { category } = useParams();

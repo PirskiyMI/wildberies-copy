@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import { Modal } from '../../shared/ui';
-import { useAppSelector } from '../../shared/lib';
-import { ProductModal as ProductModalBody } from '../../entities/product';
-import { ProductQuickViewAddToCart } from '../../features/product-actions';
+
+import { Modal, useAppSelector } from 'src/shared';
+import { ProductModal as ProductModalBody } from 'src/entities/product';
+import { ProductQuickViewAddToCart } from 'src/features/product-actions';
 
 export const ProductModal: FC = () => {
    const { product } = useAppSelector((state) => state.modalReducer);

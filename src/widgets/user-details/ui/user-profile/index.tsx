@@ -1,12 +1,10 @@
 import { FC } from 'react';
 
-import styles from './styles.module.scss';
+import { useAppDispatch, useAppSelector, openModal, Icon, Modal, Section } from 'src/shared';
+import { UserDetailsGender, UserDetailsInfo, UserDetailsPhone } from 'src/entities/user';
+import { ChangeName, GenderRadio } from 'src/features/user-actions';
 
-import { useAppDispatch, useAppSelector } from '../../../../shared/lib';
-import { openModal } from '../../../../shared/model';
-import { Icon, Modal, Section } from '../../../../shared/ui';
-import { UserDetailsGender, UserDetailsInfo, UserDetailsPhone } from '../../../../entities/user';
-import { ChangeName, GenderRadio } from '../../../../features/user-actions';
+import styles from './styles.module.scss';
 
 export const UserProfile: FC = () => {
    const { isModalOpen } = useAppSelector((state) => state.modalReducer);
@@ -27,7 +25,7 @@ export const UserProfile: FC = () => {
          />
          <div className={styles.profile__bottom}>
             <UserDetailsPhone className={styles.profile__item} />
-            <UserDetailsGender className={styles.profile__item} children={<GenderRadio/>} />
+            <UserDetailsGender className={styles.profile__item} children={<GenderRadio />} />
          </div>
 
          {isModalOpen && (

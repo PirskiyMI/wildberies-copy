@@ -1,8 +1,9 @@
 import { FC } from 'react';
 
+import { getNoun } from 'src/shared';
+
 import styles from './styles.module.scss';
 
-import { getNoun } from '../../../../shared/lib';
 
 type Props = {
    price: number;

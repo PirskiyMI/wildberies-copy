@@ -1,7 +1,8 @@
 import { FC, useState } from 'react';
-import styles from './SearchForm.module.scss';
 
-import { SearchField } from '../../../../shared/ui';
+import { SearchField } from 'src/shared';
+
+import styles from './styles.module.scss';
 
 import { ClearSearchField } from '../clear-search';
 import { SetSearchValue } from '../set-search';

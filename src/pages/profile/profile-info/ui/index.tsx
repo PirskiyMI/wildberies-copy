@@ -1,12 +1,8 @@
 import { FC } from 'react';
 
-import styles from './styles.module.scss';
+import { UserMetrics, UserPaymentMethodsWidget, UserProfile } from 'src/widgets/user-details';
 
-import {
-   UserMetrics,
-   UserPaymentMethodsWidget,
-   UserProfile,
-} from '../../../../widgets/user-details';
+import styles from './styles.module.scss';
 
 const ProfileInfo: FC = () => {
    return (

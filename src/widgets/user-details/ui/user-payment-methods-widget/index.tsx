@@ -2,10 +2,9 @@ import { FC, useState } from 'react';
 
 import styles from './styles.module.scss';
 
-import { Modal, Section } from '../../../../shared/ui';
-import { useAppSelector } from '../../../../shared/lib';
-import { PaymentMethod } from '../../../../entities/payment-method';
-import { AddCard, DeleteCard } from '../../../../features/user-actions';
+import { Modal, Section, useAppSelector } from 'src/shared';
+import { PaymentMethod } from 'src/entities/payment-method';
+import { AddCard, DeleteCard } from 'src/features/user-actions';
 
 export const UserPaymentMethodsWidget: FC = () => {
    const [isModal, setIsModal] = useState(false);

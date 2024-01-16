@@ -1,5 +1,7 @@
 import { FC } from 'react';
-import styles from './Burger.module.scss';
+
+import styles from './styles.module.scss';
+
 import { Icon } from '../icon';
 import { useAppDispatch, useAppSelector } from '../../lib';
 import { toggleMenu } from '../../model/slices/burgerSlice';

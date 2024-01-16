@@ -1,9 +1,8 @@
 import { FC } from 'react';
 
-import styles from './styles.module.scss';
+import { HeaderLink, useAppSelector } from 'src/shared';
 
-import { HeaderLink } from '../../../../shared/ui/links';
-import { useAppSelector } from '../../../../shared/lib';
+import styles from './styles.module.scss';
 
 export const HeaderNavigation: FC = () => {
    const { count } = useAppSelector((state) => state.basketInfoReducer);

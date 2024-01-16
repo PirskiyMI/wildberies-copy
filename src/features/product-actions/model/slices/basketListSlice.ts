@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IProductWithStatus } from '../../../../shared/lib';
+
+import { IProductWithStatus } from 'src/shared';
 
 export interface IState {
    list: IProductWithStatus[];

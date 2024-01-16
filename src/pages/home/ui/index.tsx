@@ -1,11 +1,11 @@
 import { FC, useEffect, useState } from 'react';
 
-import styles from './styles.module.scss';
+import { IProductWithRating, useAppDispatch, useAppSelector } from 'src/shared';
+import { HomeList, HomePreloader } from 'src/widgets/home';
+import { ProductModal } from 'src/widgets/product-modal';
+import { fetchAllProducts } from 'src/widgets/home';
 
-import { IProductWithRating, useAppDispatch, useAppSelector } from '../../../shared/lib';
-import { HomeList, HomePreloader } from '../../../widgets/home';
-import { ProductModal } from '../../../widgets/product-modal';
-import { fetchAllProducts } from '../../../widgets/home';
+import styles from './styles.module.scss';
 
 const Home: FC = () => {
    const { value: searchValue } = useAppSelector((state) => state.searchReducer);

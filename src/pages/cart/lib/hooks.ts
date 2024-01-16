@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 
-import { IProductWithStatus, useAppDispatch } from '../../../shared/lib';
-import { setCount, setPrice } from '../../../entities/order';
-import { setTotalCount, setTotalPrice } from '../../../features/product-actions';
+import { IProductWithStatus, useAppDispatch } from 'src/shared';
+import { setCount, setPrice } from 'src/entities/order';
+import { setTotalCount, setTotalPrice } from 'src/features/product-actions';
 
 type Props = {
    list: IProductWithStatus[];

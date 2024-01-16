@@ -1,15 +1,9 @@
 import { FC, FormEvent } from 'react';
 
-import styles from './styles.module.scss';
+import { Field, cardNumberFormatter, dateFormatter, useAppDispatch, useInput } from 'src/shared';
+import { addCard } from 'src/entities/user';
 
-import { Field } from '../../../../shared/ui';
-import {
-   cardNumberFormatter,
-   dateFormatter,
-   useAppDispatch,
-   useInput,
-} from '../../../../shared/lib';
-import { addCard } from '../../../../entities/user';
+import styles from './styles.module.scss';
 
 export const AddCard: FC = () => {
    const {

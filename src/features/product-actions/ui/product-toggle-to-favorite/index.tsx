@@ -1,11 +1,8 @@
 import { FC } from 'react';
 
-import { toggleToFavorite } from '../../../../widgets/home/model';
-
-import { addToFavorites, removeFromFavorites } from '../../../../entities/user';
-
-import { FavoriteButton } from '../../../../shared/ui';
-import { IProductWithRating, useAppDispatch } from '../../../../shared/lib';
+import { FavoriteButton, IProductWithRating, useAppDispatch } from 'src/shared';
+import { addToFavorites, removeFromFavorites } from 'src/entities/user';
+import { toggleToFavorite } from 'src/widgets/home';
 
 type Props = {
    product: IProductWithRating;

@@ -1,7 +1,6 @@
 import { Dispatch, FC, SetStateAction } from 'react';
-import { Icon } from '../../../../shared/ui';
-import { useAppDispatch } from '../../../../shared/lib';
-import { setSearch } from '../../../../shared/model';
+
+import { Icon, setSearch, useAppDispatch } from 'src/shared';
 
 type Props = {
    setValue: Dispatch<SetStateAction<string>>;

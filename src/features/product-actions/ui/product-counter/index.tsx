@@ -1,9 +1,9 @@
 import { FC } from 'react';
 
-import styles from './styles.module.scss';
+import { CountButton } from 'src/shared';
 
-import { CountButton } from '../../../../shared/ui';
-import { useCounterActions } from '../../lib/hooks/useCounterActions';
+import styles from './styles.module.scss';
+import { useCounterActions } from '../../lib';
 
 type Props = {
    id: number;

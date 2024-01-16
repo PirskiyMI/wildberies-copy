@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
-import styles from './styles.module.scss';
+import { CartOrder } from 'src/widgets/cart';
 
-import { CartOrder } from '../../../widgets/cart';
+import styles from './styles.module.scss';
 
 export const CartRightSide: FC = () => {
    return (
@@ -11,4 +11,3 @@ export const CartRightSide: FC = () => {
       </div>
    );
 };
-

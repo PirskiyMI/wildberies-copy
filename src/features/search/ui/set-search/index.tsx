@@ -1,8 +1,7 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
-import { Icon } from '../../../../shared/ui';
-import { useAppDispatch } from '../../../../shared/lib';
-import { setSearch } from '../../../../shared/model';
+
+import { Icon, setSearch, useAppDispatch } from 'src/shared';
 
 type Props = {
    value: string;

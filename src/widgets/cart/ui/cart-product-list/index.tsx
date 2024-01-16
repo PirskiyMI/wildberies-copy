@@ -1,11 +1,10 @@
 import { FC } from 'react';
 
-import styles from './styles.module.scss';
+import { useAppSelector, Section } from 'src/shared';
+import { ProductCard, ProductList } from 'src/entities/product';
+import { ProductAddToCart, ProductQuickView } from 'src/features/product-actions';
 
-import { useAppSelector } from '../../../../shared/lib';
-import { Section } from '../../../../shared/ui';
-import { ProductCard, ProductList } from '../../../../entities/product';
-import { ProductAddToCart, ProductQuickView } from '../../../../features/product-actions';
+import styles from './styles.module.scss';
 
 export const CartProductList: FC = () => {
    const { list } = useAppSelector((state) => state.cartSliderReducer);

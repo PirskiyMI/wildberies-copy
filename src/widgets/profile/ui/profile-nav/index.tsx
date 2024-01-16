@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
-import styles from './styles.module.scss';
+import { ProfileLink } from 'src/shared';
 
-import { ProfileLink } from '../../../../shared/ui/links';
+import styles from './styles.module.scss';
 
 export const ProfileNav: FC = () => {
    return (

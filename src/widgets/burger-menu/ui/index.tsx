@@ -1,11 +1,9 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 
-import styles from './styles.module.scss';
+import { useAppDispatch, useAppSelector, closeMenu, Icon } from 'src/shared';
 
-import { useAppDispatch, useAppSelector } from '../../../shared/lib';
-import { Icon } from '../../../shared/ui';
-import { closeMenu } from '../../../shared/model';
+import styles from './styles.module.scss';
 
 import { IMenuList } from '../model';
 

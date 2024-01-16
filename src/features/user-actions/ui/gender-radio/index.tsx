@@ -1,10 +1,9 @@
 import { FC } from 'react';
 
-import styles from './styles.module.scss';
+import { Radio, useAppDispatch, useAppSelector } from 'src/shared';
+import { setGender } from 'src/entities/user';
 
-import { useAppDispatch, useAppSelector } from '../../../../shared/lib';
-import { setGender } from '../../../../entities/user';
-import { Radio } from '../../../../shared/ui/radio';
+import styles from './styles.module.scss';
 
 export const GenderRadio: FC = () => {
    const { isMale } = useAppSelector((state) => state.userReducer);

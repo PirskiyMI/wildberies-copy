@@ -1,9 +1,8 @@
 import { FC } from 'react';
 
-import styles from './styles.module.scss';
+import { Field, useInput } from 'src/shared';
 
-import { Field } from '../../../shared/ui';
-import { useInput } from '../../../shared/lib';
+import styles from './styles.module.scss';
 
 export const RecipientForm: FC = () => {
    const {

@@ -2,8 +2,7 @@ import { FC } from 'react';
 
 import styles from './styles.module.scss';
 
-import { HeaderLink } from '../../../../shared/ui/links';
-import { useAppSelector } from '../../../../shared/lib';
+import { HeaderLink, useAppSelector } from 'src/shared';
 
 export const HeaderMobileMenu: FC = () => {
    const { count } = useAppSelector((state) => state.basketInfoReducer);

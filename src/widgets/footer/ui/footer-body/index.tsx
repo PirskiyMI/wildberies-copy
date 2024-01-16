@@ -9,7 +9,7 @@ import {
    projectLinks,
    customerLinks,
    partnersLinks,
-} from '../../config/data';
+} from '../../config';
 
 export const Footer: FC = () => {
    return (

@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
-import { IProductWithRating } from '../../shared/lib';
-import { ProductCard, ProductList } from '../../entities/product';
-import { ProductAddToCart, ProductQuickView } from '../../features/product-actions';
+import { IProductWithRating } from 'src/shared';
+import { ProductCard, ProductList } from 'src/entities/product';
+import { ProductAddToCart, ProductQuickView } from 'src/features/product-actions';
 
 type Props = {
    productList: IProductWithRating[];

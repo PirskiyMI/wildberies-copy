@@ -2,15 +2,15 @@ import { FC, Suspense, useEffect, useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 
-import { Preloader, ScrollToTop } from '../../../shared/ui';
-import { useAppDispatch, useAppSelector } from '../../../shared/lib';
-import { BurgerMenu } from '../../../widgets/burger-menu';
-import { Header } from '../../../widgets/header';
-import { Footer } from '../../../widgets/footer';
-import { ProfileNav } from '../../../widgets/profile';
-import { Notification } from '../../../entities/notification';
+import { Preloader, ScrollToTop, useAppDispatch, useAppSelector } from 'src/shared';
+import { Notification } from 'src/entities/notification';
+import { BurgerMenu } from 'src/widgets/burger-menu';
+import { Header } from 'src/widgets/header';
+import { Footer } from 'src/widgets/footer';
+import { ProfileNav } from 'src/widgets/profile';
 
-import styles from './Layout.module.scss';
+import styles from './styles.module.scss';
+
 import { menuList } from '../config';
 import { setWindowWidth } from '../model';
 
