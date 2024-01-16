@@ -5,7 +5,7 @@ import { ProductCard, ProductList } from 'src/entities/product';
 import {
    ProductAddToCart,
    ProductQuickView,
-   ProductToggleToFavorite,
+   ProductRemoveFromFavorites,
 } from 'src/features/product-actions';
 
 import styles from './styles.module.scss';
@@ -21,7 +21,7 @@ export const UserFavoritesList: FC<Props> = ({ products }) => {
             <div key={el.id} className={styles.item}>
                <ProductCard
                   product={el}
-                  addToFavoriteButton={<ProductToggleToFavorite product={el} />}>
+                  addToFavoriteButton={<ProductRemoveFromFavorites product={el} />}>
                   <ProductQuickView product={el} />
                   <ProductAddToCart
                      product={{

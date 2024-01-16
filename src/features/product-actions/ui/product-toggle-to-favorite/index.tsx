@@ -4,6 +4,8 @@ import { FavoriteButton, IProductWithRating, useAppDispatch } from 'src/shared';
 import { addToFavorites, removeFromFavorites } from 'src/entities/user';
 import { toggleToFavorite } from 'src/widgets/home';
 
+import styles from './styles.module.scss'
+
 type Props = {
    product: IProductWithRating;
 };
@@ -21,5 +23,5 @@ export const ProductToggleToFavorite: FC<Props> = ({ product }) => {
       }
    };
 
-   return <FavoriteButton clickHandler={clickHandler} />;
+   return <FavoriteButton clickHandler={clickHandler} className={styles.button}/>;
 };
