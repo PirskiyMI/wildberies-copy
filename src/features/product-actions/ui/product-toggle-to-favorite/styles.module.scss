@@ -1,0 +1,10 @@
+.button {
+   width: 20px;
+   height: 20px;
+   &:hover {
+      svg {
+         fill: var(--secondary-color);
+         stroke: var(--secondary-color);
+      }
+   }
+}

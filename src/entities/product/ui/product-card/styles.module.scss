@@ -165,12 +165,6 @@
             }
             .card__favorite {
                opacity: 1;
-               &:hover {
-                  svg {
-                     fill: var(--secondary-color);
-                     stroke: var(--secondary-color);
-                  }
-               }
             }
          }
       }

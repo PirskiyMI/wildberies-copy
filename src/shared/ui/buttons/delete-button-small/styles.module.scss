@@ -1,0 +1,24 @@
+.button {
+   padding: 10px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: rgb(255, 255, 255);
+   border-radius: 50%;
+   transition: background-color ease 0.2s;
+   svg {
+      min-width: 10px;
+      min-height: 10px;
+      fill: rgb(36, 36, 36);
+      transition: fill ease 0.2s;
+   }
+
+   @media (any-hover: hover) {
+      &:hover {
+         background-color: rgba(36, 36, 36, 0.7);
+         .button__icon {
+            fill: rgb(255, 255, 255);
+         }
+      }
+   }
+}

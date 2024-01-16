@@ -5,7 +5,7 @@
    width: 100vw;
    height: 100vh;
    z-index: 10;
-   background-color: var(--background-color-light-black);
+   background-color: rgba(var(--color-dark), 0.5);
    &__wrapper {
       position: absolute;
       top: 50%;
