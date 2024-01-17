@@ -17,7 +17,8 @@ export const useInput = (
    const onChange = (e: ChangeEvent<HTMLInputElement>) => {
       setDirty(false);
       if (isPhone) {
-         if (!e.target.value.match(phoneRegExp)) {
+         const value = e.target.value.replace(/[^0-9]/g, '');
+         if (!e.target.value.match(phoneRegExp) && value.length <= 11) {
             setValue(e.target.value);
          } else if (e.target.value.length === 0) {
             setValue('');
