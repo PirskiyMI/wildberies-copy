@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import { useAppSelector } from '../shared/lib';
 import { Layout } from './Layout';
 import { lazy, useEffect } from 'react';
+import ErrorPage from './error';
 
 const Home = lazy(() => import('./home'));
 const Catalog = lazy(() => import('./catalog'));
@@ -44,6 +45,8 @@ const Routing = () => {
                <Route path="/profile/reviews" element={<ProfileReviews />} />
                <Route path="/profile/travel" element={<ProfileTravel />} />
                <Route path="/profile/delivery" element={<ProfileDelivery />} />
+            </Route>
+            <Route path='error' element={<ErrorPage/>}>
             </Route>
          </Routes>
       </div>

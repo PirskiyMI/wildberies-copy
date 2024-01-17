@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from 'react';
 
-import { IProductWithRating, useAppDispatch, useAppSelector } from 'src/shared';
+import { IProductWithRating, ServerError, useAppDispatch, useAppSelector } from 'src/shared';
 import { HomeList, HomePreloader } from 'src/widgets/home';
 import { ProductModal } from 'src/widgets/product-modal';
 import { fetchAllProducts } from 'src/widgets/home';
@@ -37,7 +37,9 @@ const Home: FC = () => {
          </div>
       );
    } else if (error) {
-      return <div>{error}</div>;
+      return <div className='container'>
+         <ServerError />
+      </div>;
    }
 
    return (

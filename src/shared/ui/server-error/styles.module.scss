@@ -1,0 +1,17 @@
+.error {
+    text-align: center;
+    margin-top: 30ch;
+    margin-bottom: 30ch;
+    color: rgb(68,68,68);
+
+    &__title {
+        font-size: 160px;
+        font-weight: bold;
+        
+    }
+    &__text {
+        margin-top: 5ch;
+        font-size: 50px;
+        font-weight: bold;
+    }
+}

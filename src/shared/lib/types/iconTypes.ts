@@ -23,4 +23,5 @@ export type TIcon =
    | 'travel-stroke'
    | 'like-stroke'
    | 'user-stroke'
-   | 'delivery';
+   | 'delivery'
+   | 'error';
