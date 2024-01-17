@@ -53,8 +53,8 @@ export const ProductQuickViewAddToCart: FC<Props> = ({ product, inBasket }) => {
    return (
       <>
          {inBasket ? (
-            <Button className={`${styles.button} ${styles.button_link}`} onClick={closeHandler}>
-               <Link to="/cart">Перейти в корзину</Link>
+            <Button className={styles.button} onClick={closeHandler}>
+               <Link to="/cart" className={styles.button__link}><span>Перейти в корзину</span></Link>
             </Button>
          ) : (
             <Button className={styles.button} onClick={clickHandler}>
