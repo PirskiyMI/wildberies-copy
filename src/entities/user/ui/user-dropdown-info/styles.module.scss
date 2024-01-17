@@ -1,0 +1,24 @@
+.user {
+   display: flex;
+   column-gap: 16px;
+   align-items: center;
+   &__avatar {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 700;
+      color: rgba($color: #000000, $alpha: 0.3);
+      background-color: rgba($color: #000000, $alpha: 0.1);
+      border-radius: 50%;
+   }
+   &__name {
+      font-weight: 700;
+      color: #000000;
+   }
+   &__phone {
+      color: rgba($color: #000000, $alpha: 0.4);
+   }
+}

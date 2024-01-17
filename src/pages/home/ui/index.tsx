@@ -35,9 +35,11 @@ const Home: FC = () => {
          </div>
       );
    } else if (error) {
-      return <div className='container'>
-         <ServerError />
-      </div>;
+      return (
+         <div className="container">
+            <ServerError />
+         </div>
+      );
    }
 
    return (

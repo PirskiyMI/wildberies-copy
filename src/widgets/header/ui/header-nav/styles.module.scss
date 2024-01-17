@@ -4,4 +4,21 @@
       align-items: end;
       column-gap: 42px;
    }
+   &__dropdown {
+      display: none;
+   }
+   &__item {
+      position: relative;
+      @media (any-hover: hover) {
+         &:hover {
+            .navigation__dropdown {
+               display: block;
+               position: absolute;
+               bottom: -100;
+               left: -200%;
+               z-index: 5;
+            }
+         }
+      }
+   }
 }
