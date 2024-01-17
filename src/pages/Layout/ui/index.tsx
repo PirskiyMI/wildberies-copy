@@ -8,6 +8,7 @@ import { BurgerMenu } from 'src/widgets/burger-menu';
 import { Header } from 'src/widgets/header';
 import { Footer } from 'src/widgets/footer';
 import { ProfileNav } from 'src/widgets/profile';
+import { ProductModal } from 'src/widgets/product-modal';
 
 import styles from './styles.module.scss';
 
@@ -17,6 +18,7 @@ import { setWindowWidth } from '../model';
 export const Layout: FC = () => {
    const { isVisible: isActive } = useAppSelector((state) => state.notificationReducer);
    const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
+   const { isModalOpen } = useAppSelector((state) => state.modalReducer);
    const [isButtonVisible, setIsButtonVisible] = useState(false);
    const dispatch = useAppDispatch();
 
@@ -62,7 +64,7 @@ export const Layout: FC = () => {
             )}
          </AnimatePresence>
          <BurgerMenu links={menuList} />
-
+         {isModalOpen && <ProductModal />}
          <Header />
 
          <main className={styles.layout__main}>

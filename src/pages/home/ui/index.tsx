@@ -11,7 +11,6 @@ const Home: FC = () => {
    const { value: searchValue } = useAppSelector((state) => state.searchReducer);
    const [productsList, setProductsList] = useState<IProductWithRating[]>([]);
    const { products, isLoading, error } = useAppSelector((state) => state.productListReducer);
-   const { isModalOpen } = useAppSelector((state) => state.modalReducer);
    const dispatch = useAppDispatch();
 
    useEffect(() => {
@@ -42,7 +41,7 @@ const Home: FC = () => {
 
    return (
       <>
-         {isModalOpen && <ProductModal />}
+         
          <div className={`${styles.home__container} container`}>
             <HomeList productList={productsList} search={searchValue} />
          </div>
