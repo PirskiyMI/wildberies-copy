@@ -4,7 +4,7 @@ import styles from './styles.module.scss';
 
 import { Modal, Section, useAppSelector } from 'src/shared';
 import { PaymentMethod } from 'src/entities/payment-method';
-import { AddCard, DeleteCard } from 'src/features/user-actions';
+import { AddCard, DeleteCard, SetButtonMainCard } from 'src/features/user-actions';
 
 export const UserPaymentMethodsWidget: FC = () => {
    const [isModal, setIsModal] = useState(false);
@@ -19,11 +19,17 @@ export const UserPaymentMethodsWidget: FC = () => {
          <h2 className={styles.payments__title}>Способы оплаты</h2>
          <ul className={styles.payments__list}>
             {paymentInfo.map((el) => (
-               <li className={`${styles.payments__item} ${styles.payments__item_background}`}>
+               <li
+                  key={el.id}
+                  className={
+                     el.isMain
+                        ? `${styles.payments__item} ${styles.payments__item_main}`
+                        : styles.payments__item
+                  }>
                   <PaymentMethod
                      number={el.cardNumber}
                      deleteButton={<DeleteCard id={el.id} />}
-                     toggleMain={<div>Сделать основным</div>}
+                     toggleMain={el.isMain ? <div>Основной</div> : <SetButtonMainCard id={el.id} />}
                   />
                </li>
             ))}

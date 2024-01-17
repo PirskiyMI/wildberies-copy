@@ -3,13 +3,19 @@ import { FC } from 'react';
 import styles from './styles.module.scss';
 import { Icon } from '..';
 
-export const ScrollToTop: FC = () => {
+type Props = {
+   className?: string;
+};
+
+export const ScrollToTop: FC<Props> = ({ className }) => {
+   const classes = className ? `${className} ${styles.body}` : styles.body;
+
    const scrollUp = () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
    };
 
    return (
-      <button className={styles.body} onClick={scrollUp}>
+      <button className={classes} onClick={scrollUp}>
          <Icon icon="arrow" />
       </button>
    );

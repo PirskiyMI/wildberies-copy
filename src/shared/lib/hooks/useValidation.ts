@@ -8,8 +8,8 @@ export type validatorsValue = {
 
 export const useValidation = (value: string, { isRequired, type }: validatorsValue) => {
    const [errorText, setErrorText] = useState('');
-   const { card, dateRegExp, emailRegExp, nameRegExp, telRegExp } = useExpression();
-   const { code, masterCardRegExp, mirCardRegExp, visaCardRegExp } = card;
+   const { cardRegExps, dateRegExp, emailRegExp, nameRegExp, telRegExp } = useExpression();
+   const { code, masterCardRegExp, mirCardRegExp, visaCardRegExp } = cardRegExps;
 
    useEffect(() => {
       switch (type) {
@@ -30,8 +30,6 @@ export const useValidation = (value: string, { isRequired, type }: validatorsVal
          case 'card':
             {
                value = value.split(' ').join('');
-               console.log(value);
-
                masterCardRegExp.test(value) ||
                visaCardRegExp.test(value) ||
                mirCardRegExp.test(value)

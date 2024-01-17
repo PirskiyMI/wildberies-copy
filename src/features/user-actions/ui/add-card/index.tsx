@@ -21,8 +21,11 @@ export const AddCard: FC = () => {
    const {
       errorText: codeErrorText,
       isDirty: codeIsDirty,
+      value: codeValue,
       ...code
    } = useInput('', { isRequired: true, type: 'CVV/CVC' });
+   const isDirty = cartIsDirty || dateIsDirty || codeIsDirty;
+   const isEmpty = cardValue || dateValue || codeValue;
    const dispatch = useAppDispatch();
 
    const cardNumber = cardNumberFormatter(cardValue);
@@ -31,7 +34,13 @@ export const AddCard: FC = () => {
    const submitHandler = (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       dispatch(
-         addCard({ cardNumber: cardValue, code: code.value, id: Date.now(), date: dateValue }),
+         addCard({
+            cardNumber: cardValue,
+            code: codeValue,
+            id: Date.now(),
+            date: dateValue,
+            isMain: false,
+         }),
       );
    };
 
@@ -79,7 +88,12 @@ export const AddCard: FC = () => {
                   />
                </li>
                <li className={styles.form__field}>
-                  <Field title="CVV/CVC" errorText={codeIsDirty ? codeErrorText : ''} {...code} />
+                  <Field
+                     title="CVV/CVC"
+                     errorText={codeIsDirty ? codeErrorText : ''}
+                     value={codeValue}
+                     {...code}
+                  />
                </li>
             </ul>
          </div>
@@ -87,7 +101,9 @@ export const AddCard: FC = () => {
             <p className={styles.from__text}>
                Для проверки карты, мы не будем списывать небольшую сумму денег
             </p>
-            <button className={styles.form__button}>Привязать</button>
+            <button className={styles.form__button} disabled={isDirty || !isEmpty}>
+               Привязать
+            </button>
          </div>
       </form>
    );

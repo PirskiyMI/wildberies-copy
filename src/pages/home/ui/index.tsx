@@ -2,7 +2,6 @@ import { FC, useEffect, useState } from 'react';
 
 import { IProductWithRating, ServerError, useAppDispatch, useAppSelector } from 'src/shared';
 import { HomeList, HomePreloader } from 'src/widgets/home';
-import { ProductModal } from 'src/widgets/product-modal';
 import { fetchAllProducts } from 'src/widgets/home';
 
 import styles from './styles.module.scss';
@@ -11,7 +10,6 @@ const Home: FC = () => {
    const { value: searchValue } = useAppSelector((state) => state.searchReducer);
    const [productsList, setProductsList] = useState<IProductWithRating[]>([]);
    const { products, isLoading, error } = useAppSelector((state) => state.productListReducer);
-   const { isModalOpen } = useAppSelector((state) => state.modalReducer);
    const dispatch = useAppDispatch();
 
    useEffect(() => {
@@ -43,12 +41,9 @@ const Home: FC = () => {
    }
 
    return (
-      <>
-         {isModalOpen && <ProductModal />}
-         <div className={`${styles.home__container} container`}>
-            <HomeList productList={productsList} search={searchValue} />
-         </div>
-      </>
+      <div className={`${styles.home__container} container`}>
+         <HomeList productList={productsList} search={searchValue} />
+      </div>
    );
 };
 

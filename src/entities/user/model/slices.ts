@@ -10,6 +10,7 @@ type TPayment = {
    cardNumber: string;
    code: string;
    date: string;
+   isMain: boolean;
 };
 
 interface IUserSlice {
@@ -41,7 +42,13 @@ const initialState: IUserSlice = {
    },
    isMale: true,
    paymentInfo: [
-      { cardNumber: '2202 2062 1235 4687', code: '111', id: 1703154986920, date: '0125' },
+      {
+         cardNumber: '2202 2062 1235 4687',
+         code: '111',
+         id: 1703154986920,
+         date: '0125',
+         isMain: true,
+      },
    ],
 };
 
@@ -61,6 +68,11 @@ export const userSlice = createSlice({
       deleteCard: (state, { payload }: PayloadAction<number>) => {
          state.paymentInfo = state.paymentInfo.filter((el) => el.id !== payload);
       },
+      setMainCard: (state, { payload }: PayloadAction<number>) => {
+         state.paymentInfo.forEach((el) =>
+            el.id === payload ? (el.isMain = true) : (el.isMain = false),
+         );
+      },
       addToFavorites: (state, { payload }: PayloadAction<IProductWithRating>) => {
          state.favorites.products.push(payload);
       },
@@ -70,5 +82,12 @@ export const userSlice = createSlice({
    },
 });
 
-export const { setName, setGender, addCard, deleteCard, addToFavorites, removeFromFavorites } =
-   userSlice.actions;
+export const {
+   setName,
+   setGender,
+   addCard,
+   deleteCard,
+   addToFavorites,
+   removeFromFavorites,
+   setMainCard,
+} = userSlice.actions;
