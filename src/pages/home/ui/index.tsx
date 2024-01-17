@@ -2,7 +2,6 @@ import { FC, useEffect, useState } from 'react';
 
 import { IProductWithRating, useAppDispatch, useAppSelector } from 'src/shared';
 import { HomeList, HomePreloader } from 'src/widgets/home';
-import { ProductModal } from 'src/widgets/product-modal';
 import { fetchAllProducts } from 'src/widgets/home';
 
 import styles from './styles.module.scss';
@@ -40,12 +39,9 @@ const Home: FC = () => {
    }
 
    return (
-      <>
-         
-         <div className={`${styles.home__container} container`}>
-            <HomeList productList={productsList} search={searchValue} />
-         </div>
-      </>
+      <div className={`${styles.home__container} container`}>
+         <HomeList productList={productsList} search={searchValue} />
+      </div>
    );
 };
 
