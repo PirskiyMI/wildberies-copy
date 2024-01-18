@@ -14,7 +14,7 @@ export const RecipientForm: FC = () => {
       isDirty: surnameIsDirty,
       errorText: surnameErrorText,
       ...surname
-   } = useInput('', { isRequired: true, type: 'name' });
+   } = useInput('', { isRequired: true, type: 'surname' });
    const {
       isDirty: mailIsDirty,
       errorText: mailErrorText,
