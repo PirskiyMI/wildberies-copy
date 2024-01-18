@@ -24,7 +24,8 @@ export const useInput = (
             setValue('');
          }
       } else if (isNumber) {
-         if (Number(e.target.value)) {
+         const value = e.target.value.replace(/[^0-9]/g, '');
+         if (Number(e.target.value) && value.length <= 12) {
             setValue(e.target.value);
          } else if (e.target.value.length === 0) {
             setValue('');
