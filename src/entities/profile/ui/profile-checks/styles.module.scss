@@ -1,0 +1,24 @@
+.checks {
+   &__wrapper {
+      display: block;
+      padding: 28px;
+   }
+   &__title {
+      margin-bottom: 8px;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 140%;
+   }
+   &__label {
+      font-size: 16px;
+      line-height: 138%;
+      color: #868695;
+   }
+   @media (any-hover: hover) {
+      &:hover {
+         .checks__title {
+            color: var(--tertiary-color);
+         }
+      }
+   }
+}

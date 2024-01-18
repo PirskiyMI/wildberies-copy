@@ -1,0 +1,21 @@
+.discount {
+   &__wrapper {
+      padding: 16px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+   }
+   &__title {
+      font-size: 14px;
+      line-height: 143%;
+   }
+   &__value {
+      color: var(--tertiary-color);
+      font-size: 12px;
+      line-height: 133%;
+   }
+   &__title,
+   &__value {
+      font-weight: 700;
+   }
+}

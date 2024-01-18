@@ -1,0 +1,26 @@
+.purchases {
+   &__wrapper {
+      width: 100%;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+   }
+   &__title {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 140%;
+   }
+   &__content {
+      font-size: 16px;
+      line-height: 138%;
+      color: #868695;
+   }
+   @media (any-hover: hover) {
+      &:hover {
+         .purchases__title {
+            color: var(--tertiary-color);
+         }
+      }
+   }
+}

@@ -18,3 +18,4 @@ export * from './select';
 export * from './error';
 export * from './server-error';
 export * from './checkbox';
+export * from './tile';

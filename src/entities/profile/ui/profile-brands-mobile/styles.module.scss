@@ -1,0 +1,20 @@
+.brands {
+   &__wrapper {
+      width: 100%;
+      padding: 16px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+   }
+   &__title {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 143%;
+      margin-bottom: 8px;
+   }
+   &__label {
+      font-size: 12px;
+      line-height: 133%;
+      color: #868695;
+   }
+}

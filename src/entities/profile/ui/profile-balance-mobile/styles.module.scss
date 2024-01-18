@@ -1,0 +1,35 @@
+.balance {
+   &__wrapper {
+      display: block;
+      padding: 16px 12px;
+   }
+   &__title {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 143%;
+      margin-bottom: 8px;
+   }
+   &__label {
+      display: flex;
+      align-items: flex-end;
+      column-gap: 6px;
+      font-size: 12px;
+      line-height: 133%;
+   }
+   &__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      font-size: 11px;
+      line-height: 0.8;
+      background: linear-gradient(130deg, var(--secondary-color) 0%, var(--main-color) 100%);
+      font-weight: 700;
+      color: #ffffff;
+      border-radius: 0 8px 0 8px;
+   }
+   &__value {
+      color: #868695;
+   }
+}
