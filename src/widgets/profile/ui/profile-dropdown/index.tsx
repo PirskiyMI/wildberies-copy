@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import styles from './styles.module.scss';
-import { UserDropdownInfo } from 'src/entities/user';
+import { UserInfo } from 'src/entities/user';
 import { Icon, TIcon } from 'src/shared';
 import { Link } from 'react-router-dom';
 
@@ -20,9 +20,9 @@ const data: TData[] = [
 export const ProfileDropdown: FC = () => {
    return (
       <div className={styles.dropdown}>
-         <div className={styles.dropdown__info}>
-            <UserDropdownInfo />
-         </div>
+         <Link to="/profile/user" className={styles.dropdown__info}>
+            <UserInfo mobile withPhone />
+         </Link>
          <ul className={styles.dropdown__list}>
             {data.map((el) => (
                <li key={el.path} className={styles.dropdown__item}>

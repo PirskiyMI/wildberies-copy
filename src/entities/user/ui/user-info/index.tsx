@@ -1,67 +1,32 @@
-import { FC } from 'react';
-import { Link } from 'react-router-dom';
+import { FC, ReactNode } from 'react';
 
-import { phoneFormatter, useAppSelector } from 'src/shared';
+import { useAppSelector } from 'src/shared';
 
 import styles from './styles.module.scss';
+import { UserPhone } from '../user-phone';
+import { Avatar } from 'src/shared/ui/avatar';
 
-const UserInfoTop: FC = () => {
+type Props = {
+   mobile?: boolean;
+   withPhone?: boolean;
+   changeNameButton?: ReactNode;
+};
+
+export const UserInfo: FC<Props> = ({ withPhone, changeNameButton, mobile }) => {
    const { name } = useAppSelector((state) => state.userReducer);
-   const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
 
-   const firstLatter = name[0];
-
-   if (windowWidth >= 1024) {
-      return (
-         <div className={styles.user__top}>
-            <div className={styles.user__logo}>{firstLatter}</div>
-            <h2 className={styles.user__name}>{name}</h2>
-         </div>
-      );
-   }
+   const classes = mobile ? `${styles.user} ${styles.user_mobile}` : styles.user;
+   const nameFirstLatter = name[0];
 
    return (
-      <div className={styles.user__top}>
-         <div className={styles.user__logo}>{firstLatter}</div>
-         <div className={styles.user__info}>
-            <h2 className={styles.user__name}>{name}</h2>
-            <div className={styles.user__text}>
-               <UserInfoBottom />
-               <Link className={styles.user__link} to={'#'}>
-                  Личные данные
-               </Link>
+      <div className={classes}>
+         <Avatar className={styles.user__image} character={nameFirstLatter} />
+         <div className={styles.user__content}>
+            <div className={styles.user__name}>
+               <h2>{name}</h2> {changeNameButton ? changeNameButton : null}
             </div>
+            {withPhone && <UserPhone className={styles.user__label} />}
          </div>
-      </div>
-   );
-};
-const UserInfoBottom: FC = () => {
-   const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
-   const { tel } = useAppSelector((state) => state.userReducer);
-   const phoneNumber = phoneFormatter(tel);
-
-   if (windowWidth >= 1024) {
-      return (
-         <p className={styles.user__bottom}>
-            Телефон <span className={styles.user__phone}>{phoneNumber}</span>
-         </p>
-      );
-   }
-
-   return (
-      <p className={styles.user__bottom}>
-         <span className={styles.user__phone}>{phoneNumber}</span>
-      </p>
-   );
-};
-
-export const UserInfo: FC = () => {
-   const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
-
-   return (
-      <div className={styles.user}>
-         <UserInfoTop />
-         {windowWidth >= 1024 && <UserInfoBottom />}
       </div>
    );
 };

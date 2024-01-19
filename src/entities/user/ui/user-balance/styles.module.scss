@@ -1,0 +1,27 @@
+.balance {
+   display: flex;
+   column-gap: 4px;
+   &__icon {
+      width: 14px;
+      height: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 0.8;
+      color: #ffffff;
+      background: linear-gradient(130deg, var(--secondary-color) 0%, var(--main-color) 100%);
+      border-radius: 0 8px 0 8px;
+   }
+   &__value {
+      color: #868695;
+   }
+   @media (min-width: 1024px) {
+      .balance__icon {
+         width: 18px;
+         height: 18px;
+         font-size: 11px;
+      }
+   }
+}

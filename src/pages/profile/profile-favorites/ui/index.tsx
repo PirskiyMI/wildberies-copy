@@ -1,10 +1,10 @@
 import { FC, useEffect, useState } from 'react';
 
 import { useAppSelector, Select } from 'src/shared';
-import { UserFavoritesList } from 'src/widgets/user-favorites';
 import { ProfileReorder } from 'src/widgets/profile';
 
 import styles from './styles.module.scss';
+import { UserFavoritesList } from 'src/widgets/user/user-favorites/ui/user-favorites-list';
 
 const ProfileFavorites: FC = () => {
    const { favorites } = useAppSelector((state) => state.userReducer);

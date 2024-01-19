@@ -1,8 +1,9 @@
 import { FC } from 'react';
 
-import { UserMetrics, UserPaymentMethodsWidget, UserProfile } from 'src/widgets/user-details';
-
 import styles from './styles.module.scss';
+import { UserProfile } from 'src/widgets/user/user-profile';
+import { UserMetrics } from 'src/widgets/user/user-metrics';
+import { UserPaymentMethods } from 'src/widgets/user/user-payment-methods';
 
 const ProfileInfo: FC = () => {
    return (
@@ -10,7 +11,7 @@ const ProfileInfo: FC = () => {
          <div className={`${styles.info__container} container`}>
             <UserProfile />
             <UserMetrics />
-            <UserPaymentMethodsWidget />
+            <UserPaymentMethods />
          </div>
       </div>
    );

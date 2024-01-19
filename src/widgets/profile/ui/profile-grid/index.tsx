@@ -1,18 +1,15 @@
 import { FC } from 'react';
 
 import styles from './styles.module.scss';
-
-import {
-   ProfileDelivery,
-   ProfileDiscount,
-   ProfileUser,
-   ProfilePaymentMethods,
-   ProfileBalance,
-   ProfileChecks,
-   ProfileBrands,
-   ProfilePurchases,
-   ProfileFavorites,
-} from 'src/entities/profile';
+import { ProfileUser } from '../profile-user';
+import { ProfileDelivery } from '../profile-delivery';
+import { ProfileDiscount } from '../profile-discount';
+import { ProfilePaymentMethods } from '../profile-payment-methods';
+import { ProfileBalance } from '../profile-balance';
+import { ProfileChecks } from '../profile-checks';
+import { ProfileBrands } from '../profile-brands';
+import { ProfilePurchases } from '../profile-purchases';
+import { ProfileFavorites } from '../profile-favorites';
 
 export const ProfileGrid: FC = () => {
    return (
