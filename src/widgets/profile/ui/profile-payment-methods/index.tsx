@@ -1,23 +1,13 @@
 import { FC } from 'react';
 
-import { Tile } from 'src/shared';
+import { ProfileItem } from '../profile-item';
 
-import styles from './styles.module.scss';
-import { Link } from 'react-router-dom';
-
-type Props = {
-   className?: string;
-};
-
-export const ProfilePaymentMethods: FC<Props> = ({ className }) => {
-   const classes = className ? `${className} ${styles.payment}` : styles.payment;
-
+export const ProfilePaymentMethods: FC = () => {
    return (
-      <Tile className={classes}>
-         <Link className={styles.payment__wrapper} to="/profile/user">
-            <h2 className={styles.payment__title}>Способы оплаты</h2>
-            <span className={styles.payment__label}>Добавить карту</span>
-         </Link>
-      </Tile>
+      <ProfileItem
+         path="/profile/user"
+         title={<h2>Способы оплаты</h2>}
+         label={<span>Добавить карту</span>}
+      />
    );
 };

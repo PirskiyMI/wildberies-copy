@@ -30,8 +30,7 @@ export const CartSpoiler: FC = () => {
    const { count, price } = useAppSelector((state) => state.basketInfoReducer);
 
    return (
-      <Section className={styles.cart}>
-         <h2>Корзина</h2>
+      <Section className={styles.cart} title="Корзина">
          <Spoiler
             initial
             Title={<BasketInfo count={count} price={price} />}

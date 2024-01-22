@@ -1,9 +1,10 @@
 import { FC } from 'react';
+import { Link } from 'react-router-dom';
 
-import styles from './styles.module.scss';
 import { UserInfo } from 'src/entities/user';
 import { Icon, TIcon } from 'src/shared';
-import { Link } from 'react-router-dom';
+
+import styles from './styles.module.scss';
 
 type TData = {
    name: string;

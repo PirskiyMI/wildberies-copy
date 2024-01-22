@@ -1,0 +1,15 @@
+.agreement {
+   display: flex;
+   align-items: center;
+   column-gap: 8px;
+   font-size: 14px;
+   line-height: 142%;
+   &__icon {
+      width: 14px;
+      height: 14px;
+      fill: black;
+   }
+   @media (min-width: 1024px) {
+      align-items: start;
+   }
+}

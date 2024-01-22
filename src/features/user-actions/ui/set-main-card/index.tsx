@@ -9,7 +9,7 @@ type Props = {
    id: number;
 };
 
-export const SetButtonMainCard: FC<Props> = ({ id }) => {
+export const SetMainCard: FC<Props> = ({ id }) => {
    const dispatch = useAppDispatch();
 
    const clickHandler = () => {

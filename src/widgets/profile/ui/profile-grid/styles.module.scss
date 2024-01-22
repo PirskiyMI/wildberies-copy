@@ -18,12 +18,6 @@
          flex-direction: column;
          row-gap: 10px;
       }
-      &_gradient {
-         background: linear-gradient(94.18deg, #fae1f3 0.59%, #d9f1ff 98.87%);
-      }
-      & &_colored {
-         background: #fae1f3;
-      }
       @media (min-width: 1024px) {
          grid-column: span 4;
          &_big {

@@ -1,26 +1,25 @@
 import { FC } from 'react';
-import { Link } from 'react-router-dom';
 
-import { Tile } from 'src/shared';
+import { ProfileItem } from '../profile-item';
+import { useAppSelector } from 'src/shared';
 
-import styles from './styles.module.scss';
+export const ProfilePurchases: FC = () => {
+   const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
 
-type Props = {
-   className?: string;
-};
+   if (windowWidth >= 1024) {
+      return (
+         <ProfileItem
+            path="/profile/purchases"
+            title={<h2>Покупки</h2>}
+            label={
+               <div>
+                  <p>В покупках пока пусто.</p>
+                  <p>Покупайте товары и они окажутся здесь</p>
+               </div>
+            }
+         />
+      );
+   }
 
-export const ProfilePurchases: FC<Props> = ({ className }) => {
-   const classes = className ? `${className} ${styles.purchases}` : styles.purchases;
-
-   return (
-      <Tile className={classes}>
-         <Link to="/profile/purchases" className={styles.purchases__wrapper}>
-            <h2 className={styles.purchases__title}>Покупки</h2>
-            <div className={styles.purchases__content}>
-               <p className={styles.purchases__text}>В покупках пока пусто.</p>
-               <p className={styles.purchases__text}>Покупайте товары и они окажутся здесь</p>
-            </div>
-         </Link>
-      </Tile>
-   );
+   return <ProfileItem path="/profile/purchases" title={<h2>Покупки</h2>} />;
 };

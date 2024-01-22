@@ -1,0 +1,11 @@
+.sum {
+   display: flex;
+   align-items: baseline;
+   justify-content: space-between;
+   font-size: 18px;
+   font-weight: 700;
+   line-height: 150%;
+   @media (min-width: 1024px) {
+      font-size: 24px;
+   }
+}

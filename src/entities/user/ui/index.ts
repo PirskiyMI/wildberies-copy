@@ -3,3 +3,4 @@ export * from './user-discount';
 export * from './user-info';
 export * from './user-phone';
 export * from './user-ransom';
+export * from './user-payment-card';

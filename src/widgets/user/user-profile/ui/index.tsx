@@ -7,6 +7,7 @@ import { ChangeName, GenderRadio } from 'src/features/user-actions';
 import styles from './styles.module.scss';
 
 export const UserProfile: FC = () => {
+   const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
    const { isModalOpen } = useAppSelector((state) => state.modalReducer);
    const dispatch = useAppDispatch();
 
@@ -22,9 +23,10 @@ export const UserProfile: FC = () => {
                   <Icon icon="pen" className={styles.profile__icon} />
                </button>
             }
+            mobile={windowWidth < 1024}
          />
          <div className={styles.profile__bottom}>
-            <UserPhone className={styles.profile__item} />
+            <UserPhone className={styles.profile__item} withTitle />
             <UserGender className={styles.profile__item} children={<GenderRadio />} />
          </div>
 

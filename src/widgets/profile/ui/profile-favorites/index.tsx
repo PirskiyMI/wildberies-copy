@@ -1,19 +1,14 @@
 import { FC, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 
-import { Tile, useAppSelector } from 'src/shared';
+import { useAppSelector } from 'src/shared';
 
 import styles from './styles.module.scss';
+import { ProfileItem } from '../profile-item';
 
-type Props = {
-   className?: string;
-};
-
-export const ProfileFavorites: FC<Props> = ({ className }) => {
+export const ProfileFavorites: FC = () => {
    const { favorites } = useAppSelector((state) => state.userReducer);
    const [productsLeft, setProductsLeft] = useState(0);
 
-   const classes = className ? `${className} ${styles.favorites}` : styles.favorites;
    const productsList = favorites.products.filter((el, index) => index <= 6);
 
    useEffect(() => {
@@ -22,9 +17,10 @@ export const ProfileFavorites: FC<Props> = ({ className }) => {
    }, [favorites.products]);
 
    return (
-      <Tile className={classes}>
-         <Link className={styles.favorites__wrapper} to="/pforile/favorites">
-            <h2 className={styles.favorites__title}>Избранное</h2>
+      <ProfileItem
+         path="/profile/purchases"
+         title={<h2 className={styles.favorites__title}>Избранное</h2>}
+         label={
             <div className={styles.favorites__content}>
                {productsList.length > 0 ? (
                   <ul className={styles.favorites__list}>
@@ -48,7 +44,7 @@ export const ProfileFavorites: FC<Props> = ({ className }) => {
                   </>
                )}
             </div>
-         </Link>
-      </Tile>
+         }
+      />
    );
 };

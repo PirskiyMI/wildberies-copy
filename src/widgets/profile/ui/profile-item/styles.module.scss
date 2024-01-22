@@ -12,9 +12,19 @@
       color: rgb(36, 36, 36);
       transition: color ease 0.2s;
    }
-   &__content {
+   &__label {
+      margin-top: 4px;
+      color: #868695;
+   }
+   &__content,
+   &__label {
       font-size: 12px;
       line-height: 133%;
+   }
+   @media (max-width: 1024px) {
+      &__wrapper {
+         align-items: center;
+      }
    }
    @media (min-width: 1024px) {
       &__wrapper {
@@ -25,7 +35,11 @@
          font-size: 20px;
          line-height: 140%;
       }
-      &__content {
+      &__label {
+         margin-top: 8px;
+      }
+      &__content,
+      &__label {
          font-size: 16px;
          line-height: 125%;
       }

@@ -1,42 +1,56 @@
 import { FC, useState } from 'react';
 
-import styles from './styles.module.scss';
+import { Card, Icon, Modal, Section, useAppSelector } from 'src/shared';
+import { UserPaymentCard } from 'src/entities/user';
+import { AddCard, DeleteCard, SetMainCard } from 'src/features/user-actions';
 
-import { Modal, Section, useAppSelector } from 'src/shared';
-import { PaymentMethod } from 'src/entities/payment-method';
-import { AddCard, DeleteCard, SetButtonMainCard } from 'src/features/user-actions';
+import styles from './styles.module.scss';
 
 export const UserPaymentMethods: FC = () => {
    const [isModal, setIsModal] = useState(false);
    const { paymentInfo } = useAppSelector((state) => state.userReducer);
+   const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
 
    const clickHandler = () => {
       setIsModal(true);
    };
 
    return (
-      <Section className={styles.payments}>
-         <h2 className={styles.payments__title}>Способы оплаты</h2>
-         <ul className={styles.payments__list}>
-            {paymentInfo.map((el) => (
-               <li
-                  key={el.id}
-                  className={
-                     el.isMain
-                        ? `${styles.payments__item} ${styles.payments__item_main}`
-                        : styles.payments__item
-                  }>
-                  <PaymentMethod
-                     number={el.cardNumber}
-                     deleteButton={<DeleteCard id={el.id} />}
-                     toggleMain={el.isMain ? <div>Основной</div> : <SetButtonMainCard id={el.id} />}
-                  />
+      <>
+         <Section className={styles.payments} title="Способы оплаты">
+            <ul className={styles.payments__list}>
+               {paymentInfo.map((el) => (
+                  <li key={el.id} className={styles.payments__item}>
+                     {el.isMain ? (
+                        <UserPaymentCard
+                           cardNumber={el.cardNumber}
+                           deleteButton={<DeleteCard id={el.id} />}
+                           isDesktop={windowWidth >= 1024}
+                           className={styles.payments__card}
+                        />
+                     ) : (
+                        <UserPaymentCard
+                           cardNumber={el.cardNumber}
+                           deleteButton={<DeleteCard id={el.id} />}
+                           toggleMain={<SetMainCard id={el.id} />}
+                           isDesktop={windowWidth >= 1024}
+                           className={styles.payments__card}
+                        />
+                     )}
+                  </li>
+               ))}
+
+               <li onClick={clickHandler} className={styles.payments__item}>
+                  <Card className={styles.payments__card}>
+                     <div className={styles.payments__body}>
+                        <Icon icon="card" className={styles.payments__icon} />
+                        <span className={styles.payments__label}>Привязать карту</span>
+                     </div>
+                  </Card>
                </li>
-            ))}
-            <li className={styles.payments__item} onClick={clickHandler}>
-               Привязать карту
-            </li>
-         </ul>
+            </ul>
+         </Section>
+
          {isModal && (
             <Modal className={styles.modal} clickHandler={() => setIsModal(false)}>
                <div className={styles.modal__body}>
@@ -45,6 +59,6 @@ export const UserPaymentMethods: FC = () => {
                </div>
             </Modal>
          )}
-      </Section>
+      </>
    );
 };

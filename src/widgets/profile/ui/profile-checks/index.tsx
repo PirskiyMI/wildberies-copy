@@ -1,23 +1,15 @@
 import { FC } from 'react';
-import { Link } from 'react-router-dom';
 
-import { Tile } from 'src/shared';
+import { useAppSelector } from 'src/shared';
 
-import styles from './styles.module.scss';
+import { ProfileItem } from '../profile-item';
 
-type Props = {
-   className?: string;
-};
+export const ProfileChecks: FC = () => {
+   const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
 
-export const ProfileChecks: FC<Props> = ({ className }) => {
-   const classes = className ? `${className} ${styles.checks}` : styles.checks;
+   if (windowWidth >= 1024) {
+      return <ProfileItem path="/profile/checks" title={<h2>Чеки</h2>} label={<p>Смотреть</p>} />;
+   }
 
-   return (
-      <Tile className={classes}>
-         <Link to="/profile/user" className={styles.checks__wrapper}>
-            <h2 className={styles.checks__title}>Чеки</h2>
-            <p className={styles.checks__label}>Смотреть</p>
-         </Link>
-      </Tile>
-   );
+   return <ProfileItem path="/profile/checks" title={<h2>Чеки</h2>} />;
 };

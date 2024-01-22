@@ -1,26 +1,30 @@
 import { FC } from 'react';
-import { Link } from 'react-router-dom';
 
-import { Tile, useAppSelector } from 'src/shared';
+import { useAppSelector } from 'src/shared';
 
-import styles from './styles.module.scss';
+import { ProfileItem } from '../profile-item';
 
-type Props = {
-   className?: string;
-};
-
-export const ProfileBrands: FC<Props> = ({ className }) => {
+export const ProfileBrands: FC = () => {
+   const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
    const { favorites } = useAppSelector((state) => state.userReducer);
 
-   const classes = className ? `${className} ${styles.brands}` : styles.brands;
    const brandsCount = favorites.brands.length;
 
+   if (windowWidth >= 1024) {
+      return (
+         <ProfileItem
+            path="/profile/brands"
+            title={<h2>Бренды</h2>}
+            label={<div>{brandsCount} брендов</div>}
+         />
+      );
+   }
+
    return (
-      <Tile className={classes}>
-         <Link to="/profile/user" className={styles.brands__wrapper}>
-            <h2 className={styles.brands__title}>Бренды</h2>
-            <div className={styles.brands__label}>{brandsCount} брендов</div>
-         </Link>
-      </Tile>
+      <ProfileItem
+         path="/profile/brands"
+         title={<h2>Бренды</h2>}
+         content={<div>{brandsCount} брендов</div>}
+      />
    );
 };
