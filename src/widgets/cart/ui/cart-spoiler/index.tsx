@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { useAppSelector, Section, Spoiler } from 'src/shared';
 import { BasketInfo, BasketItem } from 'src/entities/basket';
-import { ProductCounter, ProductRemoveFromCart, ProductSelect } from 'src/features/product-actions';
+import { ProductCounter, RemoveProductFromCart, ToggleProductToOrder } from 'src/features/product';
 
 import styles from './styles.module.scss';
 
@@ -16,9 +16,9 @@ const CartList: FC = () => {
                key={el.id}
                product={el}
                features={{
-                  Checkbox: <ProductSelect id={el.id} isChecked={el.status.isChecked} />,
+                  Checkbox: <ToggleProductToOrder id={el.id} isChecked={el.status.isChecked} />,
                   Counter: <ProductCounter id={el.id} value={el.status.count} />,
-                  Delete: <ProductRemoveFromCart id={el.id} />,
+                  Delete: <RemoveProductFromCart id={el.id} />,
                   Like: <div />,
                }}></BasketItem>
          ))}

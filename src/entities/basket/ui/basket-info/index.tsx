@@ -4,7 +4,6 @@ import { getNoun } from 'src/shared';
 
 import styles from './styles.module.scss';
 
-
 type Props = {
    price: number;
    count: number;

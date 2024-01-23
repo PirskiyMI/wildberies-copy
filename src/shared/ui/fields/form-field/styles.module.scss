@@ -2,8 +2,11 @@
    padding: 0 0 3px 0;
    position: relative;
    &__input {
+      position: relative;
       width: 100%;
       border-bottom: 1px solid var(--border-color-gray);
+      cursor: text;
+      z-index: 1;
       &_error {
          color: var(--text-color-error);
          border-color: var(--border-color-error);

@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { useAppDispatch, useAppSelector, openModal, Icon, Modal, Section } from 'src/shared';
 import { UserGender, UserInfo, UserPhone } from 'src/entities/user';
-import { ChangeName, GenderRadio } from 'src/features/user-actions';
+import { ChangeUserName, UserGenderRadio } from 'src/features/user';
 
 import styles from './styles.module.scss';
 
@@ -27,14 +27,14 @@ export const UserProfile: FC = () => {
          />
          <div className={styles.profile__bottom}>
             <UserPhone className={styles.profile__item} withTitle />
-            <UserGender className={styles.profile__item} children={<GenderRadio />} />
+            <UserGender className={styles.profile__item} children={<UserGenderRadio />} />
          </div>
 
          {isModalOpen && (
             <Modal className={styles.modal}>
                <div className={styles.modal__body}>
                   <h3 className={styles.modal__title}>Изменить имя</h3>
-                  <ChangeName />
+                  <ChangeUserName />
                </div>
             </Modal>
          )}

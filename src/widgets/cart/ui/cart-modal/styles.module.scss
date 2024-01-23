@@ -1,0 +1,36 @@
+.modal {
+   width: 420px;
+   &__item {
+      padding: 11px 16px;
+      border: 1px solid rgba(167, 58, 253, 0.4);
+      border-radius: 12px;
+      @media (any-hover: hover) {
+         &:hover {
+            border-color: var(--tertiary-color);
+         }
+      }
+      &_main {
+         border-color: var(--tertiary-color);
+      }
+      @media (min-width: 1024px) {
+         transition: border-color ease 0.3s;
+      }
+      cursor: pointer;
+      &:not(:last-child) {
+         margin-bottom: 10px;
+      }
+   }
+   &__switcher {
+      display: flex;
+      align-items: center;
+      column-gap: 6px;
+   }
+   &__button {
+      margin-top: 10px;
+      height: 44px;
+   }
+   &__icon {
+      width: 28px;
+      height: 28px;
+   }
+}

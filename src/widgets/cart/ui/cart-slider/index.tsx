@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { Slider, useAppSelector } from 'src/shared';
 import { ProductCard } from 'src/entities/product';
-import { ProductAddToCart, ProductQuickView } from 'src/features/product-actions';
+import { AddProductToCart, ProductQuickView } from 'src/features/product';
 
 import styles from './styles.module.scss';
 
@@ -18,7 +18,7 @@ export const CartSlider: FC = () => {
             {list.map((el) => (
                <ProductCard key={el.id} product={el}>
                   <ProductQuickView product={el} />
-                  <ProductAddToCart
+                  <AddProductToCart
                      product={{
                         id: el.id,
                         image: el.image,

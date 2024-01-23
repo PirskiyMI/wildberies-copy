@@ -3,10 +3,10 @@ import { FC } from 'react';
 import { IProductWithRating } from 'src/shared';
 import { ProductCard, ProductList } from 'src/entities/product';
 import {
-   ProductAddToCart,
+   AddProductToCart,
    ProductQuickView,
-   ProductRemoveFromFavorites,
-} from 'src/features/product-actions';
+   RemoveProductFromFavorites,
+} from 'src/features/product';
 
 import styles from './styles.module.scss';
 
@@ -21,9 +21,9 @@ export const UserFavoritesList: FC<Props> = ({ products }) => {
             <div key={el.id} className={styles.item}>
                <ProductCard
                   product={el}
-                  addToFavoriteButton={<ProductRemoveFromFavorites product={el} />}>
+                  addToFavoriteButton={<RemoveProductFromFavorites product={el} />}>
                   <ProductQuickView product={el} />
-                  <ProductAddToCart
+                  <AddProductToCart
                      product={{
                         id: el.id,
                         image: el.image,

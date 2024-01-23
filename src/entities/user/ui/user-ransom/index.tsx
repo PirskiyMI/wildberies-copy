@@ -18,7 +18,7 @@ export const UserRansom: FC<Props> = ({ type, className }) => {
       case 'percent':
          return <span className={classes}>{redemptionPercentage}%</span>;
       case 'amount':
-         return <span className={classes}>{ransomAmount} СОМ</span>;
+         return <span className={classes}>{ransomAmount} сом</span>;
       default:
          return null;
    }

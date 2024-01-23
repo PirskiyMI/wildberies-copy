@@ -3,11 +3,7 @@ import { FC } from 'react';
 import { IProductWithRating } from 'src/shared';
 import { ProductCard, ProductList } from 'src/entities/product';
 import { SearchIsEmpty } from 'src/entities/search-is-empty';
-import {
-   ProductAddToCart,
-   ProductQuickView,
-   ProductToggleToFavorite,
-} from 'src/features/product-actions';
+import { AddProductToCart, ProductQuickView, ToggleProductToFavorite } from 'src/features/product';
 
 type Props = {
    search?: string;
@@ -24,9 +20,9 @@ export const HomeList: FC<Props> = ({ productList, search }) => {
                   <ProductCard
                      key={el.id}
                      product={el}
-                     addToFavoriteButton={<ProductToggleToFavorite product={el} />}>
+                     addToFavoriteButton={<ToggleProductToFavorite product={el} />}>
                      <ProductQuickView product={el} />
-                     <ProductAddToCart
+                     <AddProductToCart
                         product={{
                            id: el.id,
                            image: el.image,
@@ -48,9 +44,9 @@ export const HomeList: FC<Props> = ({ productList, search }) => {
             <ProductCard
                key={el.id}
                product={el}
-               addToFavoriteButton={<ProductToggleToFavorite product={el} />}>
+               addToFavoriteButton={<ToggleProductToFavorite product={el} />}>
                <ProductQuickView product={el} />
-               <ProductAddToCart
+               <AddProductToCart
                   product={{
                      id: el.id,
                      image: el.image,

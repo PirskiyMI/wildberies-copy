@@ -1,0 +1,35 @@
+.item {
+   &__title {
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 133%;
+      cursor: pointer;
+      @media (any-hover: hover) {
+         &:hover {
+            color: var(--tertiary-color);
+            .item__icon {
+               fill: var(--tertiary-color);
+            }
+         }
+      }
+   }
+   &__icon {
+      width: 16px;
+      height: 16px;
+      fill: rgba(36, 36, 36, 0.4);
+   }
+   @media (min-width: 1024px) {
+      &__title {
+         margin-bottom: 16px;
+         font-size: 24px;
+      }
+      &__title,
+      &__icon {
+         transition: all ease 0.3s;
+      }
+   }
+}

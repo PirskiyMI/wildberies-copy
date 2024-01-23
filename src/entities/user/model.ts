@@ -5,7 +5,7 @@ type TFavorites = {
    brands: string[];
    products: IProductWithRating[];
 };
-type TPayment = {
+export type TPayment = {
    id: number;
    cardNumber: string;
    code: string;
@@ -63,7 +63,9 @@ export const userSlice = createSlice({
          state.isMale = payload;
       },
       addCard: (state, { payload }: PayloadAction<TPayment>) => {
-         state.paymentInfo.push(payload);
+         if (!state.paymentInfo.find((el) => el.cardNumber === payload.cardNumber)) {
+            state.paymentInfo.push(payload);
+         }
       },
       deleteCard: (state, { payload }: PayloadAction<number>) => {
          state.paymentInfo = state.paymentInfo.filter((el) => el.id !== payload);

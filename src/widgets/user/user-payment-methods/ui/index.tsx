@@ -1,19 +1,19 @@
 import { FC, useState } from 'react';
 
-import { Card, Icon, Modal, Section, useAppSelector } from 'src/shared';
+import { Card, Icon, Section, useAppSelector } from 'src/shared';
 import { UserPaymentCard } from 'src/entities/user';
-import { AddCard, DeleteCard, SetMainCard } from 'src/features/user-actions';
+import { DeleteUserCard, SetUserMainCard } from 'src/features/user';
 
 import styles from './styles.module.scss';
+import { UserModal } from '../../user-modal';
 
 export const UserPaymentMethods: FC = () => {
    const [isModal, setIsModal] = useState(false);
    const { paymentInfo } = useAppSelector((state) => state.userReducer);
    const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
 
-   const clickHandler = () => {
-      setIsModal(true);
-   };
+   const clickHandler = () => setIsModal(true);
+   const closeModal = () => setIsModal(false);
 
    return (
       <>
@@ -24,15 +24,15 @@ export const UserPaymentMethods: FC = () => {
                      {el.isMain ? (
                         <UserPaymentCard
                            cardNumber={el.cardNumber}
-                           deleteButton={<DeleteCard id={el.id} />}
+                           deleteButton={<DeleteUserCard id={el.id} />}
                            isDesktop={windowWidth >= 1024}
                            className={styles.payments__card}
                         />
                      ) : (
                         <UserPaymentCard
                            cardNumber={el.cardNumber}
-                           deleteButton={<DeleteCard id={el.id} />}
-                           toggleMain={<SetMainCard id={el.id} />}
+                           deleteButton={<DeleteUserCard id={el.id} />}
+                           toggleMain={<SetUserMainCard id={el.id} />}
                            isDesktop={windowWidth >= 1024}
                            className={styles.payments__card}
                         />
@@ -51,14 +51,7 @@ export const UserPaymentMethods: FC = () => {
             </ul>
          </Section>
 
-         {isModal && (
-            <Modal className={styles.modal} clickHandler={() => setIsModal(false)}>
-               <div className={styles.modal__body}>
-                  <h3 className={styles.modal__title}>Привязка карты</h3>
-                  <AddCard />
-               </div>
-            </Modal>
-         )}
+         {isModal && <UserModal closeModal={closeModal} />}
       </>
    );
 };

@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
 import { Modal, useAppSelector } from 'src/shared';
-import { ProductModal as ProductModalBody } from 'src/entities/product';
-import { ProductQuickViewAddToCart } from 'src/features/product-actions';
+import { ProductCardDetails } from 'src/entities/product';
+import { AddProductToCartInModal } from 'src/features/product';
 
 export const ProductModal: FC = () => {
    const { product } = useAppSelector((state) => state.modalReducer);
@@ -12,9 +12,9 @@ export const ProductModal: FC = () => {
    if (product) {
       return (
          <Modal>
-            <ProductModalBody
+            <ProductCardDetails
                product={product}
-               Button={<ProductQuickViewAddToCart inBasket={inBasket} product={product} />}
+               Button={<AddProductToCartInModal inBasket={inBasket} product={product} />}
             />
          </Modal>
       );

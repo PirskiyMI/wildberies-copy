@@ -4,10 +4,11 @@ import { searchSlice } from '../../shared/model';
 import { orderSlice } from '../../entities/order';
 import { notificationSlice } from '../../entities/notification';
 import { userSlice } from '../../entities/user';
-import { basketInfoSlice, basketListSlice, cartSliderSlice } from '../../features/product-actions';
 import { productListSlice } from '../../widgets/home';
 import { categoryProductListSlice } from '../../widgets/catalog';
 import { windowWidthSlice } from '../../pages/Layout';
+import { basketInfoSlice, basketListSlice } from 'src/entities/basket';
+import { cartSliderSlice } from 'src/entities/product';
 
 const rootReducer = combineReducers({
    burgerReducer: burgerSlice.reducer,

@@ -1,13 +1,18 @@
 import { FC } from 'react';
 
 import { useAppSelector } from 'src/shared';
-import { CartEmpty, CartSlider } from 'src/widgets/cart';
+import {
+   CartEmpty,
+   CartOrder,
+   CartSlider,
+   CartSpoiler,
+   CartUserInfo,
+   CartPaymentMethod,
+} from 'src/widgets/cart';
 
 import styles from './styles.module.scss';
 
 import { useSetCount } from '../lib';
-import { CartLeftSide } from './CartLeftSide';
-import { CartRightSide } from './CartRightSide';
 
 export const CartPage: FC = () => {
    const { list } = useAppSelector((state) => state.basketListReducer);
@@ -15,37 +20,31 @@ export const CartPage: FC = () => {
 
    useSetCount({ list });
 
-   if (list.length <= 0) {
-      return (
-         <>
-            <div className={`${styles.cart__container}  container`}>
-               <CartEmpty />
-            </div>
-            {visitedProducts.length ? (
-               <div className={styles.cart__bottom}>
-                  <div className={`${styles.cart__container} container`}>
-                     <CartSlider />
-                  </div>
-               </div>
-            ) : null}
-         </>
-      );
-   }
-
    return (
-      <>
-         <div className={`${styles.cart__container} container`}>
-            <CartLeftSide />
-            <CartRightSide />
-         </div>
-         {visitedProducts.length ? (
-            <div className={styles.cart__bottom}>
-               <div className={`${styles.cart__container} container`}>
-                  <CartSlider />
+      <div className={`${styles.cart__container} container`}>
+         {list.length ? (
+            <div className={styles.cart__wrapper}>
+               <div className={`${styles.cart__column} ${styles.cart__column_big}`}>
+                  <div className={styles.cart__row_big}>
+                     <CartSpoiler />
+                  </div>
+                  <CartPaymentMethod />
+                  <CartUserInfo />
                </div>
+               <div className={styles.cart__column}>
+                  <CartOrder />
+               </div>
+            </div>
+         ) : (
+            <CartEmpty />
+         )}
+
+         {visitedProducts.length ? (
+            <div className={styles.cart__slider}>
+               <CartSlider />
             </div>
          ) : null}
-      </>
+      </div>
    );
 };
 
