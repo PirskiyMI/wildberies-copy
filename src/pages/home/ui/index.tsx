@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from 'react';
 
-import { IProductWithRating, Preloader, ServerError, useAppDispatch, useAppSelector } from 'src/shared';
+import { IProductWithRating, ServerError, useAppDispatch, useAppSelector } from 'src/shared';
 import { HomeList, HomePreloader } from 'src/widgets/home';
 import { fetchAllProducts } from 'src/widgets/home';
 
