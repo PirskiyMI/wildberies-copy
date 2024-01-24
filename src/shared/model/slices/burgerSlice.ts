@@ -1,14 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-export interface IBurgerMenu {
+interface IState {
    isOpen: boolean;
 }
 
-const initialState: IBurgerMenu = {
+const initialState: IState = {
    isOpen: false,
 };
 
-export const burgerSlice = createSlice({
+const burgerSlice = createSlice({
    name: 'burgerMenu',
    initialState,
    reducers: {
@@ -24,4 +24,5 @@ export const burgerSlice = createSlice({
    },
 });
 
+export const burgerReducer = burgerSlice.reducer;
 export const { openMenu, closeMenu, toggleMenu } = burgerSlice.actions;

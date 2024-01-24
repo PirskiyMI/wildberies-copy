@@ -1,28 +1,35 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import { modalSlice, burgerSlice } from '../../shared/model';
-import { searchSlice } from '../../shared/model';
-import { orderSlice } from '../../entities/order';
-import { notificationSlice } from '../../entities/notification';
-import { userSlice } from '../../entities/user';
-import { productListSlice } from '../../widgets/home';
-import { categoryProductListSlice } from '../../widgets/catalog';
-import { windowWidthSlice } from '../../pages/Layout';
-import { basketInfoSlice, basketListSlice } from 'src/entities/basket';
-import { cartSliderSlice } from 'src/entities/product';
+import {
+   burgerReducer,
+   deviceReducer,
+   modalReducer,
+   searchReducer,
+   windowWidthReducer,
+} from 'src/shared';
+import {
+   productsListOfCategoryReducer,
+   productsListReducer,
+   visitedProductsListReducer,
+} from 'src/entities/product';
+import { basketInfoReducer, basketListReducer } from 'src/entities/basket';
+import { orderReducer } from 'src/entities/order';
+import { notificationReducer } from 'src/entities/notification';
+import { userReducer } from 'src/entities/user';
 
 const rootReducer = combineReducers({
-   burgerReducer: burgerSlice.reducer,
-   orderReducer: orderSlice.reducer,
-   basketInfoReducer: basketInfoSlice.reducer,
-   basketListReducer: basketListSlice.reducer,
-   notificationReducer: notificationSlice.reducer,
-   productListReducer: productListSlice.reducer,
-   catalogListReducer: categoryProductListSlice.reducer,
-   cartSliderReducer: cartSliderSlice.reducer,
-   searchReducer: searchSlice.reducer,
-   modalReducer: modalSlice.reducer,
-   userReducer: userSlice.reducer,
-   windowWidthReducer: windowWidthSlice.reducer,
+   burgerReducer,
+   orderReducer,
+   basketInfoReducer,
+   basketListReducer,
+   notificationReducer,
+   productsListReducer,
+   productsListOfCategoryReducer,
+   visitedProductsListReducer,
+   searchReducer,
+   modalReducer,
+   userReducer,
+   deviceReducer,
+   windowWidthReducer,
 });
 
 const setupStore = () => {

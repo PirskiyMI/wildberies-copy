@@ -16,7 +16,7 @@ import { useSetCount } from '../lib';
 
 export const CartPage: FC = () => {
    const { list } = useAppSelector((state) => state.basketListReducer);
-   const { list: visitedProducts } = useAppSelector((state) => state.cartSliderReducer);
+   const { list: visitedProducts } = useAppSelector((state) => state.visitedProductsListReducer);
 
    useSetCount({ list });
 

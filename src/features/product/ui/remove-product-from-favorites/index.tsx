@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { DeleteButtonSmall, IProductWithRating, useAppDispatch } from 'src/shared';
 import { removeFromFavorites } from 'src/entities/user';
-import { toggleToFavorite } from 'src/widgets/home';
+import { toggleToFavorite } from 'src/entities/product';
 
 import styles from './styles.module.scss';
 

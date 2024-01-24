@@ -1,16 +1,16 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-interface ISearchSlice {
+interface IState {
    value: string;
    isOpen: boolean;
 }
 
-const initialState: ISearchSlice = {
+const initialState: IState = {
    value: '',
    isOpen: false,
 };
 
-export const searchSlice = createSlice({
+const searchSlice = createSlice({
    name: 'search',
    initialState,
    reducers: {
@@ -23,4 +23,5 @@ export const searchSlice = createSlice({
    },
 });
 
+export const searchReducer = searchSlice.reducer;
 export const { setValue: setSearch, toggleIsOpen: toggleSearch } = searchSlice.actions;

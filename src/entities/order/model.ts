@@ -1,17 +1,17 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-interface ISlice {
-   count: number;
+interface IOrderSlice {
    price: number;
+   count: number;
 }
 
-const initialState: ISlice = {
-   count: 0,
+const initialState: IOrderSlice = {
    price: 0,
+   count: 0,
 };
 
-const basketInfoSlice = createSlice({
-   name: 'basketInfo',
+export const orderSlice = createSlice({
+   name: 'order',
    initialState,
    reducers: {
       incrementCount: (state) => {
@@ -26,9 +26,5 @@ const basketInfoSlice = createSlice({
    },
 });
 
-export const basketInfoReducer = basketInfoSlice.reducer;
-export const {
-   incrementCount: incrementTotalCount,
-   setCount: setTotalCount,
-   setPrice: setTotalPrice,
-} = basketInfoSlice.actions;
+export const orderReducer = orderSlice.reducer;
+export const { incrementCount, setCount, setPrice } = orderSlice.actions;

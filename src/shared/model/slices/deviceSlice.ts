@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-type Device = {
-   type: 'mobile' | 'desktop';
+type TState = {
+   deviceType: 'mobile' | 'desktop';
 };
 
-const initialState: Device = {
-   type: 'mobile',
+const initialState: TState = {
+   deviceType: 'mobile',
 };
 
 export const deviceSlice = createSlice({
@@ -13,7 +13,7 @@ export const deviceSlice = createSlice({
    initialState,
    reducers: {
       setDeviceType: (state, { payload }: PayloadAction<'mobile' | 'desktop'>) => {
-         state.type = payload;
+         state.deviceType = payload;
       },
    },
 });

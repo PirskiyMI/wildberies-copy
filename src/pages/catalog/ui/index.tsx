@@ -2,17 +2,21 @@ import { FC, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { Preloader, useAppDispatch, useAppSelector } from 'src/shared';
-import { CatalogList, fetchCategoryProducts } from 'src/widgets/catalog';
+import { fetchProductsByCategory } from 'src/entities/product/api';
+import { ProductDetails, ProductList } from 'src/widgets/product';
 
 import styles from './styles.module.scss';
 
 const CatalogPage: FC = () => {
+   const { isModalOpen } = useAppSelector((state) => state.modalReducer);
+   const { products, isLoading, error } = useAppSelector(
+      (state) => state.productsListOfCategoryReducer,
+   );
    const { category } = useParams();
-   const { list, isLoading, error } = useAppSelector((state) => state.catalogListReducer);
    const dispatch = useAppDispatch();
 
    useEffect(() => {
-      if (category) dispatch(fetchCategoryProducts(category));
+      dispatch(fetchProductsByCategory(category!));
    }, [category, dispatch]);
 
    if (error) {
@@ -23,7 +27,8 @@ const CatalogPage: FC = () => {
 
    return (
       <div className={`${styles.catalog__container} container`}>
-         <CatalogList productList={list} />
+         <ProductList products={products} />
+         {isModalOpen && <ProductDetails />}
       </div>
    );
 };

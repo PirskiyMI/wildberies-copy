@@ -22,7 +22,7 @@ const initialState: IState = {
    ],
 };
 
-export const basketListSlice = createSlice({
+const basketListSlice = createSlice({
    name: 'cart',
    initialState,
    reducers: {
@@ -63,6 +63,7 @@ export const basketListSlice = createSlice({
    },
 });
 
+export const basketListReducer = basketListSlice.reducer;
 export const {
    toggleProductIsChecked,
    incrementProductCount,

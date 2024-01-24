@@ -7,7 +7,7 @@ import { AddProductToCart, ProductQuickView } from 'src/features/product';
 import styles from './styles.module.scss';
 
 export const CartSlider: FC = () => {
-   const { list } = useAppSelector((state) => state.cartSliderReducer);
+   const { list } = useAppSelector((state) => state.visitedProductsListReducer);
 
    if (!list.length) return null;
 

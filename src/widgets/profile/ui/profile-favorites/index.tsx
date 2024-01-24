@@ -22,27 +22,18 @@ export const ProfileFavorites: FC = () => {
          title={<h2 className={styles.favorites__title}>Избранное</h2>}
          label={
             <div className={styles.favorites__content}>
-               {productsList.length > 0 ? (
-                  <ul className={styles.favorites__list}>
-                     {productsList.map((el) => (
-                        <li className={styles.favorites__item}>
-                           <img className={styles.favorites__image} src={el.image} alt={el.title} />
-                        </li>
-                     ))}
-                     {productsLeft > 0 && (
-                        <li className={`${styles.favorites__item} ${styles.favorites__item_left}`}>
-                           +{productsLeft}
-                        </li>
-                     )}
-                  </ul>
-               ) : (
-                  <>
-                     <p className={styles.favorites__text}>В избранном пока пусто.</p>
-                     <p className={styles.favorites__text}>
-                        Сохраняйте товары, чтобы долго не искать
-                     </p>
-                  </>
-               )}
+               <ul className={styles.favorites__list}>
+                  {productsList.map((el) => (
+                     <li className={styles.favorites__item}>
+                        <img className={styles.favorites__image} src={el.image} alt={el.title} />
+                     </li>
+                  ))}
+                  {productsLeft > 0 && (
+                     <li className={`${styles.favorites__item} ${styles.favorites__item_left}`}>
+                        +{productsLeft}
+                     </li>
+                  )}
+               </ul>
             </div>
          }
       />

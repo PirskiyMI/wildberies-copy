@@ -1,17 +1,17 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { IProductWithRating } from '../../lib';
 
-export interface IModalState {
+export interface IState {
    isModalOpen: boolean;
    product?: IProductWithRating | null;
 }
 
-const initialState: IModalState = {
+const initialState: IState = {
    isModalOpen: false,
    product: null,
 };
 
-export const modalSlice = createSlice({
+const modalSlice = createSlice({
    name: 'modal',
    initialState,
    reducers: {
@@ -27,4 +27,5 @@ export const modalSlice = createSlice({
    },
 });
 
+export const modalReducer = modalSlice.reducer;
 export const { openModal, closeModal, setProductToModal } = modalSlice.actions;

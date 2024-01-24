@@ -52,7 +52,7 @@ const initialState: IUserSlice = {
    ],
 };
 
-export const userSlice = createSlice({
+const userSlice = createSlice({
    name: 'user',
    initialState,
    reducers: {
@@ -84,6 +84,7 @@ export const userSlice = createSlice({
    },
 });
 
+export const userReducer = userSlice.reducer;
 export const {
    setName,
    setGender,

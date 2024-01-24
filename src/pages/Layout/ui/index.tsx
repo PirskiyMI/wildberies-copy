@@ -2,23 +2,18 @@ import { FC, Suspense, useEffect, useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 
-import { Preloader, ScrollToTop, useAppDispatch, useAppSelector } from 'src/shared';
+import { Preloader, ScrollToTop, setWindowWidth, useAppDispatch, useAppSelector } from 'src/shared';
 import { Notification } from 'src/entities/notification';
-import { BurgerMenu } from 'src/widgets/burger-menu';
 import { Header } from 'src/widgets/header';
 import { Footer } from 'src/widgets/footer';
 import { ProfileNav } from 'src/widgets/profile';
-import { ProductModal } from 'src/widgets/product-modal';
 
 import styles from './styles.module.scss';
-
-import { menuList } from '../config';
-import { setWindowWidth } from '../model';
+import { NavigationMenu } from 'src/widgets/nav-menu';
 
 export const Layout: FC = () => {
    const { isVisible: isActive } = useAppSelector((state) => state.notificationReducer);
    const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
-   const { isModalOpen } = useAppSelector((state) => state.modalReducer);
    const [isButtonVisible, setIsButtonVisible] = useState(false);
    const dispatch = useAppDispatch();
 
@@ -39,8 +34,7 @@ export const Layout: FC = () => {
       return () => {
          window.removeEventListener('resize', resizeHandler);
       };
-   }, []);
-
+   });
    useEffect(() => {
       window.addEventListener('scroll', scrollHandler);
       return () => {
@@ -63,8 +57,7 @@ export const Layout: FC = () => {
                </motion.div>
             )}
          </AnimatePresence>
-         <BurgerMenu links={menuList} />
-         {isModalOpen && <ProductModal />}
+         <NavigationMenu />
          <Header />
 
          <main className={styles.layout__main}>
@@ -77,10 +70,10 @@ export const Layout: FC = () => {
                <Outlet />
             </Suspense>
          </main>
+
          {isButtonVisible && windowWidth >= 1024 && (
             <ScrollToTop className={styles.layout__button} />
          )}
-
          <Footer />
       </>
    );
