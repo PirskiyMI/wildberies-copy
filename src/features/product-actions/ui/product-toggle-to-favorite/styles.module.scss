@@ -3,8 +3,8 @@
    height: 20px;
    &:hover {
       svg {
-         fill: var(--secondary-color);
-         stroke: var(--secondary-color);
+         fill: rgb(var(--color-tertiary));
+         stroke: rgb(var(--color-tertiary));
       }
    }
 }

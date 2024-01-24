@@ -3,7 +3,7 @@
    width: 100%;
    height: 100%;
    z-index: 5;
-   background-color: rgba(var(--color-dark), 0.5);
+   background-color: rgba(var(--color-dark), --opacity-50);
 }
 
 .menu {
@@ -13,7 +13,7 @@
    left: -100%;
    width: 100%;
    height: 100%;
-   background-color: white;
+   background-color: rgb(var(--color-secondary));
    transition: left ease 0.4s;
    z-index: 10;
    &_active {
@@ -25,11 +25,11 @@
       row-gap: 12px;
    }
    &__item {
-      font-size: 16px;
-      line-height: 125%;
-      border-radius: 8px;
+      font-size: var(--text-fs-normal);
+      line-height: var(--text-lh-smallest);
+      border-radius: var(--br-normal);
       &:hover {
-         background-color: var(--secondary-color);
+         background-color: rgb(var(--color-primary));
       }
    }
    &__link {
@@ -48,7 +48,7 @@
    &__icon {
       width: 20px;
       height: 20px;
-      fill: rgba(36, 36, 36, 0.5);
+      fill: rgba(var(--color-dark), var(--opacity-50));
    }
    @media (min-width: 1024px) {
       padding: 20px 24px 20px 30px;

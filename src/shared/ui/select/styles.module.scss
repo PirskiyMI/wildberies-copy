@@ -1,14 +1,14 @@
 .select {
    &__wrapper {
       width: 285px;
-      font-size: 16px;
-      line-height: 28px;
+      font-size: var(--text-fs-normal);
+      line-height: 175%;
    }
    &__output {
       height: 44px;
       padding: 7px 38px 7px 12px;
       border: 1px solid #d3d4dd;
-      border-radius: 8px;
+      border-radius: var(--br-normal);
       cursor: pointer;
       background-color: #fff;
    }
@@ -20,15 +20,15 @@
       color: #242424;
       padding: 12px;
       background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      border-radius: var(--br-normal);
+      box-shadow: 0 0 20px rgba(var(--color-black), var(--opacity-10));
       z-index: 10;
    }
    &__option {
       padding: 8px;
       cursor: pointer;
-      border-radius: 8px;
-      transition: background-color ease 0.3s;
+      border-radius: var(--br-normal);
+      transition: background-color var(--transition-slow);
       text-align: center;
       &_active {
          background-color: rgba(0, 0, 0, 0.03);
@@ -45,7 +45,7 @@
       &__option {
          text-align: left;
          &_active {
-            color: #a73afd;
+            color: green;
          }
          @media (any-hover: hover) {
             &:hover {
@@ -66,6 +66,6 @@
    left: 0;
    width: 100%;
    height: 100%;
-   background-color: rgba(var(--color-dark), 0.5);
+   background-color: rgba(var(--color-dark), var(--opacity-10));
    z-index: 5;
 }

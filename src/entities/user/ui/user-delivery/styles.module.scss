@@ -7,8 +7,8 @@
       width: 100%;
    }
    &__bottom {
-      font-size: 12px;
-      line-height: 133%;
+      font-size: var(--text-fs-small);
+      line-height: var(--text-lh-small);
    }
    &__title {
       margin-bottom: 8px;
@@ -20,12 +20,12 @@
       align-items: center;
       justify-content: center;
       border: 4px solid #fff;
-      border-radius: 50%;
+      border-radius: var(--br-circle);
    }
    &__icon {
       width: 17px;
       height: 19px;
-      fill: var(--secondary-color);
+      fill: rgb(var(--color-primary));
    }
    &__label {
       color: #868695;
@@ -38,8 +38,8 @@
          column-gap: 20px;
       }
       &__bottom {
-         font-size: 16px;
-         line-height: 125%;
+         font-size: var(--text-fs-normal);
+         line-height: var(--text-lh-smallest);
       }
       &__image {
          width: 88px;
@@ -50,8 +50,8 @@
          height: 31px;
       }
       h2 {
-         font-size: 20px;
-         line-height: 140%;
+         font-size: var(--text-fs-big);
+         line-height: var(--title-lh-large);
       }
    }
 }

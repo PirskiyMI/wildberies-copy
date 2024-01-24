@@ -24,4 +24,5 @@ export type TIcon =
    | 'like-stroke'
    | 'user-stroke'
    | 'delivery'
-   | 'error';
+   | 'error'
+   | 'like-fill';

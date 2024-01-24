@@ -4,9 +4,9 @@
         flex-direction: column;
     }
     &__item {
-        font-size: 16px;
-        line-height: 125%;
-        border-radius: 8px;
+        font-size: var(--text-fs-normal);
+        line-height: var(--text-lh-smallest);
+        border-radius: var(--br-normal);
         padding: 12px 52px 14px;
         
     }
@@ -22,6 +22,6 @@
     &__icon {
         width: 24px;
         height: 24px;
-        fill: rgba(36, 36, 36, 0.5);
+        fill: rgba(var(--color-dark), --opacity-50);
     }
 }

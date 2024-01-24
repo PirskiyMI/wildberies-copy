@@ -6,9 +6,9 @@
    align-items: center;
    column-gap: 10px;
    border-radius: var(--br-big);
-   font-size: var(--text-fs-large);
+   font-size: var(--text-fs-normal);
    line-height: var(--text-lh-small);
-   background-color: var(--light-dark-color);
+   background-color: rgb(var(--color-dark),var(--opacity-60));
    transition: background-color var(--transition-slow);
    &__button {
       position: absolute;
@@ -29,14 +29,14 @@
          }
       }
       svg {
-         fill: var(--light-black-color);
+         fill: rgb(var(--color-black), var(--opacity-30));
       }
    }
 
    @media (min-width: 1024px) {
       padding: 16px 120px 16px 48px;
       color: var(--text-color-light-gray);
-      background-color: var(--background-color-gray);
+      background-color: rgb(var(--colors-background-white), var(--opacity-20));
       &__button {
          &_loop {
             left: 20px;
@@ -48,33 +48,33 @@
             }
          }
          svg {
-            fill: var(--text-color-light-gray);
+            fill: rgb(var(--color-white), var(--opacity-60));
             transition: fill var(--transition-slow);
          }
          @media (any-hover: hover) {
             &:hover {
                svg {
-                  fill: var(--white-color);
+                  fill: rgb(var(--color-white));
                }
             }
          }
       }
       &::placeholder {
-         color: var(--text-color-light-gray);
+         color: rgb(var(--colors-text-white), var(--opacity-60));
       }
       &:focus ~ &__button {
          svg {
-            fill: var(--light-black-color);
+            fill: rgb(var(--color-black),var(--opacity-60));
          }
       }
       @media (any-hover: hover) {
          &:hover {
-            background-color: var(--text-color-light-gray);
+            background-color: rgb(var(--colors-text-white), var(--opacity-60));
          }
       }
       &:focus {
-         color: var(--text-color-dark);
-         background-color: var(--background-color);
+         color: rgb(var(--colors-text-dark));
+         background-color: rgb(var(--colors-background));
       }
    }
 }

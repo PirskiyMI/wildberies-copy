@@ -19,14 +19,14 @@
          row-gap: 10px;
       }
       &_gradient {
-         background: linear-gradient(94.18deg, #fae1f3 0.59%, #d9f1ff 98.87%);
+         background: linear-gradient(94.18deg, #e3edff 0.59%, #6c9eff 98.87%);
       }
       & &_colored {
-         background: #fae1f3;
+         background: rgb(var(--color-secondary));
       }
       @media (any-hover: hover) {
          &:hover h2 {
-            color: var(--secondary-color);
+            color: rgb(var(--color-secondary));
          }
       }
       @media (min-width: 1024px) {

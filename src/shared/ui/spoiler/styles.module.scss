@@ -17,7 +17,7 @@
          transform: rotate(0);
       }
       svg {
-         fill: var(--text-color-gray);
+         fill: rgb(var(--colors-text-gray));
       }
    }
 }

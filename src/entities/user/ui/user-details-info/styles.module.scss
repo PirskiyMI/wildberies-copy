@@ -1,7 +1,7 @@
 .user {
    display: flex;
    align-items: center;
-   font-weight: 700;
+   font-weight: var(--fw-bold);
    gap: 10px;
    &__avatar {
       display: flex;
@@ -10,9 +10,9 @@
       height: 64px;
       width: 64px;
       flex: 0 0 64px;
-      border-radius: 50%;
-      font-size: 28px;
-      line-height: 129%;
+      border-radius: var(--br-circle);
+      font-size: var(--title-fs-big);
+      line-height: var(--title-lh-small);
       color: #c8c8d1;
       background-color: #f1f1f5;
    }
@@ -26,8 +26,8 @@
       align-items: center;
       justify-content: space-between;
       flex: 0 1 calc(100% - 90px);
-      font-size: 16px;
-      line-height: 22px;
+      font-size: var(--text-fs-normal);
+      line-height: var(--text-lh-small);
    }
    @media (min-width: 1024px) {
       gap: 16px;
@@ -41,8 +41,8 @@
       &__name {
          column-gap: 8px;
          justify-content: stretch;
-         font-size: 24px;
-         line-height: 133%;
+         font-size: var(--text-fs-big);
+         line-height: var(--text-lh-small);
       }
    }
 }

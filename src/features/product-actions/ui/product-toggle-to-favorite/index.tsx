@@ -23,5 +23,5 @@ export const ProductToggleToFavorite: FC<Props> = ({ product }) => {
       }
    };
 
-   return <FavoriteButton clickHandler={clickHandler} className={styles.button}/>;
+   return <FavoriteButton isFavorite={product.isFavorite} clickHandler={clickHandler} className={styles.button}/>;
 };

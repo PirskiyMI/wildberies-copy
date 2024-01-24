@@ -8,14 +8,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 24px;
-      font-weight: 700;
+      font-size: var(--text-fs-big);
+      font-weight: var(--fw-bold);
       color: rgba($color: #000000, $alpha: 0.3);
       background-color: rgba($color: #000000, $alpha: 0.1);
-      border-radius: 50%;
+      border-radius: var(--br-circle);
    }
    &__name {
-      font-weight: 700;
+      font-weight: var(--fw-bold);
       color: #000000;
    }
    &__phone {

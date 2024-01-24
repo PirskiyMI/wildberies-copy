@@ -29,9 +29,9 @@
       row-gap: 30px;
    }
    &__title {
-      font-size: 24px;
-      line-height: 32px;
-      font-weight: 700;
+      font-size: var(--title-fs-large);
+      line-height: var(--title-lh-small);
+      font-weight: var(--fw-bold);
    }
    @media (max-width: 1024px) {
       & {

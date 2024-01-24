@@ -3,9 +3,9 @@
       margin-bottom: 72px;
    }
    &__title {
-      font-size: 24px;
-      line-height: 32px;
-      font-weight: 700;
+      font-size: var(--title-fs-large);
+      line-height: var(--title-lh-small);
+      font-weight: var(--fw-bold);
       margin-bottom: 20px;
       &_not_found {
          margin-bottom: 12px;

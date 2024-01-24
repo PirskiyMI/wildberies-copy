@@ -6,8 +6,8 @@
       display: flex;
       align-items: flex-end;
       column-gap: 6px;
-      font-size: 12px;
-      line-height: 133%;
+      font-size: var(--text-fs-small);
+      line-height: var(--text-lh-small);
    }
    &__icon {
       display: flex;
@@ -15,10 +15,10 @@
       justify-content: center;
       width: 18px;
       height: 18px;
-      font-size: 11px;
+      font-size: var(--text-fs-small);
       line-height: 0.8;
-      background: linear-gradient(130deg, var(--secondary-color) 0%, var(--main-color) 100%);
-      font-weight: 700;
+      background: linear-gradient(130deg, rgb(var(--color-tertiary)) 0%, rgb(var(--color-primary)) 100%);
+      font-weight: var(--fw-bold);
       color: #ffffff;
       border-radius: 0 8px 0 8px;
    }
@@ -27,8 +27,8 @@
    }
    @media (min-width: 1024px) {
       &__bottom {
-         font-size: 16px;
-         line-height: 138%;
+         font-size: var(--text-fs-normal);
+         line-height: var(--title-lh-normal);
       }
    }
 }

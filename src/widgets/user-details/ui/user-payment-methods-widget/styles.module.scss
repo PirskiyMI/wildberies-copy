@@ -1,9 +1,9 @@
 .payments {
    &__title {
       margin-bottom: 12px;
-      font-size: 18px;
-      line-height: 24px;
-      font-weight: 700;
+      font-size: var(--title-fs-small);
+      line-height: var(--title-lh-small);
+      font-weight: var(--fw-bold);
    }
    &__list {
       display: flex;
@@ -16,22 +16,22 @@
       align-items: center;
       justify-content: space-between;
       border: 1px solid lightgray;
-      border-radius: 12px;
+      border-radius: var(--br-normal);
       @media (any-hover: hover) {
          &:hover {
             background-color: rgba(211, 211, 211, 0.3);
          }
       }
       &.payments__item_main {
-         background: #fae1f3;
+         background: rgb(var(--color-secondary));
       }
    }
 
    @media (min-width: 1024px) {
       &__title {
          margin-bottom: 20px;
-         font-size: 24px;
-         line-height: 32px;
+         font-size: var(--text-fs-big);
+         line-height: var(--text-lh-small);
       }
       &__list {
          flex-direction: row;
@@ -53,9 +53,9 @@
    top: 76%;
    &__title {
       margin-bottom: 20px;
-      font-size: 24px;
-      line-height: 32px;
-      font-weight: 700;
+      font-size: var(--text-fs-big);
+      line-height: var(--text-lh-small);
+      font-weight: var(--fw-bold);
    }
    @media (min-width: 1024px) {
       padding: 28px 40px 40px;

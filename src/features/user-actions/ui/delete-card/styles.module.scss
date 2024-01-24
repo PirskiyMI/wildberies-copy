@@ -10,17 +10,17 @@
       justify-content: center;
       width: 20px;
       height: 20px;
-      border-radius: 50%;
+      border-radius: var(--br-circle);
       background-color: #ffffff;
-      transition: background-color ease 0.3s;
+      transition: background-color var(--transition-slow);
       &__icon {
          width: 8px;
          height: 8px;
-         transition: fill ease 0.3s;
+         transition: fill var(--transition-slow);
       }
       @media (any-hover: hover) {
          &:hover {
-            background-color: var(--secondary-color);
+            background-color: rgb(var(--color-secondary));
             .button__icon {
                fill: #ffffff;
             }

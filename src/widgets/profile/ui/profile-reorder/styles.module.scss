@@ -1,14 +1,14 @@
 .body {
    margin-top: 30px;
    margin-bottom: 8px;
-   font-size: 16px;
+   font-size: var(--text-fs-normal);
    line-height: 22px;
    &__content {
       margin-bottom: 24px;
       max-width: 360px;
    }
    &__title {
-      font-weight: 700;
+      font-weight: var(--fw-bold);
       margin-bottom: 10px;
    }
    &__button {

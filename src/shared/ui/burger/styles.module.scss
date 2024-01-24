@@ -2,7 +2,7 @@
    &__icon {
       fill: lightgray;
       &_active {
-         fill: var(--secondary-color);
+         fill: rgb(var(--color-primary));
       }
    }
    @media (any-hover: hover) {
@@ -13,8 +13,8 @@
    @media (min-width: 1024px) {
       padding: 12px 10px;
       border: 1px solid rgba(255, 255, 255, 0.45);
-      border-radius: 8px;
-      transition: border-color ease 0.2s;
+      border-radius: var(--br-normal);
+      transition: border-color var(--transition-slow);
       &__icon {
          width: 28px;
          height: 24px;

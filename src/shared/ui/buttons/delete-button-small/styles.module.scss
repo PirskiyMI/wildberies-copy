@@ -4,12 +4,12 @@
    align-items: center;
    justify-content: center;
    background-color: rgb(255, 255, 255);
-   border-radius: 50%;
+   border-radius: var(--br-circle);
    transition: background-color ease 0.2s;
    svg {
       min-width: 10px;
       min-height: 10px;
-      fill: rgb(36, 36, 36);
+      fill: rgb(var(--color-dark));
       transition: fill ease 0.2s;
    }
 

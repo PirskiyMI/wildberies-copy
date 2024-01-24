@@ -6,18 +6,18 @@
    row-gap: 18px;
    text-align: center;
    &__title {
-      font-weight: 700;
-      font-size: 24px;
-      line-height: 133%;
+      font-weight: var(--fw-bold);
+      font-size: var(--title-fs-large);
+      line-height: var(--title-lh-small);
    }
    &__text {
-      font-size: 16px;
-      line-height: 138%;
+      font-size: var(--text-fs-normal);
+      line-height: var(--text-lh-small);
       color: #868695;
    }
    &__button {
       max-width: 210px;
-      font-weight: 600;
+      font-weight: var(--fw-medium);
    }
    &__link {
       display: block;

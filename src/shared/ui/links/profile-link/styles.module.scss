@@ -6,22 +6,22 @@
    svg {
       width: 24px;
       height: 24px;
-      fill: var(--dark-color);
+      fill: rgb(var(--color-dark));
       transition: fill var(--transition-fast);
    }
    &_active {
       .link__title {
-         color: var(--tertiary-color);
+         color: rgb(var(--color-tertiary));
       }
       svg {
-         fill: var(--tertiary-color);
+         fill: rgb(var(--color-tertiary));
       }
    }
    @media (any-hover: hover) {
       &:hover {
-         color: var(--tertiary-color);
+         color: rgb(var(--color-tertiary));
          svg {
-            fill: var(--tertiary-color);
+            fill: rgb(var(--color-tertiary));
          }
       }
    }

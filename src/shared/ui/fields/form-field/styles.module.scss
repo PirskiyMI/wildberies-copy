@@ -3,10 +3,10 @@
    position: relative;
    &__input {
       width: 100%;
-      border-bottom: 1px solid var(--border-color-gray);
+      border-bottom: 1px solid rgb(var(--color-border-black), var(--opacity-20));
       &_error {
-         color: var(--text-color-error);
-         border-color: var(--border-color-error);
+         color: rgb(var(--colors-text-error));
+         border-color: rgb(var(--color-border-error));
       }
    }
    &__input,
@@ -18,23 +18,23 @@
       top: 0;
       left: 0;
       position: absolute;
-      color: var(--text-color-gray);
-      transition: all ease 0.3s;
+      color: rgb(var(--colors-text-gray));
+      transition: all var(--transition-slow);
       &_active {
          top: -70%;
-         font-size: var(--text-fs-smallest);
+         font-size: var(--text-fs-small);
          line-height: var(--text-lh-smallest);
       }
       &_error {
-         color: var(--text-color-error);
+         color: rgb(var(--colors-text-error));
       }
    }
    &__error {
       position: absolute;
       bottom: -16px;
       left: 0;
-      font-size: var(--text-fs-smallest);
+      font-size: var(--text-fs-small);
       line-height: var(--text-lh-smallest);
-      color: var(--text-color-error);
+      color: rgb(var(--colors-text-error));
    }
 }

@@ -4,8 +4,8 @@
    justify-content: space-between;
    width: 100%;
    &__bottom {
-      font-size: 12px;
-      line-height: 133%;
+      font-size: var(--text-fs-small);
+      line-height: var(--text-lh-small);
       color: #868695;
    }
    @media (min-width: 1024px) {
@@ -13,8 +13,8 @@
       flex-direction: column;
       row-gap: 8px;
       &__bottom {
-         font-size: 16px;
-         line-height: 138%;
+         font-size: var(--text-fs-normal);
+         line-height: var(--title-lh-normal);
       }
    }
 }

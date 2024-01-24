@@ -3,7 +3,7 @@
    display: flex;
    align-items: center;
    column-gap: 11px;
-   font-size: 16px;
-   font-weight: 400;
-   line-height: 150%;
+   font-size: var(--text-fs-normal);
+   font-weight: var(--fw-normal);
+   line-height: var(--text-lh-big);
 }

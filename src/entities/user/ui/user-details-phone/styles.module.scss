@@ -3,8 +3,8 @@
    flex-direction: column;
    row-gap: 4px;
    &__title {
-      font-size: 12px;
-      line-height: 16px;
+      font-size: var(--title-fs-smallest);
+      line-height: var(--title-lh-small);
       color: #868695;
    }
 }

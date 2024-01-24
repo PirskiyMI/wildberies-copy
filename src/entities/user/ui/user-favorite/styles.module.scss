@@ -3,8 +3,8 @@
       margin-bottom: 8px;
    }
    &__text {
-      font-size: 12px;
-      line-height: 133%;
+      font-size: var(--text-fs-small);
+      line-height: var(--text-lh-small);
       color: #868695;
    }
    &__list {
@@ -13,7 +13,7 @@
    &__item {
       width: 60px;
       height: 60px;
-      border-radius: 50%;
+      border-radius: var(--br-circle);
       overflow: hidden;
       border: 2px solid #ffffff;
       &:not(:first-child) {
@@ -23,11 +23,11 @@
          display: flex;
          align-items: center;
          justify-content: center;
-         font-size: 20px;
-         line-height: 28px;
+         font-size: var(--text-fs-big);
+         line-height: var(--text-lh-smallest);
          border-color: #fdeef9;
          background-color: #ffffff;
-         font-weight: 700;
+         font-weight: var(--fw-bold);
       }
    }
    &__image {
@@ -36,8 +36,8 @@
    }
    @media (min-width: 1024px) {
       &__text {
-         font-size: 16px;
-         line-height: 138%;
+         font-size: var(--text-fs-normal);
+         line-height: var(--text-lh-normal);
       }
    }
 }

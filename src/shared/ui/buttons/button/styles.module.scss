@@ -3,21 +3,21 @@
    height: 100%;
    font-size: var(--text-fs-normal);
    line-height: var(--text-lh-big);
-   font-weight: 700;
-   color: var(--text-color-white);
-   background: var(--tertiary-color);
-   border: 2px solid var(--tertiary-color);
-   border-radius: 8px;
+   font-weight: var(--fw-bold);
+   color: rgb(var(--colors-text-white));
+   background: rgb(var(--color-tertiary));
+   border: 2px solid rgb(var(--color-tertiary));
+   border-radius: var(--br-normal);
    &_change {
-      color: var(--tertiary-color);
-      font-size: 16px;
-      line-height: 150%;
-      font-weight: 700;
+      color: rgb(var(--color-tertiary));
+      font-size: var(--text-fs-normal);
+      line-height: var(--text-lh-big);
+      font-weight: var(--fw-bold);
    }
    @media (any-hover: hover) {
       &:hover {
-         background: var(--tertiary-color-hovered);
-         border-color: var(--tertiary-color-hovered);
+         background:rgb(var(--color-tertiary-hovered)) ;
+         border-color: rgb(var(--color-tertiary-hovered));
       }
    }
 }

@@ -2,12 +2,12 @@
     width: 22px;
     height: 22px;
     border: 2px solid #a9a8b0;
-    border-radius: 6px;
+    border-radius: var(--br-normal);
     background-color: #fff;
 
     &_active {
-        background-color: #a73afd;
-        border: 2px solid #a73afd;
+        background-color: rgb(var(--color-tertiary));
+        border: 2px solid rgb(var(--color-tertiary));
     }
     &__mark {
         filter: invert(100%);

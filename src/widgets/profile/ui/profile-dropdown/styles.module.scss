@@ -2,7 +2,7 @@
    width: 240px;
    padding: 10px 16px;
    background-color: white;
-   border-radius: 16px;
+   border-radius: var(--br-large);
    box-shadow: 0 0 16px rgba(#000000, 0.1);
    &__list {
       margin-top: 20px;
@@ -24,27 +24,27 @@
       height: 20px;
       svg {
          fill: #000000;
-         transition: fill ease 0.3s;
+         transition: fill var(--transition-slow);
       }
    }
    &__text {
       color: #000000;
-      transition: color ease 0.3s;
+      transition: color var(--transition-slow);
    }
    &__button {
       margin-top: 10px;
       font-size: inherit;
       color: rgba(#000000, 0.5);
-      transition: color ease 0.3s;
+      transition: color var(--transition-slow);
    }
    @media (any-hover: hover) {
       &__item:hover {
          .dropdown__text {
-            color: var(--tertiary-color);
+            color: rgb(var(--color-tertiary));
          }
          .dropdown__icon {
             svg {
-               fill: var(--tertiary-color);
+               fill: rgb(var(--color-tertiary));
             }
          }
       }
