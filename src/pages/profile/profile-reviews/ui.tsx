@@ -1,12 +1,12 @@
 import { FC } from 'react';
 
-import { ProfileReorder } from 'src/widgets/profile';
+import { UserProfileReorder } from 'src/widgets/user/user-profile';
 
 const ProfileReviews: FC = () => {
    return (
       <div>
          <div className={`container`}>
-            <ProfileReorder
+            <UserProfileReorder
                title="Здесь будут ваши отзывы"
                text="Помогите другим покупателям сделать выбор — поделитесь мнением о товарах в разделе Покупки"
             />

@@ -1,13 +1,13 @@
 .cart {
    &__wrapper {
       display: grid;
-      grid-template-columns: repeat(1, 100%);
+      grid-template-columns: repeat(1, 1fr);
       gap: 8px;
    }
    &__column {
       &_big {
          display: grid;
-         grid-template-columns: repeat(1, 100%);
+         grid-template-columns: repeat(1, 1fr);
          gap: 8px;
          grid-column: span 3;
       }
@@ -24,13 +24,13 @@
       }
       &__wrapper {
          display: grid;
-         grid-template-columns: repeat(4, 25%);
+         grid-template-columns: repeat(4, 1fr);
          column-gap: 10px;
       }
       &__column {
          &_big {
             display: grid;
-            grid-template-columns: repeat(2, calc(50% - 16px));
+            grid-template-columns: repeat(2, 1fr);
             gap: 16px;
             grid-column: span 3;
          }

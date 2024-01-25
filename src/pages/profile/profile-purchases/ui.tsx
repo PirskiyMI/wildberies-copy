@@ -1,12 +1,12 @@
 import { FC } from 'react';
 
-import { ProfileReorder } from 'src/widgets/profile';
+import { UserProfileReorder } from 'src/widgets/user/user-profile';
 
 const ProfilePurchases: FC = () => {
    return (
       <div>
          <div className={`container`}>
-            <ProfileReorder
+            <UserProfileReorder
                title="В покупках пока пусто"
                text="Здесь будут отображатся товары, которые вы уже заказали"
             />

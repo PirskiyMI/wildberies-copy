@@ -5,7 +5,7 @@ import { UserPaymentCard } from 'src/entities/user';
 import { DeleteUserCard, SetUserMainCard } from 'src/features/user';
 
 import styles from './styles.module.scss';
-import { UserModal } from '../../user-modal';
+import { UserModal } from './user-modal';
 
 export const UserPaymentMethods: FC = () => {
    const [isModal, setIsModal] = useState(false);

@@ -1,12 +1,12 @@
 import { FC, useEffect, useState } from 'react';
 
 import { IProductWithRating, ServerError, useAppDispatch, useAppSelector } from 'src/shared';
-import { HomePreloader } from 'src/widgets/home';
+import { fetchAllProducts } from 'src/entities/product/api';
+import { ProductSkeletonList } from 'src/widgets/product/product-skeleton-list';
+import { ProductList } from 'src/widgets/product/product-list';
+import { ProductDetails } from 'src/widgets/product/product-details';
 
 import styles from './styles.module.scss';
-import { ProductList } from 'src/widgets/product/ui/product-list';
-import { fetchAllProducts } from 'src/entities/product/api';
-import { ProductDetails } from 'src/widgets/product';
 
 const Home: FC = () => {
    const { value } = useAppSelector((state) => state.searchReducer);
@@ -32,7 +32,7 @@ const Home: FC = () => {
    if (isLoading) {
       return (
          <div className="container">
-            <HomePreloader />
+            <ProductSkeletonList />
          </div>
       );
    } else if (error) {

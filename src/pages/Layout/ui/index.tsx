@@ -6,10 +6,9 @@ import { Preloader, ScrollToTop, setWindowWidth, useAppDispatch, useAppSelector 
 import { Notification } from 'src/entities/notification';
 import { Header } from 'src/widgets/header';
 import { Footer } from 'src/widgets/footer';
-import { ProfileNav } from 'src/widgets/profile';
 
 import styles from './styles.module.scss';
-import { NavigationMenu } from 'src/widgets/nav-menu';
+import { BurgerNav, ProfileNav } from 'src/widgets/nav-menu';
 
 export const Layout: FC = () => {
    const { isVisible: isActive } = useAppSelector((state) => state.notificationReducer);
@@ -57,7 +56,7 @@ export const Layout: FC = () => {
                </motion.div>
             )}
          </AnimatePresence>
-         <NavigationMenu />
+         <BurgerNav />
          <Header />
 
          <main className={styles.layout__main}>

@@ -4,11 +4,11 @@ import { useAppSelector } from 'src/shared';
 import {
    CartEmpty,
    CartOrder,
-   CartSlider,
    CartSpoiler,
-   CartUserInfo,
    CartPaymentMethod,
+   CartUserInfo,
 } from 'src/widgets/cart';
+import { ProductSlider } from 'src/widgets/product/product-slider';
 
 import styles from './styles.module.scss';
 
@@ -41,7 +41,7 @@ export const CartPage: FC = () => {
 
          {visitedProducts.length ? (
             <div className={styles.cart__slider}>
-               <CartSlider />
+               <ProductSlider />
             </div>
          ) : null}
       </div>

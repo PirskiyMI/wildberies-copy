@@ -1,12 +1,12 @@
 import { FC } from 'react';
 
-import { ProfileReorder } from 'src/widgets/profile';
+import { UserProfileReorder } from 'src/widgets/user/user-profile/ui/user-reorder';
 
 const ProfileDelivery: FC = () => {
    return (
       <div>
          <div className={`container`}>
-            <ProfileReorder
+            <UserProfileReorder
                title="Здесь будут ваши доставки"
                text="Оформите заказ в корзине и возвращайтесь, чтобы узнать, где товары сейчас"
             />

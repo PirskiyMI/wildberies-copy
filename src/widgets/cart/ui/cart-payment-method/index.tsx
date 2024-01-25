@@ -1,9 +1,8 @@
 import { FC, useState } from 'react';
 
 import { UserPaymentCardBasket } from 'src/entities/user';
-import { useAppSelector } from 'src/shared';
+import { CartTile, useAppSelector } from 'src/shared';
 
-import { CartItem } from '../cart-item';
 import { CartModal } from '../cart-modal';
 
 export const CartPaymentMethod: FC = () => {
@@ -33,7 +32,7 @@ export const CartPaymentMethod: FC = () => {
 
    return (
       <div>
-         <CartItem
+         <CartTile
             title="Способ оплаты"
             content={
                paymentInfo.length ? (

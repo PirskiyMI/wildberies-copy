@@ -1,12 +1,12 @@
 import { FC } from 'react';
 
-import { ProfileReorder } from 'src/widgets/profile';
+import { UserProfileReorder } from 'src/widgets/user/user-profile';
 
 const ProfileTravel: FC = () => {
    return (
       <div>
          <div className={`container`}>
-            <ProfileReorder
+            <UserProfileReorder
                title="Вы никуда не путешествовали"
                text="Здесь будут отображатся купленные вами билеты"
             />

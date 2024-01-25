@@ -1,11 +1,9 @@
 import { FC } from 'react';
 
-import styles from './styles.module.scss';
+import { Logo, useAppSelector } from 'src/shared';
+import { ProductSearch } from 'src/features/product';
 
-import { useAppSelector } from '../../../../shared/lib';
-import { SearchForm } from '../../../../features/search';
-import { ToggleSearchField } from '../../../../features/search/ui/toggle-search';
-import { Logo } from '../../../../shared/ui';
+import styles from './styles.module.scss';
 
 export const HeaderMobile: FC = () => {
    const { isOpen } = useAppSelector((state) => state.searchReducer);
@@ -15,14 +13,12 @@ export const HeaderMobile: FC = () => {
          {isOpen && (
             <div className={styles.header__search}>
                <div className={`${styles.header__container} container`}>
-                  <SearchForm />
-                  <ToggleSearchField isOpen={isOpen} />
+                  <ProductSearch />
                </div>
             </div>
          )}
          <div className={`${styles.header__container} container`}>
             <Logo />
-            <ToggleSearchField isOpen={isOpen} />
          </div>
       </>
    );

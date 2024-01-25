@@ -1,15 +1,14 @@
 import { FC } from 'react';
 
-import styles from './styles.module.scss';
-
 import { useAppSelector } from 'src/shared';
-import { SearchForm } from 'src/features/search';
+import { ProductSearch } from 'src/features/product';
+import { UserDropdown } from 'src/widgets/user/user-profile';
 
+import styles from './styles.module.scss';
 import { HeaderLabel } from '../header-label';
 import { HeaderNavigation } from '../header-nav';
 import { HeaderMobileMenu } from '../header-mobile-menu';
 import { HeaderMobile } from './HeaderMobile';
-import { ProfileDropdown } from 'src/widgets/profile/ui/profile-dropdown';
 
 export const Header: FC = () => {
    const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
@@ -19,8 +18,8 @@ export const Header: FC = () => {
          <header className={styles.header}>
             <div className={`${styles.header__container} container`}>
                <HeaderLabel />
-               <SearchForm />
-               <HeaderNavigation dropDown={<ProfileDropdown />} />
+               <ProductSearch />
+               <HeaderNavigation dropDown={<UserDropdown />} />
             </div>
          </header>
       );

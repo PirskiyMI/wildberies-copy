@@ -32,7 +32,6 @@ export const Slider: FC<Props> = ({ children, gap, minHeight }) => {
          setWrapperWidth(wrapperWidth);
       }
    }, [gap, sliderList, windowWidth]);
-
    const scrollToPrev = () => {
       if (Math.abs(sliderPosition) >= wrapperWidth) {
          setSliderPosition((prev) => (prev += wrapperWidth));
