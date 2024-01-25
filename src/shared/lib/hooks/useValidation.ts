@@ -3,7 +3,7 @@ import { useExpression } from './useExpression';
 
 export type validatorsValue = {
    isRequired?: boolean;
-   type: 'tel' | 'email' | 'name' | 'ITN' | 'card' | 'CVV/CVC' | 'date';
+   type: 'tel' | 'email' | 'name' | 'ITN' | 'card' | 'CVV/CVC' | 'date' | 'surname';
 };
 
 export const useValidation = (value: string, { isRequired, type }: validatorsValue) => {
@@ -65,6 +65,9 @@ export const useValidation = (value: string, { isRequired, type }: validatorsVal
          switch (type) {
             case 'name':
                setErrorText('Укажите имя');
+               break;
+               case 'surname':
+               setErrorText('Укажите фамилию');
                break;
             case 'email':
                setErrorText('Укажите электронную почту');
