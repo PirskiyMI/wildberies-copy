@@ -2,8 +2,14 @@ import { FC, Suspense, useEffect, useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 
-import { Preloader, ScrollToTop, setWindowWidth, useAppDispatch, useAppSelector } from 'src/shared';
-import { Notification } from 'src/entities/notification';
+import {
+   Notification,
+   Preloader,
+   ScrollToTop,
+   setWindowWidth,
+   useAppDispatch,
+   useAppSelector,
+} from 'src/shared';
 import { Header } from 'src/widgets/header';
 import { Footer } from 'src/widgets/footer';
 

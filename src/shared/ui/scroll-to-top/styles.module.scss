@@ -3,16 +3,11 @@
    display: flex;
    align-items: center;
    justify-content: center;
-   background-color: var(--tertiary-color);
+   background-color: rgb(var(--color-secondary));
    border-radius: var(--br-circle);
    z-index: 10;
    cursor: pointer;
-   svg {
-      fill: var(--white-color);
-   }
-   @media (any-hover: hover) {
-      &:hover {
-         background-color: var(--tertiary-color-hovered);
-      }
+   &__icon {
+      fill: rgb(var(--color-white));
    }
 }

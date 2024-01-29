@@ -4,6 +4,9 @@
    flex-direction: column;
    row-gap: 30px;
    padding: 0px 40px 0 16px;
+   &__item {
+      overflow: hidden;
+   }
    @media (min-width: 1024px) {
       padding: 0;
    }

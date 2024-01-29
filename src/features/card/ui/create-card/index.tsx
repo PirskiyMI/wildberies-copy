@@ -9,7 +9,7 @@ type Props = {
    closeModal?: () => void;
 };
 
-export const AddUserCard: FC<Props> = ({ closeModal }) => {
+export const CreateCard: FC<Props> = ({ closeModal }) => {
    const {
       errorText: cartErrorText,
       isDirty: cartIsDirty,

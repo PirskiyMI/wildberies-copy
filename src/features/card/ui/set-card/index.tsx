@@ -9,7 +9,7 @@ type Props = {
    id: number;
 };
 
-export const SetUserMainCard: FC<Props> = ({ id }) => {
+export const SetCard: FC<Props> = ({ id }) => {
    const dispatch = useAppDispatch();
 
    const clickHandler = () => {

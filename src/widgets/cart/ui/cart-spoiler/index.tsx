@@ -12,15 +12,17 @@ const CartList: FC = () => {
    return (
       <div className={styles.list}>
          {list.map((el) => (
-            <BasketItem
-               key={el.id}
-               product={el}
-               features={{
-                  Checkbox: <ToggleProductToOrder id={el.id} isChecked={el.status.isChecked} />,
-                  Counter: <ProductCounter id={el.id} value={el.status.count} />,
-                  Delete: <RemoveProductFromCart id={el.id} />,
-                  Like: <div />,
-               }}></BasketItem>
+            <li className={styles.list__item}>
+               <BasketItem
+                  key={el.id}
+                  product={el}
+                  features={{
+                     Checkbox: <ToggleProductToOrder id={el.id} isChecked={el.status.isChecked} />,
+                     Counter: <ProductCounter id={el.id} value={el.status.count} />,
+                     Delete: <RemoveProductFromCart id={el.id} />,
+                     Like: <div />,
+                  }}></BasketItem>
+            </li>
          ))}
       </div>
    );

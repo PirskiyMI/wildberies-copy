@@ -10,50 +10,50 @@
    &__icon {
       width: 24px;
       height: 24px;
-      fill: var(--light-black-color);
+      fill: rgba(var(--color-dark), 0.5);
    }
    &__count {
       position: absolute;
-      min-width: 16px;
-      height: 16px;
-      padding: 2px 3px 1px;
       top: -6px;
       right: -8px;
-      text-align: center;
-      font-size: 10px;
-      line-height: 130%;
-      color: rgb(255, 255, 255);
-      background-color: var(--orange-color);
-      border-radius: var(--br-large);
+      width: 16px;
+      height: 16px;
+      padding: 2px 3px 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--text-fs-small);
+      line-height: var(--text-lh-small);
+      color: rgb(var(--color-white));
+      background-color: rgb(var(--color-error));
+      border-radius: var(--br-circle);
    }
    &__label {
       display: none;
    }
    &_active {
       .link__icon {
-         fill: var(--secondary-color);
+         fill: rgb(var(--color-secondary));
       }
    }
-
    @media (min-width: 1024px) {
       &__icon {
-         fill: var(--white-color);
+         fill: rgb(var(--color-white));
       }
       &__label {
          display: block;
-         font-size: var(--text-fs-small);
-         color: var(--light-gray-color);
+         color: rgb(var(--color-white));
          transition: color var(--transition-slow);
       }
       &_active {
          .link__icon {
-            fill: var(--white-color);
+            fill: rgb(var(--color-white));
          }
       }
    }
    @media (any-hover: hover) {
       &__body:hover &__label {
-         color: var(--white-color);
+         color: rgb(var(--color-white));
       }
    }
 }

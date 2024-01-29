@@ -3,6 +3,7 @@ import {
    burgerReducer,
    deviceReducer,
    modalReducer,
+   notificationReducer,
    searchReducer,
    windowWidthReducer,
 } from 'src/shared';
@@ -13,7 +14,6 @@ import {
 } from 'src/entities/product';
 import { basketInfoReducer, basketListReducer } from 'src/entities/basket';
 import { orderReducer } from 'src/entities/order';
-import { notificationReducer } from 'src/entities/notification';
 import { userReducer } from 'src/entities/user';
 
 const rootReducer = combineReducers({

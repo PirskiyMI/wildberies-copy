@@ -3,6 +3,7 @@ export * from './fields';
 export * from './burger';
 export * from './icon';
 export * from './modal';
+export * from './notification';
 export * from './preloader';
 export * from './price';
 export * from './radio';

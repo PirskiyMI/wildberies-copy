@@ -1,17 +1,14 @@
 .error {
-    text-align: center;
-    margin-top: 30ch;
-    margin-bottom: 30ch;
-    color: rgb(68,68,68);
-
-    &__title {
-        font-size: 160px;
-        font-weight: bold;
-        
-    }
-    &__text {
-        margin-top: 5ch;
-        font-size: 50px;
-        font-weight: bold;
-    }
+   margin-top: 30ch;
+   margin-bottom: 30ch;
+   text-align: center;
+   font-weight: var(--fw-bold);
+   color: rgba(var(--color-dark), 0.9);
+   &__title {
+      font-size: 160px;
+   }
+   &__text {
+      margin-top: 5ch;
+      font-size: 50px;
+   }
 }

@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import { Button, Icon, Modal, Section } from 'src/shared';
-import { AddUserCard, SetUserMainCardInBasket } from 'src/features/user';
+import { CreateCard, SetCardInBasket } from 'src/features/card/ui';
 
 import styles from './styles.module.scss';
 
@@ -18,7 +18,7 @@ export const CartModal: FC<Props> = ({ type, cardList, closeModal, toggleType })
          <Section title={type === 'form' ? 'Привязать карту' : 'Способ оплаты'}>
             {type === 'form' ? (
                <>
-                  <AddUserCard />
+                  <CreateCard />
                   <Button onClick={toggleType} className={styles.modal__button}>
                      Выбрать способ оплаты
                   </Button>
@@ -27,7 +27,7 @@ export const CartModal: FC<Props> = ({ type, cardList, closeModal, toggleType })
                <ul className={styles.modal__list}>
                   {cardList.map((el) => (
                      <li key={el.id} className={styles.modal__item}>
-                        <SetUserMainCardInBasket cardNumber={el.cardNumber} id={el.id} />
+                        <SetCardInBasket cardNumber={el.cardNumber} id={el.id} />
                      </li>
                   ))}
                   <li onClick={toggleType} className={styles.modal__item}>

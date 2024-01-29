@@ -64,7 +64,7 @@ export const Slider: FC<Props> = ({ children, gap, minHeight }) => {
       return (
          <div style={{ position: 'relative' }}>
             <div ref={sliderRef} className={styles.slider}>
-               <div
+               <ul
                   style={{
                      left: `${sliderPosition}px`,
                      columnGap: `${gap}px`,
@@ -72,14 +72,14 @@ export const Slider: FC<Props> = ({ children, gap, minHeight }) => {
                   }}
                   className={styles.slider__wrapper}>
                   {sliderList.map((el, index) => (
-                     <div
+                     <li
                         style={{ flex: `0 0 215px`, minWidth: '215px' }}
                         className={styles.slider__item}
                         key={index}>
                         {el}
-                     </div>
+                     </li>
                   ))}
-               </div>
+               </ul>
             </div>
             <button
                className={`${styles.slider__button} ${styles.slider__button_prev}`}

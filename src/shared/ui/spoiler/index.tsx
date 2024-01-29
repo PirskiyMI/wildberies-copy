@@ -20,7 +20,7 @@ export const Spoiler: FC<SpoilerProps> = ({ initial, Content, Title }) => {
                {Title}
             </div>
             <div className={`${styles.spoiler__arrow} ${isOpen && styles.spoiler__arrow_active}`}>
-               <Icon icon="arrow" />
+               <Icon icon="arrow" className={styles.spoiler__icon} />
             </div>
          </div>
          <AnimatePresence>

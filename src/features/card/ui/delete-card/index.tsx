@@ -9,7 +9,7 @@ type Props = {
    id: number;
 };
 
-export const DeleteUserCard: FC<Props> = ({ id }) => {
+export const DeleteCard: FC<Props> = ({ id }) => {
    const dispatch = useAppDispatch();
    const clickHandler = () => {
       dispatch(deleteCard(id));

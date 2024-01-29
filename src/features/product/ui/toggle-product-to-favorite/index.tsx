@@ -11,6 +11,7 @@ type Props = {
 };
 
 export const ToggleProductToFavorite: FC<Props> = ({ product }) => {
+   const classes = product.isFavorite ? `${styles.button} ${styles.button_active}` : styles.button;
    const dispatch = useAppDispatch();
 
    const clickHandler = () => {
@@ -23,5 +24,7 @@ export const ToggleProductToFavorite: FC<Props> = ({ product }) => {
       }
    };
 
-   return <FavoriteButton clickHandler={clickHandler} className={styles.button} />;
+   return (
+      <FavoriteButton clickHandler={clickHandler} isFill={product.isFavorite} className={classes} />
+   );
 };

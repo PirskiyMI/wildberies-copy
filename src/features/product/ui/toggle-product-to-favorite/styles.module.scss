@@ -1,10 +1,18 @@
 .button {
    width: 20px;
    height: 20px;
-   &:hover {
+   &_active {
       svg {
-         fill: var(--secondary-color);
-         stroke: var(--secondary-color);
+         fill: rgb(var(--color-primary));
+         stroke: rgb(var(--color-primary));
+      }
+   }
+   @media (any-hover: hover) {
+      &:hover {
+         svg {
+            fill: rgb(var(--color-primary));
+            stroke: rgb(var(--color-primary));
+         }
       }
    }
 }

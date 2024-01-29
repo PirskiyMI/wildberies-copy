@@ -1,8 +1,7 @@
 .button {
    width: 20px;
    height: 20px;
-   svg {
-      align-items: center;
-      fill: black;
+   &__icon {
+      fill: rgb(var(--color-dark));
    }
 }

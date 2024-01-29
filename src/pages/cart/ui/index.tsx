@@ -8,7 +8,7 @@ import {
    CartPaymentMethod,
    CartUserInfo,
 } from 'src/widgets/cart';
-import { ProductSlider } from 'src/widgets/product/product-slider';
+/* import { ProductSlider } from 'src/widgets/product/product-slider'; */
 
 import styles from './styles.module.scss';
 
@@ -16,7 +16,7 @@ import { useSetCount } from '../lib';
 
 export const CartPage: FC = () => {
    const { list } = useAppSelector((state) => state.basketListReducer);
-   const { list: visitedProducts } = useAppSelector((state) => state.visitedProductsListReducer);
+   /* const { list: visitedProducts } = useAppSelector((state) => state.visitedProductsListReducer); */
 
    useSetCount({ list });
 
@@ -38,12 +38,6 @@ export const CartPage: FC = () => {
          ) : (
             <CartEmpty />
          )}
-
-         {visitedProducts.length ? (
-            <div className={styles.cart__slider}>
-               <ProductSlider />
-            </div>
-         ) : null}
       </div>
    );
 };

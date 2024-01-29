@@ -1,13 +1,13 @@
 .skeleton {
    position: relative;
-   background-color: var(--background-color-light-black);
+   background-color: rgba(var(--color-dark), 0.3);
    border-radius: var(--br-large);
    overflow: hidden;
    &__animation {
       position: absolute;
       width: 10%;
       height: 110%;
-      background-color: var(--white-color);
+      background-color: var(--color-white);
       filter: blur(20px);
       animation: skeletonAnimation 1.4s infinite 0.1s linear;
    }

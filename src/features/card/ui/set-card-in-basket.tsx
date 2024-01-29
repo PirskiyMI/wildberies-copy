@@ -8,7 +8,7 @@ type Props = {
    id: number;
 };
 
-export const SetUserMainCardInBasket: FC<Props> = ({ cardNumber, id }) => {
+export const SetCardInBasket: FC<Props> = ({ cardNumber, id }) => {
    const dispatch = useAppDispatch();
 
    const clickHandler = () => {

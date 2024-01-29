@@ -3,25 +3,25 @@
    align-items: center;
    column-gap: 10px;
    transition: color var(--transition-fast);
-   svg {
+   &__icon {
       width: 24px;
       height: 24px;
-      fill: var(--dark-color);
+      fill: rgb(var(--dark-color));
       transition: fill var(--transition-fast);
    }
    &_active {
       .link__title {
-         color: var(--tertiary-color);
+         color: rgb(var(--color-primary));
       }
-      svg {
-         fill: var(--tertiary-color);
+      &__icon {
+         fill: rgb(var(--color-primary));
       }
    }
    @media (any-hover: hover) {
       &:hover {
-         color: var(--tertiary-color);
-         svg {
-            fill: var(--tertiary-color);
+         color: rgb(var(--color-primary));
+         &__icon {
+            fill: rgb(var(--color-primary));
          }
       }
    }

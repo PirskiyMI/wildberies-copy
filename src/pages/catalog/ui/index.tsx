@@ -3,10 +3,10 @@ import { useParams } from 'react-router-dom';
 
 import { Preloader, useAppDispatch, useAppSelector } from 'src/shared';
 import { fetchProductsByCategory } from 'src/entities/product/api';
+import { ProductList } from 'src/widgets/product/product-list';
+import { ProductDetails } from 'src/widgets/product/product-details';
 
 import styles from './styles.module.scss';
-import { ProductList } from 'src/widgets/product/product-favorite-list/ui';
-import { ProductDetails } from 'src/widgets/product/product-details';
 
 const CatalogPage: FC = () => {
    const { isModalOpen } = useAppSelector((state) => state.modalReducer);

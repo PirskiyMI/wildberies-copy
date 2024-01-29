@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { Slider, useAppSelector } from 'src/shared';
 import { ProductCard } from 'src/entities/product';
-import { AddProductToCart, ProductQuickView } from 'src/features/product';
+import { AddProductToCart, ProductQuickView, ToggleProductToFavorite } from 'src/features/product';
 
 import styles from './styles.module.scss';
 
@@ -16,18 +16,22 @@ export const ProductSlider: FC = () => {
          <h2>Вы недавно смотрели</h2>
          <Slider minHeight={370} gap={30}>
             {list.map((el) => (
-               <ProductCard key={el.id} product={el}>
-                  <ProductQuickView product={el} />
-                  <AddProductToCart
-                     product={{
-                        id: el.id,
-                        image: el.image,
-                        price: el.price,
-                        title: el.title,
-                        isFavorite: el.isFavorite,
-                     }}
-                  />
-               </ProductCard>
+               <ProductCard
+                  product={el}
+                  FavoriteButton={<ToggleProductToFavorite product={el} />}
+                  ModalButton={<ProductQuickView product={el} />}
+                  CartButton={
+                     <AddProductToCart
+                        product={{
+                           id: el.id,
+                           image: el.image,
+                           price: el.price,
+                           title: el.title,
+                           isFavorite: el.isFavorite,
+                        }}
+                     />
+                  }
+               />
             ))}
          </Slider>
       </div>

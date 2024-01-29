@@ -2,7 +2,7 @@ import { FC, useState } from 'react';
 
 import { Card, Icon, Section, useAppSelector } from 'src/shared';
 import { UserPaymentCard } from 'src/entities/user';
-import { DeleteUserCard, SetUserMainCard } from 'src/features/user';
+import { DeleteCard, SetCard } from 'src/features/card/ui';
 
 import styles from './styles.module.scss';
 import { UserModal } from './user-modal';
@@ -24,15 +24,15 @@ export const UserPaymentMethods: FC = () => {
                      {el.isMain ? (
                         <UserPaymentCard
                            cardNumber={el.cardNumber}
-                           deleteButton={<DeleteUserCard id={el.id} />}
+                           deleteButton={<DeleteCard id={el.id} />}
                            isDesktop={windowWidth >= 1024}
                            className={styles.payments__card}
                         />
                      ) : (
                         <UserPaymentCard
                            cardNumber={el.cardNumber}
-                           deleteButton={<DeleteUserCard id={el.id} />}
-                           toggleMain={<SetUserMainCard id={el.id} />}
+                           deleteButton={<DeleteCard id={el.id} />}
+                           toggleMain={<SetCard id={el.id} />}
                            isDesktop={windowWidth >= 1024}
                            className={styles.payments__card}
                         />

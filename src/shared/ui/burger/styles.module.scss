@@ -1,24 +1,28 @@
 .burger {
    &__icon {
-      fill: lightgray;
+      fill: rgb(var(--color-white));
       &_active {
-         fill: var(--secondary-color);
+         fill: var(--color-primary);
       }
    }
    @media (any-hover: hover) {
       &:hover {
-         border-color: white;
+         border-color: rgb(var(--color-white));
       }
    }
    @media (min-width: 1024px) {
-      padding: 12px 10px;
-      border: 1px solid rgba(255, 255, 255, 0.45);
-      border-radius: 8px;
-      transition: border-color ease 0.2s;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(var(--color-white), 0.4);
+      border-radius: var(--br-normal);
+      transition: border-color var(--transition-slow);
       &__icon {
          width: 28px;
          height: 24px;
-         fill: white;
+         fill: rgb(var(--color-white));
       }
    }
 }

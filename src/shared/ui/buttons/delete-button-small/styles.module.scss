@@ -3,22 +3,25 @@
    display: flex;
    align-items: center;
    justify-content: center;
-   background-color: rgb(255, 255, 255);
-   border-radius: 50%;
-   transition: background-color ease 0.2s;
-   svg {
+   background-color: rgb(var(--color-white));
+   border-radius: var(--br-circle);
+   &__icon {
       min-width: 10px;
       min-height: 10px;
-      fill: rgb(36, 36, 36);
-      transition: fill ease 0.2s;
+      fill: rgb(var(--color-dark));
    }
-
    @media (any-hover: hover) {
       &:hover {
-         background-color: rgba(36, 36, 36, 0.7);
+         background-color: rgba(var(--color-dark), 0.7);
          .button__icon {
-            fill: rgb(255, 255, 255);
+            fill: rgb(var(--color-white));
          }
+      }
+   }
+   @media (min-width: 1024px) {
+      transition: background-color var(--transition-slow);
+      &__icon {
+         transition: fill var(--transition-slow);
       }
    }
 }

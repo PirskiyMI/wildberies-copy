@@ -4,33 +4,35 @@
    left: 50%;
    width: 80px;
    height: 80px;
-   background-color: rgba(227, 237, 255);
-   border-radius: 8px;
+   background-color: rgb(var(--color-secondary));
+   border-radius: var(--br-normal);
    transform: rotate(45deg);
    overflow: hidden;
    &::after {
       content: '';
-   position: absolute;
-   inset: 8px;
-   margin: auto;
-   background: rgb(108, 158, 255);
-   border-radius: 8px;
+      position: absolute;
+      inset: 8px;
+      margin: auto;
+      background: rgb(var(--color-primary));
+      border-radius: var(--br-normal);
    }
    &::before {
       content: '';
-   position: absolute;
-   inset: -15px;
-   margin: auto;
-   background: rgb(38, 125, 255);
-   animation: diamondLoader 2s linear infinite;
+      position: absolute;
+      inset: -15px;
+      margin: auto;
+      background: rgb(var(--color-primary));
+      animation: diamondLoader 2s linear infinite;
    }
 }
 
 @keyframes diamondLoader {
-   0%  ,10% {
-      transform: translate(-64px , -64px) rotate(-45deg)
+   0%,
+   10% {
+      transform: translate(-64px, -64px) rotate(-45deg);
    }
-   90% , 100% {
-      transform: translate(0px , 0px) rotate(-45deg)
+   90%,
+   100% {
+      transform: translate(0px, 0px) rotate(-45deg);
    }
 }

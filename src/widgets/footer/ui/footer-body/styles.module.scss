@@ -2,23 +2,23 @@
    margin-top: -34px;
    padding: 68px 0;
    flex: 0 0 none;
-   background-color: var(--main-color);
+   background-color: rgb(var(--color-primary));
    &__container {
       padding: 0 10px;
    }
    & &__column {
       padding: 12px 0;
-      color: white;
-      border-bottom: 1px solid rgba($color: white, $alpha: 0.2);
+      color: rgb(var(--color-white));
+      border-bottom: 1px solid rgba(var(--color-white), var(--opacity-20));
       &:first-child {
-         border-top: 1px solid rgba($color: white, $alpha: 0.2);
+         border-top: 1px solid rgba(var(--color-white), var(--opacity-20));
       }
    }
 
    @media (min-width: 1024px) {
       &__container {
          display: grid;
-         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+         grid-template-columns: repeat(5, 1fr);
       }
       & &__column {
          border: none;

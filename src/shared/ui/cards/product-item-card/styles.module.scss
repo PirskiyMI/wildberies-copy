@@ -1,0 +1,19 @@
+.card {
+   user-select: none;
+   cursor: pointer;
+   &__wrapper {
+      width: 100%;
+   }
+   &__top {
+      position: relative;
+      background-color: rgb(var(--color-white));
+      border-radius: var(--br-normal);
+      overflow: hidden;
+   }
+   &__middle {
+      margin-top: 12px;
+   }
+   &__bottom {
+      margin-top: 8px;
+   }
+}

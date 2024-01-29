@@ -4,6 +4,7 @@ export type TIcon =
    | 'cart'
    | 'checked'
    | 'like'
+   | 'like-fill'
    | 'loop'
    | 'pen'
    | 'trash'

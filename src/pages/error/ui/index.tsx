@@ -1,6 +1,8 @@
 import { FC } from 'react';
-import styles from './styles.module.scss';
+
 import { ErrorList } from 'src/widgets/error/ui';
+
+import styles from './styles.module.scss';
 
 export const ErrorPage: FC = () => {
    return (

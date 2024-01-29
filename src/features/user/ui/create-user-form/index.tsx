@@ -4,7 +4,7 @@ import { Field, useInput } from 'src/shared';
 
 import styles from './styles.module.scss';
 
-export const RecipientForm: FC = () => {
+export const CreateUserForm: FC = () => {
    const {
       isDirty: nameIsDirty,
       errorText: nameErrorText,

@@ -16,7 +16,7 @@ export const ScrollToTop: FC<Props> = ({ className }) => {
 
    return (
       <button className={classes} onClick={scrollUp}>
-         <Icon icon="arrow" />
+         <Icon icon="arrow" className={styles.body__icon}/>
       </button>
    );
 };

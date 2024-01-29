@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-interface INotificationSlice {
+interface IState {
    isVisible: boolean;
 }
 
-const initialState: INotificationSlice = {
+const initialState: IState = {
    isVisible: false,
 };
 

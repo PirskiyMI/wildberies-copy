@@ -9,15 +9,15 @@
       align-items: center;
       cursor: pointer;
    }
-
    &__arrow {
       transform: rotate(180deg);
       transition: transform var(--transition-slow);
       &_active {
          transform: rotate(0);
       }
-      svg {
-         fill: var(--text-color-gray);
-      }
+   }
+   &__icon {
+      width: 20px;
+      fill: rgba(var(--color-dark), 0.6);
    }
 }

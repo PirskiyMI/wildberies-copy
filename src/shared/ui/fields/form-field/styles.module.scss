@@ -4,12 +4,12 @@
    &__input {
       position: relative;
       width: 100%;
-      border-bottom: 1px solid var(--border-color-gray);
+      border-bottom: 1px solid rgba(var(--color-dark), 0.2);
       cursor: text;
       z-index: 1;
       &_error {
-         color: var(--text-color-error);
-         border-color: var(--border-color-error);
+         color: var(--color-error);
+         border-color: var(--color-error);
       }
    }
    &__input,
@@ -18,26 +18,26 @@
       line-height: var(--text-lh-normal);
    }
    &__label {
+      position: absolute;
       top: 0;
       left: 0;
-      position: absolute;
       color: var(--text-color-gray);
-      transition: all ease 0.3s;
+      transition: all var(--transition-slow);
       &_active {
          top: -70%;
-         font-size: var(--text-fs-smallest);
-         line-height: var(--text-lh-smallest);
+         font-size: var(--text-fs-small);
+         line-height: var(--text-lh-small);
       }
       &_error {
-         color: var(--text-color-error);
+         color: var(--color-error);
       }
    }
    &__error {
       position: absolute;
       bottom: -16px;
       left: 0;
-      font-size: var(--text-fs-smallest);
-      line-height: var(--text-lh-smallest);
-      color: var(--text-color-error);
+      font-size: var(--text-fs-small);
+      line-height: var(--text-lh-small);
+      color: var(--color-error);
    }
 }

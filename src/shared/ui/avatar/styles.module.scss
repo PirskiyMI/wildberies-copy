@@ -1,20 +1,20 @@
 .avatar {
+   height: 80px;
+   width: 80px;
    display: flex;
    align-items: center;
    justify-content: center;
-   height: 80px;
-   width: 80px;
-   border-radius: 50%;
-   background-color: #f1f1f5;
+   border-radius: var(--br-circle);
+   background-color: rgba(var(--color-dark), 0.06);
    &__image {
       width: 100%;
       height: 100%;
       object-fit: contain;
    }
    &__character {
-      font-size: 28px;
-      font-weight: 700;
-      line-height: 129%;
-      color: #c8c8d1;
+      font-size: var(--title-fs-big);
+      font-weight: var(--fw-bold);
+      line-height: 1;
+      color: rgba(var(--color-dark), 0.2);
    }
 }
