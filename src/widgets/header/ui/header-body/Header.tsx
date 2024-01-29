@@ -2,7 +2,6 @@ import { FC } from 'react';
 
 import { useAppSelector } from 'src/shared';
 import { ProductSearch } from 'src/features/product';
-import { UserDropdown } from 'src/widgets/user/user-profile';
 
 import styles from './styles.module.scss';
 import { HeaderLabel } from '../header-label';
@@ -19,7 +18,7 @@ export const Header: FC = () => {
             <div className={`${styles.header__container} container`}>
                <HeaderLabel />
                <ProductSearch />
-               <HeaderNavigation dropDown={<UserDropdown />} />
+               <HeaderNavigation />
             </div>
          </header>
       );

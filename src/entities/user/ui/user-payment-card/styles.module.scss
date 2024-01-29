@@ -3,7 +3,7 @@
    display: flex;
    justify-content: space-between;
    &_main {
-      border-color: var(--tertiary-color);
+      border-color: rgb(var(--color-primary));
    }
    &__wrapper {
       display: flex;
@@ -22,13 +22,13 @@
       }
    }
    &__label {
-      color: rgba(36, 36, 36, 0.5);
+      color: rgba(var(--color-dark), 0.5);
    }
    @media (min-width: 1024px) {
       flex-direction: column;
       &_main {
-         border-color: rgba(167, 58, 253, 0.06);
-         background-color: rgba(167, 58, 253, 0.2);
+         border-color: rgba(var(--color-dark), 0.06);
+         background-color: rgba(var(--color-primary), 0.2);
       }
       &__buttons,
       &__info {
@@ -37,10 +37,10 @@
       }
       &__delete {
          opacity: 0;
-         transition: opacity ease 0.3s;
+         transition: opacity var(--transition-slow);
       }
       &__label {
-         color: rgb(36, 36, 36);
+         color: rgb(var(--color-dark));
       }
    }
    @media (any-hover: hover) {

@@ -12,7 +12,7 @@
    }
    @media (any-hover: hover) {
       &:hover {
-         background-color: rgba(var(--color-dark), 0.7);
+         background-color: rgb(var(--color-primary));
          .button__icon {
             fill: rgb(var(--color-white));
          }

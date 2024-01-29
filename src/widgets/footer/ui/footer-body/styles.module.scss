@@ -1,6 +1,6 @@
 .footer {
-   margin-top: -34px;
-   padding: 68px 0;
+   
+   
    flex: 0 0 none;
    background-color: rgb(var(--color-primary));
    &__container {
@@ -16,6 +16,8 @@
    }
 
    @media (min-width: 1024px) {
+      margin-top: -34px;
+      padding: 68px 0;
       &__container {
          display: grid;
          grid-template-columns: repeat(5, 1fr);

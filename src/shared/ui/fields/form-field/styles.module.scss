@@ -8,8 +8,8 @@
       cursor: text;
       z-index: 1;
       &_error {
-         color: var(--color-error);
-         border-color: var(--color-error);
+         color: rgb(var(--color-error));
+         border-color: rgb(var(--color-error));
       }
    }
    &__input,
@@ -21,7 +21,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      color: var(--text-color-gray);
+      color: rgba(var(--colo-dark), 0.5);
       transition: all var(--transition-slow);
       &_active {
          top: -70%;
@@ -29,7 +29,7 @@
          line-height: var(--text-lh-small);
       }
       &_error {
-         color: var(--color-error);
+         color: rgb(var(--color-error));
       }
    }
    &__error {
@@ -38,6 +38,6 @@
       left: 0;
       font-size: var(--text-fs-small);
       line-height: var(--text-lh-small);
-      color: var(--color-error);
+      color: rgb(var(--color-error));
    }
 }

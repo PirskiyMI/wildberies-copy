@@ -21,18 +21,20 @@ export const ProductFavoriteList: FC<Props> = ({ products }) => {
             <li key={el.id}>
                <ProductCard
                   product={el}
-                  addToFavoriteButton={<RemoveProductFromFavorites product={el} />}>
-                  <ProductQuickView product={el} />
-                  <AddProductToCart
-                     product={{
-                        id: el.id,
-                        image: el.image,
-                        price: el.price,
-                        title: el.title,
-                        isFavorite: el.isFavorite,
-                     }}
-                  />
-               </ProductCard>
+                  FavoriteButton={<RemoveProductFromFavorites product={el} />}
+                  ModalButton={<ProductQuickView product={el} />}
+                  CartButton={
+                     <AddProductToCart
+                        product={{
+                           id: el.id,
+                           image: el.image,
+                           price: el.price,
+                           title: el.title,
+                           isFavorite: el.isFavorite,
+                        }}
+                     />
+                  }
+               />
             </li>
          ))}
       </ul>

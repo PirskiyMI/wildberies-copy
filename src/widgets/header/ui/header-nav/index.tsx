@@ -15,13 +15,10 @@ export const HeaderNavigation: FC<Props> = ({ dropDown }) => {
       <nav className={styles.navigation}>
          <ul className={styles.navigation__list}>
             <li>
-               <HeaderLink icon="delivery" path="/profile/delivery" label="Доставки" />
-            </li>
-            <li>
                <HeaderLink icon="like" path="/profile/favorites" label="Избранное" />
             </li>
             <li className={dropDown ? styles.navigation__item : undefined}>
-               <HeaderLink icon="user" path="/profile" label="Профиль" />
+               <HeaderLink icon="user" path="/profile/user" label="Профиль" />
                {dropDown && <div className={styles.navigation__dropdown}>{dropDown}</div>}
             </li>
             <li>

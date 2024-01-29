@@ -1,5 +1,5 @@
 import { FC, Suspense, useEffect, useState } from 'react';
-import { Outlet, useLocation } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 
 import {
@@ -14,7 +14,7 @@ import { Header } from 'src/widgets/header';
 import { Footer } from 'src/widgets/footer';
 
 import styles from './styles.module.scss';
-import { BurgerNav, ProfileNav } from 'src/widgets/nav-menu';
+import { BurgerNav } from 'src/widgets/nav-menu';
 
 export const Layout: FC = () => {
    const { isVisible: isActive } = useAppSelector((state) => state.notificationReducer);
@@ -47,8 +47,6 @@ export const Layout: FC = () => {
       };
    }, [isButtonVisible]);
 
-   const { pathname } = useLocation();
-
    return (
       <>
          <AnimatePresence>
@@ -66,11 +64,6 @@ export const Layout: FC = () => {
          <Header />
 
          <main className={styles.layout__main}>
-            {pathname.includes('profile') && windowWidth >= 1024 && (
-               <div className={'container'}>
-                  <ProfileNav />
-               </div>
-            )}
             <Suspense fallback={<Preloader />}>
                <Outlet />
             </Suspense>

@@ -10,7 +10,7 @@
       @media (any-hover: hover) {
          &:hover {
             .payments__label {
-               color: var(--tertiary-color);
+               color: rgb(var(--color-primary));
             }
          }
       }
@@ -49,7 +49,7 @@
          cursor: pointer;
       }
       &__label {
-         transition: color ease 0.3s;
+         transition: color var(--transition-slow);
       }
       &__icon {
          width: 32px;
@@ -57,4 +57,3 @@
       }
    }
 }
-

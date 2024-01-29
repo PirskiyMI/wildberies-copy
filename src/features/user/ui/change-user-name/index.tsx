@@ -16,8 +16,10 @@ export const ChangeUserName: FC = () => {
 
    const submitHandler = (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-      dispatch(setName(inputProps.value));
-      dispatch(closeModal());
+      if (!inputProps.isDirty) {
+         dispatch(setName(inputProps.value));
+         dispatch(closeModal());
+      }
    };
 
    return (
