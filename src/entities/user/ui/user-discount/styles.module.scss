@@ -1,17 +1,12 @@
 .discount {
-   color: var(--tertiary-color);
+   color: var(--color-primary);
    &__content {
       display: flex;
       align-items: baseline;
    }
    &__text {
-      font-size: 14px;
-      line-height: 20px;
       margin-right: 8px;
-   }
-   @media (min-width: 1024px) {
-      &__text {
-         font-size: 12px;
-      }
+      font-size: var(--text-fs-small);
+      line-height: var(--text-lh-normal);
    }
 }

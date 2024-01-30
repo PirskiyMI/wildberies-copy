@@ -10,8 +10,9 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      column-gap: 32px;
+      column-gap: 8px;
       @media (min-width: 1024px) {
+         column-gap: 32px;
          justify-content: safe;
       }
    }
@@ -52,7 +53,6 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgb(var(--color-white));
-      color: rgb(var(--color-dark));
+      background-color: rgb(var(--color-primary));
    }
 }

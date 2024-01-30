@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import { BurgerNav } from 'src/widgets/nav-menu';
+import { NavMenu } from 'src/widgets/nav-menu';
 
 const Navigation: FC = () => {
-   return <BurgerNav />;
+   return <NavMenu />;
 };
 
 export default Navigation;

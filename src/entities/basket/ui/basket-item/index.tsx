@@ -38,6 +38,7 @@ export const BasketItem: FC<Props> = ({ product, features }) => {
                <div className={styles.counter__buttons}></div>
             </div>
          }
+         isElementActive={status.isChecked}
          isDesktop={windowWidth >= 1024}
       />
    );

@@ -9,9 +9,10 @@ type Props = {
    title: string;
    counter: ReactNode;
    price: number;
-   className?: string;
-   isDesktop?: boolean;
    checkbox?: ReactNode;
+   isElementActive?: boolean;
+   isDesktop?: boolean;
+   className?: string;
 };
 
 export const CartItemCard: FC<Props> = ({
@@ -21,16 +22,20 @@ export const CartItemCard: FC<Props> = ({
    price,
    className,
    checkbox,
+   isElementActive = false,
    isDesktop = false,
 }) => {
    const classes = className ? `${className} ${styles.card}` : styles.card;
+   const checkboxClasses = isElementActive
+      ? `${styles.card__checkbox} ${styles.card__checkbox_active}`
+      : styles.card__checkbox;
 
    if (isDesktop) {
       return (
          <div className={classes}>
             <div className={styles.card__body}>
                <div className={styles.card__image}>
-                  {checkbox ? <div className={styles.card__checkbox}>{checkbox}</div> : null}
+                  {checkbox ? <div className={checkboxClasses}>{checkbox}</div> : null}
                   <img src={image} alt="Изображение" />
                </div>
                <div className={styles.card__title}>{title}</div>

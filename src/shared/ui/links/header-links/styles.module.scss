@@ -42,7 +42,7 @@
       }
       &__label {
          display: block;
-         color: rgb(var(--color-white));
+         color: rgba(var(--color-white), 0.7);
          transition: color var(--transition-slow);
       }
       &_active {

@@ -13,7 +13,7 @@
    &__text {
       display: flex;
       column-gap: 12px;
-      font-size: 16px;
-      line-height: 138%;
+      font-size: var(--text-fs-normal);
+      line-height: var(--text-lh-small);
    }
 }

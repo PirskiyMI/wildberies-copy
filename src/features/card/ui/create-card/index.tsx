@@ -1,6 +1,13 @@
 import { FC, FormEvent } from 'react';
 
-import { Field, cardNumberFormatter, dateFormatter, useAppDispatch, useInput } from 'src/shared';
+import {
+   Button,
+   Field,
+   cardNumberFormatter,
+   dateFormatter,
+   useAppDispatch,
+   useInput,
+} from 'src/shared';
 import { addCard } from 'src/entities/user';
 
 import styles from './styles.module.scss';
@@ -106,9 +113,9 @@ export const CreateCard: FC<Props> = ({ closeModal }) => {
             <p className={styles.from__text}>
                Для проверки карты, мы не будем списывать небольшую сумму денег
             </p>
-            <button className={styles.form__button} disabled={isDirty || !isEmpty}>
+            <Button className={styles.form__button} disabled={isDirty || !isEmpty}>
                Привязать
-            </button>
+            </Button>
          </div>
       </form>
    );

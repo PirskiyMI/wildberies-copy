@@ -9,8 +9,8 @@
    &__img {
       padding-top: calc(100% * (328 / 246));
       position: relative;
-      background-color: white;
-      border-radius: 8px;
+      background-color: rgb(var(--color-white));
+      border-radius: var(--br-normal);
       overflow: hidden;
       img {
          position: absolute;
@@ -39,7 +39,7 @@
    @media (min-width: 1024px) {
       &__favorite {
          opacity: 0;
-         transition: opacity ease 0.2s;
+         transition: opacity var(--transition-slow);
       }
    }
    @media (any-hover: hover) {
@@ -48,19 +48,19 @@
          z-index: 3;
          .card__show {
             display: block;
+            width: 100%;
             padding: 10px 0;
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 100%;
-            font-size: 14px;
             text-align: center;
+            font-size: var(--text-fs-small);
+            background-color: rgba(var(--color-white), 0.8);
+            transition: background-color var(--transition-slow);
             z-index: 1;
-            background-color: rgba($color: #ffffff, $alpha: 0.9);
-            transition: background-color ease 0.3s;
             @media (any-hover: hover) {
                &:hover {
-                  background-color: rgba($color: #ffffff, $alpha: 0.95);
+                  background-color: rgba(var(--color-white), 0.9);
                }
             }
          }

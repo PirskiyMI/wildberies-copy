@@ -6,7 +6,7 @@ import styles from './styles.module.scss';
 export const Logo: FC = () => {
    return (
       <Link to="/" className={styles.logo}>
-         Товары и точка
+         MM.Ru
       </Link>
    );
 };
