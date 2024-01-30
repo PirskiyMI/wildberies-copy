@@ -7,6 +7,7 @@ import { ProductList } from 'src/widgets/product/product-list';
 import { ProductDetails } from 'src/widgets/product/product-details';
 
 import styles from './styles.module.scss';
+import { ProductListIsEmpty } from 'src/widgets/product/product-list-is-empty';
 
 const Home: FC = () => {
    const { value } = useAppSelector((state) => state.searchReducer);
@@ -51,7 +52,7 @@ const Home: FC = () => {
                {isModalOpen && <ProductDetails />}
             </>
          ) : (
-            <div>Пошел Ты На Пенис</div>
+            <ProductListIsEmpty searchValue={value} />
          )}
       </div>
    );
