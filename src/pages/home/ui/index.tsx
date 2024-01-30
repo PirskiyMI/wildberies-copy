@@ -45,8 +45,14 @@ const Home: FC = () => {
 
    return (
       <div className={`${styles.home__container} container`}>
-         <ProductList products={productsList} />
-         {isModalOpen && <ProductDetails />}
+         {productsList.length ? (
+            <>
+               <ProductList products={productsList} />
+               {isModalOpen && <ProductDetails />}
+            </>
+         ) : (
+            <div>Пошел Ты На Пенис</div>
+         )}
       </div>
    );
 };

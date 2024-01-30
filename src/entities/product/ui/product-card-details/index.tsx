@@ -30,11 +30,11 @@ export const ProductCardDetails: FC<Props> = ({ product, Button }) => {
 
    return (
       <div className={styles.card}>
-         <div className={styles.card__left}>
+         <div className={styles.card__image}>
             <img src={image} alt="Картинка продукта" />
          </div>
 
-         <div className={styles.card__right}>
+         <div className={styles.card__body}>
             <button className={styles.card__cross} onClick={closeHandler}>
                <Icon className={styles.card__icon} icon={'cross'} />
             </button>

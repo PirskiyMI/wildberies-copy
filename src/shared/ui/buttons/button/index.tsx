@@ -3,21 +3,16 @@ import { FC, HTMLAttributes, ReactNode } from 'react';
 import styles from './styles.module.scss';
 
 interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
-   isChangeButton?: boolean;
    children: ReactNode;
+   disabled?: boolean;
    className?: string;
 }
 
-export const Button: FC<ButtonProps> = ({ children, isChangeButton, className, ...props }) => {
-   if (isChangeButton) {
-      return (
-         <button className={styles.button_change} {...props}>
-            {children}
-         </button>
-      );
-   }
+export const Button: FC<ButtonProps> = ({ children, disabled = false, className, ...props }) => {
+   const classes = className ? `${className} ${styles.button}` : styles.button;
+
    return (
-      <button className={`${styles.button} ${className}`} {...props}>
+      <button disabled={disabled} className={classes} {...props}>
          {children}
       </button>
    );

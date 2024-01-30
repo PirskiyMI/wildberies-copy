@@ -12,9 +12,9 @@ import {
 } from 'src/shared';
 import { Header } from 'src/widgets/header';
 import { Footer } from 'src/widgets/footer';
+import { NavMenu } from 'src/widgets/nav-menu';
 
 import styles from './styles.module.scss';
-import { BurgerNav } from 'src/widgets/nav-menu';
 
 export const Layout: FC = () => {
    const { isVisible: isActive } = useAppSelector((state) => state.notificationReducer);
@@ -61,7 +61,7 @@ export const Layout: FC = () => {
                </motion.div>
             )}
          </AnimatePresence>
-         <AnimatePresence>{isOpen && <BurgerNav />}</AnimatePresence>
+         <AnimatePresence>{isOpen && <NavMenu />}</AnimatePresence>
 
          <Header />
 

@@ -21,7 +21,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      color: rgba(var(--colo-dark), 0.5);
+      color: rgba(var(--color-dark), 0.5);
       transition: all var(--transition-slow);
       &_active {
          top: -70%;

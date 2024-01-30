@@ -45,6 +45,9 @@
       &__checkbox {
          opacity: 0;
          transition: opacity var(--transition-slow);
+         &_active {
+            opacity: 1;
+         }
       }
       &__image {
          flex: 0 0 96px;
