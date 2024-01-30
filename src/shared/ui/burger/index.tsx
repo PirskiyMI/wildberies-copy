@@ -3,27 +3,21 @@ import { FC } from 'react';
 import styles from './styles.module.scss';
 
 import { Icon } from '../icon';
-import { useAppDispatch, useAppSelector } from '../../lib';
-import { toggleMenu } from '../../model/slices/burgerSlice';
 
 type Props = {
+   clickHandler: () => void;
+   isOpen?: boolean;
    className?: string;
 };
 
-export const Burger: FC<Props> = ({ className }) => {
-   const { isOpen } = useAppSelector((state) => state.burgerReducer);
-   const dispatch = useAppDispatch();
-
+export const Burger: FC<Props> = ({ clickHandler, isOpen, className }) => {
+   const classes = className ? `${className} ${styles.burger}` : styles.burger;
    const iconClasses = isOpen
       ? `${styles.burger__icon} ${styles.burger__icon_active}`
       : `${styles.burger__icon}`;
 
-   const openMenuHandler = () => {
-      dispatch(toggleMenu());
-   };
-
    return (
-      <button className={`${styles.burger} ${className}`} onClick={openMenuHandler}>
+      <button className={classes} onClick={clickHandler}>
          <Icon icon="burger" className={iconClasses} />
       </button>
    );

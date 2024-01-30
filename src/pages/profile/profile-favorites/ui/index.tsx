@@ -18,7 +18,11 @@ const ProfileFavorites: FC = () => {
 
    return (
       <div className={`${styles.favorites__container} container`}>
-         <ProductSelect products={favorites.products} setProducts={setProducts} />
+         <ProductSelect
+            products={favorites.products}
+            setProducts={setProducts}
+            className={styles.favorites__select}
+         />
          <ProductFavoriteList products={products} />
          {isModalOpen && <ProductDetails />}
       </div>

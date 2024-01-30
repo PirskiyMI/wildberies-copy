@@ -2,14 +2,14 @@ import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react';
 
 import { IProductWithRating, Select } from 'src/shared';
 
-import styles from './styles.module.scss';
-
 type Props = {
    products: IProductWithRating[];
    setProducts: Dispatch<SetStateAction<IProductWithRating[]>>;
+   className?: string;
 };
 
-export const ProductSelect: FC<Props> = ({ products, setProducts }) => {
+export const ProductSelect: FC<Props> = ({ products, setProducts, className }) => {
+   const classes = className ? className : undefined;
    const [sort, setSort] = useState('descending date');
 
    const getSortedList = (sort: string) => {
@@ -26,7 +26,7 @@ export const ProductSelect: FC<Props> = ({ products, setProducts }) => {
 
    useEffect(() => {
       getSortedList(sort);
-   }, [sort]);
+   }, [sort, products]);
 
    return (
       <Select
@@ -38,7 +38,7 @@ export const ProductSelect: FC<Props> = ({ products, setProducts }) => {
             { value: 'descending price', title: 'по убыванию цены' },
             { value: 'ascending price', title: 'по возрастанию цены' },
          ]}
-         className={styles.favorites__select}
+         className={classes}
       />
    );
 };

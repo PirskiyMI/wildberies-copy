@@ -4,11 +4,15 @@ import { Icon } from 'src/shared';
 
 import styles from './styles.module.scss';
 
-export const Notification: FC = () => {
+type Props = {
+   title: string;
+};
+
+export const Notification: FC<Props> = ({ title }) => {
    return (
       <div className={styles.notification}>
          <Icon icon="checkMark" className={styles.notification__icon} />
-         <span>Товар добавлен в корзину</span>
+         <span>{title}</span>
       </div>
    );
 };

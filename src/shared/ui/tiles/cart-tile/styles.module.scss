@@ -10,9 +10,9 @@
       cursor: pointer;
       @media (any-hover: hover) {
          &:hover {
-            color: var(--tertiary-color);
+            color: rgb(var(--color-primary));
             .item__icon {
-               fill: var(--tertiary-color);
+               fill: rgb(var(--color-primary));
             }
          }
       }

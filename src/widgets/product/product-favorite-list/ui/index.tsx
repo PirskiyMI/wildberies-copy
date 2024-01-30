@@ -18,7 +18,7 @@ export const ProductFavoriteList: FC<Props> = ({ products }) => {
    return (
       <ul className={styles.list}>
          {products.map((el) => (
-            <li key={el.id}>
+            <li key={el.id} className={styles.list__item}>
                <ProductCard
                   product={el}
                   FavoriteButton={<RemoveProductFromFavorites product={el} />}

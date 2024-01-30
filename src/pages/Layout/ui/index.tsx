@@ -18,6 +18,7 @@ import { BurgerNav } from 'src/widgets/nav-menu';
 
 export const Layout: FC = () => {
    const { isVisible: isActive } = useAppSelector((state) => state.notificationReducer);
+   const { isOpen } = useAppSelector((state) => state.burgerReducer);
    const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
    const [isButtonVisible, setIsButtonVisible] = useState(false);
    const dispatch = useAppDispatch();
@@ -56,11 +57,12 @@ export const Layout: FC = () => {
                   animate={{ top: '6%' }}
                   exit={{ top: '-100%' }}
                   className={styles.layout__notification}>
-                  <Notification />
+                  <Notification title="Товар добавлен в корзину" />
                </motion.div>
             )}
          </AnimatePresence>
-         <BurgerNav />
+         <AnimatePresence>{isOpen && <BurgerNav />}</AnimatePresence>
+
          <Header />
 
          <main className={styles.layout__main}>

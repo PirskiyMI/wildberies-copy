@@ -13,20 +13,20 @@
       fill: rgba(var(--color-dark), 0.5);
    }
    &__count {
+      min-width: 16px;
+      min-height: 16px;
+      padding: 2px;
       position: absolute;
-      top: -6px;
-      right: -8px;
-      width: 16px;
-      height: 16px;
-      padding: 2px 3px 1px;
+      top: -12px;
+      right: -18px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: var(--text-fs-small);
+      font-size: 10px;
       line-height: var(--text-lh-small);
       color: rgb(var(--color-white));
       background-color: rgb(var(--color-error));
-      border-radius: var(--br-circle);
+      border-radius: var(--br-big);
    }
    &__label {
       display: none;
