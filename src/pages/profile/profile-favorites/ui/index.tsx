@@ -6,6 +6,7 @@ import { ProductSelect } from 'src/widgets/product/product-select';
 import { ProductDetails } from 'src/widgets/product/product-details';
 
 import styles from './styles.module.scss';
+import { ProductFavoriteListEmpty } from 'src/widgets/product/product-favorite-list-empty';
 
 const ProfileFavorites: FC = () => {
    const { favorites } = useAppSelector((state) => state.userReducer);
@@ -13,7 +14,11 @@ const ProfileFavorites: FC = () => {
    const [products, setProducts] = useState<IProductWithRating[]>([]);
 
    if (!favorites.products.length) {
-      return <div className={`${styles.favorites__container} container`}>Пшел нах!</div>;
+      return (
+         <div className={`${styles.favorites__container} container`}>
+            <ProductFavoriteListEmpty  />
+         </div>
+      );
    }
 
    return (
