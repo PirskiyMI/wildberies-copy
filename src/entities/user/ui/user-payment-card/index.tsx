@@ -1,14 +1,9 @@
 import { FC, ReactNode } from 'react';
 
-import {
-   Card,
-   cardNumberFormatter,
-   masterCardExpression,
-   mirCardExpression,
-   visaExpression,
-} from 'src/shared';
+import { Card } from 'src/shared';
 
 import styles from './styles.module.scss';
+import { useCardInfo } from '../../hooks';
 
 type Props = {
    cardNumber: string;
@@ -25,24 +20,13 @@ export const UserPaymentCard: FC<Props> = ({
    isDesktop,
    className,
 }) => {
+   const {
+      number,
+      img: { alt, src },
+   } = useCardInfo(cardNumber);
+
    let classes = className ? `${className} ${styles.card} ` : styles.card;
    classes = !toggleMain ? `${classes} ${styles.card_main}` : classes;
-   const cardNumberWithoutWhiteSpaces = cardNumber.split(' ').join('');
-   const maskedCardNumber = '⋅⋅ ' + cardNumberFormatter(cardNumber).split(' ')[3];
-
-   let src;
-   let alt;
-
-   if (masterCardExpression.test(cardNumberWithoutWhiteSpaces)) {
-      src = 'https://cdn.iconscout.com/icon/free/png-256/free-mastercard-3521564-2944982.png';
-      alt = 'MASTER CARD';
-   } else if (mirCardExpression.test(cardNumberWithoutWhiteSpaces)) {
-      src = 'https://evgenykatyshev.ru/projects/mir-logo/mir-logo-h14px.svg';
-      alt = 'MIR';
-   } else if (visaExpression.test(cardNumberWithoutWhiteSpaces)) {
-      src = 'https://cdn.worldvectorlogo.com/logos/visa-10.svg';
-      alt = 'VISA';
-   }
 
    if (isDesktop) {
       return (
@@ -58,7 +42,7 @@ export const UserPaymentCard: FC<Props> = ({
             <div className={styles.card__info}>
                <div className={styles.card__text}>
                   <span>{alt} </span>
-                  <span>{maskedCardNumber}</span>
+                  <span>{number}</span>
                </div>
                <div className={styles.card__image}>
                   <img src={src} alt={alt} />
@@ -77,7 +61,7 @@ export const UserPaymentCard: FC<Props> = ({
             <div className={styles.card__info}>
                <div className={styles.card__text}>
                   <span>{alt}</span>
-                  <span>{maskedCardNumber}</span>
+                  <span>{number}</span>
                </div>
                {toggleMain ? (
                   <div className={styles.card__toggle}>{toggleMain}</div>

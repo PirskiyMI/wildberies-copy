@@ -1,2 +1,2 @@
-export * from './card-images';
+export * from './card';
 export * from './paths';

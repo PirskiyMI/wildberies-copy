@@ -11,8 +11,11 @@ type Props = {
    AddToCartButton: ReactNode;
 };
 
-export const ProductCardDetails: FC<Props> = ({ product, closePopup, AddToCartButton }) => {
-   const { image, price, rating, title } = product;
+export const ProductCardDetails: FC<Props> = ({
+   product: { image, price, rating, title },
+   closePopup,
+   AddToCartButton,
+}) => {
    const { count, rate } = rating;
    const formattedPrice = priceFormatter(price);
 

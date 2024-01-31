@@ -14,13 +14,13 @@ type Props = {
    };
 };
 
-export const BasketItem: FC<Props> = ({ product, features }) => {
-   const { image, price, status, title } = product;
-   const { Checkbox, Counter, Like, Delete } = features;
-   const { count, isChecked } = status!;
-
+export const BasketItem: FC<Props> = ({
+   product: { image, price, title, status },
+   features: { Checkbox, Counter, Delete, Like },
+}) => {
    const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
    const [productPrice, setProductPrice] = useState(price);
+   const { count, isChecked } = status!;
 
    useEffect(() => {
       setProductPrice(price * count);
