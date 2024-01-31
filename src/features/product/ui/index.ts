@@ -7,3 +7,4 @@ export * from './remove-product-from-cart';
 export * from './remove-product-from-favorites';
 export * from './toggle-product-to-order';
 export * from './toggle-product-to-favorite';
+export * from './clear-product-search';
