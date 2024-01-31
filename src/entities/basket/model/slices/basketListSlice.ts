@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { IProductWithStatus } from 'src/shared';
+import { IProduct } from 'src/shared';
 
 export interface IState {
-   list: IProductWithStatus[];
+   list: IProduct[];
 }
 
 const initialState: IState = {
@@ -26,7 +26,7 @@ const basketListSlice = createSlice({
    name: 'cart',
    initialState,
    reducers: {
-      addProduct: (state, action: PayloadAction<IProductWithStatus>) => {
+      addProduct: (state, action: PayloadAction<IProduct>) => {
          state.list.push(action.payload);
       },
       deleteProduct: (state, action: PayloadAction<number>) => {

@@ -4,9 +4,9 @@
    top: 76%;
    &__title {
       margin-bottom: 20px;
-      font-size: 24px;
-      line-height: 32px;
-      font-weight: 700;
+      font-size: var(--title-fs-normal);
+      font-weight: var(--fw-bold);
+      line-height: var(--title-lh-normal);
    }
    @media (min-width: 1024px) {
       padding: 28px 40px 40px;

@@ -9,7 +9,7 @@
          &:hover {
             background-color: rgb(var(--color-white));
             border-radius: var(--br-normal);
-            box-shadow: 0 0 10px rgba(black, 0.1);
+            box-shadow: 0 0 10px rgba(var(--color-dark), 0.1);
          }
       }
    }

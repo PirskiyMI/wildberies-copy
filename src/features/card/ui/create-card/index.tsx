@@ -71,7 +71,7 @@ export const CreateCard: FC<Props> = ({ closeModal }) => {
                   <img
                      className={styles.form__image}
                      src="https://evgenykatyshev.ru/projects/mir-logo/mir-logo-h14px.svg"
-                     alt="Карта мир"
+                     alt="Карта Мир"
                   />
                </li>
                <li className={styles.form__item}>

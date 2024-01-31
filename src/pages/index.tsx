@@ -1,16 +1,15 @@
 import { Route, Routes } from 'react-router-dom';
 
 import { useAppSelector } from '../shared/lib';
-import { Layout } from './Layout';
+import { Layout } from './layout';
 import { lazy, useEffect } from 'react';
-import ErrorPage from './error';
 
-const Home = lazy(() => import('./home'));
-const Catalog = lazy(() => import('./catalog'));
-const Cart = lazy(() => import('./cart'));
-const Navigation = lazy(() => import('./navigation'));
-const ProfileInfo = lazy(() => import('./profile/profile-info'));
-const ProfileFavorites = lazy(() => import('./profile/profile-favorites'));
+const HomePage = lazy(() => import('./home-page'));
+const CategoryPage = lazy(() => import('./category-page'));
+const CartPage = lazy(() => import('./cart-page'));
+const NavigationPage = lazy(() => import('./navigation-page'));
+const ProfilePage = lazy(() => import('./profile-page'));
+const FavoritesPage = lazy(() => import('./favorites-page'));
 
 const Routing = () => {
    const { isOpen: isBurgerOpen } = useAppSelector((state) => state.burgerReducer);
@@ -25,16 +24,15 @@ const Routing = () => {
       <div className="wrapper">
          <Routes>
             <Route path="/" element={<Layout />}>
-               <Route index element={<Home />} />
-               <Route path="/cart" element={<Cart />} />
-               <Route path="/catalog/:category" element={<Catalog />} />
-               <Route path="/navigation" element={<Navigation />} />
+               <Route index element={<HomePage />} />
+               <Route path="/cart" element={<CartPage />} />
+               <Route path="/catalog/:category" element={<CategoryPage />} />
+               <Route path="/navigation" element={<NavigationPage />} />
             </Route>
             <Route path="/profile" element={<Layout />}>
-               <Route path="/profile/user" element={<ProfileInfo />} />
-               <Route path="/profile/favorites" element={<ProfileFavorites />} />
+               <Route path="/profile/user" element={<ProfilePage />} />
+               <Route path="/profile/favorites" element={<FavoritesPage />} />
             </Route>
-            <Route path="error" element={<ErrorPage />}></Route>
          </Routes>
       </div>
    );

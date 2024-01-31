@@ -1,11 +1,11 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-import { IProductWithRating } from 'src/shared';
+import { IProduct } from 'src/shared';
 
 import { fetchAllProducts } from '../../api';
 
 interface IState {
-   products: IProductWithRating[];
+   products: IProduct[];
    isLoading: boolean;
    error: string | null;
 }

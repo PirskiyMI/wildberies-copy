@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 
 import {
-   IProductWithRating,
+   IProduct,
    Icon,
    Rating,
    closeModal,
@@ -14,7 +14,7 @@ import {
 import styles from './styles.module.scss';
 
 type Props = {
-   product: IProductWithRating;
+   product: IProduct;
    Button: ReactNode;
 };
 

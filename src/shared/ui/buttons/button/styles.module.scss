@@ -6,6 +6,7 @@
    line-height: var(--text-lh-big);
    color: rgb(var(--color-white));
    background: rgb(var(--color-primary));
+   border: 2px solid transparent;
    border-radius: var(--br-normal);
    transition: all var(--transition-fast);
    @media (any-hover: hover) {

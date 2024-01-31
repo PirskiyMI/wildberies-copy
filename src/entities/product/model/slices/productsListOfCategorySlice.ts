@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { IProductWithRating } from 'src/shared';
+import { IProduct } from 'src/shared';
 
 import { fetchProductsByCategory } from '../../api';
 
 interface IState {
-   products: IProductWithRating[];
+   products: IProduct[];
    isLoading: boolean;
    error: string | null;
 }

@@ -1,6 +1,6 @@
 .menu {
-   padding: 17px 24px 17px 10px;
    height: 100%;
+   padding: 17px 24px 17px 10px;
    &_hidden {
       display: none !important;
       visibility: hidden;
@@ -11,11 +11,11 @@
       row-gap: 12px;
    }
    &__item {
-      font-size: 16px;
-      line-height: 125%;
-      border-radius: 8px;
+      font-size: var(--text-fs-normal);
+      line-height: var(--text-lh-small);
+      border-radius: var(--br-normal);
       &:hover {
-         background-color: var(--secondary-color);
+         background-color: rgb(var(--color-primary));
       }
    }
    &__link {
@@ -23,24 +23,24 @@
       display: flex;
       column-gap: 20px;
       align-items: center;
-      color: #242424;
+      color: rgb(var(--color-dark));
       &:hover {
-         color: white;
+         color: rgb(var(--color-white));
          .menu__icon {
-            fill: white;
+            fill: rgb(var(--color-white));
          }
       }
    }
    &__icon {
       width: 20px;
       height: 20px;
-      fill: rgba(36, 36, 36, 0.5);
+      fill: rgba(var(--color-dark), 0.5);
    }
    @media (min-width: 1024px) {
       width: 300px;
       padding: 20px 24px 20px 30px;
       position: fixed;
-      background-color: white;
+      background-color: rgb(var(--color-white));
       z-index: 10;
       &__link {
          padding: 5px 0 5px 20px;
@@ -51,6 +51,6 @@
    position: absolute;
    width: 100%;
    height: 100%;
+   background-color: rgba(var(--color-dark), 0.5);
    z-index: 5;
-   background-color: rgba(36, 36, 36, 0.5);
 }

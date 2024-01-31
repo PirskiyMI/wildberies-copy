@@ -1,12 +1,12 @@
 import { FC } from 'react';
 import { TIcon } from '../../lib';
 
-export type IconProps = {
+export type Props = {
    icon: TIcon;
    className?: string;
 };
 
-export const Icon: FC<IconProps> = ({ icon, className }) => {
+export const Icon: FC<Props> = ({ icon, className }) => {
    if (icon === 'burger') {
       return (
          <svg xmlns="http://www.w3.org/2000/svg" className={className}>

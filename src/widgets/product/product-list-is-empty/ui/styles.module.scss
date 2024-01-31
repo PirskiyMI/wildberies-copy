@@ -1,10 +1,9 @@
 .body {
    margin-bottom: 72px;
    &__title {
-      margin-bottom: 12px;
-      font-size: 24px;
-      line-height: 32px;
-      font-weight: 700;
       margin-bottom: 20px;
+      font-size: var(--title-fs-big);
+      font-weight: var(--fw-bold);
+      line-height: var(--text-lh-small);
    }
 }

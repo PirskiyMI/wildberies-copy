@@ -1,10 +1,11 @@
 .layout {
    &__main {
+      min-height: 200px;
       padding: 16px 0 32px;
-      position: relative;
-      background-color: var(--background-color);
-      z-index: 1;
       flex: 1 1 auto;
+      position: relative;
+      background-color: var(--color-white);
+      z-index: 1;
    }
    &__notification {
       position: fixed;
@@ -24,7 +25,6 @@
    @media (min-width: 1024px) {
       &__main {
          padding: 24px 0px 48px;
-         background-color: #ffffff;
       }
    }
 }

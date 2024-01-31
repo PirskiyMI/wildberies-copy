@@ -1,36 +1,5 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import {
-   burgerReducer,
-   deviceReducer,
-   modalReducer,
-   notificationReducer,
-   searchReducer,
-   windowWidthReducer,
-} from 'src/shared';
-import {
-   productsListOfCategoryReducer,
-   productsListReducer,
-   visitedProductsListReducer,
-} from 'src/entities/product';
-import { basketInfoReducer, basketListReducer } from 'src/entities/basket';
-import { orderReducer } from 'src/entities/order';
-import { userReducer } from 'src/entities/user';
-
-const rootReducer = combineReducers({
-   burgerReducer,
-   orderReducer,
-   basketInfoReducer,
-   basketListReducer,
-   notificationReducer,
-   productsListReducer,
-   productsListOfCategoryReducer,
-   visitedProductsListReducer,
-   searchReducer,
-   modalReducer,
-   userReducer,
-   deviceReducer,
-   windowWidthReducer,
-});
+import { configureStore } from '@reduxjs/toolkit';
+import { rootReducer } from './rootReducer';
 
 const setupStore = () => {
    return configureStore({

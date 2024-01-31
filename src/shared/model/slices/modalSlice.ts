@@ -1,9 +1,9 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { IProductWithRating } from '../../lib';
+import { IProduct } from '../../lib';
 
 export interface IState {
    isModalOpen: boolean;
-   product?: IProductWithRating | null;
+   product?: IProduct | null;
 }
 
 const initialState: IState = {
@@ -21,7 +21,7 @@ const modalSlice = createSlice({
       closeModal: (state) => {
          state.isModalOpen = false;
       },
-      setProductToModal: (state, action: PayloadAction<IProductWithRating | null>) => {
+      setProductToModal: (state, action: PayloadAction<IProduct | null>) => {
          state.product = action.payload;
       },
    },

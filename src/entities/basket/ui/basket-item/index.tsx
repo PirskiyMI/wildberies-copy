@@ -1,11 +1,11 @@
 import { FC, ReactNode, useEffect, useState } from 'react';
 
-import { IProductWithStatus, useAppSelector, CartItemCard } from 'src/shared';
+import { IProduct, useAppSelector, CartItemCard } from 'src/shared';
 
 import styles from './styles.module.scss';
 
 type Props = {
-   product: IProductWithStatus;
+   product: IProduct;
    features: {
       Checkbox: ReactNode;
       Counter: ReactNode;
@@ -16,7 +16,7 @@ type Props = {
 
 export const BasketItem: FC<Props> = ({ product, features }) => {
    const { image, price, status, title } = product;
-   const { Checkbox, Counter } = features;
+   const { Checkbox, Counter, Like, Delete } = features;
    const { count } = status;
 
    const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
@@ -33,13 +33,17 @@ export const BasketItem: FC<Props> = ({ product, features }) => {
          title={title}
          checkbox={Checkbox}
          counter={
-            <div className={styles.counter}>
+            <div className={styles.item__counter}>
                {Counter}
-               <div className={styles.counter__buttons}></div>
+               <div className={styles.item__buttons}>
+                  {Like}
+                  {Delete}
+               </div>
             </div>
          }
          isElementActive={status.isChecked}
          isDesktop={windowWidth >= 1024}
+         className={styles.item}
       />
    );
 };
