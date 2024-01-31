@@ -1,7 +1,6 @@
 import { combineReducers } from '@reduxjs/toolkit';
 import {
    burgerReducer,
-   deviceReducer,
    modalReducer,
    notificationReducer,
    searchReducer,
@@ -28,6 +27,5 @@ export const rootReducer = combineReducers({
    searchReducer,
    modalReducer,
    userReducer,
-   deviceReducer,
    windowWidthReducer,
 });

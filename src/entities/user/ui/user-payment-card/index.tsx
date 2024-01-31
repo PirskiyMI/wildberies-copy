@@ -1,6 +1,12 @@
 import { FC, ReactNode } from 'react';
 
-import { Card, cardNumberFormatter, useExpression } from 'src/shared';
+import {
+   Card,
+   cardNumberFormatter,
+   masterCardExpression,
+   mirCardExpression,
+   visaExpression,
+} from 'src/shared';
 
 import styles from './styles.module.scss';
 
@@ -19,9 +25,6 @@ export const UserPaymentCard: FC<Props> = ({
    isDesktop,
    className,
 }) => {
-   const { cardRegExps } = useExpression();
-   const { masterCardRegExp, mirCardRegExp, visaCardRegExp } = cardRegExps;
-
    let classes = className ? `${className} ${styles.card} ` : styles.card;
    classes = !toggleMain ? `${classes} ${styles.card_main}` : classes;
    const cardNumberWithoutWhiteSpaces = cardNumber.split(' ').join('');
@@ -30,13 +33,13 @@ export const UserPaymentCard: FC<Props> = ({
    let src;
    let alt;
 
-   if (masterCardRegExp.test(cardNumberWithoutWhiteSpaces)) {
+   if (masterCardExpression.test(cardNumberWithoutWhiteSpaces)) {
       src = 'https://cdn.iconscout.com/icon/free/png-256/free-mastercard-3521564-2944982.png';
       alt = 'MASTER CARD';
-   } else if (mirCardRegExp.test(cardNumberWithoutWhiteSpaces)) {
+   } else if (mirCardExpression.test(cardNumberWithoutWhiteSpaces)) {
       src = 'https://evgenykatyshev.ru/projects/mir-logo/mir-logo-h14px.svg';
       alt = 'MIR';
-   } else if (visaCardRegExp.test(cardNumberWithoutWhiteSpaces)) {
+   } else if (visaExpression.test(cardNumberWithoutWhiteSpaces)) {
       src = 'https://cdn.worldvectorlogo.com/logos/visa-10.svg';
       alt = 'VISA';
    }
