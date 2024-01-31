@@ -1,9 +1,9 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-import { IProductWithRating } from 'src/shared';
+import { IProduct } from 'src/shared';
 
 interface IState {
-   list: IProductWithRating[];
+   list: IProduct[];
 }
 
 const initialState: IState = {
@@ -14,7 +14,7 @@ const visitedProductsListSlice = createSlice({
    name: 'visitedProductsList',
    initialState,
    reducers: {
-      addProduct: (state, { payload }: PayloadAction<IProductWithRating>) => {
+      addProduct: (state, { payload }: PayloadAction<IProduct>) => {
          const inList = state.list.findIndex((el) => el.id === payload.id) !== -1;
          if (!inList) {
             state.list.push(payload);

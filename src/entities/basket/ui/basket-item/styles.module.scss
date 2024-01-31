@@ -1,13 +1,21 @@
 .item {
    &__buttons {
+      margin-top: 8px;
       display: flex;
+      align-items: center;
+      justify-content: center;
       column-gap: 16px;
    }
    @media (min-width: 1024px) {
       &__buttons {
+         margin-top: 12px;
          opacity: 0;
          transition: opacity var((--transition-slow));
-         &:hover {
+      }
+   }
+   @media (any-hover: hover) {
+      &:hover {
+         .item__buttons {
             opacity: 1;
          }
       }

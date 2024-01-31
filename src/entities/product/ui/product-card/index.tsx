@@ -1,11 +1,11 @@
 import { FC, ReactNode } from 'react';
 
-import { IProductWithRating, ProductItemCard, Rating, priceFormatter } from 'src/shared';
+import { IProduct, ProductItemCard, Rating, priceFormatter } from 'src/shared';
 
 import styles from './styles.module.scss';
 
 type Props = {
-   product: IProductWithRating;
+   product: IProduct;
    FavoriteButton: ReactNode;
    ModalButton: ReactNode;
    CartButton: ReactNode;

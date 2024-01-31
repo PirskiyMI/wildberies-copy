@@ -1,0 +1,18 @@
+@import './../assets/fonts/fonts.scss';
+@import './normalize.scss';
+@import './variables/index.scss';
+@import './main.scss';
+
+body {
+   font-family: var(--main-font);
+   font-size: var(--text-fs-normal);
+   font-weight: var(--fw-normal);
+   line-height: var(--text-lh-normal);
+   overflow-x: hidden;
+   &.hidden {
+      overflow-y: hidden;
+   }
+   &::-webkit-scrollbar {
+      display: none;
+   }
+}

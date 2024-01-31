@@ -1,4 +1,4 @@
-import './styles/index.scss';
+import 'src/shared/lib/styles/index.scss';
 
 import Routing from 'src/pages';
 

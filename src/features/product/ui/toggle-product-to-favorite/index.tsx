@@ -1,13 +1,13 @@
 import { FC } from 'react';
 
-import { FavoriteButton, IProductWithRating, useAppDispatch } from 'src/shared';
+import { FavoriteButton, IProduct, useAppDispatch } from 'src/shared';
 import { addToFavorites, removeFromFavorites } from 'src/entities/user';
 import { toggleToFavorite } from 'src/entities/product';
 
 import styles from './styles.module.scss';
 
 type Props = {
-   product: IProductWithRating;
+   product: IProduct;
 };
 
 export const ToggleProductToFavorite: FC<Props> = ({ product }) => {

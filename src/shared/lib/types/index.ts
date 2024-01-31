@@ -1,2 +1,3 @@
-export * from './iconTypes';
-export * from './productTypes';
+export * from './icon-types';
+export * from './product-types';
+export * from './validators-type';

@@ -1,9 +1,9 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { IProductWithRating } from 'src/shared';
+import { IProduct } from 'src/shared';
 
 type TFavorites = {
    brands: string[];
-   products: IProductWithRating[];
+   products: IProduct[];
 };
 export type TPayment = {
    id: number;
@@ -75,7 +75,7 @@ const userSlice = createSlice({
             el.id === payload ? (el.isMain = true) : (el.isMain = false),
          );
       },
-      addToFavorites: (state, { payload }: PayloadAction<IProductWithRating>) => {
+      addToFavorites: (state, { payload }: PayloadAction<IProduct>) => {
          state.favorites.products.push(payload);
       },
       removeFromFavorites: (state, { payload }: PayloadAction<number>) => {

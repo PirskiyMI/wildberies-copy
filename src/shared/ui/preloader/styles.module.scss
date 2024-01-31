@@ -1,12 +1,12 @@
 .loader {
-   position: relative;
+   position: absolute;
    top: 50%;
    left: 50%;
    width: 80px;
    height: 80px;
    background-color: rgb(var(--color-secondary));
    border-radius: var(--br-normal);
-   transform: rotate(45deg);
+   transform: translate(-50%, -50%);
    overflow: hidden;
    &::after {
       content: '';

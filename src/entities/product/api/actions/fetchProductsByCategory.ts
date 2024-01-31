@@ -1,10 +1,10 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import { IProductWithRating } from 'src/shared';
+import { IProduct } from 'src/shared';
 
 export const fetchProductsByCategory = createAsyncThunk<
-   IProductWithRating[],
+   IProduct[],
    string,
    { rejectValue: string }
 >('fetchProductsByCategory', async (category, { rejectWithValue }) => {
@@ -13,7 +13,7 @@ export const fetchProductsByCategory = createAsyncThunk<
          .get(`https://fakestoreapi.com/products/category/${category}`)
          .then((res) => res.data)
          .then((data) =>
-            data.map((el: IProductWithRating) => {
+            data.map((el: IProduct) => {
                return { ...el, price: el.price * 100 };
             }),
          );

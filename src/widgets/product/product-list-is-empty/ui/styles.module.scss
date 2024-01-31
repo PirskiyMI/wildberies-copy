@@ -1,19 +1,9 @@
 .body {
-   margin-top: 4ch;
-   margin-bottom: 4ch;
+   margin-bottom: 72px;
    &__title {
-      font-size: 24px;
-      line-height: 32px;
+      margin-bottom: 20px;
+      font-size: var(--title-fs-big);
       font-weight: var(--fw-bold);
-      margin-bottom: 20px;
-   }
-   &__text {
-      font-size: var(--text-fs-big);
-      font-weight: var(--fw-normal);
-      margin-bottom: 20px;
-   }
-   &__button {
-      width: 300px;
-      height: 50px;
+      line-height: var(--text-lh-small);
    }
 }
