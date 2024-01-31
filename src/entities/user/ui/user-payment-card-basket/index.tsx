@@ -1,6 +1,7 @@
 import { FC } from 'react';
 
 import {
+   Cards,
    cardNumberFormatter,
    masterCardExpression,
    mirCardExpression,
@@ -22,13 +23,13 @@ export const UserPaymentCardBasket: FC<Props> = ({ cardNumber, numberVisible }) 
    let alt;
 
    if (masterCardExpression.test(cardNumberWithoutWhiteSpaces)) {
-      src = 'https://cdn.iconscout.com/icon/free/png-256/free-mastercard-3521564-2944982.png';
+      src = Cards.MasterCard;
       alt = 'MASTER CARD';
    } else if (mirCardExpression.test(cardNumberWithoutWhiteSpaces)) {
-      src = 'https://evgenykatyshev.ru/projects/mir-logo/mir-logo-h14px.svg';
+      src = Cards.MirCard;
       alt = 'MIR';
    } else if (visaExpression.test(cardNumberWithoutWhiteSpaces)) {
-      src = 'https://cdn.worldvectorlogo.com/logos/visa-10.svg';
+      src = Cards.VisaCard;
       alt = 'VISA';
    }
 

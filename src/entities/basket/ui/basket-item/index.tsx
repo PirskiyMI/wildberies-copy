@@ -17,7 +17,7 @@ type Props = {
 export const BasketItem: FC<Props> = ({ product, features }) => {
    const { image, price, status, title } = product;
    const { Checkbox, Counter, Like, Delete } = features;
-   const { count } = status;
+   const { count, isChecked } = status!;
 
    const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
    const [productPrice, setProductPrice] = useState(price);
@@ -41,7 +41,7 @@ export const BasketItem: FC<Props> = ({ product, features }) => {
                </div>
             </div>
          }
-         isElementActive={status.isChecked}
+         isElementActive={isChecked}
          isDesktop={windowWidth >= 1024}
          className={styles.item}
       />

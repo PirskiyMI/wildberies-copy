@@ -1,5 +1,5 @@
 import { addProduct, incrementTotalCount } from 'src/entities/basket';
-import { IProduct, hideNotification, showNotification, useAppDispatch } from 'src/shared';
+import { IProduct, useAppDispatch } from 'src/shared';
 
 export const useAddToCart = (product: IProduct) => {
    const dispatch = useAppDispatch();
@@ -14,10 +14,6 @@ export const useAddToCart = (product: IProduct) => {
          }),
       );
       dispatch(incrementTotalCount());
-      dispatch(showNotification());
-      setTimeout(() => {
-         dispatch(hideNotification());
-      }, 3000);
    };
    return { addToCart };
 };

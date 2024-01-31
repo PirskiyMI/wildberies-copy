@@ -2,7 +2,7 @@ import { Dispatch, FC, SetStateAction } from 'react';
 import { createPortal } from 'react-dom';
 
 import styles from './styles.module.scss';
-import { useAppSelector } from '../../lib';
+import { useAppSelector } from '../../../lib';
 
 export type Option = {
    value: string;

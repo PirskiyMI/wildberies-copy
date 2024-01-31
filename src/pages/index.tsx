@@ -13,8 +13,7 @@ const FavoritesPage = lazy(() => import('./favorites-page'));
 
 const Routing = () => {
    const { isOpen: isBurgerOpen } = useAppSelector((state) => state.burgerReducer);
-   const { isModalOpen } = useAppSelector((state) => state.modalReducer);
-   const isHidden = isBurgerOpen || isModalOpen;
+   const isHidden = isBurgerOpen;
 
    useEffect(() => {
       isHidden ? document.body.classList.add('hidden') : document.body.classList.remove('hidden');
@@ -25,13 +24,11 @@ const Routing = () => {
          <Routes>
             <Route path="/" element={<Layout />}>
                <Route index element={<HomePage />} />
-               <Route path="/cart" element={<CartPage />} />
-               <Route path="/catalog/:category" element={<CategoryPage />} />
-               <Route path="/navigation" element={<NavigationPage />} />
-            </Route>
-            <Route path="/profile" element={<Layout />}>
-               <Route path="/profile/user" element={<ProfilePage />} />
-               <Route path="/profile/favorites" element={<FavoritesPage />} />
+               <Route path="cart" element={<CartPage />} />
+               <Route path="catalog/:category" element={<CategoryPage />} />
+               <Route path="navigation" element={<NavigationPage />} />
+               <Route path="favorites" element={<FavoritesPage />} />
+               <Route path="profile" element={<ProfilePage />} />
             </Route>
          </Routes>
       </div>

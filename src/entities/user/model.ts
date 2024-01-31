@@ -1,19 +1,18 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { IProduct } from 'src/shared';
 
-type TFavorites = {
+interface IFavorites {
    brands: string[];
    products: IProduct[];
-};
-export type TPayment = {
+}
+interface IPayment {
    id: number;
    cardNumber: string;
    code: string;
    date: string;
    isMain: boolean;
-};
-
-interface IUserSlice {
+}
+interface IState {
    name: string;
    isMale: boolean;
    tel: string;
@@ -23,13 +22,13 @@ interface IUserSlice {
    redemptionPercentage: number;
    purchases: [];
    img: string | null;
-   favorites: TFavorites;
-   paymentInfo: TPayment[];
+   favorites: IFavorites;
+   paymentInfo: IPayment[];
 }
 
-const initialState: IUserSlice = {
+const initialState: IState = {
    name: 'Максим',
-   discount: 27,
+   discount: 29,
    ransomAmount: 0,
    redemptionPercentage: 0,
    balance: 0,
@@ -62,7 +61,7 @@ const userSlice = createSlice({
       setGender: (state, { payload }: PayloadAction<boolean>) => {
          state.isMale = payload;
       },
-      addCard: (state, { payload }: PayloadAction<TPayment>) => {
+      addCard: (state, { payload }: PayloadAction<IPayment>) => {
          if (!state.paymentInfo.find((el) => el.cardNumber === payload.cardNumber)) {
             state.paymentInfo.push(payload);
          }

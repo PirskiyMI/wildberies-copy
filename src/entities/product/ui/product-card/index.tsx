@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, memo } from 'react';
 
 import { IProduct, ProductItemCard, Rating, priceFormatter } from 'src/shared';
 
@@ -7,14 +7,15 @@ import styles from './styles.module.scss';
 type Props = {
    product: IProduct;
    FavoriteButton: ReactNode;
-   ModalButton: ReactNode;
    CartButton: ReactNode;
+   openPopup: () => void;
 };
 
-export const ProductCard: FC<Props> = ({ product, CartButton, FavoriteButton, ModalButton }) => {
+export const ProductCard: FC<Props> = memo(({ product, CartButton, FavoriteButton, openPopup }) => {
    const { title, price, rating, image, isFavorite } = product;
-   const cartPrice = priceFormatter(price);
-   const count = priceFormatter(rating.count);
+   const { count, rate } = rating;
+   const formattedPrice = priceFormatter(price);
+   const formattedCount = priceFormatter(count);
    const toggleFavoriteClasses = isFavorite
       ? `${styles.card__favorite} ${styles.card__favorite_active}`
       : styles.card__favorite;
@@ -27,14 +28,16 @@ export const ProductCard: FC<Props> = ({ product, CartButton, FavoriteButton, Mo
                <div className={styles.card__img}>
                   <img src={image} alt={title} />
                </div>
-               <div className={styles.card__show}>{ModalButton}</div>
+               <div className={styles.card__show} onClick={openPopup}>
+                  Быстрый просмотр
+               </div>
             </>
          }
          middle={
             <>
-               <span className={`${styles.card__price}`}>{cartPrice} сом</span>
+               <span className={`${styles.card__price}`}>{formattedPrice} сом</span>
                <h2 className={styles.card__title}>{title}</h2>
-               <Rating count={count} rate={rating.rate} />
+               <Rating count={formattedCount} rate={rate} />
             </>
          }
          bottom={
@@ -45,4 +48,4 @@ export const ProductCard: FC<Props> = ({ product, CartButton, FavoriteButton, Mo
          className={styles.card}
       />
    );
-};
+});

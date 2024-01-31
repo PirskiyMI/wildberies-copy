@@ -1,23 +1,16 @@
 import { FC, Suspense, useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 
-import {
-   Notification,
-   Preloader,
-   ScrollToTop,
-   setWindowWidth,
-   useAppDispatch,
-   useAppSelector,
-} from 'src/shared';
+import { Preloader, setWindowWidth, useAppDispatch, useAppSelector } from 'src/shared';
 import { Header } from 'src/widgets/header';
 import { Footer } from 'src/widgets/footer';
 import { NavMenu } from 'src/widgets/nav-menu';
 
 import styles from './styles.module.scss';
+import { ScrollUp } from 'src/features/scroll-up';
 
 export const Layout: FC = () => {
-   const { isVisible: isActive } = useAppSelector((state) => state.notificationReducer);
    const { isOpen } = useAppSelector((state) => state.burgerReducer);
    const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
    const [isButtonVisible, setIsButtonVisible] = useState(false);
@@ -50,30 +43,14 @@ export const Layout: FC = () => {
 
    return (
       <>
-         <AnimatePresence>
-            {isActive && (
-               <motion.div
-                  initial={{ top: '-100%', left: '50%' }}
-                  animate={{ top: '6%' }}
-                  exit={{ top: '-100%' }}
-                  className={styles.layout__notification}>
-                  <Notification title="Товар добавлен в корзину" />
-               </motion.div>
-            )}
-         </AnimatePresence>
          <AnimatePresence>{isOpen && <NavMenu />}</AnimatePresence>
-
          <Header />
-
          <main className={styles.layout__main}>
             <Suspense fallback={<Preloader />}>
                <Outlet />
             </Suspense>
          </main>
-
-         {isButtonVisible && windowWidth >= 1024 && (
-            <ScrollToTop className={styles.layout__button} />
-         )}
+         {isButtonVisible && windowWidth >= 1024 && <ScrollUp />}
          <Footer />
       </>
    );

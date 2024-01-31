@@ -4,14 +4,12 @@ import { IProduct, ServerError, useAppDispatch, useAppSelector } from 'src/share
 import { fetchAllProducts } from 'src/entities/product/api';
 import { ProductSkeletonList } from 'src/widgets/product/product-skeleton-list';
 import { ProductList } from 'src/widgets/product/product-list';
-import { ProductDetails } from 'src/widgets/product/product-details';
 
 import styles from './styles.module.scss';
 import { ProductListIsEmpty } from 'src/widgets/product/product-list-is-empty';
 
 const HomePage: FC = () => {
    const { value } = useAppSelector((state) => state.searchReducer);
-   const { isModalOpen } = useAppSelector((state) => state.modalReducer);
    const { products, isLoading, error } = useAppSelector((state) => state.productsListReducer);
    const [productsList, setProductsList] = useState<IProduct[]>([]);
    const dispatch = useAppDispatch();
@@ -47,10 +45,7 @@ const HomePage: FC = () => {
    return (
       <div className={`${styles.home__container} container`}>
          {productsList.length ? (
-            <>
-               <ProductList products={productsList} />
-               {isModalOpen && <ProductDetails />}
-            </>
+            <ProductList products={productsList} />
          ) : (
             <ProductListIsEmpty searchValue={value} />
          )}

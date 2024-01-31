@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { Modal, useAppSelector } from 'src/shared';
+import { Popup, useAppSelector } from 'src/shared';
 import { ProductCardDetails } from 'src/entities/product';
 import { AddProductToCartInModal } from 'src/features/product';
 
@@ -11,12 +11,12 @@ export const ProductDetails: FC = () => {
 
    if (product) {
       return (
-         <Modal>
+         <Popup>
             <ProductCardDetails
                product={product}
                Button={<AddProductToCartInModal inBasket={inBasket} product={product} />}
             />
-         </Modal>
+         </Popup>
       );
    }
 };
