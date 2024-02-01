@@ -6,7 +6,8 @@ import styles from './styles.module.scss';
 import { menuLinkList } from '../../constants';
 
 export const HeaderNavigation: FC = () => {
-   const { count } = useAppSelector((state) => state.basketInfoReducer);
+   const { list } = useAppSelector((state) => state.basketListReducer);
+   const count = list.length;
 
    return (
       <nav className={styles.navigation}>
