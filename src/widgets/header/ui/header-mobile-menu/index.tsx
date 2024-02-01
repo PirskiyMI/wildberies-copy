@@ -15,7 +15,7 @@ export const HeaderMobileMenu: FC = () => {
                <HeaderLink icon="home" path={mainPath} />
             </li>
             {mobileMenuLinkList.map(({ icon, to, isCount }) => (
-               <li className={styles.menu__item}>
+               <li key={icon} className={styles.menu__item}>
                   {isCount ? (
                      <HeaderLink icon={icon} path={to} count={count} />
                   ) : (

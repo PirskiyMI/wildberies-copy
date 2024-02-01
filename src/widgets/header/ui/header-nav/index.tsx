@@ -12,7 +12,7 @@ export const HeaderNavigation: FC = () => {
       <nav className={styles.navigation}>
          <ul className={styles.navigation__list}>
             {menuLinkList.map(({ icon, to, isCount, label }) => (
-               <li>
+               <li key={icon}>
                   {isCount ? (
                      <HeaderLink
                         icon={icon}
