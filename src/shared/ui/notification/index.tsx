@@ -11,7 +11,7 @@ type Props = {
 export const Notification: FC<Props> = ({ title }) => {
    return (
       <div className={styles.notification}>
-         <Icon icon="checkMark" className={styles.notification__icon} />
+         <Icon icon="check-mark" className={styles.notification__icon} />
          <span>{title}</span>
       </div>
    );

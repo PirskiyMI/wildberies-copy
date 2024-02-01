@@ -16,7 +16,7 @@ export const Checkbox: FC<Props> = ({isChecked, Change, className}) => {
 
   return (
     <div onClick={Change} className={checkboxClasses}>
-        <Icon icon="checkMark" className={styles.checkbox__mark} />
+        <Icon icon="check-mark" className={styles.checkbox__mark} />
     </div>
   )
 }

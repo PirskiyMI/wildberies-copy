@@ -12,7 +12,7 @@ type RatingProps = {
 export const Rating: FC<RatingProps> = ({ rate, count }) => {
    return (
       <div className={styles.rating}>
-         <Icon icon="rating" className={styles.rating__icon} /> {rate}{' '}
+         <Icon icon="star" className={styles.rating__icon} /> {rate}{' '}
          <span className={styles.rating__count}>● {count} оценок</span>
       </div>
    );
