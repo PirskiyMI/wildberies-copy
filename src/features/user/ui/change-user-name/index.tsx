@@ -5,7 +5,11 @@ import { setName } from 'src/entities/user';
 
 import styles from './styles.module.scss';
 
-export const ChangeUserName: FC = () => {
+interface Props {
+   closePopUp?: () => void;
+}
+
+export const ChangeUserName: FC<Props> = ({ closePopUp }) => {
    const { name } = useAppSelector((state) => state.userReducer);
    const dispatch = useAppDispatch();
    const inputProps = useInput(name, {
@@ -17,6 +21,7 @@ export const ChangeUserName: FC = () => {
       e.preventDefault();
       if (!inputProps.isDirty) {
          dispatch(setName(inputProps.value));
+         if (closePopUp) closePopUp();
       }
    };
 

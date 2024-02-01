@@ -29,7 +29,7 @@ export const UserDetails: FC = () => {
             <PopUp closePopUp={closePopUp} className={styles.modal}>
                <div className={styles.modal__body}>
                   <h3 className={styles.modal__title}>Изменить имя</h3>
-                  <ChangeUserName />
+                  <ChangeUserName closePopUp={closePopUp} />
                </div>
             </PopUp>
          )}
