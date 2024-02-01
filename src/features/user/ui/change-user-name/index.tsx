@@ -1,24 +1,27 @@
 import { FC, FormEvent } from 'react';
 
-import { useAppDispatch, useAppSelector, useInput, Button, Field, closePopUp } from 'src/shared';
+import { useAppDispatch, useAppSelector, useInput, Button, Field } from 'src/shared';
 import { setName } from 'src/entities/user';
 
 import styles from './styles.module.scss';
 
-export const ChangeUserName: FC = () => {
-   const { name } = useAppSelector((state) => state.userReducer);
+interface Props {
+   closePopUp?: () => void;
+}
 
+export const ChangeUserName: FC<Props> = ({ closePopUp }) => {
+   const { name } = useAppSelector((state) => state.userReducer);
+   const dispatch = useAppDispatch();
    const inputProps = useInput(name, {
       isRequired: true,
       type: 'name',
    });
-   const dispatch = useAppDispatch();
 
    const submitHandler = (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       if (!inputProps.isDirty) {
          dispatch(setName(inputProps.value));
-         dispatch(closePopUp());
+         if (closePopUp) closePopUp();
       }
    };
 

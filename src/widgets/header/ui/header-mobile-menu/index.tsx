@@ -2,7 +2,8 @@ import { FC } from 'react';
 
 import styles from './styles.module.scss';
 
-import { HeaderLink, useAppSelector } from 'src/shared';
+import { HeaderLink, mainPath, useAppSelector } from 'src/shared';
+import { mobileMenuLinkList } from '../../constants';
 
 export const HeaderMobileMenu: FC = () => {
    const { count } = useAppSelector((state) => state.basketInfoReducer);
@@ -11,20 +12,17 @@ export const HeaderMobileMenu: FC = () => {
       <nav>
          <ul className={styles.menu}>
             <li className={styles.menu__item}>
-               <HeaderLink icon="home" path="/" />
+               <HeaderLink icon="home" path={mainPath} />
             </li>
-            <li className={styles.menu__item}>
-               <HeaderLink icon="burger" path="/navigation" />
-            </li>
-            <li className={styles.menu__item}>
-               <HeaderLink icon="cart" path="/cart" count={count} />
-            </li>
-            <li className={styles.menu__item}>
-               <HeaderLink icon="heart" path="/profile/favorites" />
-            </li>
-            <li className={styles.menu__item}>
-               <HeaderLink icon="user" path="/profile/user" />
-            </li>
+            {mobileMenuLinkList.map(({ icon, to, isCount }) => (
+               <li className={styles.menu__item}>
+                  {isCount ? (
+                     <HeaderLink icon={icon} path={to} count={count} />
+                  ) : (
+                     <HeaderLink icon={icon} path={to} />
+                  )}
+               </li>
+            ))}
          </ul>
       </nav>
    );
