@@ -5,7 +5,7 @@ import styles from './styles.module.scss';
 
 type Props = {
    path: string;
-   icon: 'burger' | 'cart' | 'user' | 'haert' | 'home';
+   icon: 'burger' | 'cart' | 'user' | 'heart' | 'home';
    label?: string;
    count?: number | null;
 };
