@@ -1,11 +1,5 @@
 import { combineReducers } from '@reduxjs/toolkit';
-import {
-   burgerReducer,
-   modalReducer,
-   notificationReducer,
-   searchReducer,
-   windowWidthReducer,
-} from 'src/shared';
+import { burgerReducer, searchReducer, windowWidthReducer } from 'src/shared';
 import {
    productsListOfCategoryReducer,
    productsListReducer,
@@ -20,12 +14,10 @@ export const rootReducer = combineReducers({
    orderReducer,
    basketInfoReducer,
    basketListReducer,
-   notificationReducer,
    productsListReducer,
    productsListOfCategoryReducer,
    visitedProductsListReducer,
    searchReducer,
-   modalReducer,
    userReducer,
    windowWidthReducer,
 });

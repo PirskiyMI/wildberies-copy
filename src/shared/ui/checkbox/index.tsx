@@ -20,3 +20,4 @@ export const Checkbox: FC<Props> = ({isChecked, Change, className}) => {
     </div>
   )
 }
+

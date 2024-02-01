@@ -1,33 +1,28 @@
-import { FC } from 'react';
+import { FC, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 
-import { Button, IProduct, closeModal, setProductToModal, useAppDispatch } from 'src/shared';
+import { Button, IProduct, useAppSelector } from 'src/shared';
 
 import styles from './styles.module.scss';
 import { useAddToCart } from '../..';
 
 type Props = {
    product: IProduct;
-   inBasket?: boolean;
 };
 
-export const AddProductToCartInModal: FC<Props> = ({ product, inBasket }) => {
+export const AddProductToCartInModal: FC<Props> = ({ product }) => {
+   const { list } = useAppSelector((state) => state.basketListReducer);
+   const inBasket = useMemo(() => list.find((el) => el.id === product.id), [list, product.id]);
    const { addToCart } = useAddToCart(product);
-   const dispatch = useAppDispatch();
-
-   const closeHandler = () => {
-      dispatch(closeModal());
-      dispatch(setProductToModal(null));
-   };
 
    const clickHandler = () => {
-      addToCart();
+      if (!inBasket) addToCart();
    };
 
    return (
       <>
          {inBasket ? (
-            <Button className={styles.button} onClick={closeHandler}>
+            <Button className={styles.button}>
                <Link to="/cart" className={styles.button__link}>
                   <span>Перейти в корзину</span>
                </Link>

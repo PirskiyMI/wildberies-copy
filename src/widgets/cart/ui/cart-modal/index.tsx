@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { Button, Icon, Modal, Section } from 'src/shared';
+import { Button, Icon, Popup, Section } from 'src/shared';
 import { CreateCard, SetCardInBasket } from 'src/features/card/ui';
 
 import styles from './styles.module.scss';
@@ -14,7 +14,7 @@ type Props = {
 
 export const CartModal: FC<Props> = ({ type, cardList, closeModal, toggleType }) => {
    return (
-      <Modal clickHandler={closeModal} className={styles.modal}>
+      <Popup clickHandler={closeModal} className={styles.modal}>
          <Section title={type === 'form' ? 'Привязать карту' : 'Способ оплаты'}>
             {type === 'form' ? (
                <>
@@ -39,6 +39,6 @@ export const CartModal: FC<Props> = ({ type, cardList, closeModal, toggleType })
                </ul>
             )}
          </Section>
-      </Modal>
+      </Popup>
    );
 };

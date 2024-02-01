@@ -9,7 +9,6 @@ interface IProductStatus {
 interface IProductInfo {
    description: string;
    category: string;
-   rating: IProductRating;
 }
 export interface IProduct {
    id: number;
@@ -17,6 +16,7 @@ export interface IProduct {
    price: number;
    image: string;
    isFavorite: boolean;
+   rating: IProductRating;
    status?: IProductStatus;
    info?: IProductInfo;
 }

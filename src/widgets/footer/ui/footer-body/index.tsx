@@ -9,7 +9,7 @@ import {
    projectLinks,
    customerLinks,
    partnersLinks,
-} from '../../config';
+} from '../../constants';
 
 export const Footer: FC = () => {
    return (

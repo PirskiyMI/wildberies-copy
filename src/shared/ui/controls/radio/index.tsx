@@ -7,6 +7,6 @@ type Props = {
 
 export const Radio: FC<Props> = ({ isActive }) => {
    return (
-      <div className={styles.radio}>{isActive && <div className={styles.radio__circle}></div>}</div>
+      <div className={styles.radio}>{isActive && <div className={styles.radio__dot}></div>}</div>
    );
 };

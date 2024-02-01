@@ -12,16 +12,6 @@
       transform: translateX(-50%);
       z-index: 10;
    }
-   &__button {
-      width: 48px;
-      height: 48px;
-      bottom: 20px;
-      left: 20px;
-      svg {
-         width: 20px;
-         height: 20px;
-      }
-   }
    @media (min-width: 1024px) {
       &__main {
          padding: 24px 0px 48px;

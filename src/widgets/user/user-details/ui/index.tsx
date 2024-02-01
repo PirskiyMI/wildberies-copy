@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { useAppDispatch, useAppSelector, openModal, Icon, Modal, Section } from 'src/shared';
+import { useAppDispatch, useAppSelector, openModal, Icon, Popup, Section } from 'src/shared';
 import { UserGender, UserInfo, UserPhone } from 'src/entities/user';
 import { ChangeUserName, UserGenderRadio } from 'src/features/user';
 
@@ -31,12 +31,12 @@ export const UserDetails: FC = () => {
          </div>
 
          {isModalOpen && (
-            <Modal className={styles.modal}>
+            <Popup className={styles.modal}>
                <div className={styles.modal__body}>
                   <h3 className={styles.modal__title}>Изменить имя</h3>
                   <ChangeUserName />
                </div>
-            </Modal>
+            </Popup>
          )}
       </Section>
    );

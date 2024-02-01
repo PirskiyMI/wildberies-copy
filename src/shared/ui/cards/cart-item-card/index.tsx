@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react';
 
-import { Price } from 'src/shared';
+import { Price, classCombiner } from 'src/shared';
 
 import styles from './styles.module.scss';
 
@@ -25,7 +25,7 @@ export const CartItemCard: FC<Props> = ({
    isElementActive = false,
    isDesktop = false,
 }) => {
-   const classes = className ? `${className} ${styles.card}` : styles.card;
+   const classes = classCombiner(styles.card, className);
    const checkboxClasses = isElementActive
       ? `${styles.card__checkbox} ${styles.card__checkbox_active}`
       : styles.card__checkbox;
