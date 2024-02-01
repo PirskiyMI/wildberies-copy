@@ -1,6 +1,6 @@
 import { FC, FormEvent } from 'react';
 
-import { useAppDispatch, useAppSelector, useInput, Button, Field, closeModal } from 'src/shared';
+import { useAppDispatch, useAppSelector, useInput, Button, Field, closePopUp } from 'src/shared';
 import { setName } from 'src/entities/user';
 
 import styles from './styles.module.scss';
@@ -18,7 +18,7 @@ export const ChangeUserName: FC = () => {
       e.preventDefault();
       if (!inputProps.isDirty) {
          dispatch(setName(inputProps.value));
-         dispatch(closeModal());
+         dispatch(closePopUp());
       }
    };
 

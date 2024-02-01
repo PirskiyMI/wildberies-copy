@@ -1,21 +1,21 @@
 import { FC } from 'react';
 
-import { Popup } from 'src/shared';
+import { PopUp } from 'src/shared';
 
 import styles from './styles.module.scss';
 import { CreateCard } from 'src/features/card/ui';
 
 type Props = {
-   closeModal: () => void;
+   closePopUp: () => void;
 };
 
-export const UserModal: FC<Props> = ({ closeModal }) => {
+export const UserModal: FC<Props> = ({ closePopUp }) => {
    return (
-      <Popup className={styles.modal} clickHandler={closeModal}>
+      <PopUp className={styles.modal} closePopUp={closePopUp}>
          <div className={styles.modal__body}>
             <h3 className={styles.modal__title}>Привязка карты</h3>
-            <CreateCard closeModal={closeModal} />
+            <CreateCard closePopUp={closePopUp} />
          </div>
-      </Popup>
+      </PopUp>
    );
 };

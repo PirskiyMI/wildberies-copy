@@ -1,4 +1,4 @@
-import { FC, memo, useState } from 'react';
+import { FC, memo } from 'react';
 import { ProductCard, ProductCardDetails } from 'src/entities/product';
 
 import {
@@ -8,7 +8,7 @@ import {
    ToggleProductToFavorite,
 } from 'src/features/product';
 
-import { IProduct, Popup } from 'src/shared';
+import { IProduct, PopUp, usePopUp } from 'src/shared';
 
 interface IProps {
    product: IProduct;
@@ -16,10 +16,7 @@ interface IProps {
 }
 
 export const ProductItem: FC<IProps> = memo(({ product, isFavoriteList = false }) => {
-   const [isPopupOpen, setIsPopupOpen] = useState(false);
-
-   const openPopup = () => setIsPopupOpen(true);
-   const closePopup = () => setIsPopupOpen(false);
+   const { isPopUpOpen, openPopUp, closePopUp } = usePopUp();
 
    return (
       <>
@@ -33,16 +30,16 @@ export const ProductItem: FC<IProps> = memo(({ product, isFavoriteList = false }
                )
             }
             CartButton={<AddProductToCart product={product} />}
-            openPopup={openPopup}
+            openPopup={openPopUp}
          />
-         {isPopupOpen && (
-            <Popup closeModal={closePopup}>
+         {isPopUpOpen && (
+            <PopUp closePopUp={closePopUp}>
                <ProductCardDetails
                   product={product}
                   AddToCartButton={<AddProductToCartInModal product={product} />}
-                  closePopup={closePopup}
+                  closePopup={closePopUp}
                />
-            </Popup>
+            </PopUp>
          )}
       </>
    );

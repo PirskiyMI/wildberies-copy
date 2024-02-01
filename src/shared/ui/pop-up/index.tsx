@@ -5,17 +5,17 @@ import styles from './styles.module.scss';
 
 type Props = {
    children: ReactNode;
-   closeModal: () => void;
+   closePopUp: () => void;
    className?: string;
 };
 
-const modalElement = document.getElementById('modal')!;
+const popupElement = document.getElementById('pop-up')!;
 
-export const Popup: FC<Props> = ({ children, closeModal, className }) => {
-   const classes = className ? `${styles.modal__wrapper} ${className}` : styles.modal__wrapper;
+export const PopUp: FC<Props> = ({ children, closePopUp, className }) => {
+   const classes = className ? `${styles.popup__wrapper} ${className}` : styles.popup__wrapper;
 
    return createPortal(
-      <div className={styles.modal} onClick={closeModal}>
+      <div className={styles.popup} onClick={closePopUp}>
          <div
             className={classes}
             onClick={(e) => {
@@ -24,6 +24,6 @@ export const Popup: FC<Props> = ({ children, closeModal, className }) => {
             {children}
          </div>
       </div>,
-      modalElement,
+      popupElement,
    );
 };

@@ -1,6 +1,6 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 
-import { Card, Icon, Section, useAppSelector } from 'src/shared';
+import { Card, Icon, Section, useAppSelector, usePopUp } from 'src/shared';
 import { UserPaymentCard } from 'src/entities/user';
 import { DeleteCard, SetCard } from 'src/features/card/ui';
 
@@ -8,12 +8,10 @@ import styles from './styles.module.scss';
 import { UserModal } from './user-modal';
 
 export const UserPaymentMethods: FC = () => {
-   const [isModal, setIsModal] = useState(false);
    const { paymentInfo } = useAppSelector((state) => state.userReducer);
    const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
 
-   const clickHandler = () => setIsModal(true);
-   const closeModal = () => setIsModal(false);
+   const { isPopUpOpen, openPopUp, closePopUp } = usePopUp();
 
    return (
       <>
@@ -39,8 +37,7 @@ export const UserPaymentMethods: FC = () => {
                      )}
                   </li>
                ))}
-
-               <li onClick={clickHandler} className={styles.payments__item}>
+               <li onClick={openPopUp} className={styles.payments__item}>
                   <Card className={styles.payments__card}>
                      <div className={styles.payments__body}>
                         <Icon icon="card" className={styles.payments__icon} />
@@ -51,7 +48,7 @@ export const UserPaymentMethods: FC = () => {
             </ul>
          </Section>
 
-         {isModal && <UserModal closeModal={closeModal} />}
+         {isPopUpOpen && <UserModal closePopUp={closePopUp} />}
       </>
    );
 };

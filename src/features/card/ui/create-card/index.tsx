@@ -13,10 +13,10 @@ import { addCard } from 'src/entities/user';
 import styles from './styles.module.scss';
 
 type Props = {
-   closeModal?: () => void;
+   closePopUp?: () => void;
 };
 
-export const CreateCard: FC<Props> = ({ closeModal }) => {
+export const CreateCard: FC<Props> = ({ closePopUp }) => {
    const {
       errorText: cartErrorText,
       isDirty: cartIsDirty,
@@ -53,7 +53,7 @@ export const CreateCard: FC<Props> = ({ closeModal }) => {
             isMain: false,
          }),
       );
-      if (closeModal) closeModal();
+      if (closePopUp) closePopUp();
    };
 
    return (

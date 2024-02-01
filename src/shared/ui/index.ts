@@ -2,7 +2,7 @@ export * from './buttons';
 export * from './fields';
 export * from './burger';
 export * from './icon';
-export * from './popup';
+export * from './pop-up';
 export * from './notification';
 export * from './preloader';
 export * from './price';

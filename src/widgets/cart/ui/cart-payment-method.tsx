@@ -21,7 +21,7 @@ export const CartPaymentMethod: FC = () => {
    const openModal = () => {
       setModalIsOpen(true);
    };
-   const closeModal = () => {
+   const closePopUp = () => {
       setModalIsOpen(false);
       setModalType('select');
    };
@@ -45,7 +45,7 @@ export const CartPaymentMethod: FC = () => {
          />
          {modalIsOpen ? (
             <CartModal
-               closeModal={closeModal}
+               closePopUp={closePopUp}
                cardList={cardArray}
                type={modalType}
                toggleType={toggleType}
