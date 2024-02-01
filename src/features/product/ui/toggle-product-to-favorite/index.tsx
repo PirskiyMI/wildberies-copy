@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
 import { FavoriteButton, IProduct, useAppDispatch } from 'src/shared';
-import { addToFavorites, removeFromFavorites } from 'src/entities/user';
-import { toggleToFavorite } from 'src/entities/product';
+import { productsActions } from 'src/entities/product';
+import { productFavoritesActions } from 'src/entities/product';
 
 import styles from './styles.module.scss';
 
@@ -11,16 +11,17 @@ type Props = {
 };
 
 export const ToggleProductToFavorite: FC<Props> = ({ product }) => {
+   const { toggleToFavorite } = productsActions;
+   const { addProductToFavorites, removeProductToFavorites } = productFavoritesActions;
    const classes = product.isFavorite ? `${styles.button} ${styles.button_active}` : styles.button;
    const dispatch = useAppDispatch();
 
    const clickHandler = () => {
+      dispatch(toggleToFavorite(product.id));
       if (!product.isFavorite) {
-         dispatch(toggleToFavorite(product.id));
-         dispatch(addToFavorites(product));
+         dispatch(addProductToFavorites(product));
       } else {
-         dispatch(toggleToFavorite(product.id));
-         dispatch(removeFromFavorites(product.id));
+         dispatch(removeProductToFavorites(product.id));
       }
    };
 

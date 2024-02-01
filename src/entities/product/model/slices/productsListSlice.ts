@@ -45,4 +45,4 @@ const productsListSlice = createSlice({
 });
 
 export const productsListReducer = productsListSlice.reducer;
-export const { toggleToFavorite } = productsListSlice.actions;
+export const productsActions = productsListSlice.actions;

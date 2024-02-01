@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import { Checkbox, useAppDispatch } from 'src/shared';
-import { toggleProductIsChecked } from 'src/entities/basket';
+import { basketActions } from 'src/entities/basket';
 
 type Props = {
    isChecked: boolean;
@@ -9,6 +9,7 @@ type Props = {
 };
 
 export const ToggleProductToOrder: FC<Props> = ({ id, isChecked }) => {
+   const { toggleProductIsChecked } = basketActions;
    const dispatch = useAppDispatch();
 
    const clickHandler = () => {

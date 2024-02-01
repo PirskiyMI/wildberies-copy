@@ -1,10 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { IProduct } from 'src/shared';
 
-interface IFavorites {
-   brands: string[];
-   products: IProduct[];
-}
 interface IPayment {
    id: number;
    cardNumber: string;
@@ -22,7 +17,6 @@ interface IState {
    redemptionPercentage: number;
    purchases: [];
    img: string | null;
-   favorites: IFavorites;
    paymentInfo: IPayment[];
 }
 
@@ -35,10 +29,6 @@ const initialState: IState = {
    tel: '79530930145',
    purchases: [],
    img: null,
-   favorites: {
-      brands: [],
-      products: [],
-   },
    isMale: true,
    paymentInfo: [
       {
@@ -74,22 +64,8 @@ const userSlice = createSlice({
             el.id === payload ? (el.isMain = true) : (el.isMain = false),
          );
       },
-      addToFavorites: (state, { payload }: PayloadAction<IProduct>) => {
-         state.favorites.products.push(payload);
-      },
-      removeFromFavorites: (state, { payload }: PayloadAction<number>) => {
-         state.favorites.products = state.favorites.products.filter((el) => el.id !== payload);
-      },
    },
 });
 
 export const userReducer = userSlice.reducer;
-export const {
-   setName,
-   setGender,
-   addCard,
-   deleteCard,
-   addToFavorites,
-   removeFromFavorites,
-   setMainCard,
-} = userSlice.actions;
+export const { setName, setGender, addCard, deleteCard, setMainCard } = userSlice.actions;

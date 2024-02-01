@@ -33,9 +33,7 @@ const productsListOfCategorySlice = createSlice({
          })
          .addCase(fetchProductsByCategory.rejected, (state, { payload }) => {
             state.isLoading = false;
-            if (payload) {
-               state.error = payload;
-            }
+            if (payload) state.error = payload;
          });
    },
 });

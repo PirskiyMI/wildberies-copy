@@ -1,6 +1,6 @@
 .button {
    padding: 5px 20px 7px;
-   &_disabled {
+   &:disabled {
       color: rgb(var(--color-primary));
       background-color: rgba(var(--color-primary), 0.2);
    }

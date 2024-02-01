@@ -1,2 +1,2 @@
-export * from './useAddToCart';
+export * from './useProductActions';
 export * from './useCounterActions';
