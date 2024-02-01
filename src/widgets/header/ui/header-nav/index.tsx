@@ -15,7 +15,7 @@ export const HeaderNavigation: FC<Props> = ({ dropDown }) => {
       <nav className={styles.navigation}>
          <ul className={styles.navigation__list}>
             <li>
-               <HeaderLink icon="like" path={favoritesPath} label="Избранное" />
+               <HeaderLink icon="heart" path={favoritesPath} label="Избранное" />
             </li>
             <li className={dropDown ? styles.navigation__item : undefined}>
                <HeaderLink icon="user" path={profilePath} label="Профиль" />

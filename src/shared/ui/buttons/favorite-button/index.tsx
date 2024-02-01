@@ -10,7 +10,7 @@ type Props = {
 
 export const FavoriteButton: FC<Props> = ({ clickHandler, isFill, className }) => {
    const classes = className ? `${className} ${styles.button}` : styles.button;
-   const icon = isFill ? 'like-fill' : 'like';
+   const icon = isFill ? 'heart-fill' : 'heart';
 
    return (
       <button onClick={clickHandler} className={classes}>

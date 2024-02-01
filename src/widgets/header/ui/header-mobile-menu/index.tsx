@@ -20,7 +20,7 @@ export const HeaderMobileMenu: FC = () => {
                <HeaderLink icon="cart" path="/cart" count={count} />
             </li>
             <li className={styles.menu__item}>
-               <HeaderLink icon="like" path="/profile/favorites" />
+               <HeaderLink icon="heart" path="/profile/favorites" />
             </li>
             <li className={styles.menu__item}>
                <HeaderLink icon="user" path="/profile/user" />
