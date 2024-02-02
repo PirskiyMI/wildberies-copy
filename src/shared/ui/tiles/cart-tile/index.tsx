@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, memo } from 'react';
 
 import { Section, Icon } from 'src/shared';
 
@@ -11,7 +11,7 @@ type Props = {
    className?: string;
 };
 
-export const CartTile: FC<Props> = ({ title, content, clickHandle, className }) => {
+export const CartTile: FC<Props> = memo(({ title, content, clickHandle, className }) => {
    const classes = className ? `${className} ${styles.item}` : styles.item;
    const handler = clickHandle ? clickHandle : undefined;
 
@@ -23,4 +23,4 @@ export const CartTile: FC<Props> = ({ title, content, clickHandle, className }) 
          <div>{content}</div>
       </Section>
    );
-};
+});

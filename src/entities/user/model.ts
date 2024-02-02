@@ -7,7 +7,7 @@ interface IPayment {
    date: string;
    isMain: boolean;
 }
-interface IState {
+interface IUser {
    name: string;
    isMale: boolean;
    tel: string;
@@ -20,7 +20,7 @@ interface IState {
    paymentInfo: IPayment[];
 }
 
-const initialState: IState = {
+const initialState: IUser = {
    name: 'Максим',
    discount: 29,
    ransomAmount: 0,
@@ -69,3 +69,4 @@ const userSlice = createSlice({
 
 export const userReducer = userSlice.reducer;
 export const { setName, setGender, addCard, deleteCard, setMainCard } = userSlice.actions;
+export const userActions = userSlice.actions;

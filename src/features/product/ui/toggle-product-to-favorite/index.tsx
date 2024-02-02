@@ -1,8 +1,7 @@
-import { FC } from 'react';
+import { FC, memo, useCallback } from 'react';
 
 import { FavoriteButton, IProduct, useAppDispatch } from 'src/shared';
-import { productsActions } from 'src/entities/product';
-import { productFavoritesActions } from 'src/entities/product';
+import { productFavoritesActions, productsActions } from 'src/entities/product';
 
 import styles from './styles.module.scss';
 
@@ -10,22 +9,28 @@ type Props = {
    product: IProduct;
 };
 
-export const ToggleProductToFavorite: FC<Props> = ({ product }) => {
+export const ToggleProductToFavorite: FC<Props> = memo(({ product }) => {
+   const { addProductToFavorites, removeProductFromFavorites } = productFavoritesActions;
    const { toggleToFavorite } = productsActions;
-   const { addProductToFavorites, removeProductToFavorites } = productFavoritesActions;
-   const classes = product.isFavorite ? `${styles.button} ${styles.button_active}` : styles.button;
+   const isFavorite = product.isFavorite;
+   const classes = isFavorite ? `${styles.button} ${styles.button_active}` : styles.button;
    const dispatch = useAppDispatch();
 
-   const clickHandler = () => {
+   const clickHandler = useCallback(() => {
       dispatch(toggleToFavorite(product.id));
-      if (!product.isFavorite) {
+      if (!isFavorite) {
          dispatch(addProductToFavorites(product));
       } else {
-         dispatch(removeProductToFavorites(product.id));
+         dispatch(removeProductFromFavorites(product.id));
       }
-   };
+   }, [
+      product,
+      isFavorite,
+      addProductToFavorites,
+      removeProductFromFavorites,
+      toggleToFavorite,
+      dispatch,
+   ]);
 
-   return (
-      <FavoriteButton clickHandler={clickHandler} isFill={product.isFavorite} className={classes} />
-   );
-};
+   return <FavoriteButton clickHandler={clickHandler} isFill={isFavorite} className={classes} />;
+});

@@ -17,6 +17,7 @@ const HomePage: FC = () => {
    useEffect(() => {
       if (!products.length) dispatch(fetchAllProducts());
    }, [value]);
+   
    useEffect(() => {
       if (value.trim().length === 0) {
          setProductsList(products);
@@ -45,7 +46,7 @@ const HomePage: FC = () => {
    return (
       <div className={`${styles.home__container} container`}>
          {productsList.length ? (
-            <ProductList products={productsList} />
+            <ProductList products={productsList} isFavoriteList={false} />
          ) : (
             <ProductListIsEmpty searchValue={value} />
          )}

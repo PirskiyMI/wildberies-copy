@@ -1,12 +1,12 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { CartTile } from 'src/shared';
+import { CartTile, profilePath } from 'src/shared';
 import { UserInfoBasket } from 'src/entities/user';
 
-export const CartUserInfo: FC = () => {
+export const CartUserInfo: FC = memo(() => {
    const navigate = useNavigate();
 
-   const clickHandler = () => navigate('/profile/user');
+   const clickHandler = () => navigate(profilePath);
    return <CartTile title="Мои данные" content={<UserInfoBasket />} clickHandle={clickHandler} />;
-};
+});

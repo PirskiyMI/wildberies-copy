@@ -1,4 +1,4 @@
-import { FC, useMemo } from 'react';
+import { FC, memo, useMemo } from 'react';
 
 import { Button, IProduct, useAppSelector } from 'src/shared';
 import { useProductActions } from '../../lib';
@@ -9,7 +9,7 @@ type Props = {
    product: IProduct;
 };
 
-export const AddProductToCart: FC<Props> = ({ product }) => {
+export const AddProductToCart: FC<Props> = memo(({ product }) => {
    const { list } = useAppSelector((state) => state.basketReducer);
    const inBasket = useMemo(
       () => Boolean(list.find(({ id }) => id === product.id)),
@@ -18,11 +18,8 @@ export const AddProductToCart: FC<Props> = ({ product }) => {
    const { addProduct } = useProductActions(product);
 
    return (
-      <Button
-         className={styles.button}
-         disabled={inBasket}
-         onClick={addProduct}>
+      <Button className={styles.button} disabled={inBasket} onClick={addProduct}>
          В корзин{inBasket ? 'е' : 'у'}
       </Button>
    );
-};
+});

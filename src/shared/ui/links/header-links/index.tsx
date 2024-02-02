@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Icon } from '../..';
 import styles from './styles.module.scss';
@@ -10,7 +10,7 @@ type Props = {
    count?: number | null;
 };
 
-export const HeaderLink: FC<Props> = ({ icon, path, label, count }) => {
+export const HeaderLink: FC<Props> = memo(({ icon, path, label, count }) => {
    return (
       <NavLink
          to={path}
@@ -26,4 +26,4 @@ export const HeaderLink: FC<Props> = ({ icon, path, label, count }) => {
          </div>
       </NavLink>
    );
-};
+});

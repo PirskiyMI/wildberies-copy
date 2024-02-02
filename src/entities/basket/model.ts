@@ -71,19 +71,27 @@ const basketSlice = createSlice({
       },
       toggleProductIsChecked: (state, action: PayloadAction<number>) => {
          state.list.forEach((el) => {
-            if (el.id === action.payload) {
-               el.status!.isChecked = !el.status!.isChecked;
+            if (el.id === action.payload && el.status) {
+               el.status.isChecked = !el.status.isChecked;
             }
          });
       },
-      incrementTotalCount: (state) => {
-         state.totalCount += 1;
-      },
-      setTotalCount: (state, { payload }: PayloadAction<number>) => {
-         state.totalCount = payload;
-      },
-      setTotalPrice: (state, { payload }: PayloadAction<number>) => {
-         state.totalPrice = payload;
+      getTotals: (state) => {
+         const { price, count } = state.list.reduce(
+            (basketTotal, basketItem) => {
+               const { price, status } = basketItem;
+               const itemTotal = price * status!.count;
+
+               basketTotal.price += itemTotal;
+               basketTotal.count += status!.count;
+
+               return basketTotal;
+            },
+            { count: 0, price: 0 },
+         );
+
+         state.totalCount = count;
+         state.totalPrice = price;
       },
    },
 });

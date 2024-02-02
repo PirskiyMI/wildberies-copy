@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
 import { IProduct } from 'src/shared';
 
@@ -10,7 +10,7 @@ type Props = {
    isFavoriteList: boolean;
 };
 
-export const ProductList: FC<Props> = ({ products, isFavoriteList }) => {
+export const ProductList: FC<Props> = memo(({ products, isFavoriteList }) => {
    return (
       <ul className={styles.list}>
          {products.map((el) => (
@@ -20,4 +20,4 @@ export const ProductList: FC<Props> = ({ products, isFavoriteList }) => {
          ))}
       </ul>
    );
-};
+});

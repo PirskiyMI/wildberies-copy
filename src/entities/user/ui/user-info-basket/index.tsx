@@ -1,11 +1,11 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
 import { Icon, useAppSelector } from 'src/shared';
 
 import styles from './styles.module.scss';
 import { UserPhone } from '..';
 
-export const UserInfoBasket: FC = () => {
+export const UserInfoBasket: FC = memo(() => {
    const { isMale, name } = useAppSelector((state) => state.userReducer);
 
    return (
@@ -15,4 +15,4 @@ export const UserInfoBasket: FC = () => {
          <UserPhone className={styles.info__phone} />
       </div>
    );
-};
+});

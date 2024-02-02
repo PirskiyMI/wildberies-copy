@@ -15,7 +15,7 @@ const CategoryPage: FC = () => {
    const dispatch = useAppDispatch();
 
    useEffect(() => {
-      dispatch(fetchProductsByCategory(category!));
+      if (category) dispatch(fetchProductsByCategory(category));
    }, [category, dispatch]);
 
    if (error) {
@@ -26,7 +26,7 @@ const CategoryPage: FC = () => {
 
    return (
       <div className={`${styles.catalog__container} container`}>
-         <ProductList products={products} />
+         <ProductList products={products} isFavoriteList={false} />
       </div>
    );
 };

@@ -6,8 +6,7 @@ import styles from './styles.module.scss';
 import { menuLinkList } from '../../constants';
 
 export const HeaderNavigation: FC = () => {
-   const { list } = useAppSelector((state) => state.basketReducer);
-   const count = list.length;
+   const { totalCount } = useAppSelector((state) => state.basketReducer);
 
    return (
       <nav className={styles.navigation}>
@@ -19,7 +18,7 @@ export const HeaderNavigation: FC = () => {
                         icon={icon}
                         path={to}
                         label={label}
-                        count={count > 0 ? count : null}
+                        count={totalCount > 0 ? totalCount : null}
                      />
                   ) : (
                      <HeaderLink icon={icon} path={to} label={label} />

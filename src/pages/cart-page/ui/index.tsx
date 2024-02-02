@@ -15,7 +15,6 @@ import { useSetCount } from '../lib';
 
 export const CartPage: FC = () => {
    const { list } = useAppSelector((state) => state.basketReducer);
-
    useSetCount({ list });
 
    return (

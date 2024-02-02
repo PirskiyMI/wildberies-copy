@@ -1,11 +1,11 @@
-import { FC, useState } from 'react';
+import { FC, memo, useState } from 'react';
 
 import { UserPaymentCardBasket } from 'src/entities/user';
 import { CartTile, useAppSelector } from 'src/shared';
 
 import { CartModal } from './cart-modal';
 
-export const CartPaymentMethod: FC = () => {
+export const CartPaymentMethod: FC = memo(() => {
    const { paymentInfo } = useAppSelector((state) => state.userReducer);
    const [modalIsOpen, setModalIsOpen] = useState(false);
    const [modalType, setModalType] = useState<'select' | 'form'>('select');
@@ -53,4 +53,4 @@ export const CartPaymentMethod: FC = () => {
          ) : null}
       </div>
    );
-};
+});
