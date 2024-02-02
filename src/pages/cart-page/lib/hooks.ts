@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 import { IProduct, useAppDispatch } from 'src/shared';
-import { setTotalCount, setTotalPrice } from 'src/entities/basket';
+import { basketActions } from 'src/entities/basket';
 import { setCount, setPrice } from 'src/entities/order';
 
 type Props = {
@@ -9,6 +9,7 @@ type Props = {
 };
 
 export const useSetCount = ({ list }: Props) => {
+   const { setTotalCount, setTotalPrice } = basketActions;
    const dispatch = useAppDispatch();
 
    return useEffect(() => {
@@ -18,11 +19,11 @@ export const useSetCount = ({ list }: Props) => {
       let totalPrice = 0;
 
       list.forEach((el) => {
-         totalCount += el.status.count;
-         totalPrice += Math.ceil(el.price * el.status.count);
-         if (el.status.isChecked) {
-            productsCount += el.status.count;
-            productsPrice += Math.ceil(el.price * el.status.count);
+         totalCount += el.status!.count;
+         totalPrice += Math.ceil(el.price * el.status!.count);
+         if (el.status!.isChecked) {
+            productsCount += el.status!.count;
+            productsPrice += Math.ceil(el.price * el.status!.count);
          }
       });
 
@@ -30,5 +31,5 @@ export const useSetCount = ({ list }: Props) => {
       dispatch(setTotalPrice(totalPrice));
       dispatch(setCount(productsCount));
       dispatch(setPrice(productsPrice));
-   }, [list, dispatch]);
+   }, [list, dispatch, setTotalCount, setTotalPrice]);
 };

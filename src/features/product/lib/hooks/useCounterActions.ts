@@ -1,7 +1,7 @@
 import { useState, ChangeEvent } from 'react';
 
 import { useAppDispatch } from 'src/shared';
-import { decrementProductCount, incrementProductCount, setProductCount } from 'src/entities/basket';
+import { basketActions } from 'src/entities/basket';
 
 type Props = {
    id: number;
@@ -11,6 +11,7 @@ type Props = {
 
 export const useCounterActions = ({ id, value, limit }: Props) => {
    const [count, setCount] = useState(value);
+   const { decrementProductCount, incrementProductCount, setProductCount } = basketActions;
    const dispatch = useAppDispatch();
 
    const decrementHandler = () => {

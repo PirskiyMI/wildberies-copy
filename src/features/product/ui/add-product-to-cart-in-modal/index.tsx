@@ -4,20 +4,16 @@ import { Link } from 'react-router-dom';
 import { Button, IProduct, useAppSelector } from 'src/shared';
 
 import styles from './styles.module.scss';
-import { useAddToCart } from '../..';
+import { useProductActions } from '../..';
 
 type Props = {
    product: IProduct;
 };
 
 export const AddProductToCartInModal: FC<Props> = ({ product }) => {
-   const { list } = useAppSelector((state) => state.basketListReducer);
+   const { list } = useAppSelector((state) => state.basketReducer);
    const inBasket = useMemo(() => list.find((el) => el.id === product.id), [list, product.id]);
-   const { addToCart } = useAddToCart(product);
-
-   const clickHandler = () => {
-      if (!inBasket) addToCart();
-   };
+   const { addProduct } = useProductActions(product);
 
    return (
       <>
@@ -28,7 +24,7 @@ export const AddProductToCartInModal: FC<Props> = ({ product }) => {
                </Link>
             </Button>
          ) : (
-            <Button className={styles.button} onClick={clickHandler}>
+            <Button className={styles.button} onClick={addProduct}>
                Добавить в корзину
             </Button>
          )}

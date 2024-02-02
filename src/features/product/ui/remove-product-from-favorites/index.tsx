@@ -1,8 +1,7 @@
 import { FC } from 'react';
 
 import { DeleteButtonSmall, useAppDispatch } from 'src/shared';
-import { removeFromFavorites } from 'src/entities/user';
-import { toggleToFavorite } from 'src/entities/product';
+import { productFavoritesActions, productsActions } from 'src/entities/product';
 
 import styles from './styles.module.scss';
 
@@ -11,11 +10,13 @@ type Props = {
 };
 
 export const RemoveProductFromFavorites: FC<Props> = ({ productId }) => {
+   const { toggleToFavorite } = productsActions;
+   const { removeProductToFavorites } = productFavoritesActions;
    const dispatch = useAppDispatch();
 
    const clickHandler = () => {
       dispatch(toggleToFavorite(productId));
-      dispatch(removeFromFavorites(productId));
+      dispatch(removeProductToFavorites(productId));
    };
 
    return (

@@ -6,7 +6,7 @@ import styles from './styles.module.scss';
 import { menuLinkList } from '../../constants';
 
 export const HeaderNavigation: FC = () => {
-   const { list } = useAppSelector((state) => state.basketListReducer);
+   const { list } = useAppSelector((state) => state.basketReducer);
    const count = list.length;
 
    return (

@@ -14,7 +14,7 @@ import styles from './styles.module.scss';
 import { useSetCount } from '../lib';
 
 export const CartPage: FC = () => {
-   const { list } = useAppSelector((state) => state.basketListReducer);
+   const { list } = useAppSelector((state) => state.basketReducer);
 
    useSetCount({ list });
 

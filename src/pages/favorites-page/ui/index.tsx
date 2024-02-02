@@ -8,10 +8,10 @@ import styles from './styles.module.scss';
 import { ProductFavoriteListEmpty } from 'src/widgets/product/product-favorite-list-empty';
 
 const FavoritesPage: FC = () => {
-   const { favorites } = useAppSelector((state) => state.userReducer);
+   const { favorites } = useAppSelector((state) => state.productFavoritesReducer);
    const [products, setProducts] = useState<IProduct[]>([]);
 
-   if (!favorites.products.length) {
+   if (!favorites.length) {
       return (
          <div className={`${styles.favorites__container} container`}>
             <ProductFavoriteListEmpty />
@@ -22,11 +22,11 @@ const FavoritesPage: FC = () => {
    return (
       <div className={`${styles.favorites__container} container`}>
          <ProductSelect
-            products={favorites.products}
+            products={favorites}
             setProducts={setProducts}
             className={styles.favorites__select}
          />
-         <ProductList products={products} isFavoriteList />
+         <ProductList products={products} isFavoriteList/>
       </div>
    );
 };

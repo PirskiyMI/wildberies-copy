@@ -6,7 +6,7 @@ import { HeaderLink, mainPath, useAppSelector } from 'src/shared';
 import { mobileMenuLinkList } from '../../constants';
 
 export const HeaderMobileMenu: FC = () => {
-   const { count } = useAppSelector((state) => state.basketInfoReducer);
+   const { totalCount } = useAppSelector((state) => state.basketReducer);
 
    return (
       <nav>
@@ -17,7 +17,7 @@ export const HeaderMobileMenu: FC = () => {
             {mobileMenuLinkList.map(({ icon, to, isCount }) => (
                <li key={icon} className={styles.menu__item}>
                   {isCount ? (
-                     <HeaderLink icon={icon} path={to} count={count} />
+                     <HeaderLink icon={icon} path={to} count={totalCount} />
                   ) : (
                      <HeaderLink icon={icon} path={to} />
                   )}
