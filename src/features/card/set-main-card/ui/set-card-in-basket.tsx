@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-import { UserPaymentCardBasket, setMainCard } from 'src/entities/user';
-import { useAppDispatch } from 'src/shared';
+import { UserPaymentCardBasket } from 'src/entities/user';
+import { useSetCard } from '../hooks';
 
 type Props = {
    cardNumber: string;
@@ -9,14 +9,10 @@ type Props = {
 };
 
 export const SetCardInBasket: FC<Props> = ({ cardNumber, id }) => {
-   const dispatch = useAppDispatch();
-
-   const clickHandler = () => {
-      dispatch(setMainCard(id));
-   };
+   const { setCard } = useSetCard(id);
 
    return (
-      <div onClick={clickHandler}>
+      <div onClick={setCard}>
          <UserPaymentCardBasket cardNumber={cardNumber} numberVisible />
       </div>
    );

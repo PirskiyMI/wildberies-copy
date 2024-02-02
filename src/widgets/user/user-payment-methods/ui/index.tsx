@@ -2,10 +2,11 @@ import { FC } from 'react';
 
 import { Card, Icon, Section, useAppSelector, usePopUp } from 'src/shared';
 import { UserPaymentCard } from 'src/entities/user';
-import { DeleteCard, SetCard } from 'src/features/card/ui';
 
 import styles from './styles.module.scss';
 import { UserModal } from './user-modal';
+import { DeleteCard } from 'src/features/card/delete-card';
+import { SetCard } from 'src/features/card/set-main-card';
 
 export const UserPaymentMethods: FC = () => {
    const { paymentInfo } = useAppSelector((state) => state.userReducer);

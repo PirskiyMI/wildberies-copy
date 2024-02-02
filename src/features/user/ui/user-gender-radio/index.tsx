@@ -1,14 +1,16 @@
 import { FC } from 'react';
 
 import { Radio, useAppDispatch, useAppSelector } from 'src/shared';
-import { setGender } from 'src/entities/user';
+import { userActions } from 'src/entities/user';
 
 import styles from './styles.module.scss';
 
 export const UserGenderRadio: FC = () => {
    const { isMale } = useAppSelector((state) => state.userReducer);
    const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
+   const { setGender } = userActions;
    const dispatch = useAppDispatch();
+
    const maleGender = windowWidth >= 768 ? 'Муж.' : 'Мужской';
    const femaleGender = windowWidth >= 768 ? 'Жен.' : 'Женский';
 

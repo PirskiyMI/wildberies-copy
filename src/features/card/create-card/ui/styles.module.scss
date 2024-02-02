@@ -30,7 +30,7 @@
       grid-template-rows: repeat(2, 52px);
    }
    &__field {
-      &_big {
+      &:first-child {
          grid-column: span 2;
       }
    }

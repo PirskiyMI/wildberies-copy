@@ -1,9 +1,9 @@
 import { FC, FormEvent } from 'react';
 
 import { useAppDispatch, useAppSelector, useInput, Button, Field } from 'src/shared';
-import { setName } from 'src/entities/user';
 
 import styles from './styles.module.scss';
+import { userActions } from 'src/entities/user';
 
 interface Props {
    closePopUp?: () => void;
@@ -11,11 +11,12 @@ interface Props {
 
 export const ChangeUserName: FC<Props> = ({ closePopUp }) => {
    const { name } = useAppSelector((state) => state.userReducer);
-   const dispatch = useAppDispatch();
+   const { setName } = userActions;
    const inputProps = useInput(name, {
       isRequired: true,
       type: 'name',
    });
+   const dispatch = useAppDispatch();
 
    const submitHandler = (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault();

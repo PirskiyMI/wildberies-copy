@@ -68,5 +68,4 @@ const userSlice = createSlice({
 });
 
 export const userReducer = userSlice.reducer;
-export const { setName, setGender, addCard, deleteCard, setMainCard } = userSlice.actions;
 export const userActions = userSlice.actions;

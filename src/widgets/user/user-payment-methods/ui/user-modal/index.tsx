@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { PopUp } from 'src/shared';
 
 import styles from './styles.module.scss';
-import { CreateCard } from 'src/features/card/ui';
+import { CreateCard } from 'src/features/card/create-card';
 
 type Props = {
    closePopUp: () => void;
