@@ -52,7 +52,14 @@ const userSlice = createSlice({
          state.isMale = payload;
       },
       addCard: (state, { payload }: PayloadAction<IPayment>) => {
-         if (!state.paymentInfo.find((el) => el.cardNumber === payload.cardNumber)) {
+         const isEmpty = !state.paymentInfo.length;
+         if (isEmpty) {
+            state.paymentInfo.push({ ...payload, isMain: true });
+            return;
+         }
+
+         const inList = state.paymentInfo.find((el) => el.cardNumber === payload.cardNumber);
+         if (!inList) {
             state.paymentInfo.push(payload);
          }
       },

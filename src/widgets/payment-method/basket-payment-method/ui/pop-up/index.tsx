@@ -13,7 +13,7 @@ type Props = {
    closePopUp: () => void;
 };
 
-export const CartModal: FC<Props> = ({ type, cardList, closePopUp, toggleType }) => {
+export const PaymentMethodPopUp: FC<Props> = ({ type, cardList, closePopUp, toggleType }) => {
    return (
       <PopUp closePopUp={closePopUp} className={styles.modal}>
          <Section title={type === 'form' ? 'Привязать карту' : 'Способ оплаты'}>

@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { UserDetails } from 'src/widgets/user/user-details';
 import { UserMetrics } from 'src/widgets/user/user-metrics';
-import { UserPaymentMethods } from 'src/widgets/user/user-payment-methods';
+import { ProfilePaymentMethod } from 'src/widgets/payment-method/profile-payment-method';
 
 import styles from './styles.module.scss';
 
@@ -12,7 +12,7 @@ const ProfilePage: FC = () => {
          <div className={`${styles.info__container} container`}>
             <UserDetails />
             <UserMetrics />
-            <UserPaymentMethods />
+            <ProfilePaymentMethod />
          </div>
       </div>
    );

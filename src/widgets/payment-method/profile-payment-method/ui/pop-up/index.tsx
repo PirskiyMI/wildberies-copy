@@ -9,10 +9,10 @@ type Props = {
    closePopUp: () => void;
 };
 
-export const UserModal: FC<Props> = ({ closePopUp }) => {
+export const PaymentMethodPopUp: FC<Props> = ({ closePopUp }) => {
    return (
       <PopUp className={styles.modal} closePopUp={closePopUp}>
-         <div className={styles.modal__body}>
+         <div>
             <h3 className={styles.modal__title}>Привязка карты</h3>
             <CreateCard closePopUp={closePopUp} />
          </div>
