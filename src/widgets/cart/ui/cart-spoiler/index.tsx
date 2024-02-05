@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { useAppSelector, Section, Spoiler } from 'src/shared';
 import { BasketInfo, BasketItem } from 'src/entities/basket';
-import { ProductCounter } from 'src/features/product-counter/ui';
+import { ProductCounter } from 'src/features/product/product-counter';
 import { RemoveProductFromCart } from 'src/features/product/remove-product-from-cart';
 import { ToggleProductToOrder } from 'src/features/product/toggle-product-to-order';
 

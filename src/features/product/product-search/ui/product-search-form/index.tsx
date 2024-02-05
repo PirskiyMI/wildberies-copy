@@ -1,32 +1,19 @@
-import { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
 import { Link } from 'react-router-dom';
 
-import { Icon, SearchField, setSearch, useAppDispatch, useAppSelector } from 'src/shared';
+import { Icon, SearchField } from 'src/shared';
 
 import styles from './styles.module.scss';
+import { useSearch } from '../../hooks';
 
 export const ProductSearch: FC = () => {
-   const {value:globalValue} =useAppSelector(state => state.searchReducer)
-
-   const [value, setValue] = useState<string>('');
-   const dispatch = useAppDispatch();
-
-   useEffect(()=>{
-      setValue(globalValue)
-   }, [globalValue])
-
-   const searchHandler = () => {
-      dispatch(setSearch(value));
-   };
-   const clearHandler = () => {
-      dispatch(setSearch(''));
-   };
+   const { searchValue, setSearchValue, searchHandler, clearHandler } = useSearch();
 
    return (
       <form onSubmit={(e) => e.preventDefault()} className={styles.form}>
          <SearchField
-            value={value}
-            setValue={setValue}
+            value={searchValue}
+            setValue={setSearchValue}
             ClearButton={
                <button onClick={clearHandler}>
                   <Icon icon="cross" />

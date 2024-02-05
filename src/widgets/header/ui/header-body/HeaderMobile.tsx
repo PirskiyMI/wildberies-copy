@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import { Logo } from 'src/shared';
-import { ProductSearch } from 'src/features/product';
+import { ProductSearch } from 'src/features/product/product-search';
 
 import styles from './styles.module.scss';
 

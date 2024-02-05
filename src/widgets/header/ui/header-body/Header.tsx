@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import { useAppSelector } from 'src/shared';
-import { ProductSearch } from 'src/features/product';
+import { ProductSearch } from 'src/features/product/product-search';
 
 import styles from './styles.module.scss';
 import { HeaderLabel } from '../header-label';
