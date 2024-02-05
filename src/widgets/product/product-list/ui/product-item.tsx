@@ -5,7 +5,7 @@ import {
    AddProductToCart,
    AddProductToCartInModal,
 } from 'src/features/product/add-product-to-cart/ui';
-import { RemoveProductFromFavorites } from 'src/features/product/remove-product-from-cart';
+import { RemoveProductFromFavorites } from 'src/features/product/remove-product-from-favorite';
 import { ToggleProductToFavorite } from 'src/features/product/toggle-product-to-favorite';
 
 import { IProduct, PopUp, usePopUp } from 'src/shared';
