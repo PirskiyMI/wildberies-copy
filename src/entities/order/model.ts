@@ -9,6 +9,7 @@ interface IOrderSlice {
 const initialState: IOrderSlice = {
    price: 0,
    count: 0,
+   
 };
 
 export const orderSlice = createSlice({

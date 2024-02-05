@@ -3,3 +3,4 @@ export * from './use-app-selector';
 export * from './use-input';
 export * from './use-pop-up';
 export * from './use-validation';
+export * from './use-scroll-to-top';
