@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from 'src/shared';
 import styles from './styles.module.scss';
 
-export const ProductFavoriteListEmpty: FC = () => {
+export const FavoritesIsEmpty: FC = () => {
    return (
       <div className={styles.body}>
          <h2 className={styles.body__title}>В Избранном пока пусто.</h2>

@@ -6,7 +6,7 @@ import { ChangeUserName, UserGenderRadio } from 'src/features/user';
 
 import styles from './styles.module.scss';
 
-export const UserDetails: FC = () => {
+export const ProfileUserDetails: FC = () => {
    const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
    const { isPopUpOpen, openPopUp, closePopUp } = usePopUp();
 

@@ -6,8 +6,8 @@
    bottom: 0;
    left: 0;
    width: 100%;
-   background-color: white;
-   box-shadow: 0px 20px 30px black;
+   background-color: rgb(var(--color-white));
+   box-shadow: 0px 20px 30px rgb(var(--color-dark));
    z-index: 10;
    &__item {
       display: flex;

@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { UserDetails } from 'src/widgets/user/user-details';
+import { ProfileUserDetails } from 'src/widgets/user/user-details';
 import { UserMetrics } from 'src/widgets/user/user-metrics';
 import { ProfilePaymentMethod } from 'src/widgets/payment-method/profile-payment-method';
 
@@ -10,7 +10,7 @@ const ProfilePage: FC = () => {
    return (
       <div className={styles.info}>
          <div className={`${styles.info__container} container`}>
-            <UserDetails />
+            <ProfileUserDetails />
             <UserMetrics />
             <ProfilePaymentMethod />
          </div>

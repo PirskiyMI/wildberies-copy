@@ -6,7 +6,7 @@ import { ProductSkeletonList } from 'src/widgets/product/product-skeleton-list';
 import { ProductList } from 'src/widgets/product/product-list';
 
 import styles from './styles.module.scss';
-import { ProductListIsEmpty } from 'src/widgets/product/product-list-is-empty';
+import { HomeIsEmpty } from './home-is-empty';
 
 const HomePage: FC = () => {
    const { value } = useAppSelector((state) => state.searchReducer);
@@ -17,7 +17,7 @@ const HomePage: FC = () => {
    useEffect(() => {
       if (!products.length) dispatch(fetchAllProducts());
    }, [value]);
-   
+
    useEffect(() => {
       if (value.trim().length === 0) {
          setProductsList(products);
@@ -48,7 +48,7 @@ const HomePage: FC = () => {
          {productsList.length ? (
             <ProductList products={productsList} isFavoriteList={false} />
          ) : (
-            <ProductListIsEmpty searchValue={value} />
+            <HomeIsEmpty searchValue={value} />
          )}
       </div>
    );

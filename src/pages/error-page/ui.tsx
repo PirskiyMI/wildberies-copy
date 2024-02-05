@@ -1,10 +1,10 @@
 import { FC } from 'react';
-import styles from './styles.module.scss';
+
 import { Button, Error } from 'src/shared';
 
-export const ErrorList: FC = () => {
+export const ErrorPage: FC = () => {
    return (
-      <div className={styles.error}>
+      <div>
          <Error />
          <Button>Кнопка</Button>
       </div>

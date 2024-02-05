@@ -8,7 +8,7 @@ type Props = {
    searchValue: string;
 };
 
-export const ProductListIsEmpty: FC<Props> = ({ searchValue }) => {
+export const HomeIsEmpty: FC<Props> = ({ searchValue }) => {
    return (
       <div className={styles.body}>
          <h2 className={styles.body__title}>

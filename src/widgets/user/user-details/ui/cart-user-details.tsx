@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { CartTile, profilePath } from 'src/shared';
 import { UserInfoBasket } from 'src/entities/user';
 
-export const CartUserInfo: FC = memo(() => {
+export const CartUserDetails: FC = memo(() => {
    const navigate = useNavigate();
 
    const clickHandler = () => navigate(profilePath);

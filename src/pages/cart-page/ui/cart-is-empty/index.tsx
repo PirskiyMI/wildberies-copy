@@ -5,7 +5,7 @@ import { Button, Section } from 'src/shared';
 
 import styles from './styles.module.scss';
 
-export const CartEmpty: FC = () => {
+export const CartIsEmpty: FC = () => {
    return (
       <Section className={styles.body}>
          <h1 className={styles.body__title}>В корзине пока пусто</h1>

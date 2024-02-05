@@ -1,13 +1,14 @@
 import { FC } from 'react';
 
 import { useAppSelector } from 'src/shared';
-import { CartEmpty, CartOrder, CartUserInfo } from 'src/widgets/cart';
 import { Basket } from 'src/widgets/basket';
+import { OrderInfo } from 'src/widgets/order-info';
+import { CartUserDetails } from 'src/widgets/user/user-details';
 import { BasketPaymentMethod } from 'src/widgets/payment-method/basket-payment-method';
 
 import styles from './styles.module.scss';
-
 import { useSetCount } from '../lib';
+import { CartIsEmpty } from './cart-is-empty';
 
 export const CartPage: FC = () => {
    const { list } = useAppSelector((state) => state.basketReducer);
@@ -22,14 +23,14 @@ export const CartPage: FC = () => {
                      <Basket />
                   </div>
                   <BasketPaymentMethod />
-                  <CartUserInfo />
+                  <CartUserDetails />
                </div>
                <div className={styles.cart__column}>
-                  <CartOrder />
+                  <OrderInfo />
                </div>
             </div>
          ) : (
-            <CartEmpty />
+            <CartIsEmpty />
          )}
       </div>
    );

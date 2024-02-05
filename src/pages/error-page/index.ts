@@ -1,3 +1,3 @@
-import { ErrorPage } from "./ui";
+import { ErrorPage } from './ui';
 
-export default ErrorPage
+export default ErrorPage;
