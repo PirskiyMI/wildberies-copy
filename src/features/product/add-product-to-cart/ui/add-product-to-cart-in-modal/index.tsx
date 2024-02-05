@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Button, IProduct, useAppSelector } from 'src/shared';
 
 import styles from './styles.module.scss';
-import { useProductActions } from '../..';
+import { useAddToCart } from '../../hooks';
 
 type Props = {
    product: IProduct;
@@ -13,7 +13,7 @@ type Props = {
 export const AddProductToCartInModal: FC<Props> = ({ product }) => {
    const { list } = useAppSelector((state) => state.basketReducer);
    const inBasket = useMemo(() => list.find((el) => el.id === product.id), [list, product.id]);
-   const { addProduct } = useProductActions(product);
+   const { addProduct } = useAddToCart(product);
 
    return (
       <>

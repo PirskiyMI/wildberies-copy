@@ -4,9 +4,9 @@ import { ProductCard, ProductCardDetails } from 'src/entities/product';
 import {
    AddProductToCart,
    AddProductToCartInModal,
-   RemoveProductFromFavorites,
-   ToggleProductToFavorite,
-} from 'src/features/product';
+} from 'src/features/product/add-product-to-cart/ui';
+import { RemoveProductFromFavorites } from 'src/features/product/remove-product-from-cart';
+import { ToggleProductToFavorite } from 'src/features/product/toggle-product-to-favorite';
 
 import { IProduct, PopUp, usePopUp } from 'src/shared';
 
@@ -24,7 +24,7 @@ export const ProductItem: FC<IProps> = memo(({ product, isFavoriteList = false }
             product={product}
             FavoriteButton={
                isFavoriteList ? (
-                  <RemoveProductFromFavorites productId={product.id} />
+                  <RemoveProductFromFavorites product={product} />
                ) : (
                   <ToggleProductToFavorite product={product} />
                )

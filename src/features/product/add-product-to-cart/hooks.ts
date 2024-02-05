@@ -1,7 +1,7 @@
 import { basketActions } from 'src/entities/basket';
 import { IProduct, useAppDispatch } from 'src/shared';
 
-export const useProductActions = (product: IProduct) => {
+export const useAddToCart = (product: IProduct) => {
    const { addProductToBasket, getTotals } = basketActions;
    const dispatch = useAppDispatch();
 

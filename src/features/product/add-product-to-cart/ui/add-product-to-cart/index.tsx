@@ -1,9 +1,9 @@
 import { FC, memo, useMemo } from 'react';
 
 import { Button, IProduct, useAppSelector } from 'src/shared';
-import { useProductActions } from '../../lib';
 
 import styles from './styles.module.scss';
+import { useAddToCart } from '../../hooks';
 
 type Props = {
    product: IProduct;
@@ -15,7 +15,7 @@ export const AddProductToCart: FC<Props> = memo(({ product }) => {
       () => Boolean(list.find(({ id }) => id === product.id)),
       [list, product.id],
    );
-   const { addProduct } = useProductActions(product);
+   const { addProduct } = useAddToCart(product);
 
    return (
       <Button className={styles.button} disabled={inBasket} onClick={addProduct}>

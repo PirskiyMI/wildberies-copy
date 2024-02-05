@@ -2,7 +2,8 @@ import { FC } from 'react';
 
 import { useAppSelector, Section, Spoiler } from 'src/shared';
 import { BasketInfo, BasketItem } from 'src/entities/basket';
-import { ProductCounter, RemoveProductFromCart, ToggleProductToOrder } from 'src/features/product';
+import { ProductCounter, ToggleProductToOrder } from 'src/features/product';
+import { RemoveProductFromCart } from 'src/features/product/remove-product-from-cart';
 
 import styles from './styles.module.scss';
 
