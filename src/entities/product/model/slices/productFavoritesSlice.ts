@@ -14,14 +14,13 @@ const productFavoritesSlice = createSlice({
    name: 'productFavoritesSlice',
    initialState,
    reducers: {
-      addProductToFavorites: (state, { payload }: PayloadAction<IProduct>) => {
-         const inFavorites = state.favorites.find((el) => el === payload);
+      toggleProductToFavorites: (state, { payload }: PayloadAction<IProduct>) => {
+         const inFavorites = state.favorites.find((el) => el.id === payload.id);
          if (!inFavorites) {
             state.favorites.push(payload);
+         } else {
+            state.favorites = state.favorites.filter(({ id }) => id !== payload.id);
          }
-      },
-      removeProductFromFavorites: (state, { payload }: PayloadAction<number>) => {
-         state.favorites = state.favorites.filter(({ id }) => id !== payload);
       },
    },
 });

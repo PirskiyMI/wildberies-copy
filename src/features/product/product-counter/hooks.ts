@@ -9,7 +9,7 @@ type Props = {
    limit?: number;
 };
 
-export const useCounterActions = ({ id, value, limit }: Props) => {
+export const useCount = ({ id, value, limit }: Props) => {
    const [count, setCount] = useState(value);
    const { decrementProductCount, incrementProductCount, setProductCount } = basketActions;
    const dispatch = useAppDispatch();

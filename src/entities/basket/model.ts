@@ -45,7 +45,7 @@ const basketSlice = createSlice({
                },
             });
       },
-      deleteProductFromBasket: (state, action: PayloadAction<number>) => {
+      removeProductFromBasket: (state, action: PayloadAction<number>) => {
          state.list = state.list.filter((el) => el.id !== action.payload);
       },
       incrementProductCount: (state, action: PayloadAction<number>) => {

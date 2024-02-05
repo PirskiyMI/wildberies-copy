@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { CountButton } from 'src/shared';
 
 import styles from './styles.module.scss';
-import { useCounterActions } from '../../lib';
+import { useCount } from '../hooks';
 
 type Props = {
    id: number;
@@ -13,11 +13,9 @@ type Props = {
 
 export const ProductCounter: FC<Props> = (props) => {
    const { value, limit } = props;
-   const { count, decrementHandler, incrementHandler, setHandler, blurHandler } = useCounterActions(
-      {
-         ...props,
-      },
-   );
+   const { count, decrementHandler, incrementHandler, setHandler, blurHandler } = useCount({
+      ...props,
+   });
 
    return (
       <div className={styles.counter}>
