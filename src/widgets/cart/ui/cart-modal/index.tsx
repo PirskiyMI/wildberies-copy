@@ -1,9 +1,10 @@
 import { FC } from 'react';
 
 import { Button, Icon, PopUp, Section } from 'src/shared';
-import { CreateCard, SetCardInBasket } from 'src/features/card/ui';
 
 import styles from './styles.module.scss';
+import { CreateCard } from 'src/features/card/create-card';
+import { SetCardInBasket } from 'src/features/card/set-main-card';
 
 type Props = {
    type: 'select' | 'form';
@@ -18,7 +19,7 @@ export const CartModal: FC<Props> = ({ type, cardList, closePopUp, toggleType })
          <Section title={type === 'form' ? 'Привязать карту' : 'Способ оплаты'}>
             {type === 'form' ? (
                <>
-                  <CreateCard />
+                  <CreateCard closePopUp={closePopUp} />
                   <Button onClick={toggleType} className={styles.modal__button}>
                      Выбрать способ оплаты
                   </Button>

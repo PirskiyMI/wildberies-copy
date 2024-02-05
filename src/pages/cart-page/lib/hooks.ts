@@ -1,6 +1,7 @@
 import { IProduct, useAppDispatch } from 'src/shared';
 import { basketActions } from 'src/entities/basket';
 import { orderActions } from 'src/entities/order';
+import { useEffect } from 'react';
 
 type Props = {
    list: IProduct[];
@@ -9,6 +10,8 @@ type Props = {
 export const useSetCount = ({ list }: Props) => {
    const dispatch = useAppDispatch();
 
-   dispatch(basketActions.getTotals());
-   dispatch(orderActions.getTotals(list));
+   useEffect(() => {
+      dispatch(basketActions.getTotals());
+      dispatch(orderActions.getTotals(list));
+   }, [list, dispatch]);
 };

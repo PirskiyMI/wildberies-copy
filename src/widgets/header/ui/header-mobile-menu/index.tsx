@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import styles from './styles.module.scss';
 
-import { HeaderLink, mainPath, useAppSelector } from 'src/shared';
+import { HeaderLink,  useAppSelector } from 'src/shared';
 import { mobileMenuLinkList } from '../../constants';
 
 export const HeaderMobileMenu: FC = () => {
@@ -11,9 +11,6 @@ export const HeaderMobileMenu: FC = () => {
    return (
       <nav>
          <ul className={styles.menu}>
-            <li className={styles.menu__item}>
-               <HeaderLink icon="home" path={mainPath} />
-            </li>
             {mobileMenuLinkList.map(({ icon, to, isCount }) => (
                <li key={icon} className={styles.menu__item}>
                   {isCount ? (
