@@ -9,7 +9,7 @@ type Props = {
    count: number;
 };
 
-export const BasketInfo: FC<Props> = ({ count, price }) => {
+export const BasketTotalCount: FC<Props> = ({ count, price }) => {
    const nounCount = getNoun(count, 'товар', 'товара', 'товаров');
 
    return (

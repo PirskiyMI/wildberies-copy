@@ -8,11 +8,13 @@ import {
 } from 'src/entities/product';
 import { orderReducer } from 'src/entities/order';
 import { userReducer } from 'src/entities/user';
-import { basketReducer } from 'src/entities/basket';
+import { basketReducer } from 'src/entities/basket/basket-item';
+import { basketTotalsReducer } from 'src/entities/basket/basket-total-count';
 
 export const rootReducer = combineReducers({
    burgerReducer,
    basketReducer,
+   basketTotalsReducer,
    orderReducer,
    productsListReducer,
    productFavoritesReducer,

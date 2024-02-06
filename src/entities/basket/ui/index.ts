@@ -1,2 +1,2 @@
-export * from './basket-info';
-export * from './basket-item';
+export * from './total-order-counter';
+export * from './total-order-price';

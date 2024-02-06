@@ -1,7 +1,7 @@
 import { useState, ChangeEvent } from 'react';
 
 import { useAppDispatch } from 'src/shared';
-import { basketActions } from 'src/entities/basket';
+import { basketActions } from 'src/entities/basket/basket-item';
 
 type Props = {
    id: number;

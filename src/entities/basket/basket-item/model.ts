@@ -7,7 +7,6 @@ export interface IState {
    totalPrice: number;
    list: IProduct[];
 }
-
 const initialState: IState = {
    totalCount: 0,
    totalPrice: 0,
@@ -75,23 +74,6 @@ const basketSlice = createSlice({
                el.status.isChecked = !el.status.isChecked;
             }
          });
-      },
-      getTotals: (state) => {
-         const { price, count } = state.list.reduce(
-            (basketTotal, basketItem) => {
-               const { price, status } = basketItem;
-               const itemTotal = price * status!.count;
-
-               basketTotal.price += itemTotal;
-               basketTotal.count += status!.count;
-
-               return basketTotal;
-            },
-            { count: 0, price: 0 },
-         );
-
-         state.totalCount = count;
-         state.totalPrice = price;
       },
    },
 });

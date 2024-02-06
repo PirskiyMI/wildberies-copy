@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import { Checkbox, useAppDispatch } from 'src/shared';
-import { basketActions } from 'src/entities/basket';
+import { basketActions } from 'src/entities/basket/basket-item';
 
 type Props = {
    isChecked: boolean;
