@@ -1,2 +1,2 @@
-export * from './fetchAllProducts';
-export * from './fetchProductsByCategory';
+export * from './fetch-all-products';
+export * from './fetch-products-by-category';

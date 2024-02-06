@@ -6,9 +6,9 @@ type Props = {
    count: number;
 };
 
-export const TotalOrderCounter: FC<Props> = ({ count }) => {
+export const TotalOrderCount: FC<Props> = ({ count }) => {
    return (
-      <div className={styles.counter}>
+      <div className={styles.count}>
          <span>Товары, {count} шт.</span>
       </div>
    );

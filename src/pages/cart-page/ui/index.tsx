@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import { useAppSelector } from 'src/shared';
-import { useGetOrderTotals } from 'src/entities/basket';
+import { useGetOrderTotals } from 'src/entities/order';
 import { Basket } from 'src/widgets/basket';
 import { OrderInfo } from 'src/widgets/order-info';
 import { CartUserDetails } from 'src/widgets/user/user-details';
@@ -14,7 +14,7 @@ import { useGetBasketTotals } from 'src/entities/basket/basket-total-count/hooks
 export const CartPage: FC = () => {
    const { list } = useAppSelector((state) => state.basketReducer);
    useGetBasketTotals(list);
-   useGetOrderTotals({ list });
+   useGetOrderTotals(list);
 
    return (
       <div className={`${styles.cart__container} container`}>

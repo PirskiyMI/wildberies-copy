@@ -1,2 +1,2 @@
-export * from './order-count';
-export * from './order-sum';
+export * from './total-order-count';
+export * from './total-order-price';

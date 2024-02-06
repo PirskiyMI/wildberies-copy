@@ -1,13 +1,13 @@
 import { FC } from 'react';
 
-import { HeaderLink, useAppSelector } from 'src/shared';
+import { HeaderLink } from 'src/shared';
 
 import styles from './styles.module.scss';
 import { menuLinkList } from '../../constants';
+import { useGetCount } from '../../hooks';
 
 export const HeaderNavigation: FC = () => {
-   const { list } = useAppSelector((state) => state.basketReducer);
-   const totalCount = list.length;
+   const { totalCount } = useGetCount();
 
    return (
       <nav className={styles.navigation}>

@@ -3,11 +3,7 @@ import { useEffect } from 'react';
 import { IProduct, useAppDispatch } from 'src/shared';
 import { orderActions } from 'src/entities/order';
 
-type Props = {
-   list: IProduct[];
-};
-
-export const useGetOrderTotals = ({ list }: Props) => {
+export const useGetOrderTotals = (list: IProduct[]) => {
    const { getTotals } = orderActions;
    const dispatch = useAppDispatch();
 

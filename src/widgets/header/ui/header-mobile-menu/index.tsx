@@ -2,11 +2,12 @@ import { FC } from 'react';
 
 import styles from './styles.module.scss';
 
-import { HeaderLink, useAppSelector } from 'src/shared';
+import { HeaderLink } from 'src/shared';
 import { mobileMenuLinkList } from '../../constants';
+import { useGetCount } from '../../hooks';
 
 export const HeaderMobileMenu: FC = () => {
-   const { totalCount } = useAppSelector((state) => state.basketTotalsReducer);
+   const { totalCount } = useGetCount();
 
    return (
       <nav>
