@@ -8,9 +8,7 @@ import {
 } from 'src/shared';
 
 export const useCardInfo = (cardNumber: string) => {
-   console.log(cardNumber);
    const maskedCardNumber = '⋅⋅ ' + cardNumberFormatter(cardNumber).split(' ')[3];
-   console.log(1);
    const formattedCardNumber = cardNumber.split(' ').join('');
 
    const [cardInfo, setCardInfo] = useState<{ number: string; img: { src: string; alt: string } }>({

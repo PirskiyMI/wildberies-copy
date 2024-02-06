@@ -9,14 +9,13 @@ type Props = {
    features: {
       Checkbox: ReactNode;
       Counter: ReactNode;
-      Like: ReactNode;
       Delete: ReactNode;
    };
 };
 
 export const BasketItem: FC<Props> = ({
    product: { image, price, title, status },
-   features: { Checkbox, Counter, Delete, Like },
+   features: { Checkbox, Counter, Delete },
 }) => {
    const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
    const [productPrice, setProductPrice] = useState(price);
@@ -35,10 +34,7 @@ export const BasketItem: FC<Props> = ({
          counter={
             <div className={styles.item__counter}>
                {Counter}
-               <div className={styles.item__buttons}>
-                  {Like}
-                  {Delete}
-               </div>
+               <div className={styles.item__buttons}>{Delete}</div>
             </div>
          }
          isElementActive={isChecked}

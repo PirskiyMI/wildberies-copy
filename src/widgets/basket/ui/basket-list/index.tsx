@@ -22,8 +22,8 @@ export const BasketList: FC = () => {
                      Checkbox: <ToggleProductToOrder id={el.id} isChecked={el.status!.isChecked} />,
                      Counter: <ProductCounter id={el.id} value={el.status!.count} />,
                      Delete: <RemoveProductFromCart id={el.id} />,
-                     Like: <div>test</div>,
-                  }}></BasketItem>
+                  }}
+               />
             </li>
          ))}
       </div>

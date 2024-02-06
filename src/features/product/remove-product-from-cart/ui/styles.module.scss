@@ -1,0 +1,9 @@
+.button {
+   transition: fill var(--transition-slow);
+   @media (any-hover: hover) {
+      &:hover {
+         stroke: rgb(var(--color-primary));
+         
+      }
+   }
+}
