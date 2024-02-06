@@ -2,7 +2,8 @@ import { FC } from 'react';
 
 import { useAppSelector, Icon, PopUp, Section, usePopUp } from 'src/shared';
 import { UserGender, UserInfo, UserPhone } from 'src/entities/user';
-import { ChangeUserName, UserGenderRadio } from 'src/features/user';
+import { ChangeUserName } from 'src/features/user/change-user-name';
+import { UserGenderSwitcher } from 'src/features/user/user-gender-switcher';
 
 import styles from './styles.module.scss';
 
@@ -22,7 +23,7 @@ export const ProfileUserDetails: FC = () => {
          />
          <div className={styles.details__bottom}>
             <UserPhone className={styles.details__item} withTitle />
-            <UserGender className={styles.details__item} children={<UserGenderRadio />} />
+            <UserGender className={styles.details__item} children={<UserGenderSwitcher />} />
          </div>
 
          {isPopUpOpen && (

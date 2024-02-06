@@ -5,7 +5,7 @@ import { userActions } from 'src/entities/user';
 
 import styles from './styles.module.scss';
 
-export const UserGenderRadio: FC = () => {
+export const UserGenderSwitcher: FC = () => {
    const { isMale } = useAppSelector((state) => state.userReducer);
    const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
    const { setGender } = userActions;
