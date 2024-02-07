@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, memo } from 'react';
 import styles from './styles.module.scss';
 
 interface IProps {
@@ -8,12 +8,14 @@ interface IProps {
    className?: string;
 }
 
-export const CountButton: FC<IProps> = ({ children, onClick, className, disabled = false }) => {
-   const classes = className ? `${className} ${styles.button}` : styles.button;
+export const CountButton: FC<IProps> = memo(
+   ({ children, onClick, className, disabled = false }) => {
+      const classes = className ? `${className} ${styles.button}` : styles.button;
 
-   return (
-      <button disabled={disabled} className={classes} onClick={onClick}>
-         {children}
-      </button>
-   );
-};
+      return (
+         <button disabled={disabled} className={classes} onClick={onClick}>
+            {children}
+         </button>
+      );
+   },
+);

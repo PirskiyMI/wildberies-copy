@@ -1,8 +1,7 @@
 import 'src/shared/lib/styles/index.scss';
 
-import Routing from 'src/pages';
-
 import { withProviders } from './providers';
+import { Routing } from './routing';
 
 const App = () => {
    return <Routing />;

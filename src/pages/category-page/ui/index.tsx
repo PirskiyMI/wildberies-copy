@@ -7,7 +7,7 @@ import { ProductList } from 'src/widgets/product/product-list';
 
 import styles from './styles.module.scss';
 
-const CategoryPage: FC = () => {
+export const CategoryPage: FC = () => {
    const { products, isLoading, error } = useAppSelector(
       (state) => state.productsListOfCategoryReducer,
    );
@@ -30,5 +30,3 @@ const CategoryPage: FC = () => {
       </div>
    );
 };
-
-export default CategoryPage;

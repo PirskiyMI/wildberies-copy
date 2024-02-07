@@ -8,7 +8,7 @@ import { ProductList } from 'src/widgets/product/product-list';
 import styles from './styles.module.scss';
 import { HomeIsEmpty } from './home-is-empty';
 
-const HomePage: FC = () => {
+export const HomePage: FC = () => {
    const { value } = useAppSelector((state) => state.searchReducer);
    const { products, isLoading, error } = useAppSelector((state) => state.productsListReducer);
    const [productsList, setProductsList] = useState<IProduct[]>([]);
@@ -53,5 +53,3 @@ const HomePage: FC = () => {
       </div>
    );
 };
-
-export default HomePage;

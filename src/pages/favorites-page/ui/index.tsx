@@ -7,7 +7,7 @@ import { ProductList } from 'src/widgets/product/product-list';
 import styles from './styles.module.scss';
 import { FavoritesIsEmpty } from './favorites-is-empty';
 
-const FavoritesPage: FC = () => {
+export const FavoritesPage: FC = () => {
    const { favorites } = useAppSelector((state) => state.productFavoritesReducer);
    const [products, setProducts] = useState<IProduct[]>([]);
 
@@ -28,5 +28,3 @@ const FavoritesPage: FC = () => {
       </div>
    );
 };
-
-export default FavoritesPage;

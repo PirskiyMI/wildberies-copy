@@ -1,3 +1,1 @@
-import Navigation from './ui';
-
-export default Navigation;
+export { NavigationPage } from './ui';

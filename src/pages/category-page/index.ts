@@ -1,3 +1,1 @@
-import CatalogPage from './ui';
-
-export default CatalogPage;
+export { CategoryPage } from './ui';

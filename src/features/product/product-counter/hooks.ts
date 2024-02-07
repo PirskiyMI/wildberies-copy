@@ -1,4 +1,4 @@
-import { useState, ChangeEvent } from 'react';
+import { useState, ChangeEvent, useCallback } from 'react';
 
 import { useAppDispatch } from 'src/shared';
 import { basketActions } from 'src/entities/basket/basket-item';
@@ -14,17 +14,20 @@ export const useCount = ({ id, value, limit }: Props) => {
    const { decrementProductCount, incrementProductCount, setProductCount } = basketActions;
    const dispatch = useAppDispatch();
 
-   const decrementHandler = () => {
+   const decrementHandler = useCallback(() => {
       setCount((prev) => (prev -= 1));
       dispatch(decrementProductCount(id));
-   };
-   const incrementHandler = () => {
+   }, [id, decrementProductCount, dispatch]);
+   const incrementHandler = useCallback(() => {
       setCount((prev) => (prev += 1));
       dispatch(incrementProductCount(id));
-   };
+   }, [id, incrementProductCount, dispatch]);
 
-   const setHandler = (e: ChangeEvent<HTMLInputElement>) => setCount(e.target.valueAsNumber);
-   const blurHandler = () => {
+   const setHandler = useCallback(
+      (e: ChangeEvent<HTMLInputElement>) => setCount(e.target.valueAsNumber),
+      [],
+   );
+   const blurHandler = useCallback(() => {
       const countAsString = String(count);
       if (countAsString[0] === '0') {
          const newValue = countAsString.slice(1);
@@ -44,7 +47,7 @@ export const useCount = ({ id, value, limit }: Props) => {
             dispatch(setProductCount({ id, value: limit }));
          }
       }
-   };
+   }, [count, dispatch, id, limit, setProductCount]);
 
    return { decrementHandler, incrementHandler, blurHandler, setHandler, count };
 };

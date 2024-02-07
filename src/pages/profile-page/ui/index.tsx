@@ -6,7 +6,7 @@ import { ProfilePaymentMethod } from 'src/widgets/payment-method/profile-payment
 
 import styles from './styles.module.scss';
 
-const ProfilePage: FC = () => {
+export const ProfilePage: FC = () => {
    return (
       <div className={styles.info}>
          <div className={`${styles.info__container} container`}>
@@ -17,5 +17,3 @@ const ProfilePage: FC = () => {
       </div>
    );
 };
-
-export default ProfilePage;

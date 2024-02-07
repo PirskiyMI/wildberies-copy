@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo, useCallback } from 'react';
 
 import { DeleteButton, useAppDispatch } from 'src/shared';
 import { basketActions } from 'src/entities/basket/basket-item';
@@ -9,13 +9,13 @@ type Props = {
    id: number;
 };
 
-export const RemoveProductFromCart: FC<Props> = ({ id }) => {
+export const RemoveProductFromCart: FC<Props> = memo(({ id }) => {
    const { removeProductFromBasket } = basketActions;
    const dispatch = useAppDispatch();
 
-   const removeHandler = () => {
+   const removeHandler = useCallback(() => {
       dispatch(removeProductFromBasket(id));
-   };
+   }, [dispatch, id, removeProductFromBasket]);
 
    return <DeleteButton clickHandler={removeHandler} className={styles.button} />;
-};
+});

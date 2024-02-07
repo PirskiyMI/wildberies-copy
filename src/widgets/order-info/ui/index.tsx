@@ -1,11 +1,11 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
 import { Button, Icon, Section, useAppSelector } from 'src/shared';
 import { TotalOrderCount, TotalOrderPrice } from 'src/entities/order';
 
 import styles from './styles.module.scss';
 
-export const OrderInfo: FC = () => {
+export const OrderInfo: FC = memo(() => {
    const { count, price } = useAppSelector((state) => state.orderReducer);
 
    return (
@@ -23,4 +23,4 @@ export const OrderInfo: FC = () => {
          </div>
       </Section>
    );
-};
+});

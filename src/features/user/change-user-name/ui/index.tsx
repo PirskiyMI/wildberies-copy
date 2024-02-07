@@ -1,4 +1,4 @@
-import { FC, FormEvent } from 'react';
+import { FC, FormEvent, memo, useCallback } from 'react';
 
 import { useAppDispatch, useAppSelector, useInput, Button, Field } from 'src/shared';
 
@@ -9,22 +9,26 @@ interface Props {
    closePopUp?: () => void;
 }
 
-export const ChangeUserName: FC<Props> = ({ closePopUp }) => {
+export const ChangeUserName: FC<Props> = memo(({ closePopUp }) => {
    const { name } = useAppSelector((state) => state.userReducer);
    const { setName } = userActions;
    const inputProps = useInput(name, {
       isRequired: true,
       type: 'name',
    });
+   const { isDirty, value } = inputProps;
    const dispatch = useAppDispatch();
 
-   const submitHandler = (e: FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
-      if (!inputProps.isDirty) {
-         dispatch(setName(inputProps.value));
-         if (closePopUp) closePopUp();
-      }
-   };
+   const submitHandler = useCallback(
+      (e: FormEvent<HTMLFormElement>) => {
+         e.preventDefault();
+         if (!isDirty) {
+            dispatch(setName(value));
+            if (closePopUp) closePopUp();
+         }
+      },
+      [closePopUp, dispatch, isDirty, value, setName],
+   );
 
    return (
       <form className={styles.form} onSubmit={submitHandler}>
@@ -32,4 +36,4 @@ export const ChangeUserName: FC<Props> = ({ closePopUp }) => {
          <Button className={styles.form__button}>Сохранить</Button>
       </form>
    );
-};
+});

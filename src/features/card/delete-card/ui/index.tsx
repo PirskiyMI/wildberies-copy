@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useCallback } from 'react';
 
 import { Icon, useAppDispatch } from 'src/shared';
 import { userActions } from 'src/entities/user';
@@ -10,14 +10,15 @@ type Props = {
 };
 
 export const DeleteCard: FC<Props> = ({ id }) => {
+   const { deleteCard } = userActions;
    const dispatch = useAppDispatch();
 
-   const deleteCard = () => {
-      dispatch(userActions.deleteCard(id));
-   };
+   const removeCard = useCallback(() => {
+      dispatch(deleteCard(id));
+   }, [id, deleteCard, dispatch]);
 
    return (
-      <button onClick={deleteCard} className={styles.button}>
+      <button onClick={removeCard} className={styles.button}>
          <Icon className={styles.button__icon} icon="cross" />
       </button>
    );

@@ -1,4 +1,4 @@
-import { FormEvent } from 'react';
+import { FormEvent, useCallback } from 'react';
 import { userActions } from 'src/entities/user';
 import { useAppDispatch } from 'src/shared';
 
@@ -11,19 +11,22 @@ export const useCreateCard = ({ cardInfo: { code, date, number }, closePopUp }: 
    const { addCard } = userActions;
    const dispatch = useAppDispatch();
 
-   const createCard = (e: FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
-      dispatch(
-         addCard({
-            id: Date.now(),
-            cardNumber: number,
-            date: date,
-            code: code,
-            isMain: false,
-         }),
-      );
-      closePopUp();
-   };
+   const createCard = useCallback(
+      (e: FormEvent<HTMLFormElement>) => {
+         e.preventDefault();
+         dispatch(
+            addCard({
+               id: Date.now(),
+               cardNumber: number,
+               date: date,
+               code: code,
+               isMain: false,
+            }),
+         );
+         closePopUp();
+      },
+      [addCard, number, code, date, closePopUp, dispatch],
+   );
 
    return { createCard };
 };

@@ -1,4 +1,4 @@
-import { FC, useMemo } from 'react';
+import { FC, memo, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Button, IProduct, useAppSelector } from 'src/shared';
@@ -10,7 +10,7 @@ type Props = {
    product: IProduct;
 };
 
-export const AddProductToCartInModal: FC<Props> = ({ product }) => {
+export const AddProductToCartInModal: FC<Props> = memo(({ product }) => {
    const { list } = useAppSelector((state) => state.basketReducer);
    const inBasket = useMemo(() => list.find((el) => el.id === product.id), [list, product.id]);
    const { addProduct } = useAddToCart(product);
@@ -30,4 +30,4 @@ export const AddProductToCartInModal: FC<Props> = ({ product }) => {
          )}
       </>
    );
-};
+});

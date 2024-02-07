@@ -1,10 +1,10 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
 import { Field, useInput } from 'src/shared';
 
 import styles from './styles.module.scss';
 
-export const FormCreateUser: FC = () => {
+export const FormCreateUser: FC = memo(() => {
    const {
       isDirty: nameIsDirty,
       errorText: nameErrorText,
@@ -56,4 +56,4 @@ export const FormCreateUser: FC = () => {
          </div>
       </form>
    );
-};
+});

@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
 import { DeleteButtonSmall, IProduct } from 'src/shared';
 
@@ -9,7 +9,7 @@ type Props = {
    product: IProduct;
 };
 
-export const RemoveProductFromFavorites: FC<Props> = ({ product }) => {
+export const RemoveProductFromFavorites: FC<Props> = memo(({ product }) => {
    const { removeProductFromFavorites } = useRemove(product);
 
    return (
@@ -17,4 +17,4 @@ export const RemoveProductFromFavorites: FC<Props> = ({ product }) => {
          <DeleteButtonSmall clickHandler={removeProductFromFavorites} className={styles.button} />
       </div>
    );
-};
+});

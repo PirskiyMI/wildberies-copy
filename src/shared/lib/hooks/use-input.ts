@@ -1,6 +1,6 @@
 import { ChangeEvent, useState } from 'react';
-import { IValidators, useValidation } from './use-validation';
-import { phoneFormatter } from '..';
+import { useValidation } from './use-validation';
+import { IValidators, phoneFormatter } from '..';
 
 const phoneRegExp = new RegExp(/[а-яА-ЯёЁa-zA-Z]/gi);
 

@@ -1,3 +1,1 @@
-import ProfileFavorites from "./ui";
-
-export default ProfileFavorites
+export { FavoritesPage } from './ui';

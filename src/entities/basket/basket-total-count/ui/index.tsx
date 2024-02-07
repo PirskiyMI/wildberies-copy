@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
 import { getNoun } from 'src/shared';
 
@@ -9,7 +9,7 @@ type Props = {
    count: number;
 };
 
-export const BasketTotalCount: FC<Props> = ({ count, price }) => {
+export const BasketTotalCount: FC<Props> = memo(({ count, price }) => {
    const nounCount = getNoun(count, 'товар', 'товара', 'товаров');
 
    return (
@@ -17,4 +17,4 @@ export const BasketTotalCount: FC<Props> = ({ count, price }) => {
          {count} {nounCount} ● {price} сом
       </label>
    );
-};
+});

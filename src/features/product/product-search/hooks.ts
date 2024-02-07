@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { searchActions, useAppDispatch, useAppSelector } from 'src/shared';
 
 export const useSearch = () => {
@@ -10,12 +10,12 @@ export const useSearch = () => {
    useEffect(() => {
       setSearchValue(value);
    }, [value]);
-   const searchHandler = () => {
+   const searchHandler = useCallback(() => {
       dispatch(setValue(searchValue));
-   };
-   const clearHandler = () => {
+   }, [dispatch, searchValue, setValue]);
+   const clearHandler = useCallback(() => {
       dispatch(setValue(''));
-   };
+   }, [dispatch, setValue]);
 
    return { searchValue, setSearchValue, searchHandler, clearHandler };
 };

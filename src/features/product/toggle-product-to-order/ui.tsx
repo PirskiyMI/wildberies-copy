@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo, useCallback } from 'react';
 
 import { Checkbox, useAppDispatch } from 'src/shared';
 import { basketActions } from 'src/entities/basket/basket-item';
@@ -8,13 +8,13 @@ type Props = {
    id: number;
 };
 
-export const ToggleProductToOrder: FC<Props> = ({ id, isChecked }) => {
+export const ToggleProductToOrder: FC<Props> = memo(({ id, isChecked }) => {
    const { toggleProductIsChecked } = basketActions;
    const dispatch = useAppDispatch();
 
-   const clickHandler = () => {
+   const clickHandler = useCallback(() => {
       dispatch(toggleProductIsChecked(id));
-   };
+   }, [dispatch, id, toggleProductIsChecked]);
 
    return <Checkbox Change={clickHandler} isChecked={isChecked} />;
-};
+});

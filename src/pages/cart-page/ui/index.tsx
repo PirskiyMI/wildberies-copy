@@ -37,5 +37,3 @@ export const CartPage: FC = () => {
       </div>
    );
 };
-
-export default CartPage;
