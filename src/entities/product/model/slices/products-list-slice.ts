@@ -1,4 +1,4 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 import { IProduct } from 'src/shared';
 
@@ -19,13 +19,7 @@ const initialState: IState = {
 const productsListSlice = createSlice({
    name: 'home',
    initialState,
-   reducers: {
-      toggleToFavorite: (state, { payload }: PayloadAction<number>) => {
-         state.products.forEach((el) =>
-            el.id === payload ? (el.isFavorite = !el.isFavorite) : null,
-         );
-      },
-   },
+   reducers: {},
    extraReducers: (builder) => {
       builder
          .addCase(fetchAllProducts.pending, (state) => {
@@ -45,4 +39,3 @@ const productsListSlice = createSlice({
 });
 
 export const productsListReducer = productsListSlice.reducer;
-export const productsActions = productsListSlice.actions;

@@ -15,7 +15,6 @@ export interface IProduct {
    title: string;
    price: number;
    image: string;
-   isFavorite: boolean;
    rating: IProductRating;
    status?: IProductStatus;
    info?: IProductInfo;

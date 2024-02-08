@@ -1,8 +1,8 @@
 import { FC, useEffect, useState } from 'react';
 import { useAppSelector } from 'src/shared';
 
-import { BasketItemUI } from './ui';
-import { IBasketItem } from '../types';
+import { BasketItemUI } from './ui/ui';
+import { IBasketItem } from './types';
 
 export const BasketItem: FC<IBasketItem> = ({
    product: { price, status, ...product },

@@ -6,14 +6,12 @@ import {
    productsListReducer,
    visitedProductsListReducer,
 } from 'src/entities/product';
-import { orderReducer } from 'src/entities/order';
 import { userReducer } from 'src/entities/user';
 import { basketReducer } from 'src/entities/basket/basket-item';
 
 export const rootReducer = combineReducers({
    burgerReducer,
    basketReducer,
-   orderReducer,
    productsListReducer,
    productFavoritesReducer,
    productsListOfCategoryReducer,
