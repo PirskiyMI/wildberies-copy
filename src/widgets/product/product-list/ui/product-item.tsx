@@ -22,17 +22,17 @@ export const ProductItem: FC<IProps> = memo(({ product, isFavoriteList = false }
       <>
          <ProductCard
             product={product}
-            FavoriteButton={
+            favoriteButton={
                isFavoriteList ? (
                   <RemoveProductFromFavorites product={product} />
                ) : (
                   <ToggleProductToFavorite product={product} />
                )
             }
-            CartButton={<AddProductToCart product={product} />}
-            openPopup={openPopUp}
+            cartButton={<AddProductToCart product={product} />}
+            popupHandler={openPopUp}
          />
-         {isPopUpOpen && (
+         {/* {isPopUpOpen && (
             <PopUp closePopUp={closePopUp}>
                <ProductCardDetails
                   product={product}
@@ -40,7 +40,7 @@ export const ProductItem: FC<IProps> = memo(({ product, isFavoriteList = false }
                   closePopup={closePopUp}
                />
             </PopUp>
-         )}
+         )} */}
       </>
    );
 });

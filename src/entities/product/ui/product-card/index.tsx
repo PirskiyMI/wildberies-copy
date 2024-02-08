@@ -1,53 +1,37 @@
-import { FC, ReactNode, memo } from 'react';
+import { FC, memo } from 'react';
 
-import { IProduct, ProductItemCard, Rating, priceFormatter } from 'src/shared';
+import { ProductItemCard, Rating } from 'src/shared';
 
 import styles from './styles.module.scss';
+import { IProductCard } from '../../types';
 
-type Props = {
-   product: IProduct;
-   FavoriteButton: ReactNode;
-   CartButton: ReactNode;
-   openPopup: () => void;
-};
-
-export const ProductCard: FC<Props> = memo(
-   ({
-      product: { title, price, rating, image, isFavorite },
-      CartButton,
-      FavoriteButton,
-      openPopup,
-   }) => {
+export const ProductCardUI: FC<IProductCard> = memo(
+   ({ product: { title, price, rating, image }, cartButton, favoriteButton, popupHandler }) => {
       const { count, rate } = rating;
-      const formattedPrice = priceFormatter(price);
-      const formattedCount = priceFormatter(count);
-      const toggleFavoriteClasses = isFavorite
-         ? `${styles.card__favorite} ${styles.card__favorite_active}`
-         : styles.card__favorite;
 
       return (
          <ProductItemCard
             top={
                <>
-                  <div className={toggleFavoriteClasses}>{FavoriteButton}</div>
+                  <div className={styles.card__favorite}>{favoriteButton}</div>
                   <div className={styles.card__img}>
                      <img src={image} alt={title} />
                   </div>
-                  <div className={styles.card__show} onClick={openPopup}>
+                  <div className={styles.card__show} onClick={popupHandler}>
                      Быстрый просмотр
                   </div>
                </>
             }
             middle={
                <>
-                  <span className={`${styles.card__price}`}>{formattedPrice} сом</span>
+                  <span className={`${styles.card__price}`}>{price} сом</span>
                   <h2 className={styles.card__title}>{title}</h2>
-                  <Rating count={formattedCount} rate={rate} />
+                  <Rating count={count} rate={rate} />
                </>
             }
             bottom={
                <>
-                  <div className={styles.card__button}>{CartButton}</div>
+                  <div className={styles.card__button}>{cartButton}</div>
                </>
             }
             className={styles.card}

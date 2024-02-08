@@ -1,23 +1,19 @@
-import { FC, ReactNode } from 'react';
+import { FC } from 'react';
 import { Link } from 'react-router-dom';
 
-import { IProduct, Icon, Rating, priceFormatter } from 'src/shared';
+import { Icon, Rating } from 'src/shared';
 
 import styles from './styles.module.scss';
+import { IProductCard } from '../../types';
 
-type Props = {
-   product: IProduct;
-   closePopup: () => void;
-   AddToCartButton: ReactNode;
-};
+// ToDo {info!.description}
 
-export const ProductCardDetails: FC<Props> = ({
+export const ProductCardDetailsUI: FC<IProductCard> = ({
    product: { image, price, rating, title },
-   closePopup,
-   AddToCartButton,
+   cartButton,
+   popupHandler,
 }) => {
    const { count, rate } = rating;
-   const formattedPrice = priceFormatter(price);
 
    return (
       <div className={styles.card}>
@@ -26,7 +22,7 @@ export const ProductCardDetails: FC<Props> = ({
          </div>
 
          <div className={styles.card__body}>
-            <button className={styles.card__cross} onClick={closePopup}>
+            <button className={styles.card__cross} onClick={popupHandler}>
                <Icon className={styles.card__icon} icon={'cross'} />
             </button>
 
@@ -39,12 +35,12 @@ export const ProductCardDetails: FC<Props> = ({
                </div>
 
                <div className={styles.card__content}>
-                  <div className={styles.card__price}>{formattedPrice} сом</div>
+                  <div className={styles.card__price}>{price} сом</div>
                   <div className={styles.card__description}>
                      <span>Описание:</span> {/* {info!.description} */}
                   </div>
 
-                  <div className={styles.card__button}>{AddToCartButton}</div>
+                  <div className={styles.card__button}>{cartButton}</div>
                </div>
             </div>
          </div>

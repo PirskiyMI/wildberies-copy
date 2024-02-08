@@ -1,6 +1,6 @@
 interface IProductRating {
    rate: number;
-   count: number;
+   count: number | string;
 }
 interface IProductStatus {
    count: number;
@@ -13,7 +13,7 @@ interface IProductInfo {
 export interface IProduct {
    id: number;
    title: string;
-   price: number;
+   price: number | string;
    image: string;
    rating: IProductRating;
    status?: IProductStatus;
