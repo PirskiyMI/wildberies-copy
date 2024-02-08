@@ -4,9 +4,10 @@ import { Button, Icon, Section, useAppSelector } from 'src/shared';
 import { TotalOrderCount, TotalOrderPrice } from 'src/entities/order';
 
 import styles from './styles.module.scss';
+import { orderTotalsSelector } from 'src/entities/basket/basket-item';
 
 export const OrderInfo: FC = memo(() => {
-   const { count, price } = useAppSelector((state) => state.orderReducer);
+   const { count, price } = useAppSelector(orderTotalsSelector);
 
    return (
       <Section className={styles.order}>

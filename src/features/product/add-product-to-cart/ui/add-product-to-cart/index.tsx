@@ -1,20 +1,17 @@
-import { FC, memo, useMemo } from 'react';
+import { FC, memo } from 'react';
 
 import { Button, IProduct, useAppSelector } from 'src/shared';
 
 import styles from './styles.module.scss';
 import { useAddToCart } from '../../hooks';
+import { inBasketSelector } from 'src/entities/basket/basket-item';
 
 type Props = {
    product: IProduct;
 };
 
 export const AddProductToCart: FC<Props> = memo(({ product }) => {
-   const { list } = useAppSelector((state) => state.basketReducer);
-   const inBasket = useMemo(
-      () => Boolean(list.find(({ id }) => id === product.id)),
-      [list, product.id],
-   );
+   const inBasket = useAppSelector((state) => inBasketSelector(state, product.id));
    const { addProduct } = useAddToCart(product);
 
    return (

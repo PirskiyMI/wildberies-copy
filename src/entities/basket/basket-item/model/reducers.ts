@@ -3,13 +3,9 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { IProduct } from 'src/shared';
 
 export interface IState {
-   totalCount: number;
-   totalPrice: number;
    list: IProduct[];
 }
 const initialState: IState = {
-   totalCount: 0,
-   totalPrice: 0,
    list: [
       {
          id: 1,
@@ -28,7 +24,6 @@ const initialState: IState = {
       },
    ],
 };
-
 const basketSlice = createSlice({
    name: 'basket',
    initialState,

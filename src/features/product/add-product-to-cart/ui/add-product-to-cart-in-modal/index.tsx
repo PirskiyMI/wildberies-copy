@@ -1,7 +1,8 @@
-import { FC, memo, useMemo } from 'react';
+import { FC, memo } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Button, IProduct, useAppSelector } from 'src/shared';
+import { inBasketSelector } from 'src/entities/basket/basket-item';
 
 import styles from './styles.module.scss';
 import { useAddToCart } from '../../hooks';
@@ -11,8 +12,7 @@ type Props = {
 };
 
 export const AddProductToCartInModal: FC<Props> = memo(({ product }) => {
-   const { list } = useAppSelector((state) => state.basketReducer);
-   const inBasket = useMemo(() => list.find((el) => el.id === product.id), [list, product.id]);
+   const inBasket = useAppSelector((state) => inBasketSelector(state, product.id));
    const { addProduct } = useAddToCart(product);
 
    return (
