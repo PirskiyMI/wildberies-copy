@@ -1,13 +1,13 @@
 import { FC } from 'react';
 
-import { HeaderLink } from 'src/shared';
+import { HeaderLink, useAppSelector } from 'src/shared';
+import { basketItemsTotalSelector } from 'src/entities/basket/basket-item';
 
 import styles from './styles.module.scss';
 import { menuLinkList } from '../../constants';
-import { useGetCount } from '../../hooks';
 
 export const HeaderNavigation: FC = () => {
-   const { totalCount } = useGetCount();
+   const count = useAppSelector(basketItemsTotalSelector);
 
    return (
       <nav className={styles.navigation}>
@@ -15,12 +15,7 @@ export const HeaderNavigation: FC = () => {
             {menuLinkList.map(({ icon, to, isCount, label }) => (
                <li key={icon}>
                   {isCount ? (
-                     <HeaderLink
-                        icon={icon}
-                        path={to}
-                        label={label}
-                        count={totalCount ? totalCount : null}
-                     />
+                     <HeaderLink icon={icon} path={to} label={label} count={count ? count : null} />
                   ) : (
                      <HeaderLink icon={icon} path={to} label={label} />
                   )}

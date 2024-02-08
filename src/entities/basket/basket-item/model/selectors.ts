@@ -1,6 +1,22 @@
 import { createSelector } from '@reduxjs/toolkit';
 
 export const basketListSelector = (state: RootState) => state.basketReducer.list;
+export const basketItemsTotalSelector = createSelector([basketListSelector], (list) => {
+   const count = list.reduce((count, item) => {
+      count += item.status!.count;
+      return count;
+   }, 0);
+   return count;
+});
+
+/* export const basketPriceTotalSelector = createSelector([basketListSelector], (list) => {
+   const price = list.reduce((price, item) => {
+      price += item.price;
+      return price;
+   }, 0);
+   return price;
+}); */
+
 export const basketTotalsSelector = createSelector([basketListSelector], (list) => {
    const { count, price } = list.reduce(
       (totals, item) => {

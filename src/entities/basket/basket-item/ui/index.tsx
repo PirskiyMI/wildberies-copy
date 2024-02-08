@@ -1,44 +1,27 @@
-import { FC, ReactNode, memo, useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
+import { useAppSelector } from 'src/shared';
 
-import { IProduct, useAppSelector, CartItemCard } from 'src/shared';
+import { BasketItemUI } from './ui';
+import { IBasketItem } from '../types';
 
-import styles from './styles.module.scss';
+export const BasketItem: FC<IBasketItem> = ({
+   product: { price, status, ...product },
+   features,
+}) => {
+   const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
+   const isDesktop = windowWidth >= 1024;
+   const [productPrice, setProductPrice] = useState(price);
+   const { count } = status!;
 
-type Props = {
-   product: IProduct;
-   features: {
-      Checkbox: ReactNode;
-      Counter: ReactNode;
-      Delete: ReactNode;
-   };
+   useEffect(() => {
+      setProductPrice(price * count);
+   }, [count, price]);
+
+   return (
+      <BasketItemUI
+         product={{ price: productPrice, status, ...product }}
+         features={features}
+         isDesktop={isDesktop}
+      />
+   );
 };
-
-export const BasketItem: FC<Props> = memo(
-   ({ product: { image, price, title, status }, features: { Checkbox, Counter, Delete } }) => {
-      const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
-      const [productPrice, setProductPrice] = useState(price);
-      const { count, isChecked } = status!;
-
-      useEffect(() => {
-         setProductPrice(price * count);
-      }, [count, price]);
-
-      return (
-         <CartItemCard
-            image={image}
-            price={productPrice}
-            title={title}
-            checkbox={Checkbox}
-            counter={
-               <div className={styles.item__counter}>
-                  {Counter}
-                  <div className={styles.item__buttons}>{Delete}</div>
-               </div>
-            }
-            isElementActive={isChecked}
-            isDesktop={windowWidth >= 1024}
-            className={styles.item}
-         />
-      );
-   },
-);

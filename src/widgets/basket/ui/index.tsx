@@ -5,15 +5,16 @@ import { BasketTotalCount } from 'src/entities/basket/basket-total-count';
 
 import styles from './styles.module.scss';
 import { BasketList } from './basket-list';
+import { basketTotalsSelector } from 'src/entities/basket/basket-item';
 
 export const Basket: FC = () => {
-   const { totalCount, totalPrice } = useAppSelector((state) => state.basketTotalsReducer);
+   const { count, price } = useAppSelector(basketTotalsSelector);
 
    return (
       <Section title="Корзина">
          <Spoiler
             initial
-            Title={<BasketTotalCount count={totalCount} price={totalPrice} />}
+            Title={<BasketTotalCount count={count} price={price} />}
             Content={
                <div className={styles.basket}>
                   <BasketList />
