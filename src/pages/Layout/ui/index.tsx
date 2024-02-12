@@ -5,7 +5,7 @@ import { AnimatePresence } from 'framer-motion';
 import { Preloader, useAppSelector, useScrollToTop } from 'src/shared';
 import { ScrollUp } from 'src/features/scroll-up';
 import { Header } from 'src/widgets/header';
-import { Footer } from 'src/widgets/footer';
+import { FooterContainer } from 'src/widgets/footer';
 import { NavMenu } from 'src/widgets/nav-menu';
 
 import styles from './styles.module.scss';
@@ -25,7 +25,7 @@ export const Layout: FC = () => {
             </Suspense>
          </main>
          {isButtonVisible && windowWidth >= 1024 && <ScrollUp />}
-         <Footer />
+         <FooterContainer />
       </>
    );
 };

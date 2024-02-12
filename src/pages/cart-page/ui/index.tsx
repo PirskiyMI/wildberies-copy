@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { useAppSelector } from 'src/shared';
 import { basketListSelector } from 'src/entities/basket/basket-item';
-import { Basket } from 'src/widgets/basket';
+import { BasketContainer } from 'src/widgets/basket';
 import { OrderInfo } from 'src/widgets/order-info';
 import { CartUserDetails } from 'src/widgets/user/user-details';
 import { BasketPaymentMethodContainer } from 'src/widgets/payment-method/basket-payment-method';
@@ -19,7 +19,7 @@ export const CartPage: FC = () => {
             <div className={styles.cart__wrapper}>
                <div className={`${styles.cart__column} ${styles.cart__column_big}`}>
                   <div className={styles.cart__row_big}>
-                     <Basket />
+                     <BasketContainer />
                   </div>
                   <BasketPaymentMethodContainer />
                   <CartUserDetails />

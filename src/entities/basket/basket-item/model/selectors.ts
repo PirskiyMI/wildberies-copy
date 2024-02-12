@@ -8,21 +8,12 @@ export const basketItemsTotalSelector = createSelector([basketListSelector], (li
    }, 0);
    return count;
 });
-
-/* export const basketPriceTotalSelector = createSelector([basketListSelector], (list) => {
-   const price = list.reduce((price, item) => {
-      price += item.price;
-      return price;
-   }, 0);
-   return price;
-}); */
-
 export const basketTotalsSelector = createSelector([basketListSelector], (list) => {
    const { count, price } = list.reduce(
       (totals, item) => {
          const { price, status } = item;
 
-         totals.price += price * status!.count;
+         totals.price += +price * status!.count;
          totals.count += status!.count;
 
          return totals;
@@ -39,7 +30,7 @@ export const orderTotalsSelector = createSelector([basketListSelector], (list) =
       (totals, item) => {
          const { price, status } = item;
 
-         totals.price += price * status!.count;
+         totals.price += +price * status!.count;
          totals.count += status!.count;
 
          return totals;

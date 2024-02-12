@@ -1,19 +1,11 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
 import styles from './styles.module.scss';
 
 import { useAppSelector, Spoiler } from 'src/shared';
+import { IFooterNav } from '../../types';
 
-type TLink = {
-   title: string;
-   path: string;
-};
-type Props = {
-   label: string;
-   links: TLink[];
-};
-
-export const FooterNav: FC<Props> = ({ label, links }) => {
+export const FooterNav: FC<IFooterNav> = memo(({ label, links }) => {
    const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
 
    if (windowWidth >= 1024) {
@@ -47,4 +39,4 @@ export const FooterNav: FC<Props> = ({ label, links }) => {
          }
       />
    );
-};
+});

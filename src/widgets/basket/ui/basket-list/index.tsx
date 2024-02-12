@@ -1,16 +1,14 @@
 import { FC } from 'react';
 
-import { useAppSelector } from 'src/shared';
-import { BasketItem, basketListSelector } from 'src/entities/basket/basket-item';
+import { BasketItem } from 'src/entities/basket/basket-item';
 import { ToggleProductToOrder } from 'src/features/product/toggle-product-to-order';
 import { ProductCounter } from 'src/features/product/product-counter';
 import { RemoveProductFromCart } from 'src/features/product/remove-product-from-cart';
 
 import styles from './styles.module.scss';
+import { IBasketList } from '../../lib/types';
 
-export const BasketList: FC = () => {
-   const list = useAppSelector(basketListSelector);
-
+export const BasketList: FC<IBasketList> = ({ list }) => {
    return (
       <div className={styles.list}>
          {list.map((el) => (

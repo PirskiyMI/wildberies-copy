@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, memo } from 'react';
 
 import styles from './styles.module.scss';
 
@@ -8,10 +8,10 @@ type SectionProps = {
    className?: string;
 };
 
-export const Section: FC<SectionProps> = ({ children, title, className }) => {
+export const Section: FC<SectionProps> = memo(({ children, title, className }) => {
    return (
       <section className={`${styles.section} ${className}`}>
          {title ? <h2 className={styles.section__title}>{title}</h2> : null} {children}
       </section>
    );
-};
+});
