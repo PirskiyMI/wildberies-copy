@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-import { UserPaymentCardBasket } from 'src/entities/user';
 import { useSetCard } from '../hooks';
+import { UserPaymentCardContainer } from 'src/entities/user';
 
 type Props = {
    cardNumber: string;
@@ -13,7 +13,7 @@ export const SetCardInBasket: FC<Props> = ({ cardNumber, id }) => {
 
    return (
       <div onClick={setCard}>
-         <UserPaymentCardBasket cardNumber={cardNumber} numberVisible />
+         <UserPaymentCardContainer cardNumber={cardNumber} UIType="short" numberVisible />
       </div>
    );
 };

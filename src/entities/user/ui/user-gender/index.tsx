@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import styles from './styles.module.scss';
-import { IUserGender } from '../../types';
+import { IUserGender } from '../../lib/types';
 
 export const UserGender: FC<IUserGender> = ({ switcher, className }) => {
    const classes = className ? `${styles.gender} ${className}` : styles.gender;

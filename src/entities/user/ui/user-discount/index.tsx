@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import styles from './styles.module.scss';
-import { IUserDiscount } from '../../types';
+import { IUserDiscount } from '../../lib/types';
 
 export const UserDiscount: FC<IUserDiscount> = ({ discount, className }) => {
    const classes = className ? `${styles.discount} ${className}` : styles.discount;

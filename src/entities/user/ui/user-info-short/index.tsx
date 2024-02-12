@@ -4,7 +4,7 @@ import { Icon } from 'src/shared';
 
 import styles from './styles.module.scss';
 import { UserPhone } from '..';
-import { IUserInfoShort } from '../../types';
+import { IUserInfoShort } from '../../lib/types';
 
 export const UserInfoShort: FC<IUserInfoShort> = memo(({ name, isMale }) => {
    return (

@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-interface IPayment {
+export interface IPayment {
    id: number;
    cardNumber: string;
    code: string;

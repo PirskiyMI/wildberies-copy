@@ -1,22 +1,22 @@
 import { FC, memo } from 'react';
 
-import { UserPaymentCardBasket } from 'src/entities/user';
 import { CartTile } from 'src/shared';
+import { UserPaymentCardContainer } from 'src/entities/user';
 
 import { PaymentMethodPopUp } from './pop-up';
-import { useModal, usePaymentMethods } from '../hooks';
+import { useModal } from '../lib/hooks';
+import { IBasketPaymentMethod } from '../lib/types/payment-method-pop-up';
 
-export const BasketPaymentMethod: FC = memo(() => {
+export const BasketPaymentMethod: FC<IBasketPaymentMethod> = memo(({ mainCard, paymentInfo }) => {
    const { closePopUp, modalIsOpen, openModal, toggleType, modalType } = useModal();
-   const { cardArray, selectedCard } = usePaymentMethods();
 
    return (
       <div>
          <CartTile
             title="Способ оплаты"
             content={
-               cardArray.length ? (
-                  <UserPaymentCardBasket cardNumber={selectedCard!} numberVisible />
+               paymentInfo.length ? (
+                  <UserPaymentCardContainer cardNumber={mainCard!} UIType="short" numberVisible />
                ) : (
                   <button>Выбрать способ оплаты</button>
                )
@@ -26,7 +26,7 @@ export const BasketPaymentMethod: FC = memo(() => {
          {modalIsOpen ? (
             <PaymentMethodPopUp
                closePopUp={closePopUp}
-               cardList={cardArray}
+               cardList={paymentInfo}
                type={modalType}
                toggleType={toggleType}
             />

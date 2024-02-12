@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { Avatar } from 'src/shared';
 
 import styles from './styles.module.scss';
-import { IUserInfo } from '../../types';
+import { IUserInfo } from '../../lib/types';
 
 export const UserInfo: FC<IUserInfo> = ({ name, nameFirstLatter, changeNameButton, mobile }) => {
    const classes = mobile ? `${styles.user} ${styles.user_mobile}` : styles.user;

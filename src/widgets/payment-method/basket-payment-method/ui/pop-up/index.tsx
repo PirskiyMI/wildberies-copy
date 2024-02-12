@@ -1,19 +1,18 @@
 import { FC } from 'react';
 
 import { Button, Icon, PopUp, Section } from 'src/shared';
-
-import styles from './styles.module.scss';
 import { CreateCard } from 'src/features/card/create-card';
 import { SetCardInBasket } from 'src/features/card/set-main-card';
 
-type Props = {
-   type: 'select' | 'form';
-   cardList: { id: number; cardNumber: string; isMain: boolean }[];
-   toggleType: () => void;
-   closePopUp: () => void;
-};
+import styles from './styles.module.scss';
+import { IBasketPaymentMethodPopUp } from '../../lib/types/basket-payment-method';
 
-export const PaymentMethodPopUp: FC<Props> = ({ type, cardList, closePopUp, toggleType }) => {
+export const PaymentMethodPopUp: FC<IBasketPaymentMethodPopUp> = ({
+   type,
+   cardList,
+   closePopUp,
+   toggleType,
+}) => {
    return (
       <PopUp closePopUp={closePopUp} className={styles.modal}>
          <Section title={type === 'form' ? 'Привязать карту' : 'Способ оплаты'}>

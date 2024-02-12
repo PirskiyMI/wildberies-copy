@@ -4,5 +4,3 @@ export * from './user-info';
 export * from './user-info-short';
 export * from './user-phone';
 export * from './user-ransom';
-export * from './user-payment-card';
-export * from './user-payment-card-basket';

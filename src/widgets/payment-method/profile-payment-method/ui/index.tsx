@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import { Card, Icon, Section, useAppSelector, usePopUp } from 'src/shared';
-import { UserPaymentCard } from 'src/entities/user';
+import { UserPaymentCardContainer, userPaymentInfoSelector } from 'src/entities/user';
 import { DeleteCard } from 'src/features/card/delete-card';
 import { SetCard } from 'src/features/card/set-main-card';
 
@@ -9,7 +9,7 @@ import styles from './styles.module.scss';
 import { PaymentMethodPopUp } from './pop-up';
 
 export const ProfilePaymentMethod: FC = () => {
-   const { paymentInfo } = useAppSelector((state) => state.userReducer);
+   const paymentInfo = useAppSelector(userPaymentInfoSelector);
    const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
 
    const { isPopUpOpen, openPopUp, closePopUp } = usePopUp();
@@ -21,17 +21,19 @@ export const ProfilePaymentMethod: FC = () => {
                {paymentInfo.map((el) => (
                   <li key={el.id} className={styles.payments__item}>
                      {el.isMain ? (
-                        <UserPaymentCard
+                        <UserPaymentCardContainer
                            cardNumber={el.cardNumber}
+                           UIType="full"
                            deleteButton={<DeleteCard id={el.id} />}
                            isDesktop={windowWidth >= 1024}
                            className={styles.payments__card}
                         />
                      ) : (
-                        <UserPaymentCard
+                        <UserPaymentCardContainer
                            cardNumber={el.cardNumber}
+                           UIType="full"
                            deleteButton={<DeleteCard id={el.id} />}
-                           toggleMain={<SetCard id={el.id} />}
+                           switchMainCardButton={<SetCard id={el.id} />}
                            isDesktop={windowWidth >= 1024}
                            className={styles.payments__card}
                         />

@@ -1,39 +1,29 @@
-import { FC, ReactNode } from 'react';
+import { FC } from 'react';
 
 import { Card } from 'src/shared';
 
 import styles from './styles.module.scss';
-import { useCardInfo } from '../../hooks';
+import { IUserPaymentCard } from '../../lib/types/user-payment-card';
 
-type Props = {
-   cardNumber: string;
-   deleteButton: ReactNode;
-   toggleMain?: ReactNode;
-   isDesktop?: boolean;
-   className?: string;
-};
-
-export const UserPaymentCard: FC<Props> = ({
-   cardNumber,
+export const UserPaymentCard: FC<IUserPaymentCard> = ({
+   card: {
+      number,
+      img: { alt, src },
+   },
    deleteButton,
-   toggleMain,
+   switchMainCardButton,
    isDesktop,
    className,
 }) => {
-   const {
-      number,
-      img: { alt, src },
-   } = useCardInfo(cardNumber);
-
    let classes = className ? `${className} ${styles.card} ` : styles.card;
-   classes = !toggleMain ? `${classes} ${styles.card_main}` : classes;
+   classes = !switchMainCardButton ? `${classes} ${styles.card_main}` : classes;
 
    if (isDesktop) {
       return (
          <Card className={classes}>
             <div className={styles.card__buttons}>
-               {toggleMain ? (
-                  <div className={styles.card__toggle}>{toggleMain}</div>
+               {switchMainCardButton ? (
+                  <div className={styles.card__toggle}>{switchMainCardButton}</div>
                ) : (
                   <p className={styles.card__label}>Основной способ</p>
                )}
@@ -63,8 +53,8 @@ export const UserPaymentCard: FC<Props> = ({
                   <span>{alt}</span>
                   <span>{number}</span>
                </div>
-               {toggleMain ? (
-                  <div className={styles.card__toggle}>{toggleMain}</div>
+               {switchMainCardButton ? (
+                  <div className={styles.card__toggle}>{switchMainCardButton}</div>
                ) : (
                   <p className={styles.card__label}>Основной способ</p>
                )}

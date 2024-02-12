@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { userPaymentInfoSelector } from 'src/entities/user';
 import { useAppSelector } from 'src/shared';
 
 export const useModal = () => {
@@ -21,13 +22,8 @@ export const useModal = () => {
 };
 
 export const usePaymentMethods = () => {
-   const { paymentInfo } = useAppSelector((state) => state.userReducer);
-   const cardArray = [...paymentInfo].map((el) => ({
-      id: el.id,
-      cardNumber: el.cardNumber,
-      isMain: el.isMain,
-   }));
+   const paymentInfo = useAppSelector(userPaymentInfoSelector);
    const selectedCard = paymentInfo.find((el) => el.isMain)?.cardNumber;
 
-   return { cardArray, selectedCard };
+   return { paymentInfo, selectedCard };
 };
