@@ -23,7 +23,7 @@ export const ProfileUserDetails: FC = () => {
          />
          <div className={styles.details__bottom}>
             <UserPhone className={styles.details__item} withTitle />
-            <UserGender className={styles.details__item} children={<UserGenderSwitcher />} />
+            <UserGender className={styles.details__item} switcher={<UserGenderSwitcher />} />
          </div>
 
          {isPopUpOpen && (

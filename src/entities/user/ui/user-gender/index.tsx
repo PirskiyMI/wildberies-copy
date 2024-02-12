@@ -1,19 +1,15 @@
-import { FC, ReactNode } from 'react';
+import { FC } from 'react';
 
 import styles from './styles.module.scss';
+import { IUserGender } from '../../types';
 
-type Props = {
-   children: ReactNode;
-   className?: string;
-};
-
-export const UserGender: FC<Props> = ({ children, className }) => {
+export const UserGender: FC<IUserGender> = ({ switcher, className }) => {
    const classes = className ? `${styles.gender} ${className}` : styles.gender;
 
    return (
       <div className={classes}>
          <h3 className={styles.gender__title}>Пол</h3>
-         {children}
+         {switcher}
       </div>
    );
 };
