@@ -1,13 +1,12 @@
 import { FC, memo } from 'react';
 
-import { Icon, useAppSelector } from 'src/shared';
+import { Icon } from 'src/shared';
 
 import styles from './styles.module.scss';
 import { UserPhone } from '..';
+import { IUserInfoShort } from '../../types';
 
-export const UserInfoBasket: FC = memo(() => {
-   const { isMale, name } = useAppSelector((state) => state.userReducer);
-
+export const UserInfoShort: FC<IUserInfoShort> = memo(({ name, isMale }) => {
    return (
       <div className={styles.info}>
          <Icon icon={isMale ? 'user-male' : 'user-female'} className={styles.info__icon} />
