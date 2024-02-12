@@ -1,7 +1,13 @@
 import { FC } from 'react';
 
-import { useAppSelector, Icon, PopUp, Section, usePopUp } from 'src/shared';
-import { UserGender, UserInfo, UserPhone, userNameSelector } from 'src/entities/user';
+import { useAppSelector, Icon, PopUp, Section, usePopUp, phoneFormatter } from 'src/shared';
+import {
+   UserGender,
+   UserInfo,
+   UserPhone,
+   userMainInfoSelector,
+   userNameSelector,
+} from 'src/entities/user';
 import { ChangeUserName } from 'src/features/user/change-user-name';
 import { UserGenderSwitcher } from 'src/features/user/user-gender-switcher';
 
@@ -13,6 +19,9 @@ export const ProfileUserDetails: FC = () => {
 
    const userName = useAppSelector(userNameSelector);
    const userNameFirstLatter = userName[0];
+
+   const { tel } = useAppSelector(userMainInfoSelector);
+   const formattedUserPhone = phoneFormatter(tel);
 
    return (
       <Section className={styles.details}>
@@ -27,7 +36,7 @@ export const ProfileUserDetails: FC = () => {
             mobile={windowWidth < 1024}
          />
          <div className={styles.details__bottom}>
-            <UserPhone className={styles.details__item} withTitle />
+            <UserPhone phone={formattedUserPhone} className={styles.details__item} withTitle />
             <UserGender className={styles.details__item} switcher={<UserGenderSwitcher />} />
          </div>
 
