@@ -1,9 +1,9 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
 import styles from './styles.module.scss';
 import { IUserPhone } from '../../lib/types';
 
-export const UserPhone: FC<IUserPhone> = ({ phone, withTitle, className }) => {
+export const UserPhone: FC<IUserPhone> = memo(({ phone, withTitle, className }) => {
    const classes = className ? `${styles.phone} ${className}` : styles.phone;
 
    return (
@@ -12,4 +12,4 @@ export const UserPhone: FC<IUserPhone> = ({ phone, withTitle, className }) => {
          <span>{phone}</span>
       </div>
    );
-};
+});

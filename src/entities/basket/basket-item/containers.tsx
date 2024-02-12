@@ -14,7 +14,7 @@ export const BasketItem: FC<IBasketItem> = ({
    const { count } = status!;
 
    useEffect(() => {
-      setProductPrice(price * count);
+      setProductPrice(+price * count);
    }, [count, price]);
 
    return (

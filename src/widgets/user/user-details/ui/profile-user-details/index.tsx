@@ -1,11 +1,11 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
 import { useAppSelector, Icon, PopUp, Section, usePopUp, phoneFormatter } from 'src/shared';
 import {
    UserGender,
    UserInfo,
    UserPhone,
-   userMainInfoSelector,
+   userInfoSelector,
    userNameSelector,
 } from 'src/entities/user';
 import { ChangeUserName } from 'src/features/user/change-user-name';
@@ -13,15 +13,15 @@ import { UserGenderSwitcher } from 'src/features/user/user-gender-switcher';
 
 import styles from './styles.module.scss';
 
-export const ProfileUserDetails: FC = () => {
+export const ProfileUserDetails: FC = memo(() => {
    const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
    const { isPopUpOpen, openPopUp, closePopUp } = usePopUp();
 
    const userName = useAppSelector(userNameSelector);
    const userNameFirstLatter = userName[0];
 
-   const { tel } = useAppSelector(userMainInfoSelector);
-   const formattedUserPhone = phoneFormatter(tel);
+   const { phone } = useAppSelector(userInfoSelector);
+   const formattedUserPhone = phoneFormatter(phone);
 
    return (
       <Section className={styles.details}>
@@ -50,4 +50,4 @@ export const ProfileUserDetails: FC = () => {
          )}
       </Section>
    );
-};
+});

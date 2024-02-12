@@ -1,9 +1,9 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
 import styles from './styles.module.scss';
 import { IUserDiscount } from '../../lib/types';
 
-export const UserDiscount: FC<IUserDiscount> = ({ discount, className }) => {
+export const UserDiscount: FC<IUserDiscount> = memo(({ discount, className }) => {
    const classes = className ? `${styles.discount} ${className}` : styles.discount;
 
    return (
@@ -13,4 +13,4 @@ export const UserDiscount: FC<IUserDiscount> = ({ discount, className }) => {
          </span>
       </div>
    );
-};
+});

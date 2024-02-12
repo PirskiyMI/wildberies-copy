@@ -1,9 +1,9 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
 import styles from './styles.module.scss';
 import { IUserGender } from '../../lib/types';
 
-export const UserGender: FC<IUserGender> = ({ switcher, className }) => {
+export const UserGender: FC<IUserGender> = memo(({ switcher, className }) => {
    const classes = className ? `${styles.gender} ${className}` : styles.gender;
 
    return (
@@ -12,4 +12,4 @@ export const UserGender: FC<IUserGender> = ({ switcher, className }) => {
          {switcher}
       </div>
    );
-};
+});
