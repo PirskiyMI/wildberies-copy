@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import { useAppSelector, Icon, PopUp, Section, usePopUp } from 'src/shared';
-import { UserGender, UserInfo, UserPhone } from 'src/entities/user';
+import { UserGender, UserInfo, UserPhone, userNameSelector } from 'src/entities/user';
 import { ChangeUserName } from 'src/features/user/change-user-name';
 import { UserGenderSwitcher } from 'src/features/user/user-gender-switcher';
 
@@ -11,9 +11,14 @@ export const ProfileUserDetails: FC = () => {
    const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
    const { isPopUpOpen, openPopUp, closePopUp } = usePopUp();
 
+   const userName = useAppSelector(userNameSelector);
+   const userNameFirstLatter = userName[0];
+
    return (
       <Section className={styles.details}>
          <UserInfo
+            name={userName}
+            nameFirstLatter={userNameFirstLatter}
             changeNameButton={
                <button onClick={openPopUp}>
                   <Icon icon="pen" className={styles.details__icon} />
