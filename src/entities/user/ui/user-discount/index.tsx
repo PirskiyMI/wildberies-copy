@@ -1,16 +1,9 @@
 import { FC } from 'react';
 
-import { useAppSelector } from 'src/shared';
-
 import styles from './styles.module.scss';
+import { IUserDiscount } from '../../types';
 
-type Props = {
-   className?: string;
-};
-
-export const UserDiscount: FC<Props> = ({ className }) => {
-   const { discount } = useAppSelector((state) => state.userReducer);
-
+export const UserDiscount: FC<IUserDiscount> = ({ discount, className }) => {
    const classes = className ? `${styles.discount} ${className}` : styles.discount;
 
    return (
