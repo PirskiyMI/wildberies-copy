@@ -1,4 +1,4 @@
-import { FC, ReactNode, lazy, memo, useMemo } from 'react';
+import { FC, ReactNode, memo, useMemo } from 'react';
 
 import {
    CardImages,
@@ -7,15 +7,7 @@ import {
    masterCardExpression,
    visaExpression,
 } from 'src/shared';
-
-const UserPaymentCard = lazy(async () => {
-   const { UserPaymentCard } = await import('../ui/user-payment-card');
-   return { default: UserPaymentCard };
-});
-const UserPaymentCardShort = lazy(async () => {
-   const { UserPaymentCardShort } = await import('../ui/user-payment-card-short');
-   return { default: UserPaymentCardShort };
-});
+import { UserPaymentCard, UserPaymentCardShort } from '..';
 
 export interface IUserPaymentCardContainer {
    cardNumber: string;
