@@ -1,11 +1,11 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 interface IState {
-   windowWidth: number;
+   windowWidth: number | null;
 }
 
 const initialState: IState = {
-   windowWidth: 0,
+   windowWidth: null,
 };
 
 export const windowWidthSlice = createSlice({

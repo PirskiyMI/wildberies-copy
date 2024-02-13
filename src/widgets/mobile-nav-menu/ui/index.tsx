@@ -1,14 +1,12 @@
 import { FC } from 'react';
 
+import { HeaderLink } from 'src/shared';
+
 import styles from './styles.module.scss';
+import { mobileMenuLinkList } from '../constants';
+import { IMobileNavMenu } from '../lib/types';
 
-import { HeaderLink, useAppSelector } from 'src/shared';
-import { mobileMenuLinkList } from '../../constants';
-import { basketItemsTotalSelector } from 'src/entities/basket/basket-item';
-
-export const HeaderMobileMenu: FC = () => {
-   const count = useAppSelector(basketItemsTotalSelector);
-
+export const MobileNavMenu: FC<IMobileNavMenu> = ({ count }) => {
    return (
       <nav>
          <ul className={styles.menu}>
