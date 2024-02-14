@@ -1,24 +1,16 @@
-import { FC, useCallback } from 'react';
+import { FC } from 'react';
 
-import { Icon, useAppDispatch } from 'src/shared';
-import { userActions } from 'src/entities/user';
+import { Icon } from 'src/shared';
 
 import styles from './styles.module.scss';
+import { IDeleteCardProps } from '../lib/types';
+import { useDeleteCard } from '../lib/hooks';
 
-type Props = {
-   id: number;
-};
-
-export const DeleteCard: FC<Props> = ({ id }) => {
-   const { deleteCard } = userActions;
-   const dispatch = useAppDispatch();
-
-   const removeCard = useCallback(() => {
-      dispatch(deleteCard(id));
-   }, [id, deleteCard, dispatch]);
+export const DeleteCard: FC<IDeleteCardProps> = ({ id }) => {
+   const deleteCard = useDeleteCard(id);
 
    return (
-      <button onClick={removeCard} className={styles.button}>
+      <button onClick={deleteCard} className={styles.button}>
          <Icon className={styles.button__icon} icon="cross" />
       </button>
    );

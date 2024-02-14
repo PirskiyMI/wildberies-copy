@@ -1,14 +1,11 @@
 import { FC } from 'react';
 
 import styles from './styles.module.scss';
-import { useSetCard } from '../../hooks';
+import { useSetCard } from '../../lib/hooks';
+import { ISetCardProps } from '../../lib/types';
 
-type Props = {
-   id: number;
-};
-
-export const SetCard: FC<Props> = ({ id }) => {
-   const { setCard } = useSetCard(id);
+export const SetCard: FC<ISetCardProps> = ({ id }) => {
+   const setCard = useSetCard(id);
 
    return (
       <button className={styles.button} onClick={setCard}>

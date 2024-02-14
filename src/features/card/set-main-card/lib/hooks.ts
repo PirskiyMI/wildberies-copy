@@ -10,5 +10,5 @@ export const useSetCard = (cardId: number) => {
       dispatch(setMainCard(cardId));
    }, [cardId, setMainCard, dispatch]);
 
-   return { setCard };
+   return setCard;
 };

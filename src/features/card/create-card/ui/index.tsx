@@ -3,14 +3,11 @@ import { FC } from 'react';
 import { Button, Field } from 'src/shared';
 
 import styles from './styles.module.scss';
-import { useCardForm, useCreateCard } from '../hooks';
+import { useCardForm, useCreateCard } from '../lib/hooks';
+import { ICreateCardProps } from '../lib/types';
 import { cardsInfo } from '../constants';
 
-type Props = {
-   closePopUp: () => void;
-};
-
-export const CreateCard: FC<Props> = ({ closePopUp }) => {
+export const CreateCard: FC<ICreateCardProps> = ({ closePopUp }) => {
    const {
       fields,
       fieldsValue: { cardValue, codeValue, dateValue },
