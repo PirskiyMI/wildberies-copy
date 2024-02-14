@@ -29,14 +29,10 @@ import {
    AddProductToCartInModal,
 } from 'src/features/product/add-product-to-cart/ui';
 
-import { IProduct, usePopUp } from 'src/shared';
+import { usePopUp } from 'src/shared';
+import { IProductItemProps } from '../lib/types';
 
-interface IProps {
-   product: IProduct;
-   isFavoriteList?: boolean;
-}
-
-export const ProductItem: FC<IProps> = memo(({ product, isFavoriteList = false }) => {
+export const ProductItem: FC<IProductItemProps> = memo(({ product, isFavoriteList = false }) => {
    const { isPopUpOpen, openPopUp, closePopUp } = usePopUp();
 
    return (

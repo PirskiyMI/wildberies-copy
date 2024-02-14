@@ -1,38 +1,24 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useEffect } from 'react';
 
-import { IProduct, ServerError, useAppDispatch, useAppSelector } from 'src/shared';
-import { fetchAllProducts } from 'src/entities/product/api';
-import { ProductSkeletonList } from 'src/widgets/product/product-skeleton-list';
-import { ProductList } from 'src/widgets/product/product-list';
+import { Preloader, ServerError, useAppDispatch, useAppSelector } from 'src/shared';
+import { ProductListContainer } from 'src/widgets/product/product-list';
 
 import styles from './styles.module.scss';
-import { HomeIsEmpty } from './home-is-empty';
+import { productsListSelector } from 'src/entities/product/model/selectors';
+import { fetchAllProducts } from 'src/entities/product/api';
 
 export const HomePage: FC = () => {
-   const { value } = useAppSelector((state) => state.searchReducer);
-   const { products, isLoading, error } = useAppSelector((state) => state.productsListReducer);
-   const [productsList, setProductsList] = useState<IProduct[]>([]);
+   const { products, isLoading, error } = useAppSelector(productsListSelector);
    const dispatch = useAppDispatch();
 
    useEffect(() => {
       if (!products.length) dispatch(fetchAllProducts());
-   }, [value]);
-
-   useEffect(() => {
-      if (value.trim().length === 0) {
-         setProductsList(products);
-      } else {
-         const sortedProducts = products.filter((el) =>
-            el.title.toLowerCase().includes(value.toLowerCase()),
-         );
-         setProductsList(sortedProducts);
-      }
-   }, [value, products]);
+   }, [dispatch, products.length]);
 
    if (isLoading) {
       return (
          <div className="container">
-            <ProductSkeletonList />
+            <Preloader />
          </div>
       );
    } else if (error) {
@@ -42,14 +28,9 @@ export const HomePage: FC = () => {
          </div>
       );
    }
-
    return (
       <div className={`${styles.home__container} container`}>
-         {productsList.length ? (
-            <ProductList products={productsList} isFavoriteList={false} />
-         ) : (
-            <HomeIsEmpty searchValue={value} />
-         )}
+         <ProductListContainer products={products} isFavoriteList={false} />
       </div>
    );
 };

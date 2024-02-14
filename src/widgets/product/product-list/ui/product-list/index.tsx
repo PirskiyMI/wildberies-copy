@@ -1,16 +1,10 @@
 import { FC, memo } from 'react';
 
-import { IProduct } from 'src/shared';
-
 import styles from './styles.module.scss';
 import { ProductItem } from '../product-item';
+import { IProductListProps } from '../../lib/types';
 
-type Props = {
-   products: IProduct[];
-   isFavoriteList: boolean;
-};
-
-export const ProductList: FC<Props> = memo(({ products, isFavoriteList }) => {
+export const ProductList: FC<IProductListProps> = memo(({ products, isFavoriteList }) => {
    return (
       <ul className={styles.list}>
          {products.map((el) => (

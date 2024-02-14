@@ -23,13 +23,14 @@ export const Layout: FC = () => {
    const windowWidth = useAppSelector(windowWidthSelector);
    const { isButtonVisible } = useScrollToTop();
 
+   if (!windowWidth) return null;
    if (windowWidth >= 1024) {
       return (
          <>
             <AnimatePresence>{isOpen && <NavMenu />}</AnimatePresence>
             <HeaderContainer />
             <main className={styles.layout__main}>
-               <Suspense fallback={<Preloader />}>
+               <Suspense>
                   <Outlet />
                </Suspense>
             </main>

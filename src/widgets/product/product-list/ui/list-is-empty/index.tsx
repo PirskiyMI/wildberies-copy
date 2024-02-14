@@ -3,13 +3,9 @@ import { FC } from 'react';
 import { ClearProductSearch } from 'src/features/product/product-search';
 
 import styles from './styles.module.scss';
+import { IListIsEmptyProps } from '../../lib/types';
 
-type Props = {
-   searchValue: string;
-};
-
-export const HomeIsEmpty: FC<Props> = ({ searchValue }) => {
-
+export const ListIsEmpty: FC<IListIsEmptyProps> = ({ searchValue }) => {
    return (
       <div className={styles.body}>
          <h2 className={styles.body__title}>

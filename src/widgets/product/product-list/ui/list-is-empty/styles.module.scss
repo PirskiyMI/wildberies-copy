@@ -1,0 +1,21 @@
+.body {
+   width: 300px;
+   margin-top: 4ch;
+   margin-bottom: 4ch;
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   &__title {
+      font-size: var(--title-fs-big);
+      font-weight: var(--fw-bold);
+      line-height: var(--text-lh-small);
+   }
+   &__text {
+      font-size: var(--title-fs-big);
+      font-weight: var(--fw-normal);
+      line-height: var(--text-lh-normal);
+   }
+   &__button {
+      height: 40px;
+   }
+}
