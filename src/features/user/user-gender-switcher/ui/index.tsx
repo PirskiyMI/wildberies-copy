@@ -1,35 +1,26 @@
 import { FC } from 'react';
 
-import { Radio, useAppDispatch, useAppSelector } from 'src/shared';
-import { userActions } from 'src/entities/user';
+import { Radio } from 'src/shared';
 
 import styles from './styles.module.scss';
+import { IUserGenderSwitcherProps } from '../lib/types';
 
-export const UserGenderSwitcher: FC = () => {
-   const { isMale } = useAppSelector((state) => state.userReducer);
-   const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
-   const { setGender } = userActions;
-   const dispatch = useAppDispatch();
-
-   const maleGender = windowWidth >= 768 ? 'Муж.' : 'Мужской';
-   const femaleGender = windowWidth >= 768 ? 'Жен.' : 'Женский';
-
-   const setMale = () => {
-      dispatch(setGender(true));
-   };
-   const setFemale = () => {
-      dispatch(setGender(false));
-   };
-
+export const UserGenderSwitcher: FC<IUserGenderSwitcherProps> = ({
+   isMale,
+   maleLabel,
+   femaleLabel,
+   setMale,
+   setFemale,
+}) => {
    return (
       <form className={styles.form}>
          <label className={styles.form__item} onClick={setMale}>
             <Radio isActive={isMale} />
-            <span>{maleGender}</span>
+            <span>{maleLabel}</span>
          </label>
          <label className={styles.form__item} onClick={setFemale}>
             <Radio isActive={!isMale} />
-            <span>{femaleGender}</span>
+            <span>{femaleLabel}</span>
          </label>
       </form>
    );
