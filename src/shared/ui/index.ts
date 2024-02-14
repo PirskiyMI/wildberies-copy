@@ -3,7 +3,7 @@ import { lazy } from 'react';
 export * from './buttons';
 export * from './fields';
 export * from './preloader';
-export * from './links';
+export * from './link-nav';
 export * from './logo';
 export * from './error';
 export * from './tiles';

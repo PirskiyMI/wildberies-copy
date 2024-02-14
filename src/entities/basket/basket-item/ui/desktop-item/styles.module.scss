@@ -1,0 +1,16 @@
+.item {
+   &__buttons {
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 16px;
+      opacity: 0;
+      transition: opacity var((--transition-slow));
+   }
+   &:hover {
+      .item__buttons {
+         opacity: 1;
+      }
+   }
+}

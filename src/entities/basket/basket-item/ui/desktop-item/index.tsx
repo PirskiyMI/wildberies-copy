@@ -3,18 +3,14 @@ import { FC, memo } from 'react';
 import { CartItemCard } from 'src/shared';
 
 import styles from './styles.module.scss';
-import { IBasketItemUI } from '../types';
+import { IBasketItem } from '../../types';
 
-export const BasketItemUI: FC<IBasketItemUI> = memo(
-   ({
-      product: { image, price, title, status },
-      features: { Checkbox, Counter, Delete },
-      isDesktop,
-   }) => {
+export const DesktopBasketItem: FC<IBasketItem> = memo(
+   ({ product: { image, price, title, status }, features: { Checkbox, Counter, Delete } }) => {
       return (
          <CartItemCard
             image={image}
-            price={price}
+            price={+price}
             title={title}
             checkbox={Checkbox}
             counter={
@@ -24,7 +20,7 @@ export const BasketItemUI: FC<IBasketItemUI> = memo(
                </div>
             }
             isElementActive={status!.isChecked}
-            isDesktop={isDesktop}
+            isDesktop
             className={styles.item}
          />
       );

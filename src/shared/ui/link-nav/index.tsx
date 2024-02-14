@@ -10,7 +10,7 @@ type Props = {
    count?: number | null;
 };
 
-export const HeaderLink: FC<Props> = memo(({ icon, path, label, count }) => {
+export const LinkNav: FC<Props> = memo(({ icon, path, label, count }) => {
    return (
       <NavLink
          to={path}

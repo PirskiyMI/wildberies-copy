@@ -1,2 +1,7 @@
+import { lazy } from 'react';
+
 export * from './model';
-export * from './containers';
+export const BasketItem = lazy(async () => {
+   const { BasketItem } = await import('./containers');
+   return { default: BasketItem };
+});

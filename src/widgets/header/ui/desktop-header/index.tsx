@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { Burger, HeaderLink, Logo } from 'src/shared';
+import { Burger, LinkNav, Logo } from 'src/shared';
 import { ProductSearch } from 'src/features/product/product-search';
 
 import styles from './styles.module.scss';
@@ -23,14 +23,14 @@ export const DesktopHeader: FC<IDesktopHeaderProps> = ({ count, openBurgerMenu }
                   {menuLinkList.map(({ icon, to, isCount, label }) => (
                      <li key={icon}>
                         {isCount ? (
-                           <HeaderLink
+                           <LinkNav
                               icon={icon}
                               path={to}
                               label={label}
                               count={count ? count : null}
                            />
                         ) : (
-                           <HeaderLink icon={icon} path={to} label={label} />
+                           <LinkNav icon={icon} path={to} label={label} />
                         )}
                      </li>
                   ))}

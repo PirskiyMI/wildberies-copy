@@ -9,7 +9,3 @@ export interface IBasketItem {
       Delete: ReactNode;
    };
 }
-
-export interface IBasketItemUI extends IBasketItem {
-   isDesktop: boolean;
-}
