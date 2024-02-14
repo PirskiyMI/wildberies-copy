@@ -10,5 +10,5 @@ export const useAddToCart = (product: IProduct) => {
       dispatch(addProductToBasket(product));
    }, [product, addProductToBasket, dispatch]);
 
-   return { addProduct };
+   return addProduct;
 };

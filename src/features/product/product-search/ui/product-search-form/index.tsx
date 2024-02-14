@@ -1,31 +1,22 @@
 import { FC } from 'react';
-import { Link } from 'react-router-dom';
 
-import { Icon, SearchField } from 'src/shared';
+import { SearchField } from 'src/shared';
 
 import styles from './styles.module.scss';
-import { useSearch } from '../../hooks';
+import { useSearchForm } from '../../lib/hooks/use-search-form';
+import { ClearSearchButton } from '../clear-search-button';
+import { SearchButton } from '../search-button';
 
 export const ProductSearch: FC = () => {
-   const { searchValue, setSearchValue, searchHandler, clearHandler } = useSearch();
+   const { searchValue, setSearchValue } = useSearchForm();
 
    return (
       <form onSubmit={(e) => e.preventDefault()} className={styles.form}>
          <SearchField
             value={searchValue}
             setValue={setSearchValue}
-            ClearButton={
-               <button onClick={clearHandler}>
-                  <Icon icon="cross" />
-               </button>
-            }
-            SearchButton={
-               <button onClick={searchHandler}>
-                  <Link to={'/'}>
-                     <Icon icon="loop" />
-                  </Link>
-               </button>
-            }
+            ClearButton={<ClearSearchButton />}
+            SearchButton={<SearchButton value={searchValue} />}
          />
       </form>
    );

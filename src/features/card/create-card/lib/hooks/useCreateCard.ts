@@ -1,13 +1,14 @@
 import { FormEvent, useCallback } from 'react';
-import { userActions } from 'src/entities/user';
+
 import { useAppDispatch } from 'src/shared';
+import { userActions } from 'src/entities/user';
 
-interface IProps {
-   cardInfo: { number: string; date: string; code: string };
-   closePopUp: () => void;
-}
+import { IUseCreateCardArgs } from '../types';
 
-export const useCreateCard = ({ cardInfo: { code, date, number }, closePopUp }: IProps) => {
+export const useCreateCard = ({
+   cardInfo: { code, date, number },
+   closePopUp,
+}: IUseCreateCardArgs) => {
    const { addCard } = userActions;
    const dispatch = useAppDispatch();
 
@@ -28,5 +29,5 @@ export const useCreateCard = ({ cardInfo: { code, date, number }, closePopUp }: 
       [addCard, number, code, date, closePopUp, dispatch],
    );
 
-   return { createCard };
+   return createCard;
 };

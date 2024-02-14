@@ -1,18 +1,13 @@
 import { FC, memo } from 'react';
 
-import { Button, IProduct, useAppSelector } from 'src/shared';
+import { Button } from 'src/shared';
 
 import styles from './styles.module.scss';
-import { useAddToCart } from '../../hooks';
-import { inBasketSelector } from 'src/entities/basket/basket-item';
+import { useAddToCart } from '../../lib/hooks';
+import { IAddProductToCartProps } from '../../lib/types';
 
-type Props = {
-   product: IProduct;
-};
-
-export const AddProductToCart: FC<Props> = memo(({ product }) => {
-   const inBasket = useAppSelector((state) => inBasketSelector(state, product.id));
-   const { addProduct } = useAddToCart(product);
+export const AddProductToCart: FC<IAddProductToCartProps> = memo(({ product, inBasket }) => {
+   const addProduct = useAddToCart(product);
 
    return (
       <Button className={styles.button} disabled={inBasket} onClick={addProduct}>

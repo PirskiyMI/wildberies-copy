@@ -3,15 +3,10 @@ import { FC, memo } from 'react';
 import { CountButton } from 'src/shared';
 
 import styles from './styles.module.scss';
-import { useCount } from '../hooks';
+import { useCount } from '../lib/hooks';
+import { IProductCounterProps } from '../lib/types';
 
-type Props = {
-   id: number;
-   value: number;
-   limit?: number;
-};
-
-export const ProductCounter: FC<Props> = memo((props) => {
+export const ProductCounter: FC<IProductCounterProps> = memo((props) => {
    const { value, limit } = props;
    const { count, decrementHandler, incrementHandler, setHandler, blurHandler } = useCount({
       ...props,

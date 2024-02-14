@@ -24,15 +24,17 @@ const ToggleProductToFavorite = lazy(async () => {
    return { default: ToggleProductToFavorite };
 });
 
+import { inBasketSelector } from 'src/entities/basket/basket-item';
 import {
    AddProductToCart,
    AddProductToCartInModal,
 } from 'src/features/product/add-product-to-cart/ui';
 
-import { usePopUp } from 'src/shared';
+import { useAppSelector, usePopUp } from 'src/shared';
 import { IProductItemProps } from '../lib/types';
 
 export const ProductItem: FC<IProductItemProps> = memo(({ product, isFavoriteList = false }) => {
+   const inBasket = useAppSelector((state) => inBasketSelector(state, product.id));
    const { isPopUpOpen, openPopUp, closePopUp } = usePopUp();
 
    return (
@@ -46,14 +48,14 @@ export const ProductItem: FC<IProductItemProps> = memo(({ product, isFavoriteLis
                   <ToggleProductToFavorite product={product} />
                )
             }
-            cartButton={<AddProductToCart product={product} />}
+            cartButton={<AddProductToCart product={product} inBasket={inBasket} />}
             popupHandler={openPopUp}
          />
          {isPopUpOpen && (
             <PopUp closePopUp={closePopUp}>
                <ProductCardDetails
                   product={product}
-                  cartButton={<AddProductToCartInModal product={product} />}
+                  cartButton={<AddProductToCartInModal product={product} inBasket={inBasket} />}
                   popupHandler={closePopUp}
                   favoriteButton={<span />}
                />

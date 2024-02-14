@@ -3,13 +3,9 @@ import { useState, ChangeEvent, useCallback } from 'react';
 import { useAppDispatch } from 'src/shared';
 import { basketActions } from 'src/entities/basket/basket-item';
 
-type Props = {
-   id: number;
-   value: number;
-   limit?: number;
-};
+import { IProductCounterProps } from './types';
 
-export const useCount = ({ id, value, limit }: Props) => {
+export const useCount = ({ id, value, limit }: IProductCounterProps) => {
    const [count, setCount] = useState(value);
    const { decrementProductCount, incrementProductCount, setProductCount } = basketActions;
    const dispatch = useAppDispatch();
@@ -22,7 +18,6 @@ export const useCount = ({ id, value, limit }: Props) => {
       setCount((prev) => (prev += 1));
       dispatch(incrementProductCount(id));
    }, [id, incrementProductCount, dispatch]);
-
    const setHandler = useCallback(
       (e: ChangeEvent<HTMLInputElement>) => setCount(e.target.valueAsNumber),
       [],

@@ -13,7 +13,7 @@ export const CreateCard: FC<ICreateCardProps> = ({ closePopUp }) => {
       fieldsValue: { cardValue, codeValue, dateValue },
       validate: { isDirty, isEmpty },
    } = useCardForm();
-   const { createCard } = useCreateCard({
+   const createCard = useCreateCard({
       cardInfo: { number: cardValue, date: dateValue, code: codeValue },
       closePopUp,
    });
