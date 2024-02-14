@@ -1,12 +1,9 @@
 import { FC, memo } from 'react';
 
 import styles from './styles.module.scss';
+import { ITotalOrderCountProps } from '../../types';
 
-type Props = {
-   count: number;
-};
-
-export const TotalOrderCount: FC<Props> = memo(({ count }) => {
+export const TotalOrderCount: FC<ITotalOrderCountProps> = memo(({ count }) => {
    return (
       <div className={styles.count}>
          <span>Товары, {count} шт.</span>
