@@ -3,7 +3,7 @@ import { FC, memo } from 'react';
 import { CartItemCard } from 'src/shared';
 
 import styles from './styles.module.scss';
-import { IBasketItem } from '../../types';
+import { IBasketItem } from '../../lib/types';
 
 export const MobileBasketItem: FC<IBasketItem> = memo(
    ({ product: { image, price, title, status }, features: { Checkbox, Counter, Delete } }) => {

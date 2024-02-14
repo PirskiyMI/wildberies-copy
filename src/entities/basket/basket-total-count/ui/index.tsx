@@ -1,20 +1,12 @@
 import { FC, memo } from 'react';
 
-import { getNoun } from 'src/shared';
-
 import styles from './styles.module.scss';
+import { IBasketTotalCount } from '../lib/types';
 
-type Props = {
-   price: number;
-   count: number;
-};
-
-export const BasketTotalCount: FC<Props> = memo(({ count, price }) => {
-   const nounCount = getNoun(count, 'товар', 'товара', 'товаров');
-
+export const BasketTotalCount: FC<IBasketTotalCount> = memo(({ count, price, noun }) => {
    return (
       <label className={styles.label}>
-         {count} {nounCount} ● {price} сом
+         {count} {noun} ● {price} сом
       </label>
    );
 });

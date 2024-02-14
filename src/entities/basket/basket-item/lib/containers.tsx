@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from 'react';
 import { useAppSelector, windowWidthSelector } from 'src/shared';
 
 import { IBasketItem } from './types';
-import { DesktopBasketItem, MobileBasketItem } from './ui';
+import { DesktopBasketItem, MobileBasketItem } from '../ui';
 
 export const BasketItem: FC<IBasketItem> = ({
    product: { price, status, ...product },
