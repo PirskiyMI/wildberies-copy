@@ -1,7 +1,7 @@
 import { FC, useEffect } from 'react';
 
 import { Preloader, ServerError, useAppDispatch, useAppSelector } from 'src/shared';
-import { ProductListContainer } from 'src/widgets/product/product-list';
+import { ProductList } from 'src/widgets/product/product-list';
 
 import styles from './styles.module.scss';
 import { productsListSelector } from 'src/entities/product/model/selectors';
@@ -30,7 +30,7 @@ export const HomePage: FC = () => {
    }
    return (
       <div className={`${styles.home__container} container`}>
-         <ProductListContainer products={products} isFavoriteList={false} />
+         <ProductList products={products} isFavoriteList={false} />
       </div>
    );
 };

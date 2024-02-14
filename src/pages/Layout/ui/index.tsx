@@ -30,7 +30,7 @@ export const Layout: FC = () => {
             <AnimatePresence>{isOpen && <NavMenu />}</AnimatePresence>
             <HeaderContainer />
             <main className={styles.layout__main}>
-               <Suspense>
+               <Suspense fallback={<Preloader />}>
                   <Outlet />
                </Suspense>
             </main>
@@ -48,7 +48,7 @@ export const Layout: FC = () => {
                <Outlet />
             </Suspense>
          </main>
-         <MobileNavMenu />
+         {/* <MobileNavMenu /> */}
          <FooterContainer />
       </>
    );

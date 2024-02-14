@@ -1,25 +1,14 @@
 import { FC, memo } from 'react';
 
-import { FavoriteButton, IProduct, useAppSelector } from 'src/shared';
+import { FavoriteButton } from 'src/shared';
 
 import styles from './styles.module.scss';
-import { useToggle } from '../hooks';
-import { inFavoritesSelector } from 'src/entities/product/model/selectors';
+import { IToggleProductToFavoriteProps } from '../lib/types';
 
-type Props = {
-   product: IProduct;
-};
+export const ToggleProductToFavorite: FC<IToggleProductToFavoriteProps> = memo(
+   ({ isFavorite, clickHandler }) => {
+      const classes = isFavorite ? `${styles.button} ${styles.button_active}` : styles.button;
 
-export const ToggleProductToFavorite: FC<Props> = memo(({ product }) => {
-   const isFavorite = useAppSelector((state) => inFavoritesSelector(state, product.id));
-   const classes = isFavorite ? `${styles.button} ${styles.button_active}` : styles.button;
-   const { toggleProductToFavorite } = useToggle({ product });
-
-   return (
-      <FavoriteButton
-         clickHandler={toggleProductToFavorite}
-         isFill={isFavorite}
-         className={classes}
-      />
-   );
-});
+      return <FavoriteButton clickHandler={clickHandler} isFill={isFavorite} className={classes} />;
+   },
+);

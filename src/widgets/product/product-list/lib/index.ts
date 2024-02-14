@@ -1,6 +1,6 @@
 import { lazy } from 'react';
 
-export const ProductListContainer = lazy(async () => {
+export const ProductList = lazy(async () => {
    const { ProductListContainer } = await import('./container');
    return { default: ProductListContainer };
 });

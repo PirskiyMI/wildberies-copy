@@ -25,12 +25,12 @@ export const BasketItem: FC<IBasketItem> = ({
          {windowWidth >= 1024 ? (
             <DesktopBasketItem
                features={{ ...features }}
-               product={{ ...product, price: productPrice }}
+               product={{ status, ...product, price: productPrice }}
             />
          ) : (
             <MobileBasketItem
                features={{ ...features }}
-               product={{ ...product, price: productPrice }}
+               product={{ status, ...product, price: productPrice }}
             />
          )}
       </>
