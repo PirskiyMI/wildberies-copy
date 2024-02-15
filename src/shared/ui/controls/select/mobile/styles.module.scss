@@ -3,19 +3,23 @@
       width: 285px;
       font-size: var(--text-fs-normal);
       line-height: var(--text-lh-big);
+      line-height: 0.8;
    }
    &__output {
       height: 44px;
       padding: 7px 38px 7px 12px;
+      display: flex;
+      align-items: center;
+      background-color: rgb(var(--color-white));
       border: 1px solid rgba(var(--color-dark), 0.2);
       border-radius: var(--br-normal);
-      background-color: rgb(var(--color-white));
       cursor: pointer;
    }
    &__options {
-      position: fixed;
-      left: 0;
       min-width: 100%;
+      position: fixed;
+      bottom: 0;
+      left: 0;
       padding: 12px;
       color: rgba(var(--color-dark), 0.8);
       background: rgb(var(--color-white));
@@ -24,7 +28,7 @@
       z-index: 10;
    }
    &__option {
-      padding: 8px;
+      padding: 10px;
       text-align: center;
       border-radius: var(--br-normal);
       transition: background-color var(--transition-slow);
@@ -33,32 +37,8 @@
          background-color: rgba(var(--color-dark), 0.06);
       }
    }
-   @media (min-width: 1024px) {
-      &__wrapper {
-         position: relative;
-      }
-      &__options {
-         position: absolute;
-         top: calc(100% + 8px);
-      }
-      &__option {
-         text-align: left;
-         &_active {
-            color: rgb(var(--color-primary));
-         }
-         @media (any-hover: hover) {
-            &:hover {
-               background-color: rgba(var(--color-dark), 0.06);
-            }
-         }
-      }
-   }
-   @media (max-width: 1024px) {
-      &__options {
-         bottom: 0;
-      }
-   }
 }
+
 .backdrop {
    width: 100%;
    height: 100%;

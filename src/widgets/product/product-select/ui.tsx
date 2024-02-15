@@ -1,6 +1,6 @@
 import { Dispatch, FC, SetStateAction } from 'react';
 
-import { IProduct, Select } from 'src/shared';
+import { DesktopSelect, IProduct } from 'src/shared';
 
 import { options } from './constants';
 import { useGetSortedList } from './hooks';
@@ -15,7 +15,7 @@ export const ProductSelect: FC<Props> = ({ products, setProducts, className }) =
    const { setSort } = useGetSortedList({ products, setProducts });
 
    return (
-      <Select
+      <DesktopSelect
          defaultValue="дата по убыванию"
          setSort={setSort}
          options={options}

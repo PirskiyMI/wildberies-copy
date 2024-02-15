@@ -15,7 +15,7 @@ export const Burger: FC<IProps> = ({ clickHandler, className }) => {
 
    return (
       <button className={classes} onClick={clickHandler}>
-         <Icon icon="burger" />
+         <Icon icon="burger" className={styles.burger__icon} />
       </button>
    );
 };
