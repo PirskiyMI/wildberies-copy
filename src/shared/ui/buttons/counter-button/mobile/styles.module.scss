@@ -10,18 +10,6 @@
    span {
       line-height: 0.8;
    }
-   @media (min-width: 1024px) {
-      width: 32px;
-      height: 32px;
-      background-color: rgba(var(--color-dark), 0.08);
-      border-radius: var(--br-normal);
-      transition: background-color var(--transition-slow);
-      @media (any-hover: hover) {
-         &:hover {
-            background-color: rgba(var(--color-dark), 0.14);
-         }
-      }
-   }
    &:disabled {
       background-color: rgba(var(--color-dark), 0.4);
       cursor: default;

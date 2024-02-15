@@ -1,5 +1,7 @@
 import { lazy } from 'react';
 
+export * from './counter-button';
+
 export const Button = lazy(async () => {
    const { Button } = await import('./button');
    return { default: Button };
@@ -7,10 +9,6 @@ export const Button = lazy(async () => {
 export const ButtonArrow = lazy(async () => {
    const { ButtonArrow } = await import('./button-arrow');
    return { default: ButtonArrow };
-});
-export const CounterButton = lazy(async () => {
-   const { CounterButton } = await import('./counter-button');
-   return { default: CounterButton };
 });
 export const DeleteButton = lazy(async () => {
    const { DeleteButton } = await import('./delete-button');

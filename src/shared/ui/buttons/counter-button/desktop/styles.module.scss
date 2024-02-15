@@ -1,0 +1,22 @@
+.button {
+   width: 32px;
+   height: 32px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: var(--title-fs-big);
+   font-weight: var(--fw-bold);
+   background-color: rgba(var(--color-dark), 0.08);
+   border-radius: var(--br-normal);
+   transition: background-color var(--transition-slow);
+   span {
+      line-height: 0.8;
+   }
+   &:hover {
+      background-color: rgba(var(--color-dark), 0.14);
+   }
+   &:disabled {
+      background-color: rgba(var(--color-dark), 0.4);
+      cursor: default;
+   }
+}
