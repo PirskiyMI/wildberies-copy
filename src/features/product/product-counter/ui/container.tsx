@@ -3,8 +3,8 @@ import { useState, ChangeEvent, useCallback, memo } from 'react';
 import { useAppDispatch } from 'src/shared';
 import { basketActions } from 'src/entities/basket/basket-item';
 
-import { IProductCounterContainerProps } from './types';
-import { ProductCounter } from '../ui';
+import { IProductCounterContainerProps } from '../types';
+import { ProductCounter } from './ui';
 
 export const ProductCounterContainer = memo(
    ({ id, value, limit }: IProductCounterContainerProps) => {

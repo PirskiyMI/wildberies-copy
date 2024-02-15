@@ -3,8 +3,8 @@ import { FC, memo, useCallback } from 'react';
 import { useAppDispatch } from 'src/shared';
 import { basketActions } from 'src/entities/basket/basket-item';
 
-import { RemoveProductFromCart } from '../ui';
-import { IRemoveProductFromCardContainer } from './types';
+import { RemoveProductFromCart } from './ui';
+import { IRemoveProductFromCardContainer } from '../types';
 
 export const RemoveProductFromCardContainer: FC<IRemoveProductFromCardContainer> = memo(
    ({ id }) => {

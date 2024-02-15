@@ -3,7 +3,7 @@ import { FC, memo, useCallback } from 'react';
 import { useAppDispatch } from 'src/shared';
 import { basketActions } from 'src/entities/basket/basket-item';
 
-import { ToggleProductToOrder } from '../ui';
+import { ToggleProductToOrder } from './ui';
 import { IToggleProductToOrderContainer } from './types';
 
 export const ToggleProductToOrderContainer: FC<IToggleProductToOrderContainer> = memo(

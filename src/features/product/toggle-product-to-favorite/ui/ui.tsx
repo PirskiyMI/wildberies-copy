@@ -3,7 +3,7 @@ import { FC, memo } from 'react';
 import { FavoriteButton } from 'src/shared';
 
 import styles from './styles.module.scss';
-import { IToggleProductToFavoriteProps } from '../lib/types';
+import { IToggleProductToFavoriteProps } from '../types';
 
 export const ToggleProductToFavorite: FC<IToggleProductToFavoriteProps> = memo(
    ({ isFavorite, clickHandler }) => {

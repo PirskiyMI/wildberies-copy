@@ -3,7 +3,7 @@ import { FC, memo } from 'react';
 import { Button } from 'src/shared';
 
 import styles from './styles.module.scss';
-import { IAddProductToCartProps } from '../../lib/types';
+import { IAddProductToCartProps } from '../../types';
 
 export const AddProductToCart: FC<IAddProductToCartProps> = memo(({ inBasket, clickHandler }) => {
    return (

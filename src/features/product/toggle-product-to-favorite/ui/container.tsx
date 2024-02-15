@@ -4,7 +4,7 @@ import { IProduct, useAppDispatch, useAppSelector } from 'src/shared';
 import { productFavoritesActions } from 'src/entities/product';
 import { inFavoritesSelector } from 'src/entities/product/model/selectors';
 
-import { ToggleProductToFavorite } from '../ui';
+import { ToggleProductToFavorite } from './ui';
 
 export interface IToggleProductToFavoriteContainerProps {
    product: IProduct;

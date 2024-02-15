@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Button } from 'src/shared';
 
 import styles from './styles.module.scss';
-import { IAddProductToCartProps } from '../../lib/types';
+import { IAddProductToCartProps } from '../../types';
 
 export const AddProductToCartInModal: FC<IAddProductToCartProps> = memo(
    ({ inBasket, clickHandler }) => {
