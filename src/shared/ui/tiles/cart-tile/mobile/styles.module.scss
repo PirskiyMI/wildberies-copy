@@ -1,0 +1,17 @@
+.item {
+   &__title {
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: var(--title-fs-small);
+      font-weight: var(--fw-bold);
+      line-height: var(--title-lh-small);
+      cursor: pointer;
+   }
+   &__icon {
+      width: 16px;
+      height: 16px;
+      fill: rgba(var(--color-dark), 0.4);
+   }
+}

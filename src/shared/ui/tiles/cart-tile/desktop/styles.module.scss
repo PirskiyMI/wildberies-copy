@@ -1,0 +1,27 @@
+.item {
+   &__title {
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: var(--title-fs-small);
+      font-weight: var(--fw-bold);
+      line-height: var(--title-lh-small);
+      cursor: pointer;
+      &:hover {
+         color: rgb(var(--color-primary));
+         .item__icon {
+            fill: rgb(var(--color-primary));
+         }
+      }
+   }
+   &__icon {
+      width: 16px;
+      height: 16px;
+      fill: rgba(var(--color-dark), 0.4);
+   }
+   &__title,
+   &__icon {
+      transition: all var(--transition-slow);
+   }
+}

@@ -1,7 +1,7 @@
 import { FC, memo, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { CartTile, phoneFormatter, profilePath, useAppSelector } from 'src/shared';
+import { DesktopCartTile, phoneFormatter, profilePath, useAppSelector } from 'src/shared';
 import { UserInfoShort, userInfoSelector } from 'src/entities/user';
 
 export const CartUserDetails: FC = memo(() => {
@@ -11,7 +11,7 @@ export const CartUserDetails: FC = memo(() => {
    const formattedUserPhone = phoneFormatter(phone);
 
    return (
-      <CartTile
+      <DesktopCartTile
          title="Мои данные"
          content={<UserInfoShort name={name} phone={formattedUserPhone} isMale={isMale} />}
          clickHandle={clickHandler}
