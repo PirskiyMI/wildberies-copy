@@ -8,6 +8,16 @@
       display: flex;
       column-gap: 16px;
    }
+   &__content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+   }
+}
+
+/* 
+Стили для Entities
+.card {
    &__checkbox {
       position: absolute;
       top: 0px;
@@ -29,40 +39,12 @@
          object-fit: contain;
       }
    }
-   &__content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-   }
    &__price {
       font-size: var(--text-fs-big);
       font-weight: var(--fw-bold);
       line-height: var(--text-lh-small);
       letter-spacing: -0.2px;
    }
-   @media (min-width: 1024px) {
-      flex-direction: row;
-      &__checkbox {
-         opacity: 0;
-         transition: opacity var(--transition-slow);
-         &_active {
-            opacity: 1;
-         }
-      }
-      &__image {
-         flex: 0 0 96px;
-         height: 128px;
-      }
-      &__price {
-         width: 200px;
-         text-align: right;
-      }
-      @media (any-hover: hover) {
-         &:hover {
-            .card__checkbox {
-               opacity: 1;
-            }
-         }
-      }
-   }
 }
+
+*/

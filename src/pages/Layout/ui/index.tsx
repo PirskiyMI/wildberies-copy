@@ -13,10 +13,10 @@ const ScrollUp = lazy(async () => {
    const { ScrollUp } = await import('src/features/scroll-up');
    return { default: ScrollUp };
 });
-/* const MobileNavMenu = lazy(async () => {
+const MobileNavMenu = lazy(async () => {
    const { MobileNavMenuContainer } = await import('src/widgets/mobile-nav-menu');
    return { default: MobileNavMenuContainer };
-}); */
+});
 
 export const Layout: FC = () => {
    const { isOpen } = useAppSelector((state) => state.burgerReducer);
@@ -26,30 +26,26 @@ export const Layout: FC = () => {
    if (!windowWidth) return null;
    if (windowWidth >= 1024) {
       return (
-         <>
+         <Suspense fallback={<Preloader />}>
             <AnimatePresence>{isOpen && <NavMenu />}</AnimatePresence>
             <HeaderContainer />
             <main className={styles.layout__main}>
-               <Suspense fallback={<Preloader />}>
-                  <Outlet />
-               </Suspense>
+               <Outlet />
             </main>
             {isButtonVisible && <ScrollUp />}
             <FooterContainer />
-         </>
+         </Suspense>
       );
    }
 
    return (
-      <>
+      <Suspense fallback={<Preloader />}>
          <HeaderContainer />
          <main className={styles.layout__main}>
-            <Suspense fallback={<Preloader />}>
-               <Outlet />
-            </Suspense>
+            <Outlet />
          </main>
-         {/* <MobileNavMenu /> */}
+         <MobileNavMenu />
          <FooterContainer />
-      </>
+      </Suspense>
    );
 };

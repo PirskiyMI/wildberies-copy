@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
 import { BasketItem } from 'src/entities/basket/basket-item';
 import { ToggleProductToOrder } from 'src/features/product/toggle-product-to-order';
@@ -8,7 +8,7 @@ import { RemoveProductFromCart } from 'src/features/product/remove-product-from-
 import styles from './styles.module.scss';
 import { IBasketList } from '../../lib/types';
 
-export const BasketList: FC<IBasketList> = ({ list }) => {
+export const BasketList: FC<IBasketList> = memo(({ list }) => {
    return (
       <div className={styles.list}>
          {list.map((el) => (
@@ -26,4 +26,4 @@ export const BasketList: FC<IBasketList> = ({ list }) => {
          ))}
       </div>
    );
-};
+});

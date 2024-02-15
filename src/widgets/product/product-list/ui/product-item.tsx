@@ -1,12 +1,5 @@
-import { FC, lazy, memo } from 'react';
-import { ProductCard } from 'src/entities/product';
-
-const ProductCardDetails = lazy(async () => {
-   const { ProductCardDetails } = await import(
-      'src/entities/product/containers/product-card-details'
-   );
-   return { default: ProductCardDetails };
-});
+import { FC, memo } from 'react';
+import { ProductCard, ProductCardDetails } from 'src/entities/product';
 
 import { PopUp, useAppSelector, usePopUp } from 'src/shared';
 import { inBasketSelector } from 'src/entities/basket/basket-item';
