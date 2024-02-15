@@ -1,0 +1,39 @@
+.link {
+   &__body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+   &__wrapper {
+      position: relative;
+   }
+   &__icon {
+      width: 24px;
+      height: 24px;
+      fill: rgba(var(--color-dark), 0.5);
+   }
+   &__count {
+      min-width: 16px;
+      min-height: 16px;
+      padding: 2px;
+      position: absolute;
+      top: -12px;
+      right: -18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      line-height: var(--text-lh-small);
+      color: rgb(var(--color-white));
+      background-color: rgb(var(--color-error));
+      border-radius: var(--br-big);
+   }
+   &__label {
+      display: none;
+   }
+   &_active {
+      .link__icon {
+         fill: rgb(var(--color-secondary));
+      }
+   }
+}

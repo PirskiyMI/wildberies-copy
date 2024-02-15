@@ -10,11 +10,11 @@
    &__icon {
       width: 24px;
       height: 24px;
-      fill: rgba(var(--color-dark), 0.5);
+      fill: rgb(var(--color-white));
    }
    &__count {
-      min-width: 16px;
-      min-height: 16px;
+      width: 16px;
+      height: 16px;
       padding: 2px;
       position: absolute;
       top: -12px;
@@ -29,31 +29,15 @@
       border-radius: var(--br-big);
    }
    &__label {
-      display: none;
+      color: rgba(var(--color-white), 0.7);
+      transition: color var(--transition-slow);
    }
    &_active {
       .link__icon {
-         fill: rgb(var(--color-secondary));
-      }
-   }
-   @media (min-width: 1024px) {
-      &__icon {
          fill: rgb(var(--color-white));
       }
-      &__label {
-         display: block;
-         color: rgba(var(--color-white), 0.7);
-         transition: color var(--transition-slow);
-      }
-      &_active {
-         .link__icon {
-            fill: rgb(var(--color-white));
-         }
-      }
    }
-   @media (any-hover: hover) {
-      &__body:hover &__label {
-         color: rgb(var(--color-white));
-      }
+   &__body:hover &__label {
+      color: rgb(var(--color-white));
    }
 }

@@ -1,7 +1,8 @@
 import { FC, memo } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Icon } from '../..';
+
 import styles from './styles.module.scss';
+import { Icon } from '../..';
 
 type Props = {
    path: string;
@@ -10,19 +11,17 @@ type Props = {
    count?: number | null;
 };
 
-export const LinkNav: FC<Props> = memo(({ icon, path, label, count }) => {
+export const LinkNav: FC<Props> = memo(({ icon, path, count }) => {
+   const classes = (isActive: boolean) =>
+      isActive ? `${styles.link} ${styles.link_active}` : `${styles.link}`;
+
    return (
-      <NavLink
-         to={path}
-         className={({ isActive }) =>
-            isActive ? `${styles.link} ${styles.link_active}` : `${styles.link}`
-         }>
+      <NavLink to={path} className={({ isActive }) => classes(isActive)}>
          <div className={styles.link__body}>
             <div className={styles.link__wrapper}>
                <Icon icon={icon} className={styles.link__icon} />
                {count && count > 0 && <div className={styles.link__count}>{count}</div>}
             </div>
-            {label && <span className={styles.link__label}>{label}</span>}
          </div>
       </NavLink>
    );

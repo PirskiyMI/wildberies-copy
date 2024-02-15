@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { LinkNav } from 'src/shared';
+import { MobileLinkNav } from 'src/shared';
 
 import styles from './styles.module.scss';
 import { mobileMenuLinkList } from '../constants';
@@ -13,9 +13,9 @@ export const MobileNavMenu: FC<IMobileNavMenu> = ({ count }) => {
             {mobileMenuLinkList.map(({ icon, to, isCount }) => (
                <li key={icon} className={styles.menu__item}>
                   {isCount ? (
-                     <LinkNav icon={icon} path={to} count={count} />
+                     <MobileLinkNav icon={icon} path={to} count={count} />
                   ) : (
-                     <LinkNav icon={icon} path={to} />
+                     <MobileLinkNav icon={icon} path={to} />
                   )}
                </li>
             ))}
