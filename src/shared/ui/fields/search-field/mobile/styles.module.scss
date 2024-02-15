@@ -1,0 +1,34 @@
+.field {
+   width: 100%;
+   height: 100%;
+   padding: 10px 40px 10px 40px;
+   display: flex;
+   align-items: center;
+   column-gap: 10px;
+   font-size: var(--text-fs-normal);
+   line-height: var(--text-lh-small);
+   background-color: rgb(var(--color-white));
+   border-radius: var(--br-large);
+   &__button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      &_loop {
+         left: 14px;
+         svg {
+            width: 16px;
+            height: 17px;
+         }
+      }
+      &_cross {
+         right: 20px;
+         svg {
+            width: 12px;
+            height: 12px;
+         }
+      }
+      svg {
+         fill: rgba(var(--color-dark), var(--opacity-60));
+      }
+   }
+}

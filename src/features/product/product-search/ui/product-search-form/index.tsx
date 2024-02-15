@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { SearchField } from 'src/shared';
+import { DesktopSearchField } from 'src/shared';
 
 import styles from './styles.module.scss';
 import { useSearchForm } from '../../lib/hooks/use-search-form';
@@ -12,7 +12,7 @@ export const ProductSearch: FC = () => {
 
    return (
       <form onSubmit={(e) => e.preventDefault()} className={styles.form}>
-         <SearchField
+         <DesktopSearchField
             value={searchValue}
             setValue={setSearchValue}
             ClearButton={<ClearSearchButton />}
