@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import styles from './styles.module.scss';
 
-import { Icon } from '../icon';
+import { Icon } from '../../icon';
 
 interface IProps {
    clickHandler: () => void;

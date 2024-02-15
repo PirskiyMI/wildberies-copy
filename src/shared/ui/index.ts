@@ -1,5 +1,6 @@
 import { lazy } from 'react';
 
+export * from './burger';
 export * from './buttons';
 export * from './fields';
 export * from './preloader';
@@ -17,10 +18,6 @@ export const Avatar = lazy(async () => {
 export const PopUp = lazy(async () => {
    const { PopUp } = await import('./pop-up');
    return { default: PopUp };
-});
-export const Burger = lazy(async () => {
-   const { Burger } = await import('./burger');
-   return { default: Burger };
 });
 export const Icon = lazy(async () => {
    const { Icon } = await import('./icon');

@@ -23,10 +23,14 @@ export const basketTotalsSelector = createSelector([basketListSelector], (list) 
 
    return { count, price };
 });
-export const orderTotalsSelector = createSelector([basketListSelector], (list) => {
-   const selectedItems = list.filter((el) => el.status!.isChecked);
 
-   const { count, price } = selectedItems.reduce(
+const basketSelectedListSelector = (state: RootState) => {
+   const selectedItems = state.basketReducer.list.filter((el) => el.status!.isChecked);
+   return selectedItems;
+};
+
+export const orderTotalsSelector = createSelector([basketSelectedListSelector], (list) => {
+   const { count, price } = list.reduce(
       (totals, item) => {
          const { price, status } = item;
 

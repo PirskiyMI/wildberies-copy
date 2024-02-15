@@ -13,32 +13,3 @@
       justify-content: space-between;
    }
 }
-
-/* 
-Стили для Entities
-.card {
-   flex-direction: row;
-   &__checkbox {
-      opacity: 0;
-      transition: opacity var(--transition-slow);
-      &_active {
-         opacity: 1;
-      }
-   }
-   &__image {
-      flex: 0 0 96px;
-      height: 128px;
-   }
-   &__price {
-      width: 200px;
-      text-align: right;
-   }
-   @media (any-hover: hover) {
-      &:hover {
-         .card__checkbox {
-            opacity: 1;
-         }
-      }
-   }
-}
- */

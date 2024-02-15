@@ -8,9 +8,9 @@ export const ButtonArrow = lazy(async () => {
    const { ButtonArrow } = await import('./button-arrow');
    return { default: ButtonArrow };
 });
-export const CountButton = lazy(async () => {
-   const { CountButton } = await import('./count-button');
-   return { default: CountButton };
+export const CounterButton = lazy(async () => {
+   const { CounterButton } = await import('./counter-button');
+   return { default: CounterButton };
 });
 export const DeleteButton = lazy(async () => {
    const { DeleteButton } = await import('./delete-button');

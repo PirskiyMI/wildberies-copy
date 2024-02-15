@@ -1,0 +1,8 @@
+.burger {
+   &__icon {
+      fill: rgb(var(--color-white));
+      &_active {
+         fill: var(--color-primary);
+      }
+   }
+}
