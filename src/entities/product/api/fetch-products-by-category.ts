@@ -14,7 +14,7 @@ export const fetchProductsByCategory = createAsyncThunk<
          .then((res) => res.data)
          .then((data) =>
             data.map((el: IProduct) => {
-               return { ...el, price: el.price * 100 };
+               return { ...el, price: +el.price * 100 };
             }),
          );
       return response;

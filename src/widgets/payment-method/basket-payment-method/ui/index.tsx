@@ -1,7 +1,7 @@
 import { FC, memo } from 'react';
 
 import { CartTile } from 'src/shared';
-import { UserPaymentCardContainer } from 'src/entities/user';
+import { UserPaymentCardShort } from 'src/entities/user';
 
 import { PaymentMethodPopUp } from './pop-up';
 import { useModal } from '../lib/hooks';
@@ -16,7 +16,7 @@ export const BasketPaymentMethod: FC<IBasketPaymentMethod> = memo(({ mainCard, p
             title="Способ оплаты"
             content={
                paymentInfo.length ? (
-                  <UserPaymentCardContainer cardNumber={mainCard!} UIType="short" numberVisible />
+                  <UserPaymentCardShort cardNumber={mainCard!} numberVisible />
                ) : (
                   <button>Выбрать способ оплаты</button>
                )

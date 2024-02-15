@@ -21,6 +21,10 @@ const selectElement = document.getElementById('select')!;
 export const SelectList: FC<SelectListProps> = ({ options, setSort, value, setValue }) => {
    const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
 
+   if (!windowWidth) {
+      return null;
+   }
+
    if (windowWidth >= 1024) {
       return (
          <ul className={styles.select__options}>

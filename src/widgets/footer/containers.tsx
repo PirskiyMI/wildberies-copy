@@ -6,5 +6,9 @@ export const FooterContainer = () => {
    const navList = useFooterNav();
    const windowWidth = useAppSelector(windowWidthSelector);
 
+   if (!windowWidth) {
+      return null;
+   }
+
    return <Footer isDesktop={windowWidth >= 1024} lists={navList} />;
 };

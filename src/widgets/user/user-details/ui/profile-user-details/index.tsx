@@ -23,6 +23,10 @@ export const ProfileUserDetails: FC = memo(() => {
    const { phone } = useAppSelector(userInfoSelector);
    const formattedUserPhone = phoneFormatter(phone);
 
+   if (!windowWidth) {
+      return null;
+   }
+
    return (
       <Section className={styles.details}>
          <UserInfo

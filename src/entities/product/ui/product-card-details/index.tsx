@@ -1,19 +1,20 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 
-import { Icon, Rating } from 'src/shared';
+import { Icon, Rating, priceFormatter } from 'src/shared';
 
 import styles from './styles.module.scss';
 import { IProductCard } from '../../types';
 
 // ToDo {info!.description}
 
-export const ProductCardDetailsUI: FC<IProductCard> = ({
-   product: { image, price, rating, title },
+export const ProductCardDetails: FC<IProductCard> = ({
+   product: { image, price, rating, title, info },
    cartButton,
    popupHandler,
 }) => {
    const { count, rate } = rating;
+   const formattedPrice = priceFormatter(price);
 
    return (
       <div className={styles.card}>
@@ -35,9 +36,9 @@ export const ProductCardDetailsUI: FC<IProductCard> = ({
                </div>
 
                <div className={styles.card__content}>
-                  <div className={styles.card__price}>{price} сом</div>
+                  <div className={styles.card__price}>{formattedPrice} сом</div>
                   <div className={styles.card__description}>
-                     <span>Описание:</span> {/* {info!.description} */}
+                     <span>Описание:</span> {info!.description}
                   </div>
 
                   <div className={styles.card__button}>{cartButton}</div>

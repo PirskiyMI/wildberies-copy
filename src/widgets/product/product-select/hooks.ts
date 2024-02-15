@@ -16,9 +16,9 @@ export const useGetSortedList = ({ products, setProducts }: IProps) => {
       } else if (sort === 'ascending date') {
          setProducts([...products].sort((a, b) => b.id - a.id));
       } else if (sort === 'descending price') {
-         setProducts([...products].sort((a, b) => b.price - a.price));
+         setProducts([...products].sort((a, b) => +b.price - +a.price));
       } else if (sort === 'ascending price') {
-         setProducts([...products].sort((a, b) => a.price - b.price));
+         setProducts([...products].sort((a, b) => +a.price - +b.price));
       }
    };
 

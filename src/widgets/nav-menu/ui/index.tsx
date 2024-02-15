@@ -16,6 +16,10 @@ export const NavMenu: FC = () => {
       dispatch(closeMenu());
    };
 
+   if (!windowWidth) {
+      return null;
+   }
+
    if (windowWidth >= 1024) {
       return (
          <>

@@ -13,10 +13,10 @@ const ScrollUp = lazy(async () => {
    const { ScrollUp } = await import('src/features/scroll-up');
    return { default: ScrollUp };
 });
-const MobileNavMenu = lazy(async () => {
+/* const MobileNavMenu = lazy(async () => {
    const { MobileNavMenuContainer } = await import('src/widgets/mobile-nav-menu');
    return { default: MobileNavMenuContainer };
-});
+}); */
 
 export const Layout: FC = () => {
    const { isOpen } = useAppSelector((state) => state.burgerReducer);

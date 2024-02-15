@@ -1,5 +1,5 @@
 import { combineReducers } from '@reduxjs/toolkit';
-import { burgerReducer, searchReducer, windowWidthReducer } from 'src/shared';
+import { burgerReducer, clientReducer, searchReducer, windowWidthReducer } from 'src/shared';
 import {
    productFavoritesReducer,
    productsListOfCategoryReducer,
@@ -18,5 +18,6 @@ export const rootReducer = combineReducers({
    visitedProductsListReducer,
    searchReducer,
    userReducer,
+   clientReducer,
    windowWidthReducer,
 });

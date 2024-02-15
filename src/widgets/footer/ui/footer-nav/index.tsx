@@ -8,6 +8,10 @@ import { IFooterNav } from '../../types';
 export const FooterNav: FC<IFooterNav> = memo(({ label, links }) => {
    const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
 
+   if (!windowWidth) {
+      return null;
+   }
+
    if (windowWidth >= 1024) {
       return (
          <nav className={styles.nav}>

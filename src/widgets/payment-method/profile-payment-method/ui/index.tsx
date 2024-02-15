@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import { Card, Icon, Section, useAppSelector, usePopUp } from 'src/shared';
-import { UserPaymentCardContainer, userPaymentInfoSelector } from 'src/entities/user';
+import { UserPaymentCard, userPaymentInfoSelector } from 'src/entities/user';
 import { DeleteCard } from 'src/features/card/delete-card';
 import { SetCard } from 'src/features/card/set-main-card';
 
@@ -14,6 +14,10 @@ export const ProfilePaymentMethod: FC = () => {
 
    const { isPopUpOpen, openPopUp, closePopUp } = usePopUp();
 
+   if (!windowWidth) {
+      return null;
+   }
+
    return (
       <>
          <Section className={styles.payments} title="Способы оплаты">
@@ -21,17 +25,15 @@ export const ProfilePaymentMethod: FC = () => {
                {paymentInfo.map((el) => (
                   <li key={el.id} className={styles.payments__item}>
                      {el.isMain ? (
-                        <UserPaymentCardContainer
+                        <UserPaymentCard
                            cardNumber={el.cardNumber}
-                           UIType="full"
                            deleteButton={<DeleteCard id={el.id} />}
                            isDesktop={windowWidth >= 1024}
                            className={styles.payments__card}
                         />
                      ) : (
-                        <UserPaymentCardContainer
+                        <UserPaymentCard
                            cardNumber={el.cardNumber}
-                           UIType="full"
                            deleteButton={<DeleteCard id={el.id} />}
                            switchMainCardButton={<SetCard id={el.id} />}
                            isDesktop={windowWidth >= 1024}

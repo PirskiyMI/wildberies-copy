@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 export interface IUserPaymentCard {
-   card: { number: string; img: { src: string; alt: string } };
+   cardNumber: string;
    deleteButton?: ReactNode;
    switchMainCardButton?: ReactNode;
    isDesktop?: boolean;

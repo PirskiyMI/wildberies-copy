@@ -1,9 +1,10 @@
 import { lazy } from 'react';
 
-export * from './product-card';
-export * from './product-card-details';
-
 export const ProductCard = lazy(async () => {
-   const { ProductCardUI } = await import('./product-card');
-   return { default: ProductCardUI };
+   const { ProductCard } = await import('./product-card');
+   return { default: ProductCard };
+});
+export const ProductCardDetails = lazy(async () => {
+   const { ProductCardDetails } = await import('./product-card-details');
+   return { default: ProductCardDetails };
 });

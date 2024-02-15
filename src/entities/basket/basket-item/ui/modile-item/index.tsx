@@ -1,16 +1,23 @@
-import { FC, memo } from 'react';
+import { FC, memo, useEffect, useState } from 'react';
 
 import { CartItemCard } from 'src/shared';
 
 import styles from './styles.module.scss';
-import { IBasketItem } from '../../lib/types';
+import { IBasketItem } from '../../types';
 
 export const MobileBasketItem: FC<IBasketItem> = memo(
    ({ product: { image, price, title, status }, features: { Checkbox, Counter, Delete } }) => {
+      const [productPrice, setProductPrice] = useState(price);
+      const { count } = status!;
+
+      useEffect(() => {
+         setProductPrice(+price * count);
+      }, [count, price]);
+      
       return (
          <CartItemCard
             image={image}
-            price={+price}
+            price={+productPrice}
             title={title}
             checkbox={Checkbox}
             counter={

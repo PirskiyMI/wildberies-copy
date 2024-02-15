@@ -11,6 +11,10 @@ export const UserGenderSwitcherContainer: FC = memo(() => {
    const { setGender } = userActions;
    const dispatch = useAppDispatch();
 
+   if (!windowWidth) {
+      return null;
+   }
+
    const maleGender = windowWidth! >= 768 ? 'Муж.' : 'Мужской';
    const femaleGender = windowWidth! >= 768 ? 'Жен.' : 'Женский';
 

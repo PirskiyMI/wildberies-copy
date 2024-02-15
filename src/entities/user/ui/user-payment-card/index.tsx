@@ -4,12 +4,10 @@ import { Card } from 'src/shared';
 
 import styles from './styles.module.scss';
 import { IUserPaymentCard } from '../../lib/types/user-payment-card';
+import { usePaymentInfo } from '../../lib/hooks';
 
 export const UserPaymentCard: FC<IUserPaymentCard> = ({
-   card: {
-      number,
-      img: { alt, src },
-   },
+   cardNumber,
    deleteButton,
    switchMainCardButton,
    isDesktop,
@@ -17,6 +15,11 @@ export const UserPaymentCard: FC<IUserPaymentCard> = ({
 }) => {
    let classes = className ? `${className} ${styles.card} ` : styles.card;
    classes = !switchMainCardButton ? `${classes} ${styles.card_main}` : classes;
+
+   const {
+      number,
+      img: { src, alt },
+   } = usePaymentInfo(cardNumber);
 
    if (isDesktop) {
       return (

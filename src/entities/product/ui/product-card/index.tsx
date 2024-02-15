@@ -1,13 +1,16 @@
 import { FC, memo } from 'react';
 
-import { ProductItemCard, Rating } from 'src/shared';
+import { ProductItemCard, Rating, priceFormatter } from 'src/shared';
 
 import styles from './styles.module.scss';
 import { IProductCard } from '../../types';
 
-export const ProductCardUI: FC<IProductCard> = memo(
+export const ProductCard: FC<IProductCard> = memo(
    ({ product: { title, price, rating, image }, cartButton, favoriteButton, popupHandler }) => {
       const { count, rate } = rating;
+
+      const formattedPrice = priceFormatter(price);
+      const formattedCount = priceFormatter(count);
 
       return (
          <ProductItemCard
@@ -24,9 +27,9 @@ export const ProductCardUI: FC<IProductCard> = memo(
             }
             middle={
                <>
-                  <span className={`${styles.card__price}`}>{price} сом</span>
+                  <span className={`${styles.card__price}`}>{formattedPrice} сом</span>
                   <h2 className={styles.card__title}>{title}</h2>
-                  <Rating count={count} rate={rate} />
+                  <Rating count={formattedCount} rate={rate} />
                </>
             }
             bottom={
