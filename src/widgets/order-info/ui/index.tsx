@@ -1,6 +1,6 @@
 import { FC, memo } from 'react';
 
-import { Button, Section, useAppSelector } from 'src/shared';
+import { Button, DesktopSection, useAppSelector } from 'src/shared';
 import { TotalOrderCount, TotalOrderPrice } from 'src/entities/order';
 
 import styles from './styles.module.scss';
@@ -10,7 +10,7 @@ export const OrderInfo: FC = memo(() => {
    const { count, price } = useAppSelector(orderTotalsSelector);
 
    return (
-      <Section className={styles.order}>
+      <DesktopSection className={styles.order}>
          <div className={styles.order__info}>
             <TotalOrderCount count={count} />
             <TotalOrderPrice price={price} />
@@ -21,6 +21,6 @@ export const OrderInfo: FC = memo(() => {
                <span>* Соглашаюсь с правилами пользования торговой площадкой и возврата</span>
             </div>
          </div>
-      </Section>
+      </DesktopSection>
    );
 });

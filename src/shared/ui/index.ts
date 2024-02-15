@@ -10,6 +10,7 @@ export * from './error';
 export * from './tiles';
 export * from './cards';
 export * from './controls';
+export * from './section';
 
 export const Avatar = lazy(async () => {
    const { Avatar } = await import('./avatar');
@@ -34,10 +35,6 @@ export const Price = lazy(async () => {
 export const Rating = lazy(async () => {
    const { Rating } = await import('./rating');
    return { default: Rating };
-});
-export const Section = lazy(async () => {
-   const { Section } = await import('./section');
-   return { default: Section };
 });
 export const Spoiler = lazy(async () => {
    const { Spoiler } = await import('./spoiler');

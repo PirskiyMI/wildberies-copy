@@ -1,6 +1,6 @@
 import { FC, ReactNode, memo } from 'react';
 
-import { Section, Icon } from 'src/shared';
+import { DesktopSection, Icon } from 'src/shared';
 
 import styles from './styles.module.scss';
 
@@ -16,11 +16,11 @@ export const CartTile: FC<Props> = memo(({ title, content, clickHandle, classNam
    const handler = clickHandle ? clickHandle : undefined;
 
    return (
-      <Section className={classes}>
+      <DesktopSection className={classes}>
          <h2 className={styles.item__title} onClick={handler}>
             <span>{title}</span> <Icon icon="pen" className={styles.item__icon} />
          </h2>
          <div>{content}</div>
-      </Section>
+      </DesktopSection>
    );
 });

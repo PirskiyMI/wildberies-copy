@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { Card, Icon, Section, useAppSelector, usePopUp } from 'src/shared';
+import { Card, Icon, DesktopSection, useAppSelector, usePopUp } from 'src/shared';
 import { UserPaymentCard, userPaymentInfoSelector } from 'src/entities/user';
 import { DeleteCard } from 'src/features/card/delete-card';
 import { SetCard } from 'src/features/card/set-main-card';
@@ -20,7 +20,7 @@ export const ProfilePaymentMethod: FC = () => {
 
    return (
       <>
-         <Section className={styles.payments} title="Способы оплаты">
+         <DesktopSection className={styles.payments} title="Способы оплаты">
             <ul className={styles.payments__list}>
                {paymentInfo.map((el) => (
                   <li key={el.id} className={styles.payments__item}>
@@ -51,7 +51,7 @@ export const ProfilePaymentMethod: FC = () => {
                   </Card>
                </li>
             </ul>
-         </Section>
+         </DesktopSection>
 
          {isPopUpOpen && <PaymentMethodPopUp closePopUp={closePopUp} />}
       </>

@@ -8,13 +8,4 @@
       font-weight: var(--fw-bold);
       line-height: var(--title-lh-small);
    }
-   @media (min-width: 1024px) {
-      margin: 0;
-      padding: 16px 24px;
-      border-radius: var(--br-large);
-      box-shadow: 0px 0px 16px rgba(var(--color-dark), 0.06);
-      &__title {
-         margin-bottom: 20px;
-      }
-   }
 }

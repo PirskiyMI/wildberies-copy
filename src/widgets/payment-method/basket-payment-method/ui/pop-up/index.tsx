@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { Button, Icon, PopUp, Section } from 'src/shared';
+import { Button, Icon, PopUp, DesktopSection } from 'src/shared';
 import { CreateCard } from 'src/features/card/create-card';
 import { SetCardInBasket } from 'src/features/card/set-main-card';
 
@@ -15,7 +15,7 @@ export const PaymentMethodPopUp: FC<IBasketPaymentMethodPopUp> = ({
 }) => {
    return (
       <PopUp closePopUp={closePopUp} className={styles.modal}>
-         <Section title={type === 'form' ? 'Привязать карту' : 'Способ оплаты'}>
+         <DesktopSection title={type === 'form' ? 'Привязать карту' : 'Способ оплаты'}>
             {type === 'form' ? (
                <>
                   <CreateCard closePopUp={closePopUp} />
@@ -38,7 +38,7 @@ export const PaymentMethodPopUp: FC<IBasketPaymentMethodPopUp> = ({
                   </li>
                </ul>
             )}
-         </Section>
+         </DesktopSection>
       </PopUp>
    );
 };

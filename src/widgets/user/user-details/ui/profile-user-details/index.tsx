@@ -1,6 +1,6 @@
 import { FC, memo } from 'react';
 
-import { useAppSelector, Icon, PopUp, Section, usePopUp, phoneFormatter } from 'src/shared';
+import { useAppSelector, Icon, PopUp, DesktopSection, usePopUp, phoneFormatter } from 'src/shared';
 import {
    UserGender,
    UserInfo,
@@ -28,7 +28,7 @@ export const ProfileUserDetails: FC = memo(() => {
    }
 
    return (
-      <Section className={styles.details}>
+      <DesktopSection className={styles.details}>
          <UserInfo
             name={userName}
             nameFirstLatter={userNameFirstLatter}
@@ -52,6 +52,6 @@ export const ProfileUserDetails: FC = memo(() => {
                </div>
             </PopUp>
          )}
-      </Section>
+      </DesktopSection>
    );
 });
