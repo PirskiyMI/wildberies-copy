@@ -1,0 +1,32 @@
+.modal {
+   width: 420px;
+   &__item {
+      padding: 11px 16px;
+      cursor: pointer;
+      border: 1px solid rgba(var(--color-primary), 0.4);
+      border-radius: var(--br-normal);
+      transition: border-color var(--transition-slow);
+      &:hover {
+         border-color: var(--color-primary);
+      }
+      &_main {
+         border-color: var(--color-primary);
+      }
+      &:not(:last-child) {
+         margin-bottom: 10px;
+      }
+   }
+   &__switcher {
+      display: flex;
+      align-items: center;
+      column-gap: 6px;
+   }
+   &__button {
+      margin-top: 10px;
+      height: 44px;
+   }
+   &__icon {
+      width: 28px;
+      height: 28px;
+   }
+}

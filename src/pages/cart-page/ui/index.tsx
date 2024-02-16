@@ -5,7 +5,7 @@ import { basketListSelector } from 'src/entities/basket/basket-item';
 import { BasketContainer } from 'src/widgets/basket';
 import { DesktopOrderInfo } from 'src/widgets/order-info';
 import { CartUserDetails } from 'src/widgets/user/user-details';
-import { BasketPaymentMethodContainer } from 'src/widgets/payment-method/basket-payment-method';
+import { DesktopBasketPaymentMethod } from 'src/widgets/payment-method/basket-payment-method';
 
 import styles from './styles.module.scss';
 import { CartIsEmpty } from './cart-is-empty';
@@ -21,7 +21,7 @@ export const CartPage: FC = () => {
                   <div className={styles.cart__row_big}>
                      <BasketContainer />
                   </div>
-                  <BasketPaymentMethodContainer />
+                  <DesktopBasketPaymentMethod />
                   <CartUserDetails />
                </div>
                <div className={styles.cart__column}>

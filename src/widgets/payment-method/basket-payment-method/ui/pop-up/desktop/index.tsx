@@ -5,7 +5,7 @@ import { CreateCard } from 'src/features/card/create-card';
 import { SetCardInBasket } from 'src/features/card/set-main-card';
 
 import styles from './styles.module.scss';
-import { IBasketPaymentMethodPopUp } from '../../lib/types/basket-payment-method';
+import { IBasketPaymentMethodPopUp } from '../../../lib/types/basket-payment-method';
 
 export const PaymentMethodPopUp: FC<IBasketPaymentMethodPopUp> = ({
    type,

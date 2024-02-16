@@ -6,7 +6,7 @@ import { DeleteCard } from 'src/features/card/delete-card';
 import { SetCard } from 'src/features/card/set-main-card';
 
 import styles from './styles.module.scss';
-import { PaymentMethodPopUp } from './pop-up';
+import { DesktopPaymentMethodPopUp } from '../pop-up';
 
 export const ProfilePaymentMethod: FC = () => {
    const paymentInfo = useAppSelector(userPaymentInfoSelector);
@@ -53,7 +53,7 @@ export const ProfilePaymentMethod: FC = () => {
             </ul>
          </DesktopSection>
 
-         {isPopUpOpen && <PaymentMethodPopUp closePopUp={closePopUp} />}
+         {isPopUpOpen && <DesktopPaymentMethodPopUp closePopUp={closePopUp} />}
       </>
    );
 };

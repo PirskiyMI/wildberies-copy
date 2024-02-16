@@ -4,18 +4,9 @@
       padding: 11px 16px;
       border: 1px solid rgba(var(--color-primary), 0.4);
       border-radius: var(--br-normal);
-      @media (any-hover: hover) {
-         &:hover {
-            border-color: var(--color-primary);
-         }
-      }
       &_main {
          border-color: var(--color-primary);
       }
-      @media (min-width: 1024px) {
-         transition: border-color var(--transition-slow);
-      }
-      cursor: pointer;
       &:not(:last-child) {
          margin-bottom: 10px;
       }

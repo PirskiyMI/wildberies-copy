@@ -3,9 +3,9 @@ import { FC, memo } from 'react';
 import { DesktopCartTile } from 'src/shared';
 import { UserPaymentCardShort } from 'src/entities/user';
 
-import { PaymentMethodPopUp } from './pop-up';
-import { useModal } from '../lib/hooks';
-import { IBasketPaymentMethod } from '../lib/types/payment-method-pop-up';
+import { MobilePaymentMethodPopUp } from '../pop-up';
+import { useModal } from '../../lib/hooks';
+import { IBasketPaymentMethod } from '../../lib/types/payment-method-pop-up';
 
 export const BasketPaymentMethod: FC<IBasketPaymentMethod> = memo(({ mainCard, paymentInfo }) => {
    const { closePopUp, modalIsOpen, openModal, toggleType, modalType } = useModal();
@@ -24,7 +24,7 @@ export const BasketPaymentMethod: FC<IBasketPaymentMethod> = memo(({ mainCard, p
             clickHandle={openModal}
          />
          {modalIsOpen ? (
-            <PaymentMethodPopUp
+            <MobilePaymentMethodPopUp
                closePopUp={closePopUp}
                cardList={paymentInfo}
                type={modalType}
