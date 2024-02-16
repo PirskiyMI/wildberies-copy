@@ -1,0 +1,22 @@
+.button {
+   width: 20px;
+   height: 20px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: var(--br-circle);
+   background-color: rgb(var(--color-white));
+   transition: background-color var(--transition-slow);
+   &__icon {
+      width: 8px;
+      height: 8px;
+      fill: rgba(var(--color-dark), 0.5);
+      transition: fill var(--transition-slow);
+   }
+   &:hover {
+      background-color: rgb(var(--color-primary));
+      .button__icon {
+         fill: rgb(var(--color-white));
+      }
+   }
+}
