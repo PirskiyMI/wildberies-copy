@@ -3,7 +3,7 @@ import { FC, memo } from 'react';
 import { useAppSelector, Icon, PopUp, DesktopSection, usePopUp, phoneFormatter } from 'src/shared';
 import {
    UserGender,
-   UserInfo,
+   DesktopUserInfo,
    UserPhone,
    userInfoSelector,
    userNameSelector,
@@ -29,7 +29,7 @@ export const ProfileUserDetails: FC = memo(() => {
 
    return (
       <DesktopSection className={styles.details}>
-         <UserInfo
+         <DesktopUserInfo
             name={userName}
             nameFirstLatter={userNameFirstLatter}
             changeNameButton={
@@ -37,7 +37,6 @@ export const ProfileUserDetails: FC = memo(() => {
                   <Icon icon="pen" className={styles.details__icon} />
                </button>
             }
-            mobile={windowWidth < 1024}
          />
          <div className={styles.details__bottom}>
             <UserPhone phone={formattedUserPhone} className={styles.details__item} withTitle />

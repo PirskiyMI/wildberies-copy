@@ -1,0 +1,15 @@
+.user {
+   display: flex;
+   align-items: center;
+   column-gap: 20px;
+   &__name {
+      display: flex;
+      column-gap: 8px;
+      font-size: var(--title-fs-normal);
+      font-weight: var(--fw-bold);
+      line-height: var(--title-lh-normal);
+      &:not(:last-child) {
+         margin-bottom: 4px;
+      }
+   }
+}

@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-import { Card, Icon, DesktopSection, useAppSelector, usePopUp } from 'src/shared';
-import { UserPaymentCard, userPaymentInfoSelector } from 'src/entities/user';
+import { Card, Icon, MobileSection, useAppSelector, usePopUp } from 'src/shared';
+import { MobileUserPaymentCard, userPaymentInfoSelector } from 'src/entities/user';
 import { DeleteCard } from 'src/features/card/delete-card';
 import { SetCard } from 'src/features/card/set-main-card';
 
@@ -10,33 +10,26 @@ import { MobilePaymentMethodPopUp } from '../pop-up';
 
 export const ProfilePaymentMethod: FC = () => {
    const paymentInfo = useAppSelector(userPaymentInfoSelector);
-   const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
 
    const { isPopUpOpen, openPopUp, closePopUp } = usePopUp();
 
-   if (!windowWidth) {
-      return null;
-   }
-
    return (
       <>
-         <DesktopSection className={styles.payments} title="Способы оплаты">
+         <MobileSection className={styles.payments} title="Способы оплаты">
             <ul className={styles.payments__list}>
                {paymentInfo.map((el) => (
                   <li key={el.id} className={styles.payments__item}>
                      {el.isMain ? (
-                        <UserPaymentCard
+                        <MobileUserPaymentCard
                            cardNumber={el.cardNumber}
                            deleteButton={<DeleteCard id={el.id} />}
-                           isDesktop={windowWidth >= 1024}
                            className={styles.payments__card}
                         />
                      ) : (
-                        <UserPaymentCard
+                        <MobileUserPaymentCard
                            cardNumber={el.cardNumber}
                            deleteButton={<DeleteCard id={el.id} />}
                            switchMainCardButton={<SetCard id={el.id} />}
-                           isDesktop={windowWidth >= 1024}
                            className={styles.payments__card}
                         />
                      )}
@@ -51,7 +44,7 @@ export const ProfilePaymentMethod: FC = () => {
                   </Card>
                </li>
             </ul>
-         </DesktopSection>
+         </MobileSection>
 
          {isPopUpOpen && <MobilePaymentMethodPopUp closePopUp={closePopUp} />}
       </>

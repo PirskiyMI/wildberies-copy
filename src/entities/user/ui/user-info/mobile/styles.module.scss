@@ -5,26 +5,20 @@
    &__name {
       display: flex;
       column-gap: 8px;
-      font-size: var(--title-fs-normal);
+      font-size: var(--text-fs-normal);
       font-weight: var(--fw-bold);
-      line-height: var(--title-lh-normal);
+      line-height: var(--text-lh-normal);
       &:not(:last-child) {
          margin-bottom: 4px;
       }
    }
-   &_mobile {
-      .user__image {
-         height: 60px;
-         width: 60px;
-      }
-      .user__name {
-         font-size: var(--text-fs-normal);
-         line-height: var(--text-lh-normal);
-      }
-/*       .user__label {
+   &__image {
+      height: 60px;
+      width: 60px;
+   }
+   /*       .user__label {
          font-size: var(--text-fs-small);
          line-height: var(--text-lh-small);
          color: rgba(var(--color-dark), 0.5);
       } */
-   }
 }
