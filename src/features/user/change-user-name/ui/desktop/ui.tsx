@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { Button, Field } from 'src/shared';
 
 import styles from './styles.module.scss';
-import { IChangeUserName } from '../lib/types';
+import { IChangeUserName } from '../../types';
 
 export const ChangeUserName: FC<IChangeUserName> = ({ input, submitHandler }) => {
    return (

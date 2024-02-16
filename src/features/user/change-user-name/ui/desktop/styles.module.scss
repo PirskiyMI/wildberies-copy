@@ -1,0 +1,9 @@
+.form {
+   width: 340px;
+   display: flex;
+   flex-direction: column;
+   row-gap: 32px;
+   &__button {
+      padding: 8px 24px 10px;
+   }
+}

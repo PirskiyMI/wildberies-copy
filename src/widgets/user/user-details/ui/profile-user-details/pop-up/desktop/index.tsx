@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import { PopUp } from 'src/shared';
-import { ChangeUserName } from 'src/features/user/change-user-name';
+import { DesktopChangeUserName } from 'src/features/user/change-user-name';
 
 import styles from './styles.module.scss';
 
@@ -14,7 +14,7 @@ export const ProfileUserDetailsPopUp: FC<Props> = ({ closePopUp }) => {
       <PopUp closePopUp={closePopUp} className={styles.modal}>
          <div className={styles.modal__body}>
             <h3 className={styles.modal__title}>Изменить имя</h3>
-            <ChangeUserName closePopUp={closePopUp} />
+            <DesktopChangeUserName closePopUp={closePopUp} />
          </div>
       </PopUp>
    );

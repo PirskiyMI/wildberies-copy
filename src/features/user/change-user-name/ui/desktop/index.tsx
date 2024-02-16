@@ -3,8 +3,8 @@ import { FC, memo, FormEvent, useCallback } from 'react';
 import { useAppDispatch, useAppSelector, useInput } from 'src/shared';
 import { userActions } from 'src/entities/user';
 
-import { IChangeUserNameContainer } from './types';
-import { ChangeUserName } from '../ui';
+import { IChangeUserNameContainer } from '../../types';
+import { ChangeUserName } from './ui';
 
 export const ChangeUserNameContainer: FC<IChangeUserNameContainer> = memo(({ closePopUp }) => {
    const { name } = useAppSelector((state) => state.userReducer);
