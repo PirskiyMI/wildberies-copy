@@ -1,42 +1,14 @@
-import { FC } from 'react';
+import { toggleMenu, useAppDispatch, useAppSelector } from 'src/shared';
+/* import { basketItemsTotalSelector } from 'src/entities/basket/basket-item'; */
+import { basketItemsTotalSelector } from 'src/entities/basket/basket-item';
 
-import { DesktopBurger, DesktopLinkNav, Logo } from 'src/shared';
-import { ProductSearch } from 'src/features/product/product-search';
+import { Header } from './ui';
 
-import styles from './styles.module.scss';
-import { menuLinkList } from '../../constants';
-import { IDesktopHeaderProps } from '../../lib/types';
+export const HeaderContainer = () => {
+   const count = useAppSelector(basketItemsTotalSelector);
+   const dispatch = useAppDispatch();
 
-export const DesktopHeader: FC<IDesktopHeaderProps> = ({ count, openBurgerMenu }) => {
-   return (
-      <header className={styles.header}>
-         <div className={`${styles.header__container} container`}>
-            <div className={styles.header__label}>
-               <DesktopBurger clickHandler={openBurgerMenu} />
-               <Logo />
-            </div>
+   const openBurgerMenu = () => dispatch(toggleMenu());
 
-            <ProductSearch />
-
-            <nav>
-               <ul className={styles.header__list}>
-                  {menuLinkList.map(({ icon, to, isCount, label }) => (
-                     <li key={icon}>
-                        {isCount ? (
-                           <DesktopLinkNav
-                              icon={icon}
-                              path={to}
-                              label={label}
-                              count={count ? count : null}
-                           />
-                        ) : (
-                           <DesktopLinkNav icon={icon} path={to} label={label} />
-                        )}
-                     </li>
-                  ))}
-               </ul>
-            </nav>
-         </div>
-      </header>
-   );
+   return <Header count={count} openBurgerMenu={openBurgerMenu} />;
 };

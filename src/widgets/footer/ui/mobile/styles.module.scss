@@ -1,0 +1,15 @@
+.footer {
+   flex: 0 0 none;
+   background-color: rgb(var(--color-primary));
+   &__container {
+      padding: 0 10px;
+   }
+   & &__column {
+      padding: 12px 0;
+      color: rgb(var(--color-white));
+      border-bottom: 1px solid rgba(var(--color-white), 0.2);
+      &:first-child {
+         border-top: 1px solid rgba(var(--color-white), 0.2);
+      }
+   }
+}

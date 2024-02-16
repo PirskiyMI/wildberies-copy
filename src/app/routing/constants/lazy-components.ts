@@ -12,10 +12,6 @@ export const NavigationPage = lazy(async () => {
    const { NavigationPage } = await import('src/pages/navigation-page');
    return { default: NavigationPage };
 });
-export const ProfilePage = lazy(async () => {
-   const { ProfilePage } = await import('src/pages/profile-page');
-   return { default: ProfilePage };
-});
 export const FavoritesPage = lazy(async () => {
    const { FavoritesPage } = await import('src/pages/favorites-page');
    return { default: FavoritesPage };

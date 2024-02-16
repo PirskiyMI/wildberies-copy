@@ -3,9 +3,9 @@ import { FC } from 'react';
 import { DesktopSearchField } from 'src/shared';
 
 import styles from './styles.module.scss';
-import { useSearchForm } from '../../lib/hooks/use-search-form';
-import { ClearSearchButton } from '../clear-search-button';
-import { SearchButton } from '../search-button';
+import { useSearchForm } from '../../../lib/hooks/use-search-form';
+import { ClearSearchButton } from '../../clear-search-button';
+import { SearchButton } from '../../search-button';
 
 export const ProductSearch: FC = () => {
    const { searchValue, setSearchValue } = useSearchForm();

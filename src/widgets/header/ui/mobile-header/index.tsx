@@ -1,16 +1,16 @@
 import { FC } from 'react';
 
 import { Logo } from 'src/shared';
-import { ProductSearch } from 'src/features/product/product-search';
+import { MobileProductSearch } from 'src/features/product/product-search';
 
 import styles from './styles.module.scss';
 
-export const MobileHeader: FC = () => {
+export const Header: FC = () => {
    return (
       <div className={styles.header}>
          <div className={`${styles.header__container} container`}>
             <Logo />
-            <ProductSearch />
+            <MobileProductSearch />
          </div>
       </div>
    );
