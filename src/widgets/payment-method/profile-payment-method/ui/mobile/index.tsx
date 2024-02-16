@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { Card, Icon, MobileSection, useAppSelector, usePopUp } from 'src/shared';
 import { MobileUserPaymentCard, userPaymentInfoSelector } from 'src/entities/user';
-import { DeleteCard } from 'src/features/card/delete-card';
+import { MobileDeleteCard } from 'src/features/card/delete-card';
 import { SetCard } from 'src/features/card/set-main-card';
 
 import styles from './styles.module.scss';
@@ -21,13 +21,13 @@ export const ProfilePaymentMethod: FC = () => {
                      {el.isMain ? (
                         <MobileUserPaymentCard
                            cardNumber={el.cardNumber}
-                           deleteButton={<DeleteCard id={el.id} />}
+                           deleteButton={<MobileDeleteCard id={el.id} />}
                            className={styles.payments__card}
                         />
                      ) : (
                         <MobileUserPaymentCard
                            cardNumber={el.cardNumber}
-                           deleteButton={<DeleteCard id={el.id} />}
+                           deleteButton={<MobileDeleteCard id={el.id} />}
                            switchMainCardButton={<SetCard id={el.id} />}
                            className={styles.payments__card}
                         />
