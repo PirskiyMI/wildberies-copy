@@ -4,10 +4,6 @@ export const HomePage = lazy(async () => {
    const { HomePage } = await import('src/pages/home-page');
    return { default: HomePage };
 });
-export const CartPage = lazy(async () => {
-   const { CartPage } = await import('src/pages/cart-page');
-   return { default: CartPage };
-});
 export const CategoryPage = lazy(async () => {
    const { CategoryPage } = await import('src/pages/category-page');
    return { default: CategoryPage };

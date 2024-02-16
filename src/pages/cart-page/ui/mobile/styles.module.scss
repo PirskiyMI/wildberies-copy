@@ -1,0 +1,15 @@
+.cart {
+   &__wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+   }
+   &__column {
+      &_big {
+         display: grid;
+         grid-template-columns: repeat(1, 1fr);
+         gap: 8px;
+         grid-column: span 3;
+      }
+   }
+}

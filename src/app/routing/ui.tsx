@@ -4,11 +4,12 @@ import { Route, Routes } from 'react-router-dom';
 import { useAppSelector } from 'src/shared';
 import { Layout } from 'src/pages/layout';
 
-import { routes } from './constants/routes';
+import { useRoutes } from './constants/routes';
 
 export const Routing = () => {
    const { isOpen: isBurgerOpen } = useAppSelector((state) => state.burgerReducer);
    const isHidden = isBurgerOpen;
+   const routes = useRoutes();
 
    useEffect(() => {
       isHidden ? document.body.classList.add('hidden') : document.body.classList.remove('hidden');
