@@ -10,7 +10,6 @@ import { MobilePaymentMethodPopUp } from '../pop-up';
 
 export const ProfilePaymentMethod: FC = () => {
    const paymentInfo = useAppSelector(userPaymentInfoSelector);
-
    const { isPopUpOpen, openPopUp, closePopUp } = usePopUp();
 
    return (

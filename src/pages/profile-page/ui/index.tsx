@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-import { ProfileUserDetails } from 'src/widgets/user/user-details';
-import { UserMetrics } from 'src/widgets/user/user-metrics';
+import { DesktopProfileUserDetails } from 'src/widgets/user/user-details';
+import { DesktopUserMetrics } from 'src/widgets/user/user-metrics';
 import { DesktopProfilePaymentMethod } from 'src/widgets/payment-method/profile-payment-method';
 
 import styles from './styles.module.scss';
@@ -10,8 +10,8 @@ export const ProfilePage: FC = () => {
    return (
       <div className={styles.info}>
          <div className={`${styles.info__container} container`}>
-            <ProfileUserDetails />
-            <UserMetrics />
+            <DesktopProfileUserDetails />
+            <DesktopUserMetrics />
             <DesktopProfilePaymentMethod />
          </div>
       </div>

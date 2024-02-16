@@ -1,0 +1,21 @@
+.details {
+   row-gap: 16px;
+   & {
+      display: flex;
+      flex-direction: column;
+   }
+   &__bottom {
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 16px;
+      column-gap: 20px;
+   }
+   &__icon {
+      width: 16px;
+      height: 16px;
+      fill: rgba(var(--color-dark), 0.4);
+   }
+   &__item {
+      flex: 0 0 30%;
+   }
+}

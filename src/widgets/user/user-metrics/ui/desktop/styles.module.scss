@@ -1,0 +1,31 @@
+.metrics {
+   padding: 20px 16px;
+   &__list {
+      display: flex;
+      flex-direction: row;
+      column-gap: 8px;
+   }
+   &__item,
+   &__title {
+      font-size: var(--title-fs-small);
+      line-height: var(--title-lh-small);
+   }
+   &__item {
+      padding: 14px;
+      flex: 0 0 25%;
+      background-color: rgba(var(--color-dark), 0.04);
+      border-radius: var(--br-normal);
+   }
+   &__value {
+      font-size: var(--text-fs-big);
+      font-weight: var(--fw-bold);
+      line-height: var(--text-lh-small);
+   }
+   &__label,
+   &__title {
+      color: rgba(var(--color-dark), 0.5);
+   }
+   &__title {
+      margin-top: 16px;
+   }
+}

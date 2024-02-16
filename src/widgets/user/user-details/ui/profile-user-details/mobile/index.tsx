@@ -1,20 +1,19 @@
 import { FC, memo } from 'react';
 
-import { useAppSelector, Icon, PopUp, DesktopSection, usePopUp, phoneFormatter } from 'src/shared';
+import { useAppSelector, Icon, MobileSection, usePopUp, phoneFormatter } from 'src/shared';
 import {
    UserGender,
-   DesktopUserInfo,
+   MobileUserInfo,
    UserPhone,
    userInfoSelector,
    userNameSelector,
 } from 'src/entities/user';
-import { ChangeUserName } from 'src/features/user/change-user-name';
 import { UserGenderSwitcher } from 'src/features/user/user-gender-switcher';
 
 import styles from './styles.module.scss';
+import { MobileProfileUserDetailsPopUp } from '../pop-up';
 
 export const ProfileUserDetails: FC = memo(() => {
-   const { windowWidth } = useAppSelector((state) => state.windowWidthReducer);
    const { isPopUpOpen, openPopUp, closePopUp } = usePopUp();
 
    const userName = useAppSelector(userNameSelector);
@@ -23,13 +22,9 @@ export const ProfileUserDetails: FC = memo(() => {
    const { phone } = useAppSelector(userInfoSelector);
    const formattedUserPhone = phoneFormatter(phone);
 
-   if (!windowWidth) {
-      return null;
-   }
-
    return (
-      <DesktopSection className={styles.details}>
-         <DesktopUserInfo
+      <MobileSection className={styles.details}>
+         <MobileUserInfo
             name={userName}
             nameFirstLatter={userNameFirstLatter}
             changeNameButton={
@@ -43,14 +38,7 @@ export const ProfileUserDetails: FC = memo(() => {
             <UserGender className={styles.details__item} switcher={<UserGenderSwitcher />} />
          </div>
 
-         {isPopUpOpen && (
-            <PopUp closePopUp={closePopUp} className={styles.modal}>
-               <div className={styles.modal__body}>
-                  <h3 className={styles.modal__title}>Изменить имя</h3>
-                  <ChangeUserName closePopUp={closePopUp} />
-               </div>
-            </PopUp>
-         )}
-      </DesktopSection>
+         {isPopUpOpen && <MobileProfileUserDetailsPopUp closePopUp={closePopUp} />}
+      </MobileSection>
    );
 });
