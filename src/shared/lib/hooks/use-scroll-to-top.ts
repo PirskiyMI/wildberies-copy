@@ -1,12 +1,20 @@
-import { useEffect, useState } from "react";
-import { setWindowWidth, useAppDispatch } from "src/shared";
+import { useEffect, useState } from 'react';
+import { clientActions, useAppDispatch, useAppSelector } from 'src/shared';
+import { clientTypeSelector } from 'src/shared/model/selectors/client-selectors';
 
 export const useScrollToTop = () => {
    const [isButtonVisible, setIsButtonVisible] = useState(false);
+   const { setClient } = clientActions;
+   const clientType = useAppSelector(clientTypeSelector);
    const dispatch = useAppDispatch();
 
    const resizeHandler = () => {
-      dispatch(setWindowWidth(window.innerWidth));
+      if (window.innerWidth >= 1024 && clientType !== 'desktop') {
+         dispatch(setClient('desktop'));
+      } else if (window.innerWidth < 1024 && clientType !== 'mobile') {
+         dispatch(setClient('mobile'));
+      }
+      /* dispatch(setWindowWidth(window.innerWidth)); */
    };
    const scrollHandler = () => {
       if (window.scrollY > window.innerHeight && !isButtonVisible) {
@@ -29,6 +37,6 @@ export const useScrollToTop = () => {
          window.removeEventListener('scroll', scrollHandler);
       };
    }, [isButtonVisible]);
-   
-   return {isButtonVisible}
+
+   return { isButtonVisible };
 };

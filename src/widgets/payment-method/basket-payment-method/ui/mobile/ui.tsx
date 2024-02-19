@@ -1,6 +1,6 @@
 import { FC, memo } from 'react';
 
-import { DesktopCartTile } from 'src/shared';
+import { MobileCartTile } from 'src/shared';
 import { UserPaymentCardShort } from 'src/entities/user';
 
 import { MobilePaymentMethodPopUp } from '../pop-up';
@@ -12,7 +12,7 @@ export const BasketPaymentMethod: FC<IBasketPaymentMethod> = memo(({ mainCard, p
 
    return (
       <div>
-         <DesktopCartTile
+         <MobileCartTile
             title="Способ оплаты"
             content={
                paymentInfo.length ? (

@@ -2,25 +2,34 @@ import { FC, Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
-import { Preloader, useAppSelector, useScrollToTop, windowWidthSelector } from 'src/shared';
+import { Preloader, useAppSelector, useScrollToTop } from 'src/shared';
 import { ScrollUp } from 'src/features/scroll-up';
 import { DesktopHeader, MobileHeader } from 'src/widgets/header';
 import { DesktopFooter, MobileFooter } from 'src/widgets/footer';
-import { NavMenu } from 'src/widgets/nav-menu';
+import { DesktopNavMenu } from 'src/widgets/nav-menu';
 import { MobileNavMenu } from 'src/widgets/mobile-nav-menu/ui';
 
 import styles from './styles.module.scss';
+import { clientTypeSelector } from 'src/shared/model/selectors/client-selectors';
 
 export const Layout: FC = () => {
    const { isOpen } = useAppSelector((state) => state.burgerReducer);
-   const windowWidth = useAppSelector(windowWidthSelector);
+   const clientType = useAppSelector(clientTypeSelector);
    const { isButtonVisible } = useScrollToTop();
 
    return (
       <>
-         <AnimatePresence>{isOpen && <NavMenu />}</AnimatePresence>
+         {clientType === 'desktop' && (
+            <AnimatePresence>{isOpen && <DesktopNavMenu />}</AnimatePresence>
+         )}
          <Suspense fallback>
-            {windowWidth && windowWidth >= 1024 ? <DesktopHeader /> : <MobileHeader />}
+            {clientType !== 'unknown' ? (
+               clientType === 'desktop' ? (
+                  <DesktopHeader />
+               ) : (
+                  <MobileHeader />
+               )
+            ) : null}
          </Suspense>
          <main className={styles.layout__main}>
             <Suspense fallback={<Preloader />}>
@@ -28,9 +37,17 @@ export const Layout: FC = () => {
             </Suspense>
          </main>
          {isButtonVisible && <ScrollUp />}
-         <Suspense>{windowWidth && windowWidth < 1024 && <MobileNavMenu count={1} />}</Suspense>
+         <Suspense>
+            {clientType !== 'unknown' && clientType === 'mobile' && <MobileNavMenu count={1} />}
+         </Suspense>
          <Suspense fallback>
-            {windowWidth && windowWidth >= 1024 ? <DesktopFooter /> : <MobileFooter />}
+            {clientType !== 'unknown' ? (
+               clientType === 'desktop' ? (
+                  <DesktopFooter />
+               ) : (
+                  <MobileFooter />
+               )
+            ) : null}
          </Suspense>
       </>
    );

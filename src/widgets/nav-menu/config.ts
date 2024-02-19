@@ -1,4 +1,4 @@
-import { IMenuList } from './lib';
+import { IMenuList } from './types/menu-list-types';
 
 export const menuList: IMenuList[] = [
    {
