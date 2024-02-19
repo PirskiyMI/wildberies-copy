@@ -1,14 +1,10 @@
 import { FC } from 'react';
 import styles from './styles.module.scss';
 import { Icon } from '../..';
+import { ICheckboxProps } from 'src/shared/lib/types/types-ui/checkbox-types';
 
-type Props = {
-   Change: () => void;
-   isChecked: boolean;
-   className?: string;
-};
 
-export const Checkbox: FC<Props> = ({ isChecked, Change, className }) => {
+export const Checkbox: FC<ICheckboxProps> = ({ isChecked, Change, className }) => {
    const classes = className ? `${className} ${styles.checkbox}` : styles.checkbox;
    const checkboxClasses = isChecked ? `${classes} ${styles.checkbox_active}` : classes;
 

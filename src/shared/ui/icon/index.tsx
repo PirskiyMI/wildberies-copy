@@ -1,12 +1,9 @@
 import { FC, memo } from 'react';
-import { TIcon } from '../../lib';
+import { IIconProps } from 'src/shared/lib/types/types-ui/icon-props-type';
 
-export type Props = {
-   icon: TIcon;
-   className?: string;
-};
 
-export const Icon: FC<Props> = memo(({ icon, className }) => {
+
+export const Icon: FC<IIconProps> = memo(({ icon, className }) => {
    switch (icon) {
       case 'burger':
          return (

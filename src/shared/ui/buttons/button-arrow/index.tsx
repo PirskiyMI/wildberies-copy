@@ -2,13 +2,9 @@ import { FC } from 'react';
 
 import styles from './styles.module.scss';
 import { Icon } from '../..';
+import { IButtonProps } from 'src/shared/lib/types/types-ui/button-types';
 
-interface IProps {
-   clickHandler?: () => void;
-   className?: string;
-}
-
-export const ButtonArrow: FC<IProps> = ({ clickHandler, className }) => {
+export const ButtonArrow: FC<IButtonProps> = ({ clickHandler, className }) => {
    const classes = className ? `${className} ${styles.button}` : styles.button;
 
    return (

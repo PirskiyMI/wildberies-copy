@@ -1,20 +1,10 @@
 import { Dispatch, FC, SetStateAction } from 'react';
 
 import styles from './styles.module.scss';
+import { ISelectListProps } from 'src/shared/lib/types/types-ui/select-types/select-list-types';
 
-export type Option = {
-   value: string;
-   title: string;
-};
 
-type SelectListProps = {
-   value: string;
-   setValue: Dispatch<SetStateAction<string>>;
-   setSort: Dispatch<SetStateAction<string>>;
-   options: Option[];
-};
-
-export const SelectList: FC<SelectListProps> = ({ options, setSort, value, setValue }) => {
+export const SelectList: FC<ISelectListProps> = ({ options, setSort, value, setValue }) => {
    return (
       <ul className={styles.select__options}>
          {options.map((el) => (

@@ -1,14 +1,10 @@
-import { FC, HTMLAttributes, useState } from 'react';
+import { FC, useState } from 'react';
 
 import styles from './styles.module.scss';
+import { IFieldProps } from 'src/shared/lib/types/types-ui/form-field-types';
 
-interface FieldProps extends HTMLAttributes<HTMLInputElement> {
-   value: string | number;
-   title: string;
-   errorText: string;
-}
 
-export const Field: FC<FieldProps> = ({ value, title, errorText, ...props }) => {
+export const Field: FC<IFieldProps> = ({ value, title, errorText, ...props }) => {
    const [isFocus, setFocus] = useState(false);
 
    const inputClasses = `${styles.field__input} ${errorText && styles.field__input_error}`;

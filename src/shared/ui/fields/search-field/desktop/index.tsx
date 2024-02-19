@@ -1,15 +1,11 @@
-import { ChangeEvent, Dispatch, FC, ReactNode, SetStateAction } from 'react';
+import { ChangeEvent, FC, } from 'react';
 
 import styles from './styles.module.scss';
+import { ISearchFieldProps } from 'src/shared/lib/types/types-ui/search-field-types';
 
-type Props = {
-   value: string;
-   setValue: Dispatch<SetStateAction<string>>;
-   ClearButton: ReactNode;
-   SearchButton: ReactNode;
-};
 
-export const SearchField: FC<Props> = ({ value, setValue, ClearButton, SearchButton }) => {
+
+export const SearchField: FC<ISearchFieldProps> = ({ value, setValue, ClearButton, SearchButton }) => {
    const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
       setValue(e.target.value);
    };

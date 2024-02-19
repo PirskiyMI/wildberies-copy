@@ -2,13 +2,10 @@ import { FC, memo } from 'react';
 
 import styles from './styles.module.scss';
 import { Icon } from '../icon';
+import { IRatingProps } from 'src/shared/lib/types/types-ui/rating-types';
 
-type RatingProps = {
-   rate: number;
-   count: string | number;
-};
 
-export const Rating: FC<RatingProps> = memo(({ rate, count }) => {
+export const Rating: FC<IRatingProps> = memo(({ rate, count }) => {
    return (
       <div className={styles.rating}>
          <Icon icon="star" className={styles.rating__icon} /> {rate}{' '}

@@ -3,15 +3,10 @@ import { NavLink } from 'react-router-dom';
 
 import styles from './styles.module.scss';
 import { Icon } from '../..';
+import { ILinkNavProps } from 'src/shared/lib/types/types-ui/link-nav-types';
 
-type Props = {
-   path: string;
-   icon: 'burger' | 'cart' | 'user' | 'heart' | 'home';
-   label?: string;
-   count?: number | null;
-};
 
-export const LinkNav: FC<Props> = memo(({ icon, path, count }) => {
+export const LinkNav: FC<ILinkNavProps> = memo(({ icon, path, count }) => {
    const classes = (isActive: boolean) =>
       isActive ? `${styles.link} ${styles.link_active}` : `${styles.link}`;
 

@@ -1,15 +1,11 @@
-import { FC, ReactElement, ReactNode } from 'react';
+import { FC } from 'react';
 
 import styles from './styles.module.scss';
+import { ICardProps } from 'src/shared/lib/types/types-ui/card-types';
 
-type Props = {
-   top?: ReactNode;
-   middle?: ReactElement;
-   bottom?: ReactNode;
-   className?: string;
-};
 
-export const ProductItemCard: FC<Props> = ({ top, middle, bottom, className }) => {
+
+export const ProductItemCard: FC<ICardProps> = ({ top, middle, bottom, className }) => {
    const classes = className ? `${className} ${styles.card}` : styles.card;
 
    return (

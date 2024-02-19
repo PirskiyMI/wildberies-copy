@@ -1,16 +1,11 @@
-import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react';
+import {  FC, useEffect, useState } from 'react';
 
 import styles from './styles.module.scss';
-import { Option, SelectList } from './SelectList';
+import { SelectList } from './SelectList';
+import { ISelectProps } from 'src/shared/lib/types/types-ui/select-types/select-types';
 
-type SelectProps = {
-   defaultValue: string;
-   setSort: Dispatch<SetStateAction<string>>;
-   options: Option[];
-   className?: string;
-};
 
-export const Select: FC<SelectProps> = ({ defaultValue, options, setSort, className }) => {
+export const Select: FC<ISelectProps> = ({ defaultValue, options, setSort, className }) => {
    const [value, setValue] = useState(defaultValue);
    const [isOpen, setIsOpen] = useState(false);
 

@@ -2,16 +2,10 @@ import { FC, ReactNode } from 'react';
 
 import styles from './styles.module.scss';
 import { Link } from 'react-router-dom';
+import { IProfileTileProps } from 'src/shared/lib/types/types-ui/profile-tile-types';
 
-type Props = {
-   path: string;
-   title: ReactNode;
-   label?: ReactNode;
-   content?: ReactNode;
-   className?: string;
-};
 
-export const ProfileTile: FC<Props> = ({ path, title, label, content, className }) => {
+export const ProfileTile: FC<IProfileTileProps> = ({ path, title, label, content, className }) => {
    const classes = className ? `${className} ${styles.tile}` : styles.tile;
 
    return (

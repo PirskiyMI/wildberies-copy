@@ -1,17 +1,13 @@
-import { FC, ReactNode } from 'react';
+import { FC } from 'react';
 import { createPortal } from 'react-dom';
 
 import styles from './styles.module.scss';
+import { IPopUpProps } from 'src/shared/lib/types/types-ui/pop-up-types';
 
-type Props = {
-   children: ReactNode;
-   closePopUp: () => void;
-   className?: string;
-};
 
 const popupElement = document.getElementById('pop-up')!;
 
-export const PopUp: FC<Props> = ({ children, closePopUp, className }) => {
+export const PopUp: FC<IPopUpProps> = ({ children, closePopUp, className }) => {
    const classes = className ? `${styles.popup__wrapper} ${className}` : styles.popup__wrapper;
 
    return createPortal(

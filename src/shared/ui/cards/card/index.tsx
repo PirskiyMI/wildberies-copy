@@ -3,13 +3,9 @@ import { FC, ReactNode } from 'react';
 import { classCombiner } from 'src/shared';
 
 import styles from './styles.module.scss';
+import { ICardProps } from 'src/shared/lib/types/types-ui/card-types';
 
-type Props = {
-   children: ReactNode;
-   className?: string;
-};
-
-export const Card: FC<Props> = ({ children, className }) => {
+export const Card: FC<ICardProps> = ({ children, className }) => {
    const classes = classCombiner(styles.card, className);
 
    return <div className={classes}>{children}</div>;

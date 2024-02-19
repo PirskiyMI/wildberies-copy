@@ -1,13 +1,10 @@
 import { FC } from 'react';
 
 import styles from './styles.module.scss';
+import { ISkeletonProps } from 'src/shared/lib/types/types-ui/skeleton-types';
 
-type Props = {
-   width: string;
-   height: string;
-};
 
-export const Skeleton: FC<Props> = ({ width, height }) => {
+export const Skeleton: FC<ISkeletonProps> = ({ width, height }) => {
    return (
       <div className={styles.skeleton} style={{ width: `${width}`, height: `${height}` }}>
          <div className={styles.skeleton__animation}></div>

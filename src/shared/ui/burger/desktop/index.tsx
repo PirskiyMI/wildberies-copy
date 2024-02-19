@@ -3,14 +3,10 @@ import { FC } from 'react';
 import styles from './styles.module.scss';
 
 import { Icon } from '../../icon';
+import { IBurgerProps } from 'src/shared/lib/types/types-ui/burger-types';
 
-interface IProps {
-   clickHandler: () => void;
-   isOpen?: boolean;
-   className?: string;
-}
 
-export const Burger: FC<IProps> = ({ clickHandler, className }) => {
+export const Burger: FC<IBurgerProps> = ({ clickHandler, className }) => {
    const classes = className ? `${className} ${styles.burger}` : styles.burger;
 
    return (

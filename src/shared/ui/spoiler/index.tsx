@@ -3,14 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import styles from './styles.module.scss';
 import { Icon } from '..';
+import { ISpoilerProps } from 'src/shared/lib/types/types-ui/spoiler-types';
 
-type SpoilerProps = {
-   initial?: boolean;
-   Title: ReactNode;
-   Content: ReactNode;
-};
 
-export const Spoiler: FC<SpoilerProps> = ({ initial, Content, Title }) => {
+export const Spoiler: FC<ISpoilerProps> = ({ initial, Content, Title }) => {
    const [isOpen, setIsOpen] = useState(initial ? true : false);
 
    return (

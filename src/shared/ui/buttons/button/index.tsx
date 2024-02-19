@@ -1,14 +1,10 @@
 import { FC, HTMLAttributes, ReactNode } from 'react';
 
 import styles from './styles.module.scss';
+import { IButtonProps } from 'src/shared/lib/types/types-ui/button-types';
 
-interface IProps extends HTMLAttributes<HTMLButtonElement> {
-   children: ReactNode;
-   disabled?: boolean;
-   className?: string;
-}
 
-export const Button: FC<IProps> = ({ children, disabled = false, className, ...props }) => {
+export const Button: FC<IButtonProps> = ({ children, disabled = false, className, ...props }) => {
    const classes = className ? `${className} ${styles.button}` : styles.button;
 
    return (
