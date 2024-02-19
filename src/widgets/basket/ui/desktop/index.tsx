@@ -1,5 +1,5 @@
 import { useAppSelector } from 'src/shared';
-import { Basket } from '../ui';
+import { Basket } from './ui';
 import { basketListSelector, basketTotalsSelector } from 'src/entities/basket/basket-item';
 
 export const BasketContainer = () => {

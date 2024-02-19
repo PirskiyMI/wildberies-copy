@@ -14,9 +14,6 @@
       font-size: var(--text-fs-normal);
       line-height: var(--text-lh-small);
       border-radius: var(--br-normal);
-      &:hover {
-         background-color: rgb(var(--color-primary));
-      }
    }
    &__link {
       padding: 5px 0;
@@ -24,27 +21,11 @@
       column-gap: 20px;
       align-items: center;
       color: rgb(var(--color-dark));
-      &:hover {
-         color: rgb(var(--color-white));
-         .menu__icon {
-            fill: rgb(var(--color-white));
-         }
-      }
    }
    &__icon {
       width: 20px;
       height: 20px;
       fill: rgba(var(--color-dark), 0.5);
-   }
-   @media (min-width: 1024px) {
-      width: 300px;
-      padding: 20px 24px 20px 30px;
-      position: fixed;
-      background-color: rgb(var(--color-white));
-      z-index: 10;
-      &__link {
-         padding: 5px 0 5px 20px;
-      }
    }
 }
 .backdrop {

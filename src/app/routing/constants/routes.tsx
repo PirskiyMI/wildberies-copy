@@ -1,13 +1,14 @@
 import { Suspense } from 'react';
 
-import { useAppSelector, windowWidthSelector } from 'src/shared';
+import { useAppSelector } from 'src/shared';
 import { DesktopCartPage, MobileCartPage } from 'src/pages/cart-page';
 import { DesktopProfilePage, MobileProfilePage } from 'src/pages/profile-page/ui';
+import { clientTypeSelector } from 'src/shared/model/selectors/client-selectors';
 
 import { CategoryPage, FavoritesPage, HomePage, NavigationPage } from './lazy-components';
 
 export const useRoutes = () => {
-   const windowWidth = useAppSelector(windowWidthSelector);
+   const clientType = useAppSelector(clientTypeSelector);
 
    const routes = [
       { index: true, path: '/', element: <HomePage /> },
@@ -16,7 +17,13 @@ export const useRoutes = () => {
          path: 'cart',
          element: (
             <Suspense fallback="Loading...">
-               {windowWidth && windowWidth >= 1024 ? <DesktopCartPage /> : <MobileCartPage />}
+               {clientType !== 'unknown' ? (
+                  clientType === 'desktop' ? (
+                     <DesktopCartPage />
+                  ) : (
+                     <MobileCartPage />
+                  )
+               ) : null}
             </Suspense>
          ),
       },
@@ -26,7 +33,13 @@ export const useRoutes = () => {
          path: 'profile',
          element: (
             <Suspense fallback="Loading ProfilePage">
-               {windowWidth && windowWidth >= 1024 ? <DesktopProfilePage /> : <MobileProfilePage />}
+               {clientType !== 'unknown' ? (
+                  clientType === 'desktop' ? (
+                     <DesktopProfilePage />
+                  ) : (
+                     <MobileProfilePage />
+                  )
+               ) : null}
             </Suspense>
          ),
       },
