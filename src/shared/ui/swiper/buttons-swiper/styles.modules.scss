@@ -1,0 +1,32 @@
+.swiper__button {
+    &__prev {
+        position: absolute;
+        left: 20px; 
+        right: auto; 
+        top: 50%;
+        rotate: 280deg;
+        opacity: 0.5;
+        z-index: 11;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    &__next {
+        position: absolute;
+        left: auto;
+        right: 20px; 
+        top: 50%; 
+        rotate: 90deg;
+        z-index: 11;
+        opacity: 0.5;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .swiper__button{
+        display: none;
+    }
+}
