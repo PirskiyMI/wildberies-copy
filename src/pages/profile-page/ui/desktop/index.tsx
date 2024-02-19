@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { DesktopProfileUserDetails } from 'src/widgets/user/user-details';
+import { DesktopProfileUserDetails } from 'src/widgets/user/profile-user-details';
 import { DesktopUserMetrics } from 'src/widgets/user/user-metrics';
 import { DesktopProfilePaymentMethod } from 'src/widgets/payment-method/profile-payment-method';
 

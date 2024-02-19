@@ -4,7 +4,7 @@ import { useAppSelector } from 'src/shared';
 import { basketListSelector } from 'src/entities/basket/basket-item';
 import { DesktopBasket } from 'src/widgets/basket';
 import { DesktopOrderInfo } from 'src/widgets/order-info';
-import { CartUserDetails } from 'src/widgets/user/user-details';
+import { DesktopCartUserDetails } from 'src/widgets/user/cart-user-details';
 import { DesktopBasketPaymentMethod } from 'src/widgets/payment-method/basket-payment-method';
 
 import styles from './styles.module.scss';
@@ -22,7 +22,7 @@ export const CartPage: FC = () => {
                      <DesktopBasket />
                   </div>
                   <DesktopBasketPaymentMethod />
-                  <CartUserDetails />
+                  <DesktopCartUserDetails />
                </div>
                <div className={styles.cart__column}>
                   <DesktopOrderInfo />

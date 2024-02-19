@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { MobileProfileUserDetails } from 'src/widgets/user/user-details';
+import { MobileProfileUserDetails } from 'src/widgets/user/profile-user-details';
 import { MobileUserMetrics } from 'src/widgets/user/user-metrics';
 import { MobileProfilePaymentMethod } from 'src/widgets/payment-method/profile-payment-method';
 

@@ -1,31 +1,23 @@
 import { FC, memo } from 'react';
 
-import { useAppSelector, Icon, DesktopSection, usePopUp, phoneFormatter } from 'src/shared';
-import {
-   UserGender,
-   DesktopUserInfo,
-   UserPhone,
-   userInfoSelector,
-   userNameSelector,
-} from 'src/entities/user';
+import { Icon, MobileSection, usePopUp, phoneFormatter } from 'src/shared';
+import { UserGender, MobileUserInfo, UserPhone } from 'src/entities/user';
 import { UserGenderSwitcher } from 'src/features/user/user-gender-switcher';
 
 import styles from './styles.module.scss';
-import { DesktopProfileUserDetailsPopUp } from '../pop-up';
+import { MobileProfileUserDetailsPopUp } from '../pop-up';
+import { IProfileUserDetailsProps } from '../../types/user-details';
 
-export const ProfileUserDetails: FC = memo(() => {
+export const ProfileUserDetails: FC<IProfileUserDetailsProps> = memo(({ name, phone }) => {
    const { isPopUpOpen, openPopUp, closePopUp } = usePopUp();
 
-   const userName = useAppSelector(userNameSelector);
-   const userNameFirstLatter = userName[0];
-
-   const { phone } = useAppSelector(userInfoSelector);
+   const userNameFirstLatter = name[0];
    const formattedUserPhone = phoneFormatter(phone);
 
    return (
-      <DesktopSection className={styles.details}>
-         <DesktopUserInfo
-            name={userName}
+      <MobileSection className={styles.details}>
+         <MobileUserInfo
+            name={name}
             nameFirstLatter={userNameFirstLatter}
             changeNameButton={
                <button onClick={openPopUp}>
@@ -38,7 +30,7 @@ export const ProfileUserDetails: FC = memo(() => {
             <UserGender className={styles.details__item} switcher={<UserGenderSwitcher />} />
          </div>
 
-         {isPopUpOpen && <DesktopProfileUserDetailsPopUp closePopUp={closePopUp} />}
-      </DesktopSection>
+         {isPopUpOpen && <MobileProfileUserDetailsPopUp closePopUp={closePopUp} />}
+      </MobileSection>
    );
 });

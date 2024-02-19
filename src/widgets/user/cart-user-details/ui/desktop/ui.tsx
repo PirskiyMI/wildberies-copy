@@ -1,13 +1,18 @@
 import { FC, memo, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { DesktopCartTile, phoneFormatter, profilePath, useAppSelector } from 'src/shared';
-import { UserInfoShort, userInfoSelector } from 'src/entities/user';
+import { DesktopCartTile, phoneFormatter, profilePath } from 'src/shared';
+import { UserInfoShort } from 'src/entities/user';
 
-export const CartUserDetails: FC = memo(() => {
+export interface ICartUserDetailsProps {
+   name: string;
+   phone: string;
+   isMale: boolean;
+}
+
+export const CartUserDetails: FC<ICartUserDetailsProps> = memo(({ name, isMale, phone }) => {
    const navigate = useNavigate();
    const clickHandler = useCallback(() => navigate(profilePath), [navigate]);
-   const { name, isMale, phone } = useAppSelector(userInfoSelector);
    const formattedUserPhone = phoneFormatter(phone);
 
    return (
