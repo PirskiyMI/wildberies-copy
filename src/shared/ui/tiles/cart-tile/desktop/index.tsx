@@ -3,8 +3,7 @@ import { FC, memo } from 'react';
 import { DesktopSection, Icon } from 'src/shared';
 
 import styles from './styles.module.scss';
-import { ICartTileProps } from 'src/shared/lib/types/types-ui/cart-tile-types';
-
+import { ICartTileProps } from '../../../../lib/types/types-ui/cart-tile-types';
 
 export const CartTile: FC<ICartTileProps> = memo(({ title, content, clickHandle, className }) => {
    const classes = className ? `${className} ${styles.item}` : styles.item;

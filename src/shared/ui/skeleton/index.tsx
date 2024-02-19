@@ -1,8 +1,7 @@
 import { FC } from 'react';
 
 import styles from './styles.module.scss';
-import { ISkeletonProps } from 'src/shared/lib/types/types-ui/skeleton-types';
-
+import { ISkeletonProps } from '../../lib/types/types-ui/skeleton-types';
 
 export const Skeleton: FC<ISkeletonProps> = ({ width, height }) => {
    return (

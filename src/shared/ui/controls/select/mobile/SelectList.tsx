@@ -2,8 +2,7 @@ import { FC } from 'react';
 import { createPortal } from 'react-dom';
 
 import styles from './styles.module.scss';
-import { ISelectListProps } from 'src/shared/lib/types/types-ui/select-types/select-list-types';
-
+import { ISelectListProps } from '../../../../lib/types/types-ui/select-types/select-list-types';
 
 const selectElement = document.getElementById('select')!;
 

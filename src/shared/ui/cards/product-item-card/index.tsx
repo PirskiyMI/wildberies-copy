@@ -1,9 +1,7 @@
 import { FC } from 'react';
 
 import styles from './styles.module.scss';
-import { ICardProps } from 'src/shared/lib/types/types-ui/card-types';
-
-
+import { ICardProps } from '../../../lib/types/types-ui/card-types';
 
 export const ProductItemCard: FC<ICardProps> = ({ top, middle, bottom, className }) => {
    const classes = className ? `${className} ${styles.card}` : styles.card;

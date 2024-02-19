@@ -1,10 +1,9 @@
-import { FC, ReactNode, useState } from 'react';
+import { FC, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import styles from './styles.module.scss';
 import { Icon } from '..';
-import { ISpoilerProps } from 'src/shared/lib/types/types-ui/spoiler-types';
-
+import { ISpoilerProps } from '../../lib/types/types-ui/spoiler-types';
 
 export const Spoiler: FC<ISpoilerProps> = ({ initial, Content, Title }) => {
    const [isOpen, setIsOpen] = useState(initial ? true : false);

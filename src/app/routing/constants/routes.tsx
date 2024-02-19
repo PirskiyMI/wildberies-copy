@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 
-import { useAppSelector } from 'src/shared';
+import { Preloader, useAppSelector } from 'src/shared';
 import { DesktopCartPage, MobileCartPage } from 'src/pages/cart-page';
 import { DesktopProfilePage, MobileProfilePage } from 'src/pages/profile-page/ui';
 import { clientTypeSelector } from 'src/shared/model/selectors/client-selectors';
@@ -16,7 +16,7 @@ export const useRoutes = () => {
          index: false,
          path: 'cart',
          element: (
-            <Suspense fallback="Loading...">
+            <Suspense fallback={<Preloader />}>
                {clientType !== 'unknown' ? (
                   clientType === 'desktop' ? (
                      <DesktopCartPage />

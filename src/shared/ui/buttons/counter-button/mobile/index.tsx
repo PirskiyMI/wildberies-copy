@@ -1,7 +1,8 @@
-import { FC, ReactNode, memo } from 'react';
-import styles from './styles.module.scss';
-import { IButtonProps } from 'src/shared/lib/types/types-ui/button-types';
+import { FC, memo } from 'react';
 
+import styles from './styles.module.scss';
+
+import { IButtonProps } from '../../../../lib/types/types-ui/button-types';
 
 export const CounterButton: FC<IButtonProps> = memo(
    ({ children, clickHandler, className, disabled = false }) => {

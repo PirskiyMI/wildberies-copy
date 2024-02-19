@@ -2,8 +2,7 @@ import { FC, memo } from 'react';
 
 import styles from './styles.module.scss';
 import { Icon } from '../icon';
-import { IRatingProps } from 'src/shared/lib/types/types-ui/rating-types';
-
+import { IRatingProps } from '../../lib/types/types-ui/rating-types';
 
 export const Rating: FC<IRatingProps> = memo(({ rate, count }) => {
    return (

@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import styles from './styles.module.scss';
-import { IRadioProps } from 'src/shared/lib/types/types-ui/radio-types';
 
+import styles from './styles.module.scss';
+import { IRadioProps } from '../../../lib/types/types-ui/radio-types';
 
 export const Radio: FC<IRadioProps> = ({ isActive }) => {
    return (

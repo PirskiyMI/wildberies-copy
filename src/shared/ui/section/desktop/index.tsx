@@ -1,8 +1,7 @@
-import { FC,  memo } from 'react';
+import { FC, memo } from 'react';
 
 import styles from './styles.module.scss';
-import { ISectionProps } from 'src/shared/lib/types/types-ui/section-types';
-
+import { ISectionProps } from '../../../lib/types/types-ui/section-types';
 
 export const Section: FC<ISectionProps> = memo(({ children, title, className }) => {
    return (

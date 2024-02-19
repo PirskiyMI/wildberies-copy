@@ -3,8 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 import styles from './styles.module.scss';
 import { Icon } from '../..';
-import { ILinkNavProps } from 'src/shared/lib/types/types-ui/link-nav-types';
-
+import { ILinkNavProps } from '../../../lib/types/types-ui/link-nav-types';
 
 export const LinkNav: FC<ILinkNavProps> = memo(({ icon, path, count }) => {
    const classes = (isActive: boolean) =>

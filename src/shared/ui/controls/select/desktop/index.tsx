@@ -1,10 +1,8 @@
-import { FC,  useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 import styles from './styles.module.scss';
 import { SelectList } from './SelectList';
-import { ISelectProps } from 'src/shared/lib/types/types-ui/select-types/select-types';
-
-
+import { ISelectProps } from '../../../../lib/types/types-ui/select-types/select-types';
 
 export const Select: FC<ISelectProps> = ({ defaultValue, options, setSort, className }) => {
    const [value, setValue] = useState(defaultValue);

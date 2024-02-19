@@ -2,7 +2,7 @@ import { FC, memo } from 'react';
 
 import { Icon, MobileSection, usePopUp, phoneFormatter } from 'src/shared';
 import { UserGender, MobileUserInfo, UserPhone } from 'src/entities/user';
-import { UserGenderSwitcher } from 'src/features/user/user-gender-switcher';
+import { MobileUserGenderSwitcher } from 'src/features/user/user-gender-switcher';
 
 import styles from './styles.module.scss';
 import { MobileProfileUserDetailsPopUp } from '../pop-up';
@@ -27,7 +27,7 @@ export const ProfileUserDetails: FC<IProfileUserDetailsProps> = memo(({ name, ph
          />
          <div className={styles.details__bottom}>
             <UserPhone phone={formattedUserPhone} className={styles.details__item} withTitle />
-            <UserGender className={styles.details__item} switcher={<UserGenderSwitcher />} />
+            <UserGender className={styles.details__item} switcher={<MobileUserGenderSwitcher />} />
          </div>
 
          {isPopUpOpen && <MobileProfileUserDetailsPopUp closePopUp={closePopUp} />}

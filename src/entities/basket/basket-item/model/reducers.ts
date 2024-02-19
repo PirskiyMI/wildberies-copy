@@ -12,6 +12,7 @@ const initialState: IState = {
          image: 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
          price: 10995,
          title: 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops',
+         description: 'test',
          rating: {
             rate: 0,
             count: 0,

@@ -1,8 +1,7 @@
-import { Dispatch, FC, SetStateAction } from 'react';
+import { FC } from 'react';
 
 import styles from './styles.module.scss';
-import { ISelectListProps } from 'src/shared/lib/types/types-ui/select-types/select-list-types';
-
+import { ISelectListProps } from '../../../../lib/types/types-ui/select-types/select-list-types';
 
 export const SelectList: FC<ISelectListProps> = ({ options, setSort, value, setValue }) => {
    return (

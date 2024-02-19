@@ -1,4 +1,4 @@
-import { FC, memo } from 'react';
+import { FC, Suspense, memo } from 'react';
 import { ProductCard, ProductCardDetails } from 'src/entities/product';
 
 import { PopUp, useAppSelector, usePopUp } from 'src/shared';
@@ -27,18 +27,20 @@ export const ProductItem: FC<IProductItemProps> = memo(({ product, isFavoriteLis
             cartButton={<AddProductToCart product={product} inBasket={inBasket} UIType="main" />}
             popupHandler={openPopUp}
          />
-         {isPopUpOpen && (
-            <PopUp closePopUp={closePopUp}>
-               <ProductCardDetails
-                  product={product}
-                  cartButton={
-                     <AddProductToCart product={product} inBasket={inBasket} UIType="pop-up" />
-                  }
-                  popupHandler={closePopUp}
-                  favoriteButton={<span />}
-               />
-            </PopUp>
-         )}
+         <Suspense fallback>
+            {isPopUpOpen && (
+               <PopUp closePopUp={closePopUp}>
+                  <ProductCardDetails
+                     product={product}
+                     cartButton={
+                        <AddProductToCart product={product} inBasket={inBasket} UIType="pop-up" />
+                     }
+                     popupHandler={closePopUp}
+                     favoriteButton={<span />}
+                  />
+               </PopUp>
+            )}
+         </Suspense>
       </>
    );
 });

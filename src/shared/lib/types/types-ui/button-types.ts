@@ -1,9 +1,9 @@
-import { HTMLAttributes, ReactNode } from "react";
+import { HTMLAttributes, ReactNode } from 'react';
 
 export interface IButtonProps extends HTMLAttributes<HTMLButtonElement> {
-    children: ReactNode;
-    disabled?: boolean;
-    className?: string;
-    clickHandler?: () => void;
-    isFill?: boolean;
+   children?: ReactNode;
+   disabled?: boolean;
+   className?: string;
+   clickHandler?: () => void;
+   isFill?: boolean;
 }

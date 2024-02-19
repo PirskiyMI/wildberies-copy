@@ -1,8 +1,7 @@
 import { FC, useState } from 'react';
 
 import styles from './styles.module.scss';
-import { IFieldProps } from 'src/shared/lib/types/types-ui/form-field-types';
-
+import { IFieldProps } from '../../../lib/types/types-ui/form-field-types';
 
 export const Field: FC<IFieldProps> = ({ value, title, errorText, ...props }) => {
    const [isFocus, setFocus] = useState(false);

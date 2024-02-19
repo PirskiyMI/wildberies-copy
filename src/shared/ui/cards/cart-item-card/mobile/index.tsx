@@ -3,7 +3,7 @@ import { FC, memo } from 'react';
 import { classCombiner } from 'src/shared';
 
 import styles from './styles.module.scss';
-import { ICardProps } from 'src/shared/lib/types/types-ui/card-types';
+import { ICardProps } from '../../../../lib/types/types-ui/card-types';
 
 export const MobileCartItemCard: FC<ICardProps> = memo(
    ({ imageComponent, contentComponent, counterComponent, totalComponent, className }) => {

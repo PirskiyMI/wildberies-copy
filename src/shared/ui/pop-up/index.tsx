@@ -2,8 +2,7 @@ import { FC } from 'react';
 import { createPortal } from 'react-dom';
 
 import styles from './styles.module.scss';
-import { IPopUpProps } from 'src/shared/lib/types/types-ui/pop-up-types';
-
+import { IPopUpProps } from '../../lib/types/types-ui/pop-up-types';
 
 const popupElement = document.getElementById('pop-up')!;
 
