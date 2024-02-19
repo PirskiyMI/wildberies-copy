@@ -5,7 +5,7 @@ import { UserPaymentCardShort } from 'src/entities/user';
 
 import { MobilePaymentMethodPopUp } from '../pop-up';
 import { useModal } from '../../lib/hooks';
-import { IBasketPaymentMethod } from '../../lib/types/payment-method-pop-up';
+import { IBasketPaymentMethod } from '../../lib/types/basket-payment-method-pop-up';
 
 export const BasketPaymentMethod: FC<IBasketPaymentMethod> = memo(({ mainCard, paymentInfo }) => {
    const { closePopUp, modalIsOpen, openModal, toggleType, modalType } = useModal();

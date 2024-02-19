@@ -1,10 +1,10 @@
 import { lazy } from 'react';
 
 export const SetCard = lazy(async () => {
-   const { SetCard } = await import('./set-card');
-   return { default: SetCard };
+   const { SetCardContainer } = await import('./set-card');
+   return { default: SetCardContainer };
 });
 export const SetCardInBasket = lazy(async () => {
-   const { SetCardInBasket } = await import('./set-card-in-basket');
-   return { default: SetCardInBasket };
+   const { SetCardInBasketContainer } = await import('./set-card-in-basket');
+   return { default: SetCardInBasketContainer };
 });

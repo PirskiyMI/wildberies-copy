@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
 import { DesktopSearchField } from 'src/shared';
 
@@ -7,7 +7,7 @@ import { useSearchForm } from '../../../lib/hooks/use-search-form';
 import { ClearSearchButton } from '../../clear-search-button';
 import { SearchButton } from '../../search-button';
 
-export const ProductSearch: FC = () => {
+export const ProductSearch: FC = memo(() => {
    const { searchValue, setSearchValue } = useSearchForm();
 
    return (
@@ -20,4 +20,4 @@ export const ProductSearch: FC = () => {
          />
       </form>
    );
-};
+});

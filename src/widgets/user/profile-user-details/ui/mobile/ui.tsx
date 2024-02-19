@@ -1,4 +1,4 @@
-import { FC, memo } from 'react';
+import { FC, Suspense, memo } from 'react';
 
 import { Icon, MobileSection, usePopUp, phoneFormatter } from 'src/shared';
 import { UserGender, MobileUserInfo, UserPhone } from 'src/entities/user';
@@ -29,8 +29,9 @@ export const ProfileUserDetails: FC<IProfileUserDetailsProps> = memo(({ name, ph
             <UserPhone phone={formattedUserPhone} className={styles.details__item} withTitle />
             <UserGender className={styles.details__item} switcher={<MobileUserGenderSwitcher />} />
          </div>
-
-         {isPopUpOpen && <MobileProfileUserDetailsPopUp closePopUp={closePopUp} />}
+         <Suspense>
+            {isPopUpOpen && <MobileProfileUserDetailsPopUp closePopUp={closePopUp} />}
+         </Suspense>
       </MobileSection>
    );
 });

@@ -1,12 +1,12 @@
-import { FC, memo, useCallback } from 'react';
+import { FC, useCallback } from 'react';
 
-import { useAppDispatch } from 'src/shared';
 import { userActions } from 'src/entities/user';
+import { useAppDispatch } from 'src/shared';
 
 import { ISetCardContainerProps } from '../../lib/types';
-import { SetCard } from './ui';
+import { SetCardInBasket } from './ui';
 
-export const SetCardContainer: FC<ISetCardContainerProps> = memo(({ cardId }) => {
+export const SetCardInBasketContainer: FC<ISetCardContainerProps> = ({ cardId, ...props }) => {
    const { setMainCard } = userActions;
    const dispatch = useAppDispatch();
 
@@ -14,5 +14,5 @@ export const SetCardContainer: FC<ISetCardContainerProps> = memo(({ cardId }) =>
       dispatch(setMainCard(cardId));
    }, [cardId, setMainCard, dispatch]);
 
-   return <SetCard setCard={setCard} />;
-});
+   return <SetCardInBasket setCard={setCard} {...props} />;
+};

@@ -1,4 +1,4 @@
-import { FC, memo } from 'react';
+import { FC, Suspense, memo, useMemo } from 'react';
 
 import { Icon, DesktopSection, usePopUp, phoneFormatter } from 'src/shared';
 import { UserGender, DesktopUserInfo, UserPhone } from 'src/entities/user';
@@ -11,8 +11,9 @@ import { IProfileUserDetailsProps } from '../../types/user-details';
 export const ProfileUserDetails: FC<IProfileUserDetailsProps> = memo(({ name, phone }) => {
    const { isPopUpOpen, openPopUp, closePopUp } = usePopUp();
 
-   const userNameFirstLatter = name[0];
-   const formattedUserPhone = phoneFormatter(phone);
+   const userNameFirstLatter = useMemo(() => name[0], [name]);
+   const formattedUserPhone = useMemo(() => phoneFormatter(phone), [phone]);
+   console.log(1);
 
    return (
       <DesktopSection className={styles.details}>
@@ -29,8 +30,9 @@ export const ProfileUserDetails: FC<IProfileUserDetailsProps> = memo(({ name, ph
             <UserPhone phone={formattedUserPhone} className={styles.details__item} withTitle />
             <UserGender className={styles.details__item} switcher={<DesktopUserGenderSwitcher />} />
          </div>
-
-         {isPopUpOpen && <DesktopProfileUserDetailsPopUp closePopUp={closePopUp} />}
+         <Suspense>
+            {isPopUpOpen && <DesktopProfileUserDetailsPopUp closePopUp={closePopUp} />}
+         </Suspense>
       </DesktopSection>
    );
 });

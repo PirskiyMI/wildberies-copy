@@ -32,7 +32,7 @@ export const useRoutes = () => {
          index: false,
          path: 'profile',
          element: (
-            <Suspense fallback="Loading ProfilePage">
+            <Suspense fallback={<Preloader />}>
                {clientType !== 'unknown' ? (
                   clientType === 'desktop' ? (
                      <DesktopProfilePage />

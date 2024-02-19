@@ -1,15 +1,12 @@
 import { FC } from 'react';
 
 import { PopUp } from 'src/shared';
-
-import styles from './styles.module.scss';
 import { CreateCard } from 'src/features/card/create-card';
 
-type Props = {
-   closePopUp: () => void;
-};
+import styles from './styles.module.scss';
+import { IPaymentMethodPopUp } from '../../../types/profile-payment-method-pop-up';
 
-export const PaymentMethodPopUp: FC<Props> = ({ closePopUp }) => {
+export const PaymentMethodPopUp: FC<IPaymentMethodPopUp> = ({ closePopUp }) => {
    return (
       <PopUp className={styles.modal} closePopUp={closePopUp}>
          <div>

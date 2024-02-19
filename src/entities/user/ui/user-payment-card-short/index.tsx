@@ -15,10 +15,7 @@ export const UserPaymentCardShort: FC<IUserPaymentCard> = memo(({ cardNumber, nu
          <div className={styles.card__image}>
             <img src={src} alt={alt} />
          </div>
-         <div className={styles.card__text}>
-            <span>{alt} </span>
-            {numberVisible ? <span>{number}</span> : null}
-         </div>
+         <div className={styles.card__text}>{numberVisible ? <span>{number}</span> : null}</div>
       </div>
    );
 });

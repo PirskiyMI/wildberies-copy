@@ -1,4 +1,9 @@
+export interface ISetCardContainerProps {
+   cardId: number;
+   cardNumber?: string;
+}
+
 export interface ISetCardProps {
-   id: number;
+   setCard: () => void;
    cardNumber?: string;
 }

@@ -27,7 +27,7 @@ export const PaymentMethodPopUp: FC<IBasketPaymentMethodPopUp> = ({
                <ul className={styles.modal__list}>
                   {cardList.map((el) => (
                      <li key={el.id} className={styles.modal__item}>
-                        <SetCardInBasket cardNumber={el.cardNumber} id={el.id} />
+                        <SetCardInBasket cardNumber={el.cardNumber} cardId={el.id} />
                      </li>
                   ))}
                   <li onClick={toggleType} className={styles.modal__item}>
