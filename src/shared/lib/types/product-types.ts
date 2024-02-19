@@ -15,6 +15,7 @@ export interface IProduct {
    title: string;
    price: number | string;
    image: string;
+   description: string;
    rating: IProductRating;
    status?: IProductStatus;
    info?: IProductInfo;

@@ -2,7 +2,7 @@ import { FC, memo } from 'react';
 
 import { Icon, DesktopSection, usePopUp, phoneFormatter } from 'src/shared';
 import { UserGender, DesktopUserInfo, UserPhone } from 'src/entities/user';
-import { UserGenderSwitcher } from 'src/features/user/user-gender-switcher';
+import { DesktopUserGenderSwitcher } from 'src/features/user/user-gender-switcher';
 
 import styles from './styles.module.scss';
 import { DesktopProfileUserDetailsPopUp } from '../pop-up';
@@ -27,7 +27,7 @@ export const ProfileUserDetails: FC<IProfileUserDetailsProps> = memo(({ name, ph
          />
          <div className={styles.details__bottom}>
             <UserPhone phone={formattedUserPhone} className={styles.details__item} withTitle />
-            <UserGender className={styles.details__item} switcher={<UserGenderSwitcher />} />
+            <UserGender className={styles.details__item} switcher={<DesktopUserGenderSwitcher />} />
          </div>
 
          {isPopUpOpen && <DesktopProfileUserDetailsPopUp closePopUp={closePopUp} />}

@@ -1,7 +1,7 @@
 import { ReactElement, ReactNode } from "react";
 
 export interface ICardProps {
-    children: ReactNode;
+    children?: ReactNode;
     className?: string;
     imageComponent?: ReactNode;
     contentComponent?: ReactNode;

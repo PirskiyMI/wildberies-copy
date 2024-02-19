@@ -9,7 +9,7 @@ import { IProductCard } from '../../types';
 // ToDo {info!.description}
 
 export const ProductCardDetails: FC<IProductCard> = ({
-   product: { image, price, rating, title, info },
+   product: { image, price, rating, title, description },
    cartButton,
    popupHandler,
 }) => {
@@ -38,7 +38,7 @@ export const ProductCardDetails: FC<IProductCard> = ({
                <div className={styles.card__content}>
                   <div className={styles.card__price}>{formattedPrice} сом</div>
                   <div className={styles.card__description}>
-                     <span>Описание:</span> {info!.description}
+                     <span>Описание:</span> {description}
                   </div>
 
                   <div className={styles.card__button}>{cartButton}</div>

@@ -9,7 +9,7 @@ export const ProductCounter: FC<IProductCounterProps> = memo(
    ({ value, limit, count, decrementHandler, incrementHandler, setHandler, blurHandler }) => {
       return (
          <div className={styles.counter}>
-            <DesktopCounterButton disabled={value <= 1} onClick={decrementHandler}>
+            <DesktopCounterButton disabled={value <= 1} clickHandler={decrementHandler}>
                <span>−</span>
             </DesktopCounterButton>
             <input
@@ -19,7 +19,7 @@ export const ProductCounter: FC<IProductCounterProps> = memo(
                onChange={setHandler}
                onBlur={blurHandler}
             />
-            <DesktopCounterButton disabled={value === limit} onClick={incrementHandler}>
+            <DesktopCounterButton disabled={value === limit} clickHandler={incrementHandler}>
                <span>+</span>
             </DesktopCounterButton>
          </div>

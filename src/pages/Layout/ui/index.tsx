@@ -19,9 +19,12 @@ export const Layout: FC = () => {
 
    return (
       <>
-         {clientType === 'desktop' && (
-            <AnimatePresence>{isOpen && <DesktopNavMenu />}</AnimatePresence>
-         )}
+         <Suspense fallback>
+            {clientType === 'desktop' && (
+               <AnimatePresence>{isOpen && <DesktopNavMenu />}</AnimatePresence>
+            )}
+         </Suspense>
+
          <Suspense fallback>
             {clientType !== 'unknown' ? (
                clientType === 'desktop' ? (
