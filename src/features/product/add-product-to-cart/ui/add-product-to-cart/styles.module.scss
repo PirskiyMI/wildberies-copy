@@ -1,9 +1,5 @@
 .button {
    padding: 5px 20px 7px;
-   &:disabled {
-      color: rgb(var(--color-primary));
-      background-color: rgba(var(--color-primary), 0.2);
-   }
    &__link {
       width: 100%;
       height: 100%;

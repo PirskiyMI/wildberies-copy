@@ -24,17 +24,12 @@ export const basketTotalsSelector = createSelector([basketListSelector], (list) 
    return { count, price };
 });
 
-const memoBasketSelectedListSelector = createSelector([basketListSelector], (list) => {
-   const selectedItems = list.filter((el) => el.status!.isChecked);
-   return selectedItems;
-});
-
 const basketSelectedListSelector = (state: RootState) => {
    const selectedItems = state.basketReducer.list.filter((el) => el.status!.isChecked);
    return selectedItems;
 };
 export const isBasketEmptySelector = createSelector([basketListSelector], (list) => !list.length);
-export const orderTotalsSelector = createSelector([memoBasketSelectedListSelector], (list) => {
+export const orderTotalsSelector = createSelector([basketSelectedListSelector], (list) => {
    const { count, price } = list.reduce(
       (totals, item) => {
          const { price, status } = item;

@@ -6,8 +6,6 @@ import { Icon, Rating, priceFormatter } from 'src/shared';
 import styles from './styles.module.scss';
 import { IProductCard } from '../../types';
 
-// ToDo {info!.description}
-
 export const ProductCardDetails: FC<IProductCard> = ({
    product: { image, price, rating, title, description },
    cartButton,
