@@ -24,10 +24,6 @@ export const Icon = lazy(async () => {
    const { Icon } = await import('./icon');
    return { default: Icon };
 });
-export const Notification = lazy(async () => {
-   const { Notification } = await import('./notification');
-   return { default: Notification };
-});
 export const Price = lazy(async () => {
    const { Price } = await import('./price');
    return { default: Price };

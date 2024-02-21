@@ -1,5 +1,8 @@
 .layout {
    &__main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       min-height: 200px;
       padding: 16px 0 32px;
       flex: 1 1 auto;

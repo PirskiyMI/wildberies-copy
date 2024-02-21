@@ -1,11 +1,5 @@
 import { cartPath, favoritesPath, profilePath } from 'src/shared';
-
-interface IHeaderLink {
-   icon: 'cart' | 'home' | 'user' | 'burger' | 'heart';
-   to: string;
-   isCount?: boolean;
-   label?: string;
-}
+import { IHeaderLink } from './types';
 
 export const menuLinkList: IHeaderLink[] = [
    { icon: 'heart', to: favoritesPath, label: 'Избранное' },

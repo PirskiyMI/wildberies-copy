@@ -9,5 +9,5 @@ export const ProfileUserDetailsContainer = memo(() => {
    const name = useAppSelector(userNameSelector);
    const phone = useAppSelector(userPhoneSelector);
 
-   return <ProfileUserDetails name={name} phone={phone} />;
+   return <ProfileUserDetails name={name!} phone={phone!} />;
 });

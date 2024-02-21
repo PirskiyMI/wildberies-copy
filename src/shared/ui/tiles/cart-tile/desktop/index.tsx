@@ -11,7 +11,7 @@ export const CartTile: FC<ICartTileProps> = memo(({ title, content, clickHandle,
    return (
       <DesktopSection className={classes}>
          <h2 className={styles.item__title} onClick={clickHandle}>
-            <span>{title}</span> <Icon icon="pen" className={styles.item__icon} />
+            <span>{title}</span> {clickHandle && <Icon icon="pen" className={styles.item__icon} />}
          </h2>
          <div>{content}</div>
       </DesktopSection>

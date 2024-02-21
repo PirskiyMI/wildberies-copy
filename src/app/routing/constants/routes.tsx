@@ -6,6 +6,7 @@ import { DesktopProfilePage, MobileProfilePage } from 'src/pages/profile-page/ui
 import { clientTypeSelector } from 'src/shared/model/selectors/client-selectors';
 
 import { CategoryPage, FavoritesPage, HomePage, NavigationPage } from './lazy-components';
+import { AuthPage } from 'src/pages/auth-page';
 
 export const useRoutes = () => {
    const clientType = useAppSelector(clientTypeSelector);
@@ -45,6 +46,7 @@ export const useRoutes = () => {
       },
       { index: false, path: 'navigation', element: <NavigationPage /> },
       { index: false, path: 'catalog/:category', element: <CategoryPage /> },
+      { index: false, path: 'auth', element: <AuthPage /> },
    ];
 
    return routes;

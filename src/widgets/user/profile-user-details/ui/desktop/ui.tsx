@@ -7,6 +7,7 @@ import { DesktopUserGenderSwitcher } from 'src/features/user/user-gender-switche
 import styles from './styles.module.scss';
 import { DesktopProfileUserDetailsPopUp } from '../pop-up';
 import { IProfileUserDetailsProps } from '../../types/user-details';
+import { UserLogOut } from 'src/features/user/user-log-out';
 
 export const ProfileUserDetails: FC<IProfileUserDetailsProps> = memo(({ name, phone }) => {
    const { isPopUpOpen, openPopUp, closePopUp } = usePopUp();
@@ -32,6 +33,7 @@ export const ProfileUserDetails: FC<IProfileUserDetailsProps> = memo(({ name, ph
          <Suspense>
             {isPopUpOpen && <DesktopProfileUserDetailsPopUp closePopUp={closePopUp} />}
          </Suspense>
+         <UserLogOut />
       </DesktopSection>
    );
 });

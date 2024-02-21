@@ -12,6 +12,8 @@ interface ICartPageProps {
    isBasketEmpty: boolean;
 }
 
+console.log(1);
+
 export const CartPage: FC<ICartPageProps> = memo(({ isBasketEmpty }) => {
    return (
       <div className={`${styles.cart__container} container`}>

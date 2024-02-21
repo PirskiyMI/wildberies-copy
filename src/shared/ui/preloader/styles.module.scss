@@ -33,10 +33,10 @@
 @keyframes diamondLoader {
    0%,
    10% {
-      transform: translate(-64px, -64px) rotate(-45deg);
+      transform: translate(-74px, -84px) rotate(-45deg);
    }
    90%,
    100% {
-      transform: translate(0px, 0px) rotate(-45deg);
+      transform: translate(74px, 84px) rotate(-45deg);
    }
 }

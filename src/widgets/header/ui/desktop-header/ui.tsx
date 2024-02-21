@@ -4,10 +4,9 @@ import { DesktopBurger, DesktopLinkNav, Logo } from 'src/shared';
 import { DesktopProductSearch } from 'src/features/product/product-search';
 
 import styles from './styles.module.scss';
-import { menuLinkList } from '../../constants';
 import { IDesktopHeaderProps } from '../../types';
 
-export const Header: FC<IDesktopHeaderProps> = ({ count, openBurgerMenu }) => {
+export const Header: FC<IDesktopHeaderProps> = ({ count, openBurgerMenu, links }) => {
    return (
       <header className={styles.header}>
          <div className={`${styles.header__container} container`}>
@@ -20,7 +19,7 @@ export const Header: FC<IDesktopHeaderProps> = ({ count, openBurgerMenu }) => {
 
             <nav>
                <ul className={styles.header__list}>
-                  {menuLinkList.map(({ icon, to, isCount, label }) => (
+                  {links.map(({ icon, to, isCount, label }) => (
                      <li key={icon}>
                         {isCount ? (
                            <DesktopLinkNav

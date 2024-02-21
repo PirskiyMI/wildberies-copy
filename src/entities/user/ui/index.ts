@@ -11,10 +11,6 @@ export const UserGender = lazy(async () => {
    const { UserGender } = await import('./user-gender');
    return { default: UserGender };
 });
-export const UserDiscount = lazy(async () => {
-   const { UserDiscount } = await import('./user-discount');
-   return { default: UserDiscount };
-});
 export const UserInfoShort = lazy(async () => {
    const { UserInfoShort } = await import('./user-info-short');
    return { default: UserInfoShort };
@@ -22,8 +18,4 @@ export const UserInfoShort = lazy(async () => {
 export const UserPhone = lazy(async () => {
    const { UserPhone } = await import('./user-phone');
    return { default: UserPhone };
-});
-export const UserRansom = lazy(async () => {
-   const { UserRansom } = await import('./user-ransom');
-   return { default: UserRansom };
 });

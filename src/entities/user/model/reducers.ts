@@ -8,43 +8,39 @@ export interface IPayment {
    isMain: boolean;
 }
 interface IUser {
-   name: string;
+   isAuth: boolean;
    isMale: boolean;
-   tel: string;
-   balance: number;
-   discount: number;
-   ransomAmount: number;
-   redemptionPercentage: number;
-   purchases: [];
+   name: string | null;
+   tel: string | null;
    img: string | null;
    paymentInfo: IPayment[];
 }
 
 const initialState: IUser = {
-   name: 'Максим',
-   discount: 29,
-   ransomAmount: 0,
-   redemptionPercentage: 0,
-   balance: 0,
-   tel: '79530930145',
-   purchases: [],
-   img: null,
+   isAuth: false,
    isMale: true,
-   paymentInfo: [
-      {
-         cardNumber: '2202 2062 1235 4687',
-         code: '111',
-         id: 1703154986920,
-         date: '0125',
-         isMain: true,
-      },
-   ],
+   name: null,
+   tel: null,
+   img: null,
+   paymentInfo: [],
 };
 
 const userSlice = createSlice({
    name: 'user',
    initialState,
    reducers: {
+      setUser: (state, { payload }: PayloadAction<{ name: string; tel: string }>) => {
+         state.isAuth = true;
+         state.name = payload.name;
+         state.tel = payload.tel;
+      },
+      deleteUser: (state) => {
+         state.isAuth = false;
+         state.isMale = true;
+         state.name = '';
+         state.tel = '';
+         state.paymentInfo = [];
+      },
       setName: (state, { payload }: PayloadAction<string>) => {
          state.name = payload;
       },
@@ -57,7 +53,6 @@ const userSlice = createSlice({
             state.paymentInfo.push({ ...payload, isMain: true });
             return;
          }
-
          const inList = state.paymentInfo.find((el) => el.cardNumber === payload.cardNumber);
          if (!inList) {
             state.paymentInfo.push(payload);

@@ -1,59 +1,60 @@
 import { FC, memo } from 'react';
 
-import { Field, useInput } from 'src/shared';
+import {
+   Button,
+   DesktopSection,
+   Field,
+   useAppDispatch,
+   useAppSelector,
+   useInput,
+} from 'src/shared';
 
 import styles from './styles.module.scss';
+import { userActions, userIsAuthSelector } from 'src/entities/user';
+import { Navigate } from 'react-router-dom';
 
 export const FormCreateUser: FC = memo(() => {
+   const isAuth = useAppSelector(userIsAuthSelector);
+
    const {
       isDirty: nameIsDirty,
       errorText: nameErrorText,
       ...name
    } = useInput('', { isRequired: true, type: 'name' });
    const {
-      isDirty: surnameIsDirty,
-      errorText: surnameErrorText,
-      ...surname
-   } = useInput('', { isRequired: true, type: 'surname' });
-   const {
-      isDirty: mailIsDirty,
-      errorText: mailErrorText,
-      ...mail
-   } = useInput('', { isRequired: true, type: 'email' });
-   const {
       isDirty: telIsDirty,
       errorText: telErrorText,
       ...tel
    } = useInput('', { isRequired: true, type: 'tel' }, true);
-   const {
-      isDirty: identifyIsDirty,
-      errorText: identifyErrorText,
-      ...identify
-   } = useInput('', { isRequired: true, type: 'ITN' }, false, true);
+   const { setUser } = userActions;
+   const dispatch = useAppDispatch();
+
+   if (isAuth) return <Navigate to="/profile" />;
 
    return (
-      <form
-         className={styles.form}
-         onSubmit={(e) => {
-            e.preventDefault();
-         }}>
-         <div className={styles.form__top}>
-            <Field title="Имя" errorText={`${nameIsDirty ? nameErrorText : ''}`} {...name} />
+      <DesktopSection className={styles.wrapper}>
+         <form
+            className={styles.form}
+            onSubmit={(e) => {
+               e.preventDefault();
+               dispatch(setUser({ name: name.value, tel: tel.value }));
+            }}>
             <Field
-               title="Фамилия"
-               errorText={`${surnameIsDirty ? surnameErrorText : ''}`}
-               {...surname}
+               title="Имя"
+               errorText={`${nameIsDirty ? nameErrorText : ''}`}
+               {...name}
+               className={styles.form__item}
             />
-         </div>
-         <div className={styles.form__bottom}>
-            <Field title="Почта" errorText={`${mailIsDirty ? mailErrorText : ''}`} {...mail} />
-            <Field title="Телефон" errorText={`${telIsDirty ? telErrorText : ''}`} {...tel} />
             <Field
-               title="ИНН"
-               errorText={`${identifyIsDirty ? identifyErrorText : ''}`}
-               {...identify}
+               title="Телефон"
+               errorText={`${telIsDirty ? telErrorText : ''}`}
+               {...tel}
+               className={styles.form__item}
             />
-         </div>
-      </form>
+            <Button disabled={nameIsDirty || telIsDirty} className={styles.form__button}>
+               Зарегистрироваться
+            </Button>
+         </form>
+      </DesktopSection>
    );
 });
