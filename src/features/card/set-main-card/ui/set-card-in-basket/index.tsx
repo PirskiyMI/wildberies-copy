@@ -3,7 +3,7 @@ import { FC, useCallback } from 'react';
 import { userActions } from 'src/entities/user';
 import { useAppDispatch } from 'src/shared';
 
-import { ISetCardContainerProps } from '../../lib/types';
+import { ISetCardContainerProps } from '../../types/set-card-container';
 import { SetCardInBasket } from './ui';
 
 export const SetCardInBasketContainer: FC<ISetCardContainerProps> = ({ cardId, ...props }) => {

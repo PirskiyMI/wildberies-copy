@@ -21,13 +21,13 @@ export const ProfilePaymentMethod: FC<IProfilePaymentMethodProps> = ({ payments 
                      {el.isMain ? (
                         <MobileUserPaymentCard
                            cardNumber={el.cardNumber}
-                           deleteButton={<MobileDeleteCard id={el.id} />}
+                           deleteButton={<MobileDeleteCard cardId={el.id} />}
                            className={styles.payments__card}
                         />
                      ) : (
                         <MobileUserPaymentCard
                            cardNumber={el.cardNumber}
-                           deleteButton={<MobileDeleteCard id={el.id} />}
+                           deleteButton={<MobileDeleteCard cardId={el.id} />}
                            switchMainCardButton={<SetCard cardId={el.id} />}
                            className={styles.payments__card}
                         />

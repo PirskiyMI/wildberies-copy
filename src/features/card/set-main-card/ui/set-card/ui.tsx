@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { ISetCardProps } from '../../lib/types';
+import { ISetCardProps } from '../../types/set-card';
 import styles from './styles.module.scss';
 
 export const SetCard: FC<ISetCardProps> = ({ setCard }) => {

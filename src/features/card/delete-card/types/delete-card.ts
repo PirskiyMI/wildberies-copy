@@ -1,3 +1,3 @@
 export interface IDeleteCardProps {
-   id: number;
+   deleteCard: () => void;
 }

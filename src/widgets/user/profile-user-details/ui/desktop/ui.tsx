@@ -13,7 +13,6 @@ export const ProfileUserDetails: FC<IProfileUserDetailsProps> = memo(({ name, ph
 
    const userNameFirstLatter = useMemo(() => name[0], [name]);
    const formattedUserPhone = useMemo(() => phoneFormatter(phone), [phone]);
-   console.log(1);
 
    return (
       <DesktopSection className={styles.details}>

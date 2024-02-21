@@ -3,7 +3,7 @@ import { FC, memo, useCallback } from 'react';
 import { useAppDispatch } from 'src/shared';
 import { userActions } from 'src/entities/user';
 
-import { ISetCardContainerProps } from '../../lib/types';
+import { ISetCardContainerProps } from '../../types/set-card-container';
 import { SetCard } from './ui';
 
 export const SetCardContainer: FC<ISetCardContainerProps> = memo(({ cardId }) => {
